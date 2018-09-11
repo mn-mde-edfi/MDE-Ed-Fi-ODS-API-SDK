@@ -1,23 +1,25 @@
 # MDE-Ed-Fi-ODS-API-SDK
 A client SDK to interact with the MN Ed-Fi ODS API.
-Step 5. Use the SDK in a Sample C# Program
+
+Use the SDK Source files in a Sample C# Program
 Open up Visual Studio and create a new project. Choose the type Visual C# > Console Application. Name the project "EdFiClientSDK".
 
 
 Add folders to the project, one for each of the folders generated from the previous step, i.e.,:
-Api
-\Resources
-\Descriptors
-\Types
-\EnrollmentComposite
-\School_and_Student
-Models
-\Resources
-\Descriptors
-\Types
-\EnrollmentComposite
-\School_and_Student
-Sdk
+
+## Api
+* \Resources
+* \Descriptors
+* \Types
+* \Minnesota-SISVendor-Profile
+
+## Models
+* \Resources
+* \Descriptors
+* \Types
+* \Minnesota-SISVendor-Profile
+
+## Sdk
 
 
 
