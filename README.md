@@ -39,6 +39,6 @@ var clientSecret = "ABCabcaNf81xzCxwHfbolkC";
 var client = new RestClient("https://test.edfi.education.mn.gov/EdFi.Ods.WebApi/api/v2/2018/");
 ```
 
-Build the project and run it without debugging (Ctrl+F5) and a console 
+Build the project and run it without debugging (Ctrl+F5) and a console will open and display the results of your API request.
 
 
