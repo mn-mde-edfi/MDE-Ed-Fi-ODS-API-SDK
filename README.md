@@ -1,84 +1,44 @@
 # MDE-Ed-Fi-ODS-API-SDK
 A client SDK to interact with the MN Ed-Fi ODS API.
 
-Use the SDK Source files in a Sample C# Program
-Open up Visual Studio and create a new project. Choose the type Visual C# > Console Application. Name the project "EdFiClientSDK".
+## Use the SDK Source files in a Sample C# Program
+1. Open up Visual Studio and create a new project. 
+2. Choose the type Visual C# > Console Application. 
+3. Name the project "MNEdFiClientSDK".
+4. Add folders to the project, one for each of the folders generated from the previous step, i.e.,:
 
-
-Add folders to the project, one for each of the folders generated from the previous step, i.e.,:
-
-## Api
+### Api
 * \Resources
 * \Descriptors
 * \Types
 * \Minnesota-SISVendor-Profile
 
-## Models
+### Models
 * \Resources
 * \Descriptors
 * \Types
 * \Minnesota-SISVendor-Profile
 
-## Sdk
+### Sdk
 
 
+5. Right-click on each of the folders and add the existing classes for each package. The files can be found at the following location: MDE-Ed-Fi-ODS-API-SDK/MDE-EdFiClientSDK/EdFi/OdsApi/. Be sure to select all of the generated SDK files for each package.
 
-Right-click on each of the folders and add the existing classes for each package. The files can be found at the following location: C:\Ed-Fi-ODS-API-SDK\CSharpSDK\EdFiClientSDK\EdFi\OdsApi. Be sure to select all of the generated SDK files for each package.
+6. Use the NuGet Package Manager Console to install the RestSharp library. 
+7. Use the Program.cs file found here (MDE-Ed-Fi-ODS-API-SDK/MDE-EdFiClientSDK/EdFi/OdsApi/) 
 
-Use the Package Manager Console to install the RestSharp library. At the PM> prompt, enter "install-package restsharp -version 105.0.1".
+The client key and secret are will need to be replaced to match a MN sandbox environment with sample data.  URLS provided connect to the MN Public Sandbox environment. 
 
-
-Edit the Program.cs file and paste and add the following using statements at the top of the file: 
-
-using EdFi.OdsApi.Sdk;
-using EdFi.OdsApi.Models.Resources;
-using EdFi.OdsApi.Api.Resources;
-using RestSharp;
-Edit the Program.cs file and paste the following into the Main method. The client and key are using a publicly available sandbox environment with sample data hosted by the Ed-Fi Alliance.
-
-// Trust all SSL certs -- needed unless signed SSL certificates are configured.
-System.Net.ServicePointManager.ServerCertificateValidationCallback =
-    ((sender, certificate, chain, sslPolicyErrors) => true);
- 
-//Explicitly configures outgoing network calls to use the latest version of TLS where possible.
-//Due to our reliance on some older libraries, the.NET framework won't necessarily default
-//to the latest unless we explicitly request it. Some hosting environments will not allow older versions
-//of TLS, and thus calls can fail without this extra configuration.
-System.Net.ServicePointManager.SecurityProtocol |= System.Net.SecurityProtocolType.Tls11 | System.Net.SecurityProtocolType.Tls12;
- 
+```
 // OAuth configuration
-var oauthUrl = "https://api.ed-fi.org/v2.5.0/api/";
-var clientKey = "RvcohKz9zHI4";
-var clientSecret = "E1iEFusaNf81xzCxwHfbolkC";
+var oauthUrl = "https://test.edfi.education.mn.gov/EdFi.Ods.WebApi/";
+var clientKey = "RvcohKxyzXYZ";
+var clientSecret = "ABCabcaNf81xzCxwHfbolkC";
  
 // RestSharp dependency, install via NuGet
-var client = new RestClient("https://api.ed-fi.org/v2.5.0/api/api/v2.0/2018");
-             
-// TokenRetriever makes the OAuth calls
-var tokenRetriever = new TokenRetriever(oauthUrl, clientKey, clientSecret);
- 
-// Plug Oauth into RestSharp's authentication scheme
-client.Authenticator = new BearerTokenAuthenticator(tokenRetriever);
- 
-// GET schools
-var api = new SchoolsApi(client);
- 
-var response = api.GetSchoolsAll(null, null); // offset, limit
- 
-var httpReponseCode = response.StatusCode; // returns System.Net.HttpStatusCode.OK
-var schools = response.Data;
- 
-Console.WriteLine("Response code is " + httpReponseCode);
-  
-foreach (var school in schools)
-{
-    Console.WriteLine(school.nameOfInstitution);
-}
-Console.WriteLine();
-Console.WriteLine("Hit ENTER key to continue...");
-Console.ReadLine();
-Build the project and run it without debugging (Ctrl+F5) and you should see the following results:
+var client = new RestClient("https://test.edfi.education.mn.gov/EdFi.Ods.WebApi/api/v2/2018/");
+```
 
-With that, you're done!
+Build the project and run it without debugging (Ctrl+F5) and a console 
 
-This exercise leveraged a publicly available instance of the API, which contains the surface for a core implementation. If you're working with a specific platform host and you already have a key/secret pair, a great next step is to use these same techniques to generate an SDK for that platform. If the platform host has extended the data model, your new code will automatically include those structures in the data access components in the generated code.
+
