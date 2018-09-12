@@ -1,5 +1,5 @@
 # MDE-Ed-Fi-ODS-API-SDK
-A client SDK to interact with the MN Ed-Fi ODS API.
+A C sharp client SDK to interact with the MN Ed-Fi ODS API.
 
 ## Use the SDK Source files in a Sample C# Program
 1. Open up Visual Studio and create a new project. 
