@@ -7,6 +7,8 @@ A C sharp client SDK to interact with the MN Ed-Fi ODS API.
 3. Name the project "MNEdFiClientSDK".
 4. Add folders to the project, one for each of the folders generated from the previous step, i.e.,:
 
+### Sdk
+
 ### Api
 * \Resources
 * \Descriptors
@@ -19,7 +21,7 @@ A C sharp client SDK to interact with the MN Ed-Fi ODS API.
 * \Types
 * \Minnesota-SISVendor-Profile
 
-### Sdk
+
 
 
 5. Right-click on each of the folders and add the existing classes for each package. The files can be found at the following location: MDE-Ed-Fi-ODS-API-SDK/MDE-EdFiClientSDK/EdFi/OdsApi/. Be sure to select all of the generated SDK files for each package.
