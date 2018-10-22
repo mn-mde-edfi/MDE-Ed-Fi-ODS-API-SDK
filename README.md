@@ -8,13 +8,11 @@ A C sharp client SDK to interact with the MN Ed-Fi ODS API.
 4. Add folders to the project, one for each of the folders generated from the previous step, i.e.,:
 
 #### Sdk
-
 #### Api
 * \Resources
 * \Descriptors
 * \Types
 * \Minnesota-SISVendor-Profile
-
 #### Models
 * \Resources
 * \Descriptors
