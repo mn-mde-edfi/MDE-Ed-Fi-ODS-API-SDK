@@ -21,7 +21,6 @@ A C sharp client SDK to interact with the MN Ed-Fi ODS API.
 
 
 5. Right-click on each of the folders and add the existing classes for each package. The files can be found at the following location: MDE-Ed-Fi-ODS-API-SDK/MDE-EdFiClientSDK/EdFi/OdsApi/. Be sure to select all of the generated SDK files for each package.
-
 6. Use the NuGet Package Manager Console to install the RestSharp library. 
 7. Use the Program.cs file found here (MDE-Ed-Fi-ODS-API-SDK/MDE-EdFiClientSDK/EdFi/OdsApi/) 
 
@@ -38,5 +37,8 @@ var client = new RestClient("https://test.edfi.education.mn.gov/EdFi.Ods.WebApi/
 ```
 
 Build the project and run it without debugging (Ctrl+F5) and a console will open and display the results of your API request.
+
+######Important note on profile references.
+An existing defect in the the SDK generator outputs the references to profiles without hyphens.  You should change references to the SIS Vendor profile so that they include hyphens that are part of the actual profile name. For example:  "application/vnd.ed-fi.student.minnesota-sisvendor-profile.writable+json" 
 
 
