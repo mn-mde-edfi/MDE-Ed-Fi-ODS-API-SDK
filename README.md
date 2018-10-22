@@ -39,6 +39,7 @@ var client = new RestClient("https://test.edfi.education.mn.gov/EdFi.Ods.WebApi/
 Build the project and run it without debugging (Ctrl+F5) and a console will open and display the results of your API request.
 
 ###### Important note on profile references
+```
 An existing defect in the the SDK generator outputs the references to profiles without hyphens.  You should change references to the SIS Vendor profile so that they include hyphens that are part of the actual profile name. For example:  "application/vnd.ed-fi.student.minnesota-sisvendor-profile.writable+json" 
-
+```
 
