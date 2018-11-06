@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using EdFi.OdsApi.Sdk;
-using EdFi.OdsApi.Models.MinnesotaSISVendorProfile;
+using EdFi.OdsApi.Models.Minnesota-SISVendor-Profile;
 using RestSharp;
   
-namespace EdFi.OdsApi.Api.MinnesotaSISVendorProfile 
+namespace EdFi.OdsApi.Api.Minnesota-SISVendor-Profile 
 {
     public class LocalEducationAgenciesApi 
     {
@@ -31,7 +31,7 @@ namespace EdFi.OdsApi.Api.MinnesotaSISVendorProfile
                 request.AddParameter("offset", offset);
             if (limit != null)
                 request.AddParameter("limit", limit);
-            request.AddHeader("Accept", "application/vnd.ed-fi.localeducationagency.MinnesotaSISVendorProfile.readable+json");
+            request.AddHeader("Accept", "application/vnd.ed-fi.localeducationagency.Minnesota-SIS-Vendor-Profile.readable+json");
             var response = client.Execute<List<LocalEducationAgency_Readable>>(request);
 
             return response;
@@ -72,7 +72,7 @@ namespace EdFi.OdsApi.Api.MinnesotaSISVendorProfile
                 request.AddParameter("districtTypeDescriptor", districtTypeDescriptor);
             if (categoryType != null)
                 request.AddParameter("categoryType", categoryType);
-            request.AddHeader("Accept", "application/vnd.ed-fi.localeducationagency.MinnesotaSISVendorProfile.readable+json");
+            request.AddHeader("Accept", "application/vnd.ed-fi.localeducationagency.Minnesota-SISVendor-Profile.readable+json");
             var response = client.Execute<List<LocalEducationAgency_Readable>>(request);
 
             return response;
@@ -94,7 +94,7 @@ namespace EdFi.OdsApi.Api.MinnesotaSISVendorProfile
             if (localEducationAgencyId != null)
                 request.AddParameter("localEducationAgencyId", localEducationAgencyId);
             request.AddHeader("If-None-Match", IfNoneMatch);
-            request.AddHeader("Accept", "application/vnd.ed-fi.localeducationagency.MinnesotaSISVendorProfile.readable+json");
+            request.AddHeader("Accept", "application/vnd.ed-fi.localeducationagency.Minnesota-SISVendor-Profile.readable+json");
             var response = client.Execute<LocalEducationAgency_Readable>(request);
 
             return response;
@@ -113,7 +113,7 @@ namespace EdFi.OdsApi.Api.MinnesotaSISVendorProfile
             if (body == null ) 
                throw new ArgumentException("API method call is missing required parameters");
             request.AddBody(body);
-            request.Parameters.First(param => param.Type == ParameterType.RequestBody).Name = "application/vnd.ed-fi.localeducationagency.MinnesotaSISVendorProfile.writable+json";
+            request.Parameters.First(param => param.Type == ParameterType.RequestBody).Name = "application/vnd.ed-fi.localeducationagency.Minnesota-SISVendor-Profile.writable+json";
             var response = client.Execute(request);
 
             var location = response.Headers.FirstOrDefault(x => x.Name == "Location");
@@ -138,7 +138,7 @@ namespace EdFi.OdsApi.Api.MinnesotaSISVendorProfile
             if (id == null ) 
                throw new ArgumentException("API method call is missing required parameters");
             request.AddHeader("If-None-Match", IfNoneMatch);
-            request.AddHeader("Accept", "application/vnd.ed-fi.localeducationagency.MinnesotaSISVendorProfile.readable+json");
+            request.AddHeader("Accept", "application/vnd.ed-fi.localeducationagency.Minnesota-SISVendor-Profile.readable+json");
             var response = client.Execute<LocalEducationAgency_Readable>(request);
 
             return response;
@@ -161,7 +161,7 @@ namespace EdFi.OdsApi.Api.MinnesotaSISVendorProfile
                throw new ArgumentException("API method call is missing required parameters");
             request.AddHeader("If-Match", IfMatch);
             request.AddBody(body);
-            request.Parameters.First(param => param.Type == ParameterType.RequestBody).Name = "application/vnd.ed-fi.localeducationagency.MinnesotaSISVendorProfile.writable+json";
+            request.Parameters.First(param => param.Type == ParameterType.RequestBody).Name = "application/vnd.ed-fi.localeducationagency.Minnesota-SISVendor-Profile.writable+json";
             var response = client.Execute(request);
 
             var location = response.Headers.FirstOrDefault(x => x.Name == "Location");
