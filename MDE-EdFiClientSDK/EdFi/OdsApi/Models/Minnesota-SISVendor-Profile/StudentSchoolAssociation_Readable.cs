@@ -66,7 +66,7 @@ namespace EdFi.OdsApi.Models.MinnesotaSISVendorProfile
         /// An indication of a student's level of eligibility for breakfast, lunch, snack, supper, and milk programs.
         /// </summary>
         public string schoolFoodServicesEligibilityDescriptor { get; set; }
-        
+
         /// <summary>
         /// An indicator of the students' need for and participation in special education programs during this enrollment period.
         /// </summary>

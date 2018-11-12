@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using EdFi.OdsApi.Sdk;
-using EdFi.OdsApi.Models.Minnesota-SISVendor-Profile;
+using EdFi.OdsApi.Models.MinnesotaSISVendorProfile;
 using RestSharp;
   
-namespace EdFi.OdsApi.Api.Minnesota-SISVendor-Profile 
+namespace EdFi.OdsApi.Api.MinnesotaSISVendorProfile 
 {
     public class SchoolsApi 
     {
@@ -31,7 +31,7 @@ namespace EdFi.OdsApi.Api.Minnesota-SISVendor-Profile
                 request.AddParameter("offset", offset);
             if (limit != null)
                 request.AddParameter("limit", limit);
-            request.AddHeader("Accept", "application/vnd.ed-fi.school.Minnesota-SISVendor-Profile.readable+json");
+            request.AddHeader("Accept", "application/vnd.ed-fi.school.minnesota-sisvendor-profile.readable+json");
             var response = client.Execute<List<School_Readable>>(request);
 
             return response;
@@ -84,7 +84,7 @@ namespace EdFi.OdsApi.Api.Minnesota-SISVendor-Profile
                 request.AddParameter("type", type);
             if (titleIPartASchoolDesignationType != null)
                 request.AddParameter("titleIPartASchoolDesignationType", titleIPartASchoolDesignationType);
-            request.AddHeader("Accept", "application/vnd.ed-fi.school.Minnesota-SISVendor-Profile.readable+json");
+            request.AddHeader("Accept", "application/vnd.ed-fi.school.minnesota-sisvendor-profile.readable+json");
             var response = client.Execute<List<School_Readable>>(request);
 
             return response;
@@ -106,7 +106,7 @@ namespace EdFi.OdsApi.Api.Minnesota-SISVendor-Profile
             if (schoolId != null)
                 request.AddParameter("schoolId", schoolId);
             request.AddHeader("If-None-Match", IfNoneMatch);
-            request.AddHeader("Accept", "application/vnd.ed-fi.school.Minnesota-SISVendor-Profile.readable+json");
+            request.AddHeader("Accept", "application/vnd.ed-fi.school.minnesota-sisvendor-profile.readable+json");
             var response = client.Execute<School_Readable>(request);
 
             return response;
@@ -125,7 +125,7 @@ namespace EdFi.OdsApi.Api.Minnesota-SISVendor-Profile
             if (body == null ) 
                throw new ArgumentException("API method call is missing required parameters");
             request.AddBody(body);
-            request.Parameters.First(param => param.Type == ParameterType.RequestBody).Name = "application/vnd.ed-fi.school.Minnesota-SISVendor-Profile.writable+json";
+            request.Parameters.First(param => param.Type == ParameterType.RequestBody).Name = "application/vnd.ed-fi.school.minnesota-sisvendor-profile.writable+json";
             var response = client.Execute(request);
 
             var location = response.Headers.FirstOrDefault(x => x.Name == "Location");
@@ -150,8 +150,7 @@ namespace EdFi.OdsApi.Api.Minnesota-SISVendor-Profile
             if (id == null ) 
                throw new ArgumentException("API method call is missing required parameters");
             request.AddHeader("If-None-Match", IfNoneMatch);
-            request.AddHeader("Accept", "application/vnd.ed-fi.school.MinnesotaSISVendor
-                              .readable+json");
+            request.AddHeader("Accept", "application/vnd.ed-fi.school.minnesota-sisvendor-profile.readable+json");
             var response = client.Execute<School_Readable>(request);
 
             return response;
@@ -174,7 +173,7 @@ namespace EdFi.OdsApi.Api.Minnesota-SISVendor-Profile
                throw new ArgumentException("API method call is missing required parameters");
             request.AddHeader("If-Match", IfMatch);
             request.AddBody(body);
-            request.Parameters.First(param => param.Type == ParameterType.RequestBody).Name = "application/vnd.ed-fi.school.Minnesota-SISVendor-Profile.writable+json";
+            request.Parameters.First(param => param.Type == ParameterType.RequestBody).Name = "application/vnd.ed-fi.school.minnesota-sisvendor-profile.writable+json";
             var response = client.Execute(request);
 
             var location = response.Headers.FirstOrDefault(x => x.Name == "Location");

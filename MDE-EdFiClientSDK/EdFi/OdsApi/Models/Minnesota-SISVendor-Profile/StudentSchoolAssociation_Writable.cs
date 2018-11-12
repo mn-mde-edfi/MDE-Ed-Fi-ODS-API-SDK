@@ -68,6 +68,11 @@ namespace EdFi.OdsApi.Models.MinnesotaSISVendorProfile
         public string schoolFoodServicesEligibilityDescriptor { get; set; }
 
         /// <summary>
+        /// An indicator of the students' need for and participation in special education programs during this enrollment period.
+        /// </summary>
+        public string specialEducationEvaluationStatusDescriptor { get; set; }
+
+        /// <summary>
         /// An unordered collection of studentSchoolAssociationStudentProgramParticipations.  Key programs the student is participating in or receives services from.
         /// </summary>
         public List<StudentSchoolAssociationStudentProgramParticipation_Writable> studentProgramParticipations { get; set; }
