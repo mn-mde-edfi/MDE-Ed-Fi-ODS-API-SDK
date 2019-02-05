@@ -1,88 +1,21 @@
-using System.Collections.Generic;
-using RestSharp;
 using System;
+using System.Collections.Generic;
 using System.Linq;
-
-namespace EdFi.OdsApi.Sdk
+using EdFi.OdsApi.Sdk;
+using EdFi.OdsApi.Models;
+using RestSharp;
+  
+namespace EdFi.OdsApi.Api 
 {
-    public class IdentitiesApi 
+    public class V2Api 
     {
         private readonly IRestClient client;
 
-        public IdentitiesApi(IRestClient client)
+        public V2Api(IRestClient client)
         {
             this.client = client;
         }
       
-        /// <summary>
-        /// Lookup an existing Unique Id for a person, or suggest possible matches Returns a list of potential matches for the provided identity resource
-        /// </summary>
-        public IRestResponse<List<Identity>> IdentitiesV1_GetByExample(Identity identity) 
-        {
-            // verify required params are set
-            if (identity == null)
-            {
-                throw new ArgumentException("API method call is missing required parameters");
-            }
-
-            var request = new RestRequest("/identities", Method.GET);
-            request.RequestFormat = DataFormat.Json;
-
-            if (!string.IsNullOrEmpty(identity.familyNames))
-                request.AddParameter("familyNames", identity.familyNames);
-
-            if (!string.IsNullOrEmpty(identity.givenNames))
-                request.AddParameter("givenNames", identity.givenNames);
-
-            if (!string.IsNullOrEmpty(identity.birthGender))
-                request.AddParameter("birthGender", identity.birthGender);
-
-            if (!string.IsNullOrEmpty(identity.birthDate))
-                request.AddParameter("birthDate", identity.birthDate);
-
-            return client.Execute<List<Identity>>(request);
-
-        }
-        /// <summary>
-        /// Creates a new Unique Id for the given Identity information. 
-        /// Assumption here is that the user has verified that possible matches are not correct matches. Returns the created identity information along with the assigned Unique Id
-        /// </summary>
-        /// <param name="body">Identity object to be created</param>
-        /// <returns>A RestSharp <see cref="IRestResponse"/> instance containing the API response details.</returns>
-        public IRestResponse<Identity> IdentitiesV1_Post(Identity body) 
-        {
-            // verify required params are set
-            if (body == null)
-            {
-                throw new ArgumentException("API method call is missing required parameters");
-            }
-
-            var request = new RestRequest("/identities", Method.POST);
-            request.RequestFormat = DataFormat.Json;
-            request.AddBody(body);
-
-            return client.Execute<Identity>(request);
-        }
-
-        /// <summary>
-        /// Retrieve a single person record from their Unique Id. Returns either a single Identity or 404 and no data
-        /// </summary>
-        /// <param name="id">Unique Id of the person to be retrieved</param>
-        /// <returns>A RestSharp <see cref="IRestResponse"/> instance containing the API response details.</returns>
-        public IRestResponse<Identity> IdentitiesV1_GetById(string id) 
-        {
-            // verify required params are set
-            if (id == null)
-            {
-                throw new ArgumentException("API method call is missing required parameters");
-            }
-
-            var request = new RestRequest("/identities/{id}", Method.GET);
-            request.RequestFormat = DataFormat.Json;
-            request.AddUrlSegment("id", id);
-
-            return client.Execute<Identity>(request);
-        }
         /// <summary>
         /// Creates a new Unique Id for the given Identity information. Assumption here is that the user has verified that possible matches are not correct matches. Returns the created identity information along with the assigned Unique Id.
         /// </summary>
@@ -90,7 +23,7 @@ namespace EdFi.OdsApi.Sdk
         /// <returns>A RestSharp <see cref="IRestResponse"/> instance containing the API response details.</returns>
         public IRestResponse IdentitiesV2_Create(IdentityCreateRequest body) 
         {
-            var request = new RestRequest("/identities/v2.0", Method.POST);
+            var request = new RestRequest("/v2/identities", Method.POST);
             request.RequestFormat = DataFormat.Json;
 
             // verify required params are set
@@ -101,8 +34,7 @@ namespace EdFi.OdsApi.Sdk
             request.Parameters.First(param => param.Type == ParameterType.RequestBody).Name = "application/json, text/json";
             var response = client.Execute(request);
 
-            var location = response.Headers.FirstOrDefault(x => x.Name == "Location");
-
+            
             return response;
         }
         /// <summary>
@@ -112,7 +44,7 @@ namespace EdFi.OdsApi.Sdk
         /// <returns>A RestSharp <see cref="IRestResponse"/> instance containing the API response details.</returns>
         public IRestResponse<IdentityResponse> IdentitiesV2_GetById(string id) 
         {
-            var request = new RestRequest("/identities/v2.0/{id}", Method.GET);
+            var request = new RestRequest("/v2/identities/{id}", Method.GET);
             request.RequestFormat = DataFormat.Json;
 
             request.AddUrlSegment("id", id);
@@ -131,7 +63,7 @@ namespace EdFi.OdsApi.Sdk
         /// <returns>A RestSharp <see cref="IRestResponse"/> instance containing the API response details.</returns>
         public IRestResponse<IdentitySearchResponse> IdentitiesV2_Find(List<string> body) 
         {
-            var request = new RestRequest("/identities/v2.0/find", Method.POST);
+            var request = new RestRequest("/v2/identities/find", Method.POST);
             request.RequestFormat = DataFormat.Json;
 
             // verify required params are set
@@ -142,8 +74,7 @@ namespace EdFi.OdsApi.Sdk
             request.Parameters.First(param => param.Type == ParameterType.RequestBody).Name = "application/json, text/json";
             var response = client.Execute<IdentitySearchResponse>(request);
 
-            var location = response.Headers.FirstOrDefault(x => x.Name == "Location");
-
+           
             return response;
         }
         /// <summary>
@@ -153,7 +84,7 @@ namespace EdFi.OdsApi.Sdk
         /// <returns>A RestSharp <see cref="IRestResponse"/> instance containing the API response details.</returns>
         public IRestResponse<IdentitySearchResponse> IdentitiesV2_Result(string id) 
         {
-            var request = new RestRequest("/identities/v2.0/results/{id}", Method.GET);
+            var request = new RestRequest("/v2/identities/results/{id}", Method.GET);
             request.RequestFormat = DataFormat.Json;
 
             request.AddUrlSegment("id", id);
@@ -172,7 +103,7 @@ namespace EdFi.OdsApi.Sdk
         /// <returns>A RestSharp <see cref="IRestResponse"/> instance containing the API response details.</returns>
         public IRestResponse<IdentitySearchResponse> IdentitiesV2_Search(List<IdentitySearchRequest> body) 
         {
-            var request = new RestRequest("/identities/v2.0/search", Method.POST);
+            var request = new RestRequest("/v2/identities/search", Method.POST);
             request.RequestFormat = DataFormat.Json;
 
             // verify required params are set
@@ -183,9 +114,8 @@ namespace EdFi.OdsApi.Sdk
             request.Parameters.First(param => param.Type == ParameterType.RequestBody).Name = "application/json, text/json";
             var response = client.Execute<IdentitySearchResponse>(request);
 
-            var location = response.Headers.FirstOrDefault(x => x.Name == "Location");
-
             return response;
         }
+        }
     }
-}
+

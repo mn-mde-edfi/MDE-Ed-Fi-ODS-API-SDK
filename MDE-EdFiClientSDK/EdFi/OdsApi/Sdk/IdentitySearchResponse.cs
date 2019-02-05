@@ -3,7 +3,7 @@ using System.Text;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace EdFi.OdsApi.Sdk
+namespace EdFi.OdsApi.Models 
 {
     public class IdentitySearchResponse 
     {
@@ -13,5 +13,4 @@ namespace EdFi.OdsApi.Sdk
 
         }
 }
-
 

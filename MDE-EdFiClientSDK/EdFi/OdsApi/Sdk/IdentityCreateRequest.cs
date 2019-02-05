@@ -3,10 +3,14 @@ using System.Text;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace EdFi.OdsApi.Sdk
+namespace EdFi.OdsApi.Models 
 {
     public class IdentityCreateRequest 
     {
+        public string StateStudentId { get; set; }
+
+        public string EducationOrganizationId { get; set; }
+
         public string LastSurname { get; set; }
 
         public string FirstName { get; set; }
@@ -21,9 +25,8 @@ namespace EdFi.OdsApi.Sdk
 
         public int? BirthOrder { get; set; }
 
-        public IdentityLocation BirthLocation { get; set; }
+        public Location BirthLocation { get; set; }
 
         }
 }
-
 

@@ -3,9 +3,9 @@ using System.Text;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace EdFi.OdsApi.Sdk
+namespace EdFi.OdsApi.Models 
 {
-    public class IdentityLocation 
+    public class Location 
     {
         public string City { get; set; }
 
@@ -17,5 +17,4 @@ namespace EdFi.OdsApi.Sdk
 
         }
 }
-
 
