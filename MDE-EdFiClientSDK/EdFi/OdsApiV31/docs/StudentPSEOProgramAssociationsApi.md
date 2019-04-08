@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Apis.All.StudentPSEOProgramAssociationsApi
+# EdFi.OdsApi.Sdk.Apis.MN.StudentPSEOProgramAssociationsApi
 
 All URIs are relative to *https://test.edfi.education.mn.gov:443/edfi.ods.webapi/data/v3*
 
@@ -23,9 +23,9 @@ The DELETE operation is used to delete an existing resource by identifier. If th
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.All;
+using EdFi.OdsApi.Sdk.Apis.MN;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.All;
+using EdFi.OdsApi.Sdk.Models.MN;
 
 namespace Example
 {
@@ -88,9 +88,9 @@ This GET operation provides access to resources using the \"Get\" search pattern
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.All;
+using EdFi.OdsApi.Sdk.Apis.MN;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.All;
+using EdFi.OdsApi.Sdk.Models.MN;
 
 namespace Example
 {
@@ -168,9 +168,9 @@ This GET operation retrieves a resource by the specified resource identifier.
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.All;
+using EdFi.OdsApi.Sdk.Apis.MN;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.All;
+using EdFi.OdsApi.Sdk.Models.MN;
 
 namespace Example
 {
@@ -234,9 +234,9 @@ The POST operation can be used to create or update resources. In database terms,
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.All;
+using EdFi.OdsApi.Sdk.Apis.MN;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.All;
+using EdFi.OdsApi.Sdk.Models.MN;
 
 namespace Example
 {
@@ -297,9 +297,9 @@ The PUT operation is used to update or create a resource by identifier. If the r
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.All;
+using EdFi.OdsApi.Sdk.Apis.MN;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.All;
+using EdFi.OdsApi.Sdk.Models.MN;
 
 namespace Example
 {

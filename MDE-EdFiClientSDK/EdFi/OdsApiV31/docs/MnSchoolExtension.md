@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.All.MnSchoolExtension
+# EdFi.OdsApi.Sdk.Models.MN.MnSchoolExtension
 ## Properties
 
 Name | Type | Description | Notes

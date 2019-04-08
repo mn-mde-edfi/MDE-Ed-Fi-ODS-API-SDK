@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.All.MnStudentEarlyChildhoodScreeningProgramAssociation
+# EdFi.OdsApi.Sdk.Models.MN.MnStudentEarlyChildhoodScreeningProgramAssociation
 ## Properties
 
 Name | Type | Description | Notes

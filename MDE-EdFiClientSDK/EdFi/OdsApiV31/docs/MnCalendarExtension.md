@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.All.MnCalendarExtension
+# EdFi.OdsApi.Sdk.Models.MN.MnCalendarExtension
 ## Properties
 
 Name | Type | Description | Notes

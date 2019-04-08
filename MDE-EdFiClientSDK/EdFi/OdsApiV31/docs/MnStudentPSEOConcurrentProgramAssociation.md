@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.All.MnStudentPSEOConcurrentProgramAssociation
+# EdFi.OdsApi.Sdk.Models.MN.MnStudentPSEOConcurrentProgramAssociation
 ## Properties
 
 Name | Type | Description | Notes

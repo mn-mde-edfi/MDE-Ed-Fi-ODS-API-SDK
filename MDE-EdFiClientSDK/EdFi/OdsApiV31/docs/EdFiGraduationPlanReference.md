@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.All.EdFiGraduationPlanReference
+# EdFi.OdsApi.Sdk.Models.MN.EdFiGraduationPlanReference
 ## Properties
 
 Name | Type | Description | Notes

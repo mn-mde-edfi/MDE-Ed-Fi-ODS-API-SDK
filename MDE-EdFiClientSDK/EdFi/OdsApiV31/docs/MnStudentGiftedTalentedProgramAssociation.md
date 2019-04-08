@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.All.MnStudentGiftedTalentedProgramAssociation
+# EdFi.OdsApi.Sdk.Models.MN.MnStudentGiftedTalentedProgramAssociation
 ## Properties
 
 Name | Type | Description | Notes

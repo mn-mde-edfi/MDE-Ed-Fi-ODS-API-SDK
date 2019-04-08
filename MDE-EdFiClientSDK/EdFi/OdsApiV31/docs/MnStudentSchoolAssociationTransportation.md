@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.All.MnStudentSchoolAssociationTransportation
+# EdFi.OdsApi.Sdk.Models.MN.MnStudentSchoolAssociationTransportation
 ## Properties
 
 Name | Type | Description | Notes

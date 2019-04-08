@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.All.Link
+# EdFi.OdsApi.Sdk.Models.MN.Link
 ## Properties
 
 Name | Type | Description | Notes

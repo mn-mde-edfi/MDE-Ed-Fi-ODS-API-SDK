@@ -1,19 +1,19 @@
-# EdFi.OdsApi.Sdk.Apis.All.StudentLanguageInstructionProgramAssociationsApi
+# EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile.StudentLanguageInstructionProgramAssociationsApi
 
 All URIs are relative to *https://test.edfi.education.mn.gov:443/edfi.ods.webapi/data/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteStudentLanguageInstructionProgramAssociationById**](StudentLanguageInstructionProgramAssociationsApi.md#deletestudentlanguageinstructionprogramassociationbyid) | **DELETE** /ed-fi/studentLanguageInstructionProgramAssociations/{id} | Deletes an existing resource using the resource identifier.
+[**DeletestudentLanguageInstructionProgramAssociationById**](StudentLanguageInstructionProgramAssociationsApi.md#deletestudentlanguageinstructionprogramassociationbyid) | **DELETE** /ed-fi/studentLanguageInstructionProgramAssociations/{id} | Deletes an existing resource using the resource identifier.
 [**GetStudentLanguageInstructionProgramAssociations**](StudentLanguageInstructionProgramAssociationsApi.md#getstudentlanguageinstructionprogramassociations) | **GET** /ed-fi/studentLanguageInstructionProgramAssociations | Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
 [**GetStudentLanguageInstructionProgramAssociationsById**](StudentLanguageInstructionProgramAssociationsApi.md#getstudentlanguageinstructionprogramassociationsbyid) | **GET** /ed-fi/studentLanguageInstructionProgramAssociations/{id} | Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
-[**PostStudentLanguageInstructionProgramAssociation**](StudentLanguageInstructionProgramAssociationsApi.md#poststudentlanguageinstructionprogramassociation) | **POST** /ed-fi/studentLanguageInstructionProgramAssociations | Creates or updates resources based on the natural key values of the supplied resource.
-[**PutStudentLanguageInstructionProgramAssociation**](StudentLanguageInstructionProgramAssociationsApi.md#putstudentlanguageinstructionprogramassociation) | **PUT** /ed-fi/studentLanguageInstructionProgramAssociations/{id} | Updates or creates a resource based on the resource identifier.
+[**PoststudentLanguageInstructionProgramAssociation**](StudentLanguageInstructionProgramAssociationsApi.md#poststudentlanguageinstructionprogramassociation) | **POST** /ed-fi/studentLanguageInstructionProgramAssociations | Creates or updates resources based on the natural key values of the supplied resource.
+[**PutstudentLanguageInstructionProgramAssociation**](StudentLanguageInstructionProgramAssociationsApi.md#putstudentlanguageinstructionprogramassociation) | **PUT** /ed-fi/studentLanguageInstructionProgramAssociations/{id} | Updates or creates a resource based on the resource identifier.
 
 
 <a name="deletestudentlanguageinstructionprogramassociationbyid"></a>
-# **DeleteStudentLanguageInstructionProgramAssociationById**
-> void DeleteStudentLanguageInstructionProgramAssociationById (string id, string ifMatch = null)
+# **DeletestudentLanguageInstructionProgramAssociationById**
+> void DeletestudentLanguageInstructionProgramAssociationById (string id, string ifMatch = null)
 
 Deletes an existing resource using the resource identifier.
 
@@ -23,13 +23,13 @@ The DELETE operation is used to delete an existing resource by identifier. If th
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.All;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.All;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile;
 
 namespace Example
 {
-    public class DeleteStudentLanguageInstructionProgramAssociationByIdExample
+    public class DeletestudentLanguageInstructionProgramAssociationByIdExample
     {
         public void main()
         {
@@ -43,11 +43,11 @@ namespace Example
             try
             {
                 // Deletes an existing resource using the resource identifier.
-                apiInstance.DeleteStudentLanguageInstructionProgramAssociationById(id, ifMatch);
+                apiInstance.DeletestudentLanguageInstructionProgramAssociationById(id, ifMatch);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling StudentLanguageInstructionProgramAssociationsApi.DeleteStudentLanguageInstructionProgramAssociationById: " + e.Message );
+                Debug.Print("Exception when calling StudentLanguageInstructionProgramAssociationsApi.DeletestudentLanguageInstructionProgramAssociationById: " + e.Message );
             }
         }
     }
@@ -71,14 +71,14 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/vnd.ed-fi.studentlanguageinstructionprogramassociation.minnesota-sisvendor-profile.writable+json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getstudentlanguageinstructionprogramassociations"></a>
 # **GetStudentLanguageInstructionProgramAssociations**
-> List<EdFiStudentLanguageInstructionProgramAssociation> GetStudentLanguageInstructionProgramAssociations (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, bool? englishLearnerParticipation = null)
+> List<EdFiStudentLanguageInstructionProgramAssociationReadable> GetStudentLanguageInstructionProgramAssociations (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, bool? englishLearnerParticipation = null)
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
 
@@ -88,9 +88,9 @@ This GET operation provides access to resources using the \"Get\" search pattern
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.All;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.All;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile;
 
 namespace Example
 {
@@ -116,7 +116,7 @@ namespace Example
             try
             {
                 // Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
-                List&lt;EdFiStudentLanguageInstructionProgramAssociation&gt; result = apiInstance.GetStudentLanguageInstructionProgramAssociations(offset, limit, totalCount, beginDate, educationOrganizationId, programEducationOrganizationId, programName, programTypeDescriptor, studentUniqueId, englishLearnerParticipation);
+                List&lt;EdFiStudentLanguageInstructionProgramAssociationReadable&gt; result = apiInstance.GetStudentLanguageInstructionProgramAssociations(offset, limit, totalCount, beginDate, educationOrganizationId, programEducationOrganizationId, programName, programTypeDescriptor, studentUniqueId, englishLearnerParticipation);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<EdFiStudentLanguageInstructionProgramAssociation>**](EdFiStudentLanguageInstructionProgramAssociation.md)
+[**List<EdFiStudentLanguageInstructionProgramAssociationReadable>**](EdFiStudentLanguageInstructionProgramAssociationReadable.md)
 
 ### Authorization
 
@@ -154,13 +154,13 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: application/vnd.ed-fi.studentlanguageinstructionprogramassociation.minnesota-sisvendor-profile.readable+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getstudentlanguageinstructionprogramassociationsbyid"></a>
 # **GetStudentLanguageInstructionProgramAssociationsById**
-> EdFiStudentLanguageInstructionProgramAssociation GetStudentLanguageInstructionProgramAssociationsById (string id, string ifNoneMatch = null)
+> EdFiStudentLanguageInstructionProgramAssociationReadable GetStudentLanguageInstructionProgramAssociationsById (string id, string ifNoneMatch = null)
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
 
@@ -170,9 +170,9 @@ This GET operation retrieves a resource by the specified resource identifier.
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.All;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.All;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile;
 
 namespace Example
 {
@@ -190,7 +190,7 @@ namespace Example
             try
             {
                 // Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
-                EdFiStudentLanguageInstructionProgramAssociation result = apiInstance.GetStudentLanguageInstructionProgramAssociationsById(id, ifNoneMatch);
+                EdFiStudentLanguageInstructionProgramAssociationReadable result = apiInstance.GetStudentLanguageInstructionProgramAssociationsById(id, ifNoneMatch);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EdFiStudentLanguageInstructionProgramAssociation**](EdFiStudentLanguageInstructionProgramAssociation.md)
+[**EdFiStudentLanguageInstructionProgramAssociationReadable**](EdFiStudentLanguageInstructionProgramAssociationReadable.md)
 
 ### Authorization
 
@@ -220,13 +220,13 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: application/vnd.ed-fi.studentlanguageinstructionprogramassociation.minnesota-sisvendor-profile.readable+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="poststudentlanguageinstructionprogramassociation"></a>
-# **PostStudentLanguageInstructionProgramAssociation**
-> void PostStudentLanguageInstructionProgramAssociation (EdFiStudentLanguageInstructionProgramAssociation studentLanguageInstructionProgramAssociation)
+# **PoststudentLanguageInstructionProgramAssociation**
+> void PoststudentLanguageInstructionProgramAssociation (EdFiStudentLanguageInstructionProgramAssociationWritable studentLanguageInstructionProgramAssociation)
 
 Creates or updates resources based on the natural key values of the supplied resource.
 
@@ -236,13 +236,13 @@ The POST operation can be used to create or update resources. In database terms,
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.All;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.All;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile;
 
 namespace Example
 {
-    public class PostStudentLanguageInstructionProgramAssociationExample
+    public class PoststudentLanguageInstructionProgramAssociationExample
     {
         public void main()
         {
@@ -250,16 +250,16 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new StudentLanguageInstructionProgramAssociationsApi();
-            var studentLanguageInstructionProgramAssociation = new EdFiStudentLanguageInstructionProgramAssociation(); // EdFiStudentLanguageInstructionProgramAssociation | The JSON representation of the \"studentLanguageInstructionProgramAssociation\" resource to be created or updated.
+            var studentLanguageInstructionProgramAssociation = new EdFiStudentLanguageInstructionProgramAssociationWritable(); // EdFiStudentLanguageInstructionProgramAssociationWritable | The JSON representation of the \"studentLanguageInstructionProgramAssociation\" resource to be created or updated.
 
             try
             {
                 // Creates or updates resources based on the natural key values of the supplied resource.
-                apiInstance.PostStudentLanguageInstructionProgramAssociation(studentLanguageInstructionProgramAssociation);
+                apiInstance.PoststudentLanguageInstructionProgramAssociation(studentLanguageInstructionProgramAssociation);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling StudentLanguageInstructionProgramAssociationsApi.PostStudentLanguageInstructionProgramAssociation: " + e.Message );
+                Debug.Print("Exception when calling StudentLanguageInstructionProgramAssociationsApi.PoststudentLanguageInstructionProgramAssociation: " + e.Message );
             }
         }
     }
@@ -270,7 +270,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **studentLanguageInstructionProgramAssociation** | [**EdFiStudentLanguageInstructionProgramAssociation**](EdFiStudentLanguageInstructionProgramAssociation.md)| The JSON representation of the \&quot;studentLanguageInstructionProgramAssociation\&quot; resource to be created or updated. | 
+ **studentLanguageInstructionProgramAssociation** | [**EdFiStudentLanguageInstructionProgramAssociationWritable**](EdFiStudentLanguageInstructionProgramAssociationWritable.md)| The JSON representation of the \&quot;studentLanguageInstructionProgramAssociation\&quot; resource to be created or updated. | 
 
 ### Return type
 
@@ -282,14 +282,14 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/vnd.ed-fi.studentlanguageinstructionprogramassociation.minnesota-sisvendor-profile.writable+json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="putstudentlanguageinstructionprogramassociation"></a>
-# **PutStudentLanguageInstructionProgramAssociation**
-> void PutStudentLanguageInstructionProgramAssociation (string id, EdFiStudentLanguageInstructionProgramAssociation studentLanguageInstructionProgramAssociation, string ifMatch = null)
+# **PutstudentLanguageInstructionProgramAssociation**
+> void PutstudentLanguageInstructionProgramAssociation (string id, EdFiStudentLanguageInstructionProgramAssociationWritable studentLanguageInstructionProgramAssociation, string ifMatch = null)
 
 Updates or creates a resource based on the resource identifier.
 
@@ -299,13 +299,13 @@ The PUT operation is used to update or create a resource by identifier. If the r
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.All;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.All;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile;
 
 namespace Example
 {
-    public class PutStudentLanguageInstructionProgramAssociationExample
+    public class PutstudentLanguageInstructionProgramAssociationExample
     {
         public void main()
         {
@@ -314,17 +314,17 @@ namespace Example
 
             var apiInstance = new StudentLanguageInstructionProgramAssociationsApi();
             var id = id_example;  // string | A resource identifier that uniquely identifies the resource.
-            var studentLanguageInstructionProgramAssociation = new EdFiStudentLanguageInstructionProgramAssociation(); // EdFiStudentLanguageInstructionProgramAssociation | The JSON representation of the \"studentLanguageInstructionProgramAssociation\" resource to be created or updated.
+            var studentLanguageInstructionProgramAssociation = new EdFiStudentLanguageInstructionProgramAssociationWritable(); // EdFiStudentLanguageInstructionProgramAssociationWritable | The JSON representation of the \"studentLanguageInstructionProgramAssociation\" resource to be created or updated.
             var ifMatch = ifMatch_example;  // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional) 
 
             try
             {
                 // Updates or creates a resource based on the resource identifier.
-                apiInstance.PutStudentLanguageInstructionProgramAssociation(id, studentLanguageInstructionProgramAssociation, ifMatch);
+                apiInstance.PutstudentLanguageInstructionProgramAssociation(id, studentLanguageInstructionProgramAssociation, ifMatch);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling StudentLanguageInstructionProgramAssociationsApi.PutStudentLanguageInstructionProgramAssociation: " + e.Message );
+                Debug.Print("Exception when calling StudentLanguageInstructionProgramAssociationsApi.PutstudentLanguageInstructionProgramAssociation: " + e.Message );
             }
         }
     }
@@ -336,7 +336,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| A resource identifier that uniquely identifies the resource. | 
- **studentLanguageInstructionProgramAssociation** | [**EdFiStudentLanguageInstructionProgramAssociation**](EdFiStudentLanguageInstructionProgramAssociation.md)| The JSON representation of the \&quot;studentLanguageInstructionProgramAssociation\&quot; resource to be created or updated. | 
+ **studentLanguageInstructionProgramAssociation** | [**EdFiStudentLanguageInstructionProgramAssociationWritable**](EdFiStudentLanguageInstructionProgramAssociationWritable.md)| The JSON representation of the \&quot;studentLanguageInstructionProgramAssociation\&quot; resource to be created or updated. | 
  **ifMatch** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] 
 
 ### Return type
@@ -349,7 +349,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/vnd.ed-fi.studentlanguageinstructionprogramassociation.minnesota-sisvendor-profile.writable+json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

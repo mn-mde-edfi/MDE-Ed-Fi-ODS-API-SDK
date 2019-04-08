@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.All.MnSchoolClassificationDescriptor
+# EdFi.OdsApi.Sdk.Models.MN.MnSchoolClassificationDescriptor
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.All.MnStudent21stCenturyLearningCenterGrantProgramAssociation
+# EdFi.OdsApi.Sdk.Models.MN.MnStudent21stCenturyLearningCenterGrantProgramAssociation
 ## Properties
 
 Name | Type | Description | Notes

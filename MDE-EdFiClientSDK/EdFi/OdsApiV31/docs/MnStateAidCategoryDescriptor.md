@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.All.MnStateAidCategoryDescriptor
+# EdFi.OdsApi.Sdk.Models.MN.MnStateAidCategoryDescriptor
 ## Properties
 
 Name | Type | Description | Notes

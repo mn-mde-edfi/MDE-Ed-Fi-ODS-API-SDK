@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.All.EdFiStaffReference
+# EdFi.OdsApi.Sdk.Models.MN.EdFiStaffReference
 ## Properties
 
 Name | Type | Description | Notes

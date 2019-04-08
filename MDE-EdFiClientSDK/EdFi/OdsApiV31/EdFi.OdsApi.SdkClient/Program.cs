@@ -13,10 +13,10 @@
             System.Net.ServicePointManager.ServerCertificateValidationCallback =
                 ((sender, certificate, chain, sslPolicyErrors) => true);
 
-            //Explicitly configures outgoing network calls to use the latest version of TLS where possible.
-            //Due to our reliance on some older libraries, the.NET framework won't necessarily default
-            //to the latest unless we explicitly request it. Some hosting environments will not allow older versions
-            //of TLS, and thus calls can fail without this extra configuration.
+            // Explicitly configures outgoing network calls to use the latest version of TLS where possible.
+            // Due to our reliance on some older libraries, the.NET framework won't necessarily default
+            // to the latest unless we explicitly request it. Some hosting environments will not allow older versions
+            // of TLS, and thus calls can fail without this extra configuration.
             System.Net.ServicePointManager.SecurityProtocol |= System.Net.SecurityProtocolType.Tls11 | System.Net.SecurityProtocolType.Tls12;
 
             // Oauth configuration
@@ -37,10 +37,10 @@
             // GET schools
             var api = new SchoolsApi(configuration);
             var response = api.GetSchoolsWithHttpInfo(null, null); // offset, limit
-            var httpReponseCode = response.StatusCode; // returns System.Net.HttpStatusCode.OK
+            var httpResponseCode = response.StatusCode; // returns System.Net.HttpStatusCode.OK
             var schools = response.Data;
 
-            Console.WriteLine("Response code is " + httpReponseCode);
+            Console.WriteLine("Response code is " + httpResponseCode);
 
             foreach (var school in schools)
             {

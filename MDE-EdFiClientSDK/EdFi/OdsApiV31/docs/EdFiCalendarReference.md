@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.All.EdFiCalendarReference
+# EdFi.OdsApi.Sdk.Models.MN.EdFiCalendarReference
 ## Properties
 
 Name | Type | Description | Notes

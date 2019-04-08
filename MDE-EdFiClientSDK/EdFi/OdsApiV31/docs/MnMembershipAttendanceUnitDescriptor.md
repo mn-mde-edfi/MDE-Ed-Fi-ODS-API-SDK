@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.All.MnMembershipAttendanceUnitDescriptor
+# EdFi.OdsApi.Sdk.Models.MN.MnMembershipAttendanceUnitDescriptor
 ## Properties
 
 Name | Type | Description | Notes

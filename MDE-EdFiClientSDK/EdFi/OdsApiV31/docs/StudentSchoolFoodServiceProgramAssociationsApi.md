@@ -1,19 +1,19 @@
-# EdFi.OdsApi.Sdk.Apis.All.StudentSchoolFoodServiceProgramAssociationsApi
+# EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile.StudentSchoolFoodServiceProgramAssociationsApi
 
 All URIs are relative to *https://test.edfi.education.mn.gov:443/edfi.ods.webapi/data/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteStudentSchoolFoodServiceProgramAssociationById**](StudentSchoolFoodServiceProgramAssociationsApi.md#deletestudentschoolfoodserviceprogramassociationbyid) | **DELETE** /ed-fi/studentSchoolFoodServiceProgramAssociations/{id} | Deletes an existing resource using the resource identifier.
+[**DeletestudentSchoolFoodServiceProgramAssociationById**](StudentSchoolFoodServiceProgramAssociationsApi.md#deletestudentschoolfoodserviceprogramassociationbyid) | **DELETE** /ed-fi/studentSchoolFoodServiceProgramAssociations/{id} | Deletes an existing resource using the resource identifier.
 [**GetStudentSchoolFoodServiceProgramAssociations**](StudentSchoolFoodServiceProgramAssociationsApi.md#getstudentschoolfoodserviceprogramassociations) | **GET** /ed-fi/studentSchoolFoodServiceProgramAssociations | Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
 [**GetStudentSchoolFoodServiceProgramAssociationsById**](StudentSchoolFoodServiceProgramAssociationsApi.md#getstudentschoolfoodserviceprogramassociationsbyid) | **GET** /ed-fi/studentSchoolFoodServiceProgramAssociations/{id} | Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
-[**PostStudentSchoolFoodServiceProgramAssociation**](StudentSchoolFoodServiceProgramAssociationsApi.md#poststudentschoolfoodserviceprogramassociation) | **POST** /ed-fi/studentSchoolFoodServiceProgramAssociations | Creates or updates resources based on the natural key values of the supplied resource.
-[**PutStudentSchoolFoodServiceProgramAssociation**](StudentSchoolFoodServiceProgramAssociationsApi.md#putstudentschoolfoodserviceprogramassociation) | **PUT** /ed-fi/studentSchoolFoodServiceProgramAssociations/{id} | Updates or creates a resource based on the resource identifier.
+[**PoststudentSchoolFoodServiceProgramAssociation**](StudentSchoolFoodServiceProgramAssociationsApi.md#poststudentschoolfoodserviceprogramassociation) | **POST** /ed-fi/studentSchoolFoodServiceProgramAssociations | Creates or updates resources based on the natural key values of the supplied resource.
+[**PutstudentSchoolFoodServiceProgramAssociation**](StudentSchoolFoodServiceProgramAssociationsApi.md#putstudentschoolfoodserviceprogramassociation) | **PUT** /ed-fi/studentSchoolFoodServiceProgramAssociations/{id} | Updates or creates a resource based on the resource identifier.
 
 
 <a name="deletestudentschoolfoodserviceprogramassociationbyid"></a>
-# **DeleteStudentSchoolFoodServiceProgramAssociationById**
-> void DeleteStudentSchoolFoodServiceProgramAssociationById (string id, string ifMatch = null)
+# **DeletestudentSchoolFoodServiceProgramAssociationById**
+> void DeletestudentSchoolFoodServiceProgramAssociationById (string id, string ifMatch = null)
 
 Deletes an existing resource using the resource identifier.
 
@@ -23,13 +23,13 @@ The DELETE operation is used to delete an existing resource by identifier. If th
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.All;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.All;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile;
 
 namespace Example
 {
-    public class DeleteStudentSchoolFoodServiceProgramAssociationByIdExample
+    public class DeletestudentSchoolFoodServiceProgramAssociationByIdExample
     {
         public void main()
         {
@@ -43,11 +43,11 @@ namespace Example
             try
             {
                 // Deletes an existing resource using the resource identifier.
-                apiInstance.DeleteStudentSchoolFoodServiceProgramAssociationById(id, ifMatch);
+                apiInstance.DeletestudentSchoolFoodServiceProgramAssociationById(id, ifMatch);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling StudentSchoolFoodServiceProgramAssociationsApi.DeleteStudentSchoolFoodServiceProgramAssociationById: " + e.Message );
+                Debug.Print("Exception when calling StudentSchoolFoodServiceProgramAssociationsApi.DeletestudentSchoolFoodServiceProgramAssociationById: " + e.Message );
             }
         }
     }
@@ -71,14 +71,14 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/vnd.ed-fi.studentschoolfoodserviceprogramassociation.minnesota-sisvendor-profile.writable+json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getstudentschoolfoodserviceprogramassociations"></a>
 # **GetStudentSchoolFoodServiceProgramAssociations**
-> List<EdFiStudentSchoolFoodServiceProgramAssociation> GetStudentSchoolFoodServiceProgramAssociations (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, bool? directCertification = null)
+> List<EdFiStudentSchoolFoodServiceProgramAssociationReadable> GetStudentSchoolFoodServiceProgramAssociations (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null)
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
 
@@ -88,9 +88,9 @@ This GET operation provides access to resources using the \"Get\" search pattern
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.All;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.All;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile;
 
 namespace Example
 {
@@ -111,12 +111,11 @@ namespace Example
             var programName = programName_example;  // string | The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional) 
             var programTypeDescriptor = programTypeDescriptor_example;  // string | The type of program. (optional) 
             var studentUniqueId = studentUniqueId_example;  // string | A unique alphanumeric code assigned to a student. (optional) 
-            var directCertification = true;  // bool? | Indicates that the student's National School Lunch Program (NSLP) eligibility has been determined through direct certification. (optional) 
 
             try
             {
                 // Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
-                List&lt;EdFiStudentSchoolFoodServiceProgramAssociation&gt; result = apiInstance.GetStudentSchoolFoodServiceProgramAssociations(offset, limit, totalCount, beginDate, educationOrganizationId, programEducationOrganizationId, programName, programTypeDescriptor, studentUniqueId, directCertification);
+                List&lt;EdFiStudentSchoolFoodServiceProgramAssociationReadable&gt; result = apiInstance.GetStudentSchoolFoodServiceProgramAssociations(offset, limit, totalCount, beginDate, educationOrganizationId, programEducationOrganizationId, programName, programTypeDescriptor, studentUniqueId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -141,11 +140,10 @@ Name | Type | Description  | Notes
  **programName** | **string**| The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. | [optional] 
  **programTypeDescriptor** | **string**| The type of program. | [optional] 
  **studentUniqueId** | **string**| A unique alphanumeric code assigned to a student. | [optional] 
- **directCertification** | **bool?**| Indicates that the student&#39;s National School Lunch Program (NSLP) eligibility has been determined through direct certification. | [optional] 
 
 ### Return type
 
-[**List<EdFiStudentSchoolFoodServiceProgramAssociation>**](EdFiStudentSchoolFoodServiceProgramAssociation.md)
+[**List<EdFiStudentSchoolFoodServiceProgramAssociationReadable>**](EdFiStudentSchoolFoodServiceProgramAssociationReadable.md)
 
 ### Authorization
 
@@ -154,13 +152,13 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: application/vnd.ed-fi.studentschoolfoodserviceprogramassociation.minnesota-sisvendor-profile.readable+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getstudentschoolfoodserviceprogramassociationsbyid"></a>
 # **GetStudentSchoolFoodServiceProgramAssociationsById**
-> EdFiStudentSchoolFoodServiceProgramAssociation GetStudentSchoolFoodServiceProgramAssociationsById (string id, string ifNoneMatch = null)
+> EdFiStudentSchoolFoodServiceProgramAssociationReadable GetStudentSchoolFoodServiceProgramAssociationsById (string id, string ifNoneMatch = null)
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
 
@@ -170,9 +168,9 @@ This GET operation retrieves a resource by the specified resource identifier.
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.All;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.All;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile;
 
 namespace Example
 {
@@ -190,7 +188,7 @@ namespace Example
             try
             {
                 // Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
-                EdFiStudentSchoolFoodServiceProgramAssociation result = apiInstance.GetStudentSchoolFoodServiceProgramAssociationsById(id, ifNoneMatch);
+                EdFiStudentSchoolFoodServiceProgramAssociationReadable result = apiInstance.GetStudentSchoolFoodServiceProgramAssociationsById(id, ifNoneMatch);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -211,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EdFiStudentSchoolFoodServiceProgramAssociation**](EdFiStudentSchoolFoodServiceProgramAssociation.md)
+[**EdFiStudentSchoolFoodServiceProgramAssociationReadable**](EdFiStudentSchoolFoodServiceProgramAssociationReadable.md)
 
 ### Authorization
 
@@ -220,13 +218,13 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: application/vnd.ed-fi.studentschoolfoodserviceprogramassociation.minnesota-sisvendor-profile.readable+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="poststudentschoolfoodserviceprogramassociation"></a>
-# **PostStudentSchoolFoodServiceProgramAssociation**
-> void PostStudentSchoolFoodServiceProgramAssociation (EdFiStudentSchoolFoodServiceProgramAssociation studentSchoolFoodServiceProgramAssociation)
+# **PoststudentSchoolFoodServiceProgramAssociation**
+> void PoststudentSchoolFoodServiceProgramAssociation (EdFiStudentSchoolFoodServiceProgramAssociationWritable studentSchoolFoodServiceProgramAssociation)
 
 Creates or updates resources based on the natural key values of the supplied resource.
 
@@ -236,13 +234,13 @@ The POST operation can be used to create or update resources. In database terms,
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.All;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.All;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile;
 
 namespace Example
 {
-    public class PostStudentSchoolFoodServiceProgramAssociationExample
+    public class PoststudentSchoolFoodServiceProgramAssociationExample
     {
         public void main()
         {
@@ -250,16 +248,16 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new StudentSchoolFoodServiceProgramAssociationsApi();
-            var studentSchoolFoodServiceProgramAssociation = new EdFiStudentSchoolFoodServiceProgramAssociation(); // EdFiStudentSchoolFoodServiceProgramAssociation | The JSON representation of the \"studentSchoolFoodServiceProgramAssociation\" resource to be created or updated.
+            var studentSchoolFoodServiceProgramAssociation = new EdFiStudentSchoolFoodServiceProgramAssociationWritable(); // EdFiStudentSchoolFoodServiceProgramAssociationWritable | The JSON representation of the \"studentSchoolFoodServiceProgramAssociation\" resource to be created or updated.
 
             try
             {
                 // Creates or updates resources based on the natural key values of the supplied resource.
-                apiInstance.PostStudentSchoolFoodServiceProgramAssociation(studentSchoolFoodServiceProgramAssociation);
+                apiInstance.PoststudentSchoolFoodServiceProgramAssociation(studentSchoolFoodServiceProgramAssociation);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling StudentSchoolFoodServiceProgramAssociationsApi.PostStudentSchoolFoodServiceProgramAssociation: " + e.Message );
+                Debug.Print("Exception when calling StudentSchoolFoodServiceProgramAssociationsApi.PoststudentSchoolFoodServiceProgramAssociation: " + e.Message );
             }
         }
     }
@@ -270,7 +268,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **studentSchoolFoodServiceProgramAssociation** | [**EdFiStudentSchoolFoodServiceProgramAssociation**](EdFiStudentSchoolFoodServiceProgramAssociation.md)| The JSON representation of the \&quot;studentSchoolFoodServiceProgramAssociation\&quot; resource to be created or updated. | 
+ **studentSchoolFoodServiceProgramAssociation** | [**EdFiStudentSchoolFoodServiceProgramAssociationWritable**](EdFiStudentSchoolFoodServiceProgramAssociationWritable.md)| The JSON representation of the \&quot;studentSchoolFoodServiceProgramAssociation\&quot; resource to be created or updated. | 
 
 ### Return type
 
@@ -282,14 +280,14 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/vnd.ed-fi.studentschoolfoodserviceprogramassociation.minnesota-sisvendor-profile.writable+json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="putstudentschoolfoodserviceprogramassociation"></a>
-# **PutStudentSchoolFoodServiceProgramAssociation**
-> void PutStudentSchoolFoodServiceProgramAssociation (string id, EdFiStudentSchoolFoodServiceProgramAssociation studentSchoolFoodServiceProgramAssociation, string ifMatch = null)
+# **PutstudentSchoolFoodServiceProgramAssociation**
+> void PutstudentSchoolFoodServiceProgramAssociation (string id, EdFiStudentSchoolFoodServiceProgramAssociationWritable studentSchoolFoodServiceProgramAssociation, string ifMatch = null)
 
 Updates or creates a resource based on the resource identifier.
 
@@ -299,13 +297,13 @@ The PUT operation is used to update or create a resource by identifier. If the r
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.All;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.All;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile;
 
 namespace Example
 {
-    public class PutStudentSchoolFoodServiceProgramAssociationExample
+    public class PutstudentSchoolFoodServiceProgramAssociationExample
     {
         public void main()
         {
@@ -314,17 +312,17 @@ namespace Example
 
             var apiInstance = new StudentSchoolFoodServiceProgramAssociationsApi();
             var id = id_example;  // string | A resource identifier that uniquely identifies the resource.
-            var studentSchoolFoodServiceProgramAssociation = new EdFiStudentSchoolFoodServiceProgramAssociation(); // EdFiStudentSchoolFoodServiceProgramAssociation | The JSON representation of the \"studentSchoolFoodServiceProgramAssociation\" resource to be created or updated.
+            var studentSchoolFoodServiceProgramAssociation = new EdFiStudentSchoolFoodServiceProgramAssociationWritable(); // EdFiStudentSchoolFoodServiceProgramAssociationWritable | The JSON representation of the \"studentSchoolFoodServiceProgramAssociation\" resource to be created or updated.
             var ifMatch = ifMatch_example;  // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional) 
 
             try
             {
                 // Updates or creates a resource based on the resource identifier.
-                apiInstance.PutStudentSchoolFoodServiceProgramAssociation(id, studentSchoolFoodServiceProgramAssociation, ifMatch);
+                apiInstance.PutstudentSchoolFoodServiceProgramAssociation(id, studentSchoolFoodServiceProgramAssociation, ifMatch);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling StudentSchoolFoodServiceProgramAssociationsApi.PutStudentSchoolFoodServiceProgramAssociation: " + e.Message );
+                Debug.Print("Exception when calling StudentSchoolFoodServiceProgramAssociationsApi.PutstudentSchoolFoodServiceProgramAssociation: " + e.Message );
             }
         }
     }
@@ -336,7 +334,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| A resource identifier that uniquely identifies the resource. | 
- **studentSchoolFoodServiceProgramAssociation** | [**EdFiStudentSchoolFoodServiceProgramAssociation**](EdFiStudentSchoolFoodServiceProgramAssociation.md)| The JSON representation of the \&quot;studentSchoolFoodServiceProgramAssociation\&quot; resource to be created or updated. | 
+ **studentSchoolFoodServiceProgramAssociation** | [**EdFiStudentSchoolFoodServiceProgramAssociationWritable**](EdFiStudentSchoolFoodServiceProgramAssociationWritable.md)| The JSON representation of the \&quot;studentSchoolFoodServiceProgramAssociation\&quot; resource to be created or updated. | 
  **ifMatch** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] 
 
 ### Return type
@@ -349,7 +347,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/vnd.ed-fi.studentschoolfoodserviceprogramassociation.minnesota-sisvendor-profile.writable+json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

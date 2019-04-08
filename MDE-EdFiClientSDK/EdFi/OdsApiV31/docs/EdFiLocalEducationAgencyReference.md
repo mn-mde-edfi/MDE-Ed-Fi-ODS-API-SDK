@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.All.EdFiLocalEducationAgencyReference
+# EdFi.OdsApi.Sdk.Models.MN.EdFiLocalEducationAgencyReference
 ## Properties
 
 Name | Type | Description | Notes

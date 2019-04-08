@@ -1,19 +1,19 @@
-# EdFi.OdsApi.Sdk.Apis.All.StudentTitleIPartAProgramAssociationsApi
+# EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile.StudentTitleIPartAProgramAssociationsApi
 
 All URIs are relative to *https://test.edfi.education.mn.gov:443/edfi.ods.webapi/data/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteStudentTitleIPartAProgramAssociationById**](StudentTitleIPartAProgramAssociationsApi.md#deletestudenttitleipartaprogramassociationbyid) | **DELETE** /ed-fi/studentTitleIPartAProgramAssociations/{id} | Deletes an existing resource using the resource identifier.
+[**DeletestudentTitleIPartAProgramAssociationById**](StudentTitleIPartAProgramAssociationsApi.md#deletestudenttitleipartaprogramassociationbyid) | **DELETE** /ed-fi/studentTitleIPartAProgramAssociations/{id} | Deletes an existing resource using the resource identifier.
 [**GetStudentTitleIPartAProgramAssociations**](StudentTitleIPartAProgramAssociationsApi.md#getstudenttitleipartaprogramassociations) | **GET** /ed-fi/studentTitleIPartAProgramAssociations | Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
 [**GetStudentTitleIPartAProgramAssociationsById**](StudentTitleIPartAProgramAssociationsApi.md#getstudenttitleipartaprogramassociationsbyid) | **GET** /ed-fi/studentTitleIPartAProgramAssociations/{id} | Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
-[**PostStudentTitleIPartAProgramAssociation**](StudentTitleIPartAProgramAssociationsApi.md#poststudenttitleipartaprogramassociation) | **POST** /ed-fi/studentTitleIPartAProgramAssociations | Creates or updates resources based on the natural key values of the supplied resource.
-[**PutStudentTitleIPartAProgramAssociation**](StudentTitleIPartAProgramAssociationsApi.md#putstudenttitleipartaprogramassociation) | **PUT** /ed-fi/studentTitleIPartAProgramAssociations/{id} | Updates or creates a resource based on the resource identifier.
+[**PoststudentTitleIPartAProgramAssociation**](StudentTitleIPartAProgramAssociationsApi.md#poststudenttitleipartaprogramassociation) | **POST** /ed-fi/studentTitleIPartAProgramAssociations | Creates or updates resources based on the natural key values of the supplied resource.
+[**PutstudentTitleIPartAProgramAssociation**](StudentTitleIPartAProgramAssociationsApi.md#putstudenttitleipartaprogramassociation) | **PUT** /ed-fi/studentTitleIPartAProgramAssociations/{id} | Updates or creates a resource based on the resource identifier.
 
 
 <a name="deletestudenttitleipartaprogramassociationbyid"></a>
-# **DeleteStudentTitleIPartAProgramAssociationById**
-> void DeleteStudentTitleIPartAProgramAssociationById (string id, string ifMatch = null)
+# **DeletestudentTitleIPartAProgramAssociationById**
+> void DeletestudentTitleIPartAProgramAssociationById (string id, string ifMatch = null)
 
 Deletes an existing resource using the resource identifier.
 
@@ -23,13 +23,13 @@ The DELETE operation is used to delete an existing resource by identifier. If th
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.All;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.All;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile;
 
 namespace Example
 {
-    public class DeleteStudentTitleIPartAProgramAssociationByIdExample
+    public class DeletestudentTitleIPartAProgramAssociationByIdExample
     {
         public void main()
         {
@@ -43,11 +43,11 @@ namespace Example
             try
             {
                 // Deletes an existing resource using the resource identifier.
-                apiInstance.DeleteStudentTitleIPartAProgramAssociationById(id, ifMatch);
+                apiInstance.DeletestudentTitleIPartAProgramAssociationById(id, ifMatch);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling StudentTitleIPartAProgramAssociationsApi.DeleteStudentTitleIPartAProgramAssociationById: " + e.Message );
+                Debug.Print("Exception when calling StudentTitleIPartAProgramAssociationsApi.DeletestudentTitleIPartAProgramAssociationById: " + e.Message );
             }
         }
     }
@@ -71,14 +71,14 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/vnd.ed-fi.studenttitleipartaprogramassociation.minnesota-sisvendor-profile.writable+json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getstudenttitleipartaprogramassociations"></a>
 # **GetStudentTitleIPartAProgramAssociations**
-> List<EdFiStudentTitleIPartAProgramAssociation> GetStudentTitleIPartAProgramAssociations (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, string titleIPartAParticipantDescriptor = null)
+> List<EdFiStudentTitleIPartAProgramAssociationReadable> GetStudentTitleIPartAProgramAssociations (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null)
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
 
@@ -88,9 +88,9 @@ This GET operation provides access to resources using the \"Get\" search pattern
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.All;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.All;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile;
 
 namespace Example
 {
@@ -111,12 +111,11 @@ namespace Example
             var programName = programName_example;  // string | The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional) 
             var programTypeDescriptor = programTypeDescriptor_example;  // string | The type of program. (optional) 
             var studentUniqueId = studentUniqueId_example;  // string | A unique alphanumeric code assigned to a student. (optional) 
-            var titleIPartAParticipantDescriptor = titleIPartAParticipantDescriptor_example;  // string | An indication of the type of Title I program, if any, in which the student is participating and by which the student is served:          Public Targeted Assistance Program          Public Schoolwide Program          Private School Students Participating          Local Neglected Program. (optional) 
 
             try
             {
                 // Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
-                List&lt;EdFiStudentTitleIPartAProgramAssociation&gt; result = apiInstance.GetStudentTitleIPartAProgramAssociations(offset, limit, totalCount, beginDate, educationOrganizationId, programEducationOrganizationId, programName, programTypeDescriptor, studentUniqueId, titleIPartAParticipantDescriptor);
+                List&lt;EdFiStudentTitleIPartAProgramAssociationReadable&gt; result = apiInstance.GetStudentTitleIPartAProgramAssociations(offset, limit, totalCount, beginDate, educationOrganizationId, programEducationOrganizationId, programName, programTypeDescriptor, studentUniqueId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -141,11 +140,10 @@ Name | Type | Description  | Notes
  **programName** | **string**| The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. | [optional] 
  **programTypeDescriptor** | **string**| The type of program. | [optional] 
  **studentUniqueId** | **string**| A unique alphanumeric code assigned to a student. | [optional] 
- **titleIPartAParticipantDescriptor** | **string**| An indication of the type of Title I program, if any, in which the student is participating and by which the student is served:          Public Targeted Assistance Program          Public Schoolwide Program          Private School Students Participating          Local Neglected Program. | [optional] 
 
 ### Return type
 
-[**List<EdFiStudentTitleIPartAProgramAssociation>**](EdFiStudentTitleIPartAProgramAssociation.md)
+[**List<EdFiStudentTitleIPartAProgramAssociationReadable>**](EdFiStudentTitleIPartAProgramAssociationReadable.md)
 
 ### Authorization
 
@@ -154,13 +152,13 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: application/vnd.ed-fi.studenttitleipartaprogramassociation.minnesota-sisvendor-profile.readable+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getstudenttitleipartaprogramassociationsbyid"></a>
 # **GetStudentTitleIPartAProgramAssociationsById**
-> EdFiStudentTitleIPartAProgramAssociation GetStudentTitleIPartAProgramAssociationsById (string id, string ifNoneMatch = null)
+> EdFiStudentTitleIPartAProgramAssociationReadable GetStudentTitleIPartAProgramAssociationsById (string id, string ifNoneMatch = null)
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
 
@@ -170,9 +168,9 @@ This GET operation retrieves a resource by the specified resource identifier.
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.All;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.All;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile;
 
 namespace Example
 {
@@ -190,7 +188,7 @@ namespace Example
             try
             {
                 // Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
-                EdFiStudentTitleIPartAProgramAssociation result = apiInstance.GetStudentTitleIPartAProgramAssociationsById(id, ifNoneMatch);
+                EdFiStudentTitleIPartAProgramAssociationReadable result = apiInstance.GetStudentTitleIPartAProgramAssociationsById(id, ifNoneMatch);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -211,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EdFiStudentTitleIPartAProgramAssociation**](EdFiStudentTitleIPartAProgramAssociation.md)
+[**EdFiStudentTitleIPartAProgramAssociationReadable**](EdFiStudentTitleIPartAProgramAssociationReadable.md)
 
 ### Authorization
 
@@ -220,13 +218,13 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: application/vnd.ed-fi.studenttitleipartaprogramassociation.minnesota-sisvendor-profile.readable+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="poststudenttitleipartaprogramassociation"></a>
-# **PostStudentTitleIPartAProgramAssociation**
-> void PostStudentTitleIPartAProgramAssociation (EdFiStudentTitleIPartAProgramAssociation studentTitleIPartAProgramAssociation)
+# **PoststudentTitleIPartAProgramAssociation**
+> void PoststudentTitleIPartAProgramAssociation (EdFiStudentTitleIPartAProgramAssociationWritable studentTitleIPartAProgramAssociation)
 
 Creates or updates resources based on the natural key values of the supplied resource.
 
@@ -236,13 +234,13 @@ The POST operation can be used to create or update resources. In database terms,
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.All;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.All;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile;
 
 namespace Example
 {
-    public class PostStudentTitleIPartAProgramAssociationExample
+    public class PoststudentTitleIPartAProgramAssociationExample
     {
         public void main()
         {
@@ -250,16 +248,16 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new StudentTitleIPartAProgramAssociationsApi();
-            var studentTitleIPartAProgramAssociation = new EdFiStudentTitleIPartAProgramAssociation(); // EdFiStudentTitleIPartAProgramAssociation | The JSON representation of the \"studentTitleIPartAProgramAssociation\" resource to be created or updated.
+            var studentTitleIPartAProgramAssociation = new EdFiStudentTitleIPartAProgramAssociationWritable(); // EdFiStudentTitleIPartAProgramAssociationWritable | The JSON representation of the \"studentTitleIPartAProgramAssociation\" resource to be created or updated.
 
             try
             {
                 // Creates or updates resources based on the natural key values of the supplied resource.
-                apiInstance.PostStudentTitleIPartAProgramAssociation(studentTitleIPartAProgramAssociation);
+                apiInstance.PoststudentTitleIPartAProgramAssociation(studentTitleIPartAProgramAssociation);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling StudentTitleIPartAProgramAssociationsApi.PostStudentTitleIPartAProgramAssociation: " + e.Message );
+                Debug.Print("Exception when calling StudentTitleIPartAProgramAssociationsApi.PoststudentTitleIPartAProgramAssociation: " + e.Message );
             }
         }
     }
@@ -270,7 +268,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **studentTitleIPartAProgramAssociation** | [**EdFiStudentTitleIPartAProgramAssociation**](EdFiStudentTitleIPartAProgramAssociation.md)| The JSON representation of the \&quot;studentTitleIPartAProgramAssociation\&quot; resource to be created or updated. | 
+ **studentTitleIPartAProgramAssociation** | [**EdFiStudentTitleIPartAProgramAssociationWritable**](EdFiStudentTitleIPartAProgramAssociationWritable.md)| The JSON representation of the \&quot;studentTitleIPartAProgramAssociation\&quot; resource to be created or updated. | 
 
 ### Return type
 
@@ -282,14 +280,14 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/vnd.ed-fi.studenttitleipartaprogramassociation.minnesota-sisvendor-profile.writable+json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="putstudenttitleipartaprogramassociation"></a>
-# **PutStudentTitleIPartAProgramAssociation**
-> void PutStudentTitleIPartAProgramAssociation (string id, EdFiStudentTitleIPartAProgramAssociation studentTitleIPartAProgramAssociation, string ifMatch = null)
+# **PutstudentTitleIPartAProgramAssociation**
+> void PutstudentTitleIPartAProgramAssociation (string id, EdFiStudentTitleIPartAProgramAssociationWritable studentTitleIPartAProgramAssociation, string ifMatch = null)
 
 Updates or creates a resource based on the resource identifier.
 
@@ -299,13 +297,13 @@ The PUT operation is used to update or create a resource by identifier. If the r
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.All;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.All;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile;
 
 namespace Example
 {
-    public class PutStudentTitleIPartAProgramAssociationExample
+    public class PutstudentTitleIPartAProgramAssociationExample
     {
         public void main()
         {
@@ -314,17 +312,17 @@ namespace Example
 
             var apiInstance = new StudentTitleIPartAProgramAssociationsApi();
             var id = id_example;  // string | A resource identifier that uniquely identifies the resource.
-            var studentTitleIPartAProgramAssociation = new EdFiStudentTitleIPartAProgramAssociation(); // EdFiStudentTitleIPartAProgramAssociation | The JSON representation of the \"studentTitleIPartAProgramAssociation\" resource to be created or updated.
+            var studentTitleIPartAProgramAssociation = new EdFiStudentTitleIPartAProgramAssociationWritable(); // EdFiStudentTitleIPartAProgramAssociationWritable | The JSON representation of the \"studentTitleIPartAProgramAssociation\" resource to be created or updated.
             var ifMatch = ifMatch_example;  // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional) 
 
             try
             {
                 // Updates or creates a resource based on the resource identifier.
-                apiInstance.PutStudentTitleIPartAProgramAssociation(id, studentTitleIPartAProgramAssociation, ifMatch);
+                apiInstance.PutstudentTitleIPartAProgramAssociation(id, studentTitleIPartAProgramAssociation, ifMatch);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling StudentTitleIPartAProgramAssociationsApi.PutStudentTitleIPartAProgramAssociation: " + e.Message );
+                Debug.Print("Exception when calling StudentTitleIPartAProgramAssociationsApi.PutstudentTitleIPartAProgramAssociation: " + e.Message );
             }
         }
     }
@@ -336,7 +334,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| A resource identifier that uniquely identifies the resource. | 
- **studentTitleIPartAProgramAssociation** | [**EdFiStudentTitleIPartAProgramAssociation**](EdFiStudentTitleIPartAProgramAssociation.md)| The JSON representation of the \&quot;studentTitleIPartAProgramAssociation\&quot; resource to be created or updated. | 
+ **studentTitleIPartAProgramAssociation** | [**EdFiStudentTitleIPartAProgramAssociationWritable**](EdFiStudentTitleIPartAProgramAssociationWritable.md)| The JSON representation of the \&quot;studentTitleIPartAProgramAssociation\&quot; resource to be created or updated. | 
  **ifMatch** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] 
 
 ### Return type
@@ -349,7 +347,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/vnd.ed-fi.studenttitleipartaprogramassociation.minnesota-sisvendor-profile.writable+json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

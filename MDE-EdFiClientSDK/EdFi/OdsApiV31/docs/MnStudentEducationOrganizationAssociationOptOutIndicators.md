@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.All.MnStudentEducationOrganizationAssociationOptOutIndicators
+# EdFi.OdsApi.Sdk.Models.MN.MnStudentEducationOrganizationAssociationOptOutIndicators
 ## Properties
 
 Name | Type | Description | Notes

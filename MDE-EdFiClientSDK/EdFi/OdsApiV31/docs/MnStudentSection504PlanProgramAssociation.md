@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.All.MnStudentSection504PlanProgramAssociation
+# EdFi.OdsApi.Sdk.Models.MN.MnStudentSection504PlanProgramAssociation
 ## Properties
 
 Name | Type | Description | Notes

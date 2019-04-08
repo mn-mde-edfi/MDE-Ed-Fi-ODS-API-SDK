@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.All.MnStudentEducationOrganizationAssociationAncestryEthnicOrigin
+# EdFi.OdsApi.Sdk.Models.MN.MnStudentEducationOrganizationAssociationAncestryEthnicOrigin
 ## Properties
 
 Name | Type | Description | Notes

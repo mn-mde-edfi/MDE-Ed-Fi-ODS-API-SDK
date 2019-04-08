@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.All.MnStudentSchoolAssociationExtension
+# EdFi.OdsApi.Sdk.Models.MN.MnStudentSchoolAssociationExtension
 ## Properties
 
 Name | Type | Description | Notes

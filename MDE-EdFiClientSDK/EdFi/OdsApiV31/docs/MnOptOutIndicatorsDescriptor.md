@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.All.MnOptOutIndicatorsDescriptor
+# EdFi.OdsApi.Sdk.Models.MN.MnOptOutIndicatorsDescriptor
 ## Properties
 
 Name | Type | Description | Notes
