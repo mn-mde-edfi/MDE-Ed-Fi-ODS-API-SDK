@@ -1,7 +1,9 @@
 ﻿namespace EdFi.OdsApi.SdkClient
 {
     using System;
+    using System.Linq;
 
+    using EdFi.OdsApi.Sdk.Apis.MN;
     using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile;
     using EdFi.OdsApi.Sdk.Client;
 
@@ -20,9 +22,9 @@
             System.Net.ServicePointManager.SecurityProtocol |= System.Net.SecurityProtocolType.Tls11 | System.Net.SecurityProtocolType.Tls12;
 
             // Oauth configuration
-            var oauthUrl = "https://test.edfi.education.mn.gov/edfi.ods.webapi/";
-            var clientKey = "minimalSandbox";
-            var clientSecret = "minimalSandboxSecret";
+            var oauthUrl = "https://test.edfi.education.mn.gov/edfi.ods.webapi";
+            var clientKey = "populatedSandbox";
+            var clientSecret = "populatedSandboxSecret";
 
             // TokenRetriever makes the oauth calls.  It has RestSharp dependency, install via NuGet
             var tokenRetriever = new TokenRetriever(oauthUrl, clientKey, clientSecret);
@@ -33,19 +35,34 @@
                                     AccessToken = tokenRetriever.ObtainNewBearerToken(), 
                                     BasePath = "https://test.edfi.education.mn.gov/edfi.ods.webapi/data/v3"
             };
+            
+            Console.WriteLine("GET Schools via MN SISVendor profile");
+            var schoolsApi = new SchoolsApi(configuration);
+            var schoolsResponse = schoolsApi.GetSchoolsWithHttpInfo(null, null);
+            var httpResponseCode = schoolsResponse.StatusCode; 
+            var schools = schoolsResponse.Data;
 
-            // GET schools
-            var api = new SchoolsApi(configuration);
-            var response = api.GetSchoolsWithHttpInfo(null, null); // offset, limit
-            var httpResponseCode = response.StatusCode; // returns System.Net.HttpStatusCode.OK
-            var schools = response.Data;
+            Console.WriteLine($"Response code is {httpResponseCode}");
 
-            Console.WriteLine("Response code is " + httpResponseCode);
-
-            foreach (var school in schools)
+            foreach (var school in schools.OrderBy(x => x.SchoolId))
             {
-                Console.WriteLine(school.NameOfInstitution);
+                Console.WriteLine($"{school.SchoolId}: {school.NameOfInstitution}");
             }
+
+            Console.WriteLine();
+            Console.WriteLine("GET MN Extension Descriptor");
+            var descriptorApi = new EarlyChildhoodScreeningExitStatusDescriptorsApi(configuration);
+            var descriptorResponse = descriptorApi.GetEarlyChildhoodScreeningExitStatusDescriptorsWithHttpInfo(null, null);
+            httpResponseCode = descriptorResponse.StatusCode;
+            var descriptors = descriptorResponse.Data;
+            Console.WriteLine($"Response code is {httpResponseCode}");
+
+            foreach (var descriptor in descriptors.OrderBy(x => x.CodeValue))
+            {
+                Console.WriteLine($"{descriptor.CodeValue}: {descriptor.ShortDescription}");
+            }
+
+
             Console.WriteLine();
             Console.WriteLine("Hit ENTER key to continue...");
             Console.ReadLine();

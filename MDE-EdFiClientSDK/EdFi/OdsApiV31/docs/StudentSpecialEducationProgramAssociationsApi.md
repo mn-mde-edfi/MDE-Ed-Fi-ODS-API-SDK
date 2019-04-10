@@ -1,19 +1,19 @@
-# EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile.StudentSpecialEducationProgramAssociationsApi
+# EdFi.OdsApi.Sdk.Apis.All.StudentSpecialEducationProgramAssociationsApi
 
-All URIs are relative to *https://test.edfi.education.mn.gov:443/edfi.ods.webapi/data/v3*
+All URIs are relative to *https://localhost:56641/edfi.ods.webapi/data/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeletestudentSpecialEducationProgramAssociationById**](StudentSpecialEducationProgramAssociationsApi.md#deletestudentspecialeducationprogramassociationbyid) | **DELETE** /ed-fi/studentSpecialEducationProgramAssociations/{id} | Deletes an existing resource using the resource identifier.
+[**DeleteStudentSpecialEducationProgramAssociationById**](StudentSpecialEducationProgramAssociationsApi.md#deletestudentspecialeducationprogramassociationbyid) | **DELETE** /ed-fi/studentSpecialEducationProgramAssociations/{id} | Deletes an existing resource using the resource identifier.
 [**GetStudentSpecialEducationProgramAssociations**](StudentSpecialEducationProgramAssociationsApi.md#getstudentspecialeducationprogramassociations) | **GET** /ed-fi/studentSpecialEducationProgramAssociations | Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
 [**GetStudentSpecialEducationProgramAssociationsById**](StudentSpecialEducationProgramAssociationsApi.md#getstudentspecialeducationprogramassociationsbyid) | **GET** /ed-fi/studentSpecialEducationProgramAssociations/{id} | Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
-[**PoststudentSpecialEducationProgramAssociation**](StudentSpecialEducationProgramAssociationsApi.md#poststudentspecialeducationprogramassociation) | **POST** /ed-fi/studentSpecialEducationProgramAssociations | Creates or updates resources based on the natural key values of the supplied resource.
-[**PutstudentSpecialEducationProgramAssociation**](StudentSpecialEducationProgramAssociationsApi.md#putstudentspecialeducationprogramassociation) | **PUT** /ed-fi/studentSpecialEducationProgramAssociations/{id} | Updates or creates a resource based on the resource identifier.
+[**PostStudentSpecialEducationProgramAssociation**](StudentSpecialEducationProgramAssociationsApi.md#poststudentspecialeducationprogramassociation) | **POST** /ed-fi/studentSpecialEducationProgramAssociations | Creates or updates resources based on the natural key values of the supplied resource.
+[**PutStudentSpecialEducationProgramAssociation**](StudentSpecialEducationProgramAssociationsApi.md#putstudentspecialeducationprogramassociation) | **PUT** /ed-fi/studentSpecialEducationProgramAssociations/{id} | Updates or creates a resource based on the resource identifier.
 
 
 <a name="deletestudentspecialeducationprogramassociationbyid"></a>
-# **DeletestudentSpecialEducationProgramAssociationById**
-> void DeletestudentSpecialEducationProgramAssociationById (string id, string ifMatch = null)
+# **DeleteStudentSpecialEducationProgramAssociationById**
+> void DeleteStudentSpecialEducationProgramAssociationById (string id, string ifMatch = null)
 
 Deletes an existing resource using the resource identifier.
 
@@ -23,13 +23,13 @@ The DELETE operation is used to delete an existing resource by identifier. If th
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.All;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.All;
 
 namespace Example
 {
-    public class DeletestudentSpecialEducationProgramAssociationByIdExample
+    public class DeleteStudentSpecialEducationProgramAssociationByIdExample
     {
         public void main()
         {
@@ -43,11 +43,11 @@ namespace Example
             try
             {
                 // Deletes an existing resource using the resource identifier.
-                apiInstance.DeletestudentSpecialEducationProgramAssociationById(id, ifMatch);
+                apiInstance.DeleteStudentSpecialEducationProgramAssociationById(id, ifMatch);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling StudentSpecialEducationProgramAssociationsApi.DeletestudentSpecialEducationProgramAssociationById: " + e.Message );
+                Debug.Print("Exception when calling StudentSpecialEducationProgramAssociationsApi.DeleteStudentSpecialEducationProgramAssociationById: " + e.Message );
             }
         }
     }
@@ -71,14 +71,14 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/vnd.ed-fi.studentspecialeducationprogramassociation.minnesota-sisvendor-profile.writable+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getstudentspecialeducationprogramassociations"></a>
 # **GetStudentSpecialEducationProgramAssociations**
-> List<EdFiStudentSpecialEducationProgramAssociationReadable> GetStudentSpecialEducationProgramAssociations (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, string specialEducationSettingDescriptor = null)
+> List<EdFiStudentSpecialEducationProgramAssociation> GetStudentSpecialEducationProgramAssociations (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, string specialEducationSettingDescriptor = null, bool? ideaEligibility = null, DateTime? iepBeginDate = null, DateTime? iepEndDate = null, DateTime? iepReviewDate = null, DateTime? lastEvaluationDate = null, bool? medicallyFragile = null, bool? multiplyDisabled = null, double? schoolHoursPerWeek = null, double? specialEducationHoursPerWeek = null)
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
 
@@ -88,9 +88,9 @@ This GET operation provides access to resources using the \"Get\" search pattern
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.All;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.All;
 
 namespace Example
 {
@@ -112,11 +112,20 @@ namespace Example
             var programTypeDescriptor = programTypeDescriptor_example;  // string | The type of program. (optional) 
             var studentUniqueId = studentUniqueId_example;  // string | A unique alphanumeric code assigned to a student. (optional) 
             var specialEducationSettingDescriptor = specialEducationSettingDescriptor_example;  // string | The major instructional setting (more than 50 percent of a student's special education program). (optional) 
+            var ideaEligibility = true;  // bool? | Indicator of the eligibility of the student to receive special education services according to the Individuals with Disabilities Education Act (IDEA). (optional) 
+            var iepBeginDate = 2013-10-20;  // DateTime? | The effective date of the most recent IEP. (optional) 
+            var iepEndDate = 2013-10-20;  // DateTime? | The end date of the most recent IEP. (optional) 
+            var iepReviewDate = 2013-10-20;  // DateTime? | The date of the last IEP review. (optional) 
+            var lastEvaluationDate = 2013-10-20;  // DateTime? | The date of the last special education evaluation. (optional) 
+            var medicallyFragile = true;  // bool? | Indicates whether the Student receiving special education and related services is:          1) in the age range of birth to 22 years, and          2) has a serious, ongoing illness or a chronic condition that has lasted or is anticipated to last at least 12 or more months or has required at least one month of hospitalization, and that requires daily, ongoing medical treatments and monitoring by appropriately trained personnel which may include parents or other family members, and          3) requires the routine use of medical device or of assistive technology to compensate for the loss of usefulness of a body function needed to participate in activities of daily living, and          4) lives with ongoing threat to his or her continued well-being.          Aligns with federal requirements. (optional) 
+            var multiplyDisabled = true;  // bool? | Indicates whether the Student receiving special education and related services has been designated as multiply disabled by the admission, review, and dismissal committee as aligned with federal requirements. (optional) 
+            var schoolHoursPerWeek = 1.2;  // double? | Indicate the total number of hours of instructional time per week for the school that the student attends. (optional) 
+            var specialEducationHoursPerWeek = 1.2;  // double? | The number of hours per week for special education instruction and therapy. (optional) 
 
             try
             {
                 // Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
-                List&lt;EdFiStudentSpecialEducationProgramAssociationReadable&gt; result = apiInstance.GetStudentSpecialEducationProgramAssociations(offset, limit, totalCount, beginDate, educationOrganizationId, programEducationOrganizationId, programName, programTypeDescriptor, studentUniqueId, specialEducationSettingDescriptor);
+                List&lt;EdFiStudentSpecialEducationProgramAssociation&gt; result = apiInstance.GetStudentSpecialEducationProgramAssociations(offset, limit, totalCount, beginDate, educationOrganizationId, programEducationOrganizationId, programName, programTypeDescriptor, studentUniqueId, specialEducationSettingDescriptor, ideaEligibility, iepBeginDate, iepEndDate, iepReviewDate, lastEvaluationDate, medicallyFragile, multiplyDisabled, schoolHoursPerWeek, specialEducationHoursPerWeek);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -142,10 +151,19 @@ Name | Type | Description  | Notes
  **programTypeDescriptor** | **string**| The type of program. | [optional] 
  **studentUniqueId** | **string**| A unique alphanumeric code assigned to a student. | [optional] 
  **specialEducationSettingDescriptor** | **string**| The major instructional setting (more than 50 percent of a student&#39;s special education program). | [optional] 
+ **ideaEligibility** | **bool?**| Indicator of the eligibility of the student to receive special education services according to the Individuals with Disabilities Education Act (IDEA). | [optional] 
+ **iepBeginDate** | **DateTime?**| The effective date of the most recent IEP. | [optional] 
+ **iepEndDate** | **DateTime?**| The end date of the most recent IEP. | [optional] 
+ **iepReviewDate** | **DateTime?**| The date of the last IEP review. | [optional] 
+ **lastEvaluationDate** | **DateTime?**| The date of the last special education evaluation. | [optional] 
+ **medicallyFragile** | **bool?**| Indicates whether the Student receiving special education and related services is:          1) in the age range of birth to 22 years, and          2) has a serious, ongoing illness or a chronic condition that has lasted or is anticipated to last at least 12 or more months or has required at least one month of hospitalization, and that requires daily, ongoing medical treatments and monitoring by appropriately trained personnel which may include parents or other family members, and          3) requires the routine use of medical device or of assistive technology to compensate for the loss of usefulness of a body function needed to participate in activities of daily living, and          4) lives with ongoing threat to his or her continued well-being.          Aligns with federal requirements. | [optional] 
+ **multiplyDisabled** | **bool?**| Indicates whether the Student receiving special education and related services has been designated as multiply disabled by the admission, review, and dismissal committee as aligned with federal requirements. | [optional] 
+ **schoolHoursPerWeek** | **double?**| Indicate the total number of hours of instructional time per week for the school that the student attends. | [optional] 
+ **specialEducationHoursPerWeek** | **double?**| The number of hours per week for special education instruction and therapy. | [optional] 
 
 ### Return type
 
-[**List<EdFiStudentSpecialEducationProgramAssociationReadable>**](EdFiStudentSpecialEducationProgramAssociationReadable.md)
+[**List<EdFiStudentSpecialEducationProgramAssociation>**](EdFiStudentSpecialEducationProgramAssociation.md)
 
 ### Authorization
 
@@ -154,13 +172,13 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/vnd.ed-fi.studentspecialeducationprogramassociation.minnesota-sisvendor-profile.readable+json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getstudentspecialeducationprogramassociationsbyid"></a>
 # **GetStudentSpecialEducationProgramAssociationsById**
-> EdFiStudentSpecialEducationProgramAssociationReadable GetStudentSpecialEducationProgramAssociationsById (string id, string ifNoneMatch = null)
+> EdFiStudentSpecialEducationProgramAssociation GetStudentSpecialEducationProgramAssociationsById (string id, string ifNoneMatch = null)
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
 
@@ -170,9 +188,9 @@ This GET operation retrieves a resource by the specified resource identifier.
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.All;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.All;
 
 namespace Example
 {
@@ -190,7 +208,7 @@ namespace Example
             try
             {
                 // Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
-                EdFiStudentSpecialEducationProgramAssociationReadable result = apiInstance.GetStudentSpecialEducationProgramAssociationsById(id, ifNoneMatch);
+                EdFiStudentSpecialEducationProgramAssociation result = apiInstance.GetStudentSpecialEducationProgramAssociationsById(id, ifNoneMatch);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -211,7 +229,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EdFiStudentSpecialEducationProgramAssociationReadable**](EdFiStudentSpecialEducationProgramAssociationReadable.md)
+[**EdFiStudentSpecialEducationProgramAssociation**](EdFiStudentSpecialEducationProgramAssociation.md)
 
 ### Authorization
 
@@ -220,13 +238,13 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/vnd.ed-fi.studentspecialeducationprogramassociation.minnesota-sisvendor-profile.readable+json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="poststudentspecialeducationprogramassociation"></a>
-# **PoststudentSpecialEducationProgramAssociation**
-> void PoststudentSpecialEducationProgramAssociation (EdFiStudentSpecialEducationProgramAssociationWritable studentSpecialEducationProgramAssociation)
+# **PostStudentSpecialEducationProgramAssociation**
+> void PostStudentSpecialEducationProgramAssociation (EdFiStudentSpecialEducationProgramAssociation studentSpecialEducationProgramAssociation)
 
 Creates or updates resources based on the natural key values of the supplied resource.
 
@@ -236,13 +254,13 @@ The POST operation can be used to create or update resources. In database terms,
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.All;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.All;
 
 namespace Example
 {
-    public class PoststudentSpecialEducationProgramAssociationExample
+    public class PostStudentSpecialEducationProgramAssociationExample
     {
         public void main()
         {
@@ -250,16 +268,16 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new StudentSpecialEducationProgramAssociationsApi();
-            var studentSpecialEducationProgramAssociation = new EdFiStudentSpecialEducationProgramAssociationWritable(); // EdFiStudentSpecialEducationProgramAssociationWritable | The JSON representation of the \"studentSpecialEducationProgramAssociation\" resource to be created or updated.
+            var studentSpecialEducationProgramAssociation = new EdFiStudentSpecialEducationProgramAssociation(); // EdFiStudentSpecialEducationProgramAssociation | The JSON representation of the \"studentSpecialEducationProgramAssociation\" resource to be created or updated.
 
             try
             {
                 // Creates or updates resources based on the natural key values of the supplied resource.
-                apiInstance.PoststudentSpecialEducationProgramAssociation(studentSpecialEducationProgramAssociation);
+                apiInstance.PostStudentSpecialEducationProgramAssociation(studentSpecialEducationProgramAssociation);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling StudentSpecialEducationProgramAssociationsApi.PoststudentSpecialEducationProgramAssociation: " + e.Message );
+                Debug.Print("Exception when calling StudentSpecialEducationProgramAssociationsApi.PostStudentSpecialEducationProgramAssociation: " + e.Message );
             }
         }
     }
@@ -270,7 +288,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **studentSpecialEducationProgramAssociation** | [**EdFiStudentSpecialEducationProgramAssociationWritable**](EdFiStudentSpecialEducationProgramAssociationWritable.md)| The JSON representation of the \&quot;studentSpecialEducationProgramAssociation\&quot; resource to be created or updated. | 
+ **studentSpecialEducationProgramAssociation** | [**EdFiStudentSpecialEducationProgramAssociation**](EdFiStudentSpecialEducationProgramAssociation.md)| The JSON representation of the \&quot;studentSpecialEducationProgramAssociation\&quot; resource to be created or updated. | 
 
 ### Return type
 
@@ -282,14 +300,14 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/vnd.ed-fi.studentspecialeducationprogramassociation.minnesota-sisvendor-profile.writable+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="putstudentspecialeducationprogramassociation"></a>
-# **PutstudentSpecialEducationProgramAssociation**
-> void PutstudentSpecialEducationProgramAssociation (string id, EdFiStudentSpecialEducationProgramAssociationWritable studentSpecialEducationProgramAssociation, string ifMatch = null)
+# **PutStudentSpecialEducationProgramAssociation**
+> void PutStudentSpecialEducationProgramAssociation (string id, EdFiStudentSpecialEducationProgramAssociation studentSpecialEducationProgramAssociation, string ifMatch = null)
 
 Updates or creates a resource based on the resource identifier.
 
@@ -299,13 +317,13 @@ The PUT operation is used to update or create a resource by identifier. If the r
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.All;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.All;
 
 namespace Example
 {
-    public class PutstudentSpecialEducationProgramAssociationExample
+    public class PutStudentSpecialEducationProgramAssociationExample
     {
         public void main()
         {
@@ -314,17 +332,17 @@ namespace Example
 
             var apiInstance = new StudentSpecialEducationProgramAssociationsApi();
             var id = id_example;  // string | A resource identifier that uniquely identifies the resource.
-            var studentSpecialEducationProgramAssociation = new EdFiStudentSpecialEducationProgramAssociationWritable(); // EdFiStudentSpecialEducationProgramAssociationWritable | The JSON representation of the \"studentSpecialEducationProgramAssociation\" resource to be created or updated.
+            var studentSpecialEducationProgramAssociation = new EdFiStudentSpecialEducationProgramAssociation(); // EdFiStudentSpecialEducationProgramAssociation | The JSON representation of the \"studentSpecialEducationProgramAssociation\" resource to be created or updated.
             var ifMatch = ifMatch_example;  // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional) 
 
             try
             {
                 // Updates or creates a resource based on the resource identifier.
-                apiInstance.PutstudentSpecialEducationProgramAssociation(id, studentSpecialEducationProgramAssociation, ifMatch);
+                apiInstance.PutStudentSpecialEducationProgramAssociation(id, studentSpecialEducationProgramAssociation, ifMatch);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling StudentSpecialEducationProgramAssociationsApi.PutstudentSpecialEducationProgramAssociation: " + e.Message );
+                Debug.Print("Exception when calling StudentSpecialEducationProgramAssociationsApi.PutStudentSpecialEducationProgramAssociation: " + e.Message );
             }
         }
     }
@@ -336,7 +354,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| A resource identifier that uniquely identifies the resource. | 
- **studentSpecialEducationProgramAssociation** | [**EdFiStudentSpecialEducationProgramAssociationWritable**](EdFiStudentSpecialEducationProgramAssociationWritable.md)| The JSON representation of the \&quot;studentSpecialEducationProgramAssociation\&quot; resource to be created or updated. | 
+ **studentSpecialEducationProgramAssociation** | [**EdFiStudentSpecialEducationProgramAssociation**](EdFiStudentSpecialEducationProgramAssociation.md)| The JSON representation of the \&quot;studentSpecialEducationProgramAssociation\&quot; resource to be created or updated. | 
  **ifMatch** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] 
 
 ### Return type
@@ -349,7 +367,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/vnd.ed-fi.studentspecialeducationprogramassociation.minnesota-sisvendor-profile.writable+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

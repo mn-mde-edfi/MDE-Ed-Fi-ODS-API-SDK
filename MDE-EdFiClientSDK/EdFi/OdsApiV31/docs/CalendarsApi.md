@@ -1,19 +1,19 @@
-# EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile.CalendarsApi
+# EdFi.OdsApi.Sdk.Apis.All.CalendarsApi
 
-All URIs are relative to *https://test.edfi.education.mn.gov:443/edfi.ods.webapi/data/v3*
+All URIs are relative to *https://localhost:56641/edfi.ods.webapi/data/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeletecalendarById**](CalendarsApi.md#deletecalendarbyid) | **DELETE** /ed-fi/calendars/{id} | Deletes an existing resource using the resource identifier.
+[**DeleteCalendarById**](CalendarsApi.md#deletecalendarbyid) | **DELETE** /ed-fi/calendars/{id} | Deletes an existing resource using the resource identifier.
 [**GetCalendars**](CalendarsApi.md#getcalendars) | **GET** /ed-fi/calendars | Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
 [**GetCalendarsById**](CalendarsApi.md#getcalendarsbyid) | **GET** /ed-fi/calendars/{id} | Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
-[**Postcalendar**](CalendarsApi.md#postcalendar) | **POST** /ed-fi/calendars | Creates or updates resources based on the natural key values of the supplied resource.
-[**Putcalendar**](CalendarsApi.md#putcalendar) | **PUT** /ed-fi/calendars/{id} | Updates or creates a resource based on the resource identifier.
+[**PostCalendar**](CalendarsApi.md#postcalendar) | **POST** /ed-fi/calendars | Creates or updates resources based on the natural key values of the supplied resource.
+[**PutCalendar**](CalendarsApi.md#putcalendar) | **PUT** /ed-fi/calendars/{id} | Updates or creates a resource based on the resource identifier.
 
 
 <a name="deletecalendarbyid"></a>
-# **DeletecalendarById**
-> void DeletecalendarById (string id, string ifMatch = null)
+# **DeleteCalendarById**
+> void DeleteCalendarById (string id, string ifMatch = null)
 
 Deletes an existing resource using the resource identifier.
 
@@ -23,13 +23,13 @@ The DELETE operation is used to delete an existing resource by identifier. If th
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.All;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.All;
 
 namespace Example
 {
-    public class DeletecalendarByIdExample
+    public class DeleteCalendarByIdExample
     {
         public void main()
         {
@@ -43,11 +43,11 @@ namespace Example
             try
             {
                 // Deletes an existing resource using the resource identifier.
-                apiInstance.DeletecalendarById(id, ifMatch);
+                apiInstance.DeleteCalendarById(id, ifMatch);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling CalendarsApi.DeletecalendarById: " + e.Message );
+                Debug.Print("Exception when calling CalendarsApi.DeleteCalendarById: " + e.Message );
             }
         }
     }
@@ -71,14 +71,14 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/vnd.ed-fi.calendar.minnesota-sisvendor-profile.writable+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getcalendars"></a>
 # **GetCalendars**
-> List<EdFiCalendarReadable> GetCalendars (int? offset = null, int? limit = null, bool? totalCount = null, string calendarCode = null, int? schoolId = null, int? schoolYear = null, string calendarTypeDescriptor = null, string id = null)
+> List<EdFiCalendar> GetCalendars (int? offset = null, int? limit = null, bool? totalCount = null, string calendarCode = null, int? schoolId = null, int? schoolYear = null, string calendarTypeDescriptor = null, string id = null)
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
 
@@ -88,9 +88,9 @@ This GET operation provides access to resources using the \"Get\" search pattern
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.All;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.All;
 
 namespace Example
 {
@@ -114,7 +114,7 @@ namespace Example
             try
             {
                 // Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
-                List&lt;EdFiCalendarReadable&gt; result = apiInstance.GetCalendars(offset, limit, totalCount, calendarCode, schoolId, schoolYear, calendarTypeDescriptor, id);
+                List&lt;EdFiCalendar&gt; result = apiInstance.GetCalendars(offset, limit, totalCount, calendarCode, schoolId, schoolYear, calendarTypeDescriptor, id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<EdFiCalendarReadable>**](EdFiCalendarReadable.md)
+[**List<EdFiCalendar>**](EdFiCalendar.md)
 
 ### Authorization
 
@@ -150,13 +150,13 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/vnd.ed-fi.calendar.minnesota-sisvendor-profile.readable+json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getcalendarsbyid"></a>
 # **GetCalendarsById**
-> EdFiCalendarReadable GetCalendarsById (string id, string ifNoneMatch = null)
+> EdFiCalendar GetCalendarsById (string id, string ifNoneMatch = null)
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
 
@@ -166,9 +166,9 @@ This GET operation retrieves a resource by the specified resource identifier.
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.All;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.All;
 
 namespace Example
 {
@@ -186,7 +186,7 @@ namespace Example
             try
             {
                 // Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
-                EdFiCalendarReadable result = apiInstance.GetCalendarsById(id, ifNoneMatch);
+                EdFiCalendar result = apiInstance.GetCalendarsById(id, ifNoneMatch);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EdFiCalendarReadable**](EdFiCalendarReadable.md)
+[**EdFiCalendar**](EdFiCalendar.md)
 
 ### Authorization
 
@@ -216,13 +216,13 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/vnd.ed-fi.calendar.minnesota-sisvendor-profile.readable+json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="postcalendar"></a>
-# **Postcalendar**
-> void Postcalendar (EdFiCalendarWritable calendar)
+# **PostCalendar**
+> void PostCalendar (EdFiCalendar calendar)
 
 Creates or updates resources based on the natural key values of the supplied resource.
 
@@ -232,13 +232,13 @@ The POST operation can be used to create or update resources. In database terms,
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.All;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.All;
 
 namespace Example
 {
-    public class PostcalendarExample
+    public class PostCalendarExample
     {
         public void main()
         {
@@ -246,16 +246,16 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new CalendarsApi();
-            var calendar = new EdFiCalendarWritable(); // EdFiCalendarWritable | The JSON representation of the \"calendar\" resource to be created or updated.
+            var calendar = new EdFiCalendar(); // EdFiCalendar | The JSON representation of the \"calendar\" resource to be created or updated.
 
             try
             {
                 // Creates or updates resources based on the natural key values of the supplied resource.
-                apiInstance.Postcalendar(calendar);
+                apiInstance.PostCalendar(calendar);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling CalendarsApi.Postcalendar: " + e.Message );
+                Debug.Print("Exception when calling CalendarsApi.PostCalendar: " + e.Message );
             }
         }
     }
@@ -266,7 +266,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **calendar** | [**EdFiCalendarWritable**](EdFiCalendarWritable.md)| The JSON representation of the \&quot;calendar\&quot; resource to be created or updated. | 
+ **calendar** | [**EdFiCalendar**](EdFiCalendar.md)| The JSON representation of the \&quot;calendar\&quot; resource to be created or updated. | 
 
 ### Return type
 
@@ -278,14 +278,14 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/vnd.ed-fi.calendar.minnesota-sisvendor-profile.writable+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="putcalendar"></a>
-# **Putcalendar**
-> void Putcalendar (string id, EdFiCalendarWritable calendar, string ifMatch = null)
+# **PutCalendar**
+> void PutCalendar (string id, EdFiCalendar calendar, string ifMatch = null)
 
 Updates or creates a resource based on the resource identifier.
 
@@ -295,13 +295,13 @@ The PUT operation is used to update or create a resource by identifier. If the r
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.All;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.All;
 
 namespace Example
 {
-    public class PutcalendarExample
+    public class PutCalendarExample
     {
         public void main()
         {
@@ -310,17 +310,17 @@ namespace Example
 
             var apiInstance = new CalendarsApi();
             var id = id_example;  // string | A resource identifier that uniquely identifies the resource.
-            var calendar = new EdFiCalendarWritable(); // EdFiCalendarWritable | The JSON representation of the \"calendar\" resource to be created or updated.
+            var calendar = new EdFiCalendar(); // EdFiCalendar | The JSON representation of the \"calendar\" resource to be created or updated.
             var ifMatch = ifMatch_example;  // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional) 
 
             try
             {
                 // Updates or creates a resource based on the resource identifier.
-                apiInstance.Putcalendar(id, calendar, ifMatch);
+                apiInstance.PutCalendar(id, calendar, ifMatch);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling CalendarsApi.Putcalendar: " + e.Message );
+                Debug.Print("Exception when calling CalendarsApi.PutCalendar: " + e.Message );
             }
         }
     }
@@ -332,7 +332,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| A resource identifier that uniquely identifies the resource. | 
- **calendar** | [**EdFiCalendarWritable**](EdFiCalendarWritable.md)| The JSON representation of the \&quot;calendar\&quot; resource to be created or updated. | 
+ **calendar** | [**EdFiCalendar**](EdFiCalendar.md)| The JSON representation of the \&quot;calendar\&quot; resource to be created or updated. | 
  **ifMatch** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] 
 
 ### Return type
@@ -345,7 +345,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/vnd.ed-fi.calendar.minnesota-sisvendor-profile.writable+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

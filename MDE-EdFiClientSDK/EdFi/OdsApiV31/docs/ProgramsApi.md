@@ -1,19 +1,19 @@
-# EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile.ProgramsApi
+# EdFi.OdsApi.Sdk.Apis.All.ProgramsApi
 
-All URIs are relative to *https://test.edfi.education.mn.gov:443/edfi.ods.webapi/data/v3*
+All URIs are relative to *https://localhost:56641/edfi.ods.webapi/data/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteprogramById**](ProgramsApi.md#deleteprogrambyid) | **DELETE** /ed-fi/programs/{id} | Deletes an existing resource using the resource identifier.
+[**DeleteProgramById**](ProgramsApi.md#deleteprogrambyid) | **DELETE** /ed-fi/programs/{id} | Deletes an existing resource using the resource identifier.
 [**GetPrograms**](ProgramsApi.md#getprograms) | **GET** /ed-fi/programs | Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
 [**GetProgramsById**](ProgramsApi.md#getprogramsbyid) | **GET** /ed-fi/programs/{id} | Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
-[**Postprogram**](ProgramsApi.md#postprogram) | **POST** /ed-fi/programs | Creates or updates resources based on the natural key values of the supplied resource.
-[**Putprogram**](ProgramsApi.md#putprogram) | **PUT** /ed-fi/programs/{id} | Updates or creates a resource based on the resource identifier.
+[**PostProgram**](ProgramsApi.md#postprogram) | **POST** /ed-fi/programs | Creates or updates resources based on the natural key values of the supplied resource.
+[**PutProgram**](ProgramsApi.md#putprogram) | **PUT** /ed-fi/programs/{id} | Updates or creates a resource based on the resource identifier.
 
 
 <a name="deleteprogrambyid"></a>
-# **DeleteprogramById**
-> void DeleteprogramById (string id, string ifMatch = null)
+# **DeleteProgramById**
+> void DeleteProgramById (string id, string ifMatch = null)
 
 Deletes an existing resource using the resource identifier.
 
@@ -23,13 +23,13 @@ The DELETE operation is used to delete an existing resource by identifier. If th
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.All;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.All;
 
 namespace Example
 {
-    public class DeleteprogramByIdExample
+    public class DeleteProgramByIdExample
     {
         public void main()
         {
@@ -43,11 +43,11 @@ namespace Example
             try
             {
                 // Deletes an existing resource using the resource identifier.
-                apiInstance.DeleteprogramById(id, ifMatch);
+                apiInstance.DeleteProgramById(id, ifMatch);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ProgramsApi.DeleteprogramById: " + e.Message );
+                Debug.Print("Exception when calling ProgramsApi.DeleteProgramById: " + e.Message );
             }
         }
     }
@@ -71,14 +71,14 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/vnd.ed-fi.program.minnesota-sisvendor-profile.writable+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getprograms"></a>
 # **GetPrograms**
-> List<EdFiProgramReadable> GetPrograms (int? offset = null, int? limit = null, bool? totalCount = null, string programTypeDescriptor = null, string programName = null, int? educationOrganizationId = null, string id = null)
+> List<EdFiProgram> GetPrograms (int? offset = null, int? limit = null, bool? totalCount = null, string programTypeDescriptor = null, string programName = null, int? educationOrganizationId = null, string id = null, string programId = null)
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
 
@@ -88,9 +88,9 @@ This GET operation provides access to resources using the \"Get\" search pattern
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.All;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.All;
 
 namespace Example
 {
@@ -109,11 +109,12 @@ namespace Example
             var programName = programName_example;  // string | The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional) 
             var educationOrganizationId = 56;  // int? | The identifier assigned to an education organization. (optional) 
             var id = id_example;  // string |  (optional) 
+            var programId = programId_example;  // string | A unique number or alphanumeric code assigned to a program by a school, school system, a state, or other agency or entity. (optional) 
 
             try
             {
                 // Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
-                List&lt;EdFiProgramReadable&gt; result = apiInstance.GetPrograms(offset, limit, totalCount, programTypeDescriptor, programName, educationOrganizationId, id);
+                List&lt;EdFiProgram&gt; result = apiInstance.GetPrograms(offset, limit, totalCount, programTypeDescriptor, programName, educationOrganizationId, id, programId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -136,10 +137,11 @@ Name | Type | Description  | Notes
  **programName** | **string**| The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. | [optional] 
  **educationOrganizationId** | **int?**| The identifier assigned to an education organization. | [optional] 
  **id** | **string**|  | [optional] 
+ **programId** | **string**| A unique number or alphanumeric code assigned to a program by a school, school system, a state, or other agency or entity. | [optional] 
 
 ### Return type
 
-[**List<EdFiProgramReadable>**](EdFiProgramReadable.md)
+[**List<EdFiProgram>**](EdFiProgram.md)
 
 ### Authorization
 
@@ -148,13 +150,13 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/vnd.ed-fi.program.minnesota-sisvendor-profile.readable+json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getprogramsbyid"></a>
 # **GetProgramsById**
-> EdFiProgramReadable GetProgramsById (string id, string ifNoneMatch = null)
+> EdFiProgram GetProgramsById (string id, string ifNoneMatch = null)
 
 Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
 
@@ -164,9 +166,9 @@ This GET operation retrieves a resource by the specified resource identifier.
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.All;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.All;
 
 namespace Example
 {
@@ -184,7 +186,7 @@ namespace Example
             try
             {
                 // Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
-                EdFiProgramReadable result = apiInstance.GetProgramsById(id, ifNoneMatch);
+                EdFiProgram result = apiInstance.GetProgramsById(id, ifNoneMatch);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -205,7 +207,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EdFiProgramReadable**](EdFiProgramReadable.md)
+[**EdFiProgram**](EdFiProgram.md)
 
 ### Authorization
 
@@ -214,13 +216,13 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/vnd.ed-fi.program.minnesota-sisvendor-profile.readable+json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="postprogram"></a>
-# **Postprogram**
-> void Postprogram (EdFiProgramWritable program)
+# **PostProgram**
+> void PostProgram (EdFiProgram program)
 
 Creates or updates resources based on the natural key values of the supplied resource.
 
@@ -230,13 +232,13 @@ The POST operation can be used to create or update resources. In database terms,
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.All;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.All;
 
 namespace Example
 {
-    public class PostprogramExample
+    public class PostProgramExample
     {
         public void main()
         {
@@ -244,16 +246,16 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new ProgramsApi();
-            var program = new EdFiProgramWritable(); // EdFiProgramWritable | The JSON representation of the \"program\" resource to be created or updated.
+            var program = new EdFiProgram(); // EdFiProgram | The JSON representation of the \"program\" resource to be created or updated.
 
             try
             {
                 // Creates or updates resources based on the natural key values of the supplied resource.
-                apiInstance.Postprogram(program);
+                apiInstance.PostProgram(program);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ProgramsApi.Postprogram: " + e.Message );
+                Debug.Print("Exception when calling ProgramsApi.PostProgram: " + e.Message );
             }
         }
     }
@@ -264,7 +266,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **program** | [**EdFiProgramWritable**](EdFiProgramWritable.md)| The JSON representation of the \&quot;program\&quot; resource to be created or updated. | 
+ **program** | [**EdFiProgram**](EdFiProgram.md)| The JSON representation of the \&quot;program\&quot; resource to be created or updated. | 
 
 ### Return type
 
@@ -276,14 +278,14 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/vnd.ed-fi.program.minnesota-sisvendor-profile.writable+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="putprogram"></a>
-# **Putprogram**
-> void Putprogram (string id, EdFiProgramWritable program, string ifMatch = null)
+# **PutProgram**
+> void PutProgram (string id, EdFiProgram program, string ifMatch = null)
 
 Updates or creates a resource based on the resource identifier.
 
@@ -293,13 +295,13 @@ The PUT operation is used to update or create a resource by identifier. If the r
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.All;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.All;
 
 namespace Example
 {
-    public class PutprogramExample
+    public class PutProgramExample
     {
         public void main()
         {
@@ -308,17 +310,17 @@ namespace Example
 
             var apiInstance = new ProgramsApi();
             var id = id_example;  // string | A resource identifier that uniquely identifies the resource.
-            var program = new EdFiProgramWritable(); // EdFiProgramWritable | The JSON representation of the \"program\" resource to be created or updated.
+            var program = new EdFiProgram(); // EdFiProgram | The JSON representation of the \"program\" resource to be created or updated.
             var ifMatch = ifMatch_example;  // string | The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional) 
 
             try
             {
                 // Updates or creates a resource based on the resource identifier.
-                apiInstance.Putprogram(id, program, ifMatch);
+                apiInstance.PutProgram(id, program, ifMatch);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ProgramsApi.Putprogram: " + e.Message );
+                Debug.Print("Exception when calling ProgramsApi.PutProgram: " + e.Message );
             }
         }
     }
@@ -330,7 +332,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| A resource identifier that uniquely identifies the resource. | 
- **program** | [**EdFiProgramWritable**](EdFiProgramWritable.md)| The JSON representation of the \&quot;program\&quot; resource to be created or updated. | 
+ **program** | [**EdFiProgram**](EdFiProgram.md)| The JSON representation of the \&quot;program\&quot; resource to be created or updated. | 
  **ifMatch** | **string**| The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional] 
 
 ### Return type
@@ -343,7 +345,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/vnd.ed-fi.program.minnesota-sisvendor-profile.writable+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
