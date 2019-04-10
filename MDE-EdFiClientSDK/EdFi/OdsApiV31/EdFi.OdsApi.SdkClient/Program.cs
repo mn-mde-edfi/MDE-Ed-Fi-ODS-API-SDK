@@ -50,14 +50,27 @@
             }
 
             Console.WriteLine();
-            Console.WriteLine("GET MN Extension Descriptor");
-            var descriptorApi = new EarlyChildhoodScreeningExitStatusDescriptorsApi(configuration);
-            var descriptorResponse = descriptorApi.GetEarlyChildhoodScreeningExitStatusDescriptorsWithHttpInfo(null, null);
+            Console.WriteLine("GET Core Ed-Fi Descriptor: GiftedTalentedParticipation");
+            var descriptorApi = new GiftedTalentedParticipationDescriptorsApi(configuration);
+            var descriptorResponse = descriptorApi.GetGiftedTalentedParticipationDescriptorsWithHttpInfo(null, null);
             httpResponseCode = descriptorResponse.StatusCode;
             var descriptors = descriptorResponse.Data;
             Console.WriteLine($"Response code is {httpResponseCode}");
 
             foreach (var descriptor in descriptors.OrderBy(x => x.CodeValue))
+            {
+                Console.WriteLine($"{descriptor.CodeValue}: {descriptor.ShortDescription}");
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("GET MN Extension Descriptor: EarlyChildhoodScreeningExitStatus");
+            var mnDescriptorApi = new EarlyChildhoodScreeningExitStatusDescriptorsApi(configuration);
+            var mnDescriptorResponse = mnDescriptorApi.GetEarlyChildhoodScreeningExitStatusDescriptorsWithHttpInfo(null, null);
+            httpResponseCode = mnDescriptorResponse.StatusCode;
+            var mnDescriptors = mnDescriptorResponse.Data;
+            Console.WriteLine($"Response code is {httpResponseCode}");
+
+            foreach (var descriptor in mnDescriptors.OrderBy(x => x.CodeValue))
             {
                 Console.WriteLine($"{descriptor.CodeValue}: {descriptor.ShortDescription}");
             }
