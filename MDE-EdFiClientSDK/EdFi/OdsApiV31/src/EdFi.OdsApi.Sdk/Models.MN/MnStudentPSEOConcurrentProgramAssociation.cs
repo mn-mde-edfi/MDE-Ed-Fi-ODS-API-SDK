@@ -44,11 +44,10 @@ namespace EdFi.OdsApi.Sdk.Models.MN
         /// <param name="ProgramReference">ProgramReference (required).</param>
         /// <param name="StudentReference">StudentReference (required).</param>
         /// <param name="EndDate">The month, day, and year on which the Student exited the Program or stopped receiving services..</param>
-        /// <param name="PseoHighSchoolHours">Indicates PSEO High School Hours..</param>
         /// <param name="ReasonExitedDescriptor">The reason the child left the Program within a school or district..</param>
         /// <param name="ServedOutsideOfRegularSession">Indicates whether the Student received services during the summer session or between sessions..</param>
         /// <param name="Etag">A unique system-generated value that identifies the version of the resource..</param>
-        public MnStudentPSEOConcurrentProgramAssociation(string Id = default(string), DateTime? BeginDate = default(DateTime?), EdFiEducationOrganizationReference EducationOrganizationReference = default(EdFiEducationOrganizationReference), EdFiProgramReference ProgramReference = default(EdFiProgramReference), EdFiStudentReference StudentReference = default(EdFiStudentReference), DateTime? EndDate = default(DateTime?), int? PseoHighSchoolHours = default(int?), string ReasonExitedDescriptor = default(string), bool? ServedOutsideOfRegularSession = default(bool?), string Etag = default(string))
+        public MnStudentPSEOConcurrentProgramAssociation(string Id = default(string), DateTime? BeginDate = default(DateTime?), EdFiEducationOrganizationReference EducationOrganizationReference = default(EdFiEducationOrganizationReference), EdFiProgramReference ProgramReference = default(EdFiProgramReference), EdFiStudentReference StudentReference = default(EdFiStudentReference), DateTime? EndDate = default(DateTime?), string ReasonExitedDescriptor = default(string), bool? ServedOutsideOfRegularSession = default(bool?), string Etag = default(string))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
@@ -96,7 +95,6 @@ namespace EdFi.OdsApi.Sdk.Models.MN
                 this.StudentReference = StudentReference;
             }
             this.EndDate = EndDate;
-            this.PseoHighSchoolHours = PseoHighSchoolHours;
             this.ReasonExitedDescriptor = ReasonExitedDescriptor;
             this.ServedOutsideOfRegularSession = ServedOutsideOfRegularSession;
             this.Etag = Etag;
@@ -143,13 +141,6 @@ namespace EdFi.OdsApi.Sdk.Models.MN
         public DateTime? EndDate { get; set; }
 
         /// <summary>
-        /// Indicates PSEO High School Hours.
-        /// </summary>
-        /// <value>Indicates PSEO High School Hours.</value>
-        [DataMember(Name="pseoHighSchoolHours", EmitDefaultValue=false)]
-        public int? PseoHighSchoolHours { get; set; }
-
-        /// <summary>
         /// The reason the child left the Program within a school or district.
         /// </summary>
         /// <value>The reason the child left the Program within a school or district.</value>
@@ -184,7 +175,6 @@ namespace EdFi.OdsApi.Sdk.Models.MN
             sb.Append("  ProgramReference: ").Append(ProgramReference).Append("\n");
             sb.Append("  StudentReference: ").Append(StudentReference).Append("\n");
             sb.Append("  EndDate: ").Append(EndDate).Append("\n");
-            sb.Append("  PseoHighSchoolHours: ").Append(PseoHighSchoolHours).Append("\n");
             sb.Append("  ReasonExitedDescriptor: ").Append(ReasonExitedDescriptor).Append("\n");
             sb.Append("  ServedOutsideOfRegularSession: ").Append(ServedOutsideOfRegularSession).Append("\n");
             sb.Append("  Etag: ").Append(Etag).Append("\n");
@@ -253,11 +243,6 @@ namespace EdFi.OdsApi.Sdk.Models.MN
                     this.EndDate.Equals(input.EndDate))
                 ) && 
                 (
-                    this.PseoHighSchoolHours == input.PseoHighSchoolHours ||
-                    (this.PseoHighSchoolHours != null &&
-                    this.PseoHighSchoolHours.Equals(input.PseoHighSchoolHours))
-                ) && 
-                (
                     this.ReasonExitedDescriptor == input.ReasonExitedDescriptor ||
                     (this.ReasonExitedDescriptor != null &&
                     this.ReasonExitedDescriptor.Equals(input.ReasonExitedDescriptor))
@@ -295,8 +280,6 @@ namespace EdFi.OdsApi.Sdk.Models.MN
                     hashCode = hashCode * 59 + this.StudentReference.GetHashCode();
                 if (this.EndDate != null)
                     hashCode = hashCode * 59 + this.EndDate.GetHashCode();
-                if (this.PseoHighSchoolHours != null)
-                    hashCode = hashCode * 59 + this.PseoHighSchoolHours.GetHashCode();
                 if (this.ReasonExitedDescriptor != null)
                     hashCode = hashCode * 59 + this.ReasonExitedDescriptor.GetHashCode();
                 if (this.ServedOutsideOfRegularSession != null)

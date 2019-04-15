@@ -43,9 +43,10 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// <param name="SchoolReference">SchoolReference (required).</param>
         /// <param name="SchoolYearTypeReference">SchoolYearTypeReference (required).</param>
         /// <param name="CalendarTypeDescriptor">Indicates the type of Calendar. (required).</param>
+        /// <param name="GradeLevels">An unordered collection of calendarGradeLevels. Indicates the GradeLevel associated with the Calendar..</param>
         /// <param name="Etag">A unique system-generated value that identifies the version of the resource..</param>
         /// <param name="Ext">Ext.</param>
-        public EdFiCalendarReadable(string Id = default(string), string CalendarCode = default(string), EdFiSchoolReference SchoolReference = default(EdFiSchoolReference), EdFiSchoolYearTypeReference SchoolYearTypeReference = default(EdFiSchoolYearTypeReference), string CalendarTypeDescriptor = default(string), string Etag = default(string), CalendarExtensionsReadable Ext = default(CalendarExtensionsReadable))
+        public EdFiCalendarReadable(string Id = default(string), string CalendarCode = default(string), EdFiSchoolReference SchoolReference = default(EdFiSchoolReference), EdFiSchoolYearTypeReference SchoolYearTypeReference = default(EdFiSchoolYearTypeReference), string CalendarTypeDescriptor = default(string), List<EdFiCalendarGradeLevelReadable> GradeLevels = default(List<EdFiCalendarGradeLevelReadable>), string Etag = default(string), CalendarExtensionsReadable Ext = default(CalendarExtensionsReadable))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
@@ -92,6 +93,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
             {
                 this.CalendarTypeDescriptor = CalendarTypeDescriptor;
             }
+            this.GradeLevels = GradeLevels;
             this.Etag = Etag;
             this.Ext = Ext;
         }
@@ -129,6 +131,13 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         public string CalendarTypeDescriptor { get; set; }
 
         /// <summary>
+        /// An unordered collection of calendarGradeLevels. Indicates the GradeLevel associated with the Calendar.
+        /// </summary>
+        /// <value>An unordered collection of calendarGradeLevels. Indicates the GradeLevel associated with the Calendar.</value>
+        [DataMember(Name="gradeLevels", EmitDefaultValue=false)]
+        public List<EdFiCalendarGradeLevelReadable> GradeLevels { get; set; }
+
+        /// <summary>
         /// A unique system-generated value that identifies the version of the resource.
         /// </summary>
         /// <value>A unique system-generated value that identifies the version of the resource.</value>
@@ -154,6 +163,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
             sb.Append("  SchoolReference: ").Append(SchoolReference).Append("\n");
             sb.Append("  SchoolYearTypeReference: ").Append(SchoolYearTypeReference).Append("\n");
             sb.Append("  CalendarTypeDescriptor: ").Append(CalendarTypeDescriptor).Append("\n");
+            sb.Append("  GradeLevels: ").Append(GradeLevels).Append("\n");
             sb.Append("  Etag: ").Append(Etag).Append("\n");
             sb.Append("  Ext: ").Append(Ext).Append("\n");
             sb.Append("}\n");
@@ -216,6 +226,11 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
                     this.CalendarTypeDescriptor.Equals(input.CalendarTypeDescriptor))
                 ) && 
                 (
+                    this.GradeLevels == input.GradeLevels ||
+                    this.GradeLevels != null &&
+                    this.GradeLevels.SequenceEqual(input.GradeLevels)
+                ) && 
+                (
                     this.Etag == input.Etag ||
                     (this.Etag != null &&
                     this.Etag.Equals(input.Etag))
@@ -246,6 +261,8 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
                     hashCode = hashCode * 59 + this.SchoolYearTypeReference.GetHashCode();
                 if (this.CalendarTypeDescriptor != null)
                     hashCode = hashCode * 59 + this.CalendarTypeDescriptor.GetHashCode();
+                if (this.GradeLevels != null)
+                    hashCode = hashCode * 59 + this.GradeLevels.GetHashCode();
                 if (this.Etag != null)
                     hashCode = hashCode * 59 + this.Etag.GetHashCode();
                 if (this.Ext != null)

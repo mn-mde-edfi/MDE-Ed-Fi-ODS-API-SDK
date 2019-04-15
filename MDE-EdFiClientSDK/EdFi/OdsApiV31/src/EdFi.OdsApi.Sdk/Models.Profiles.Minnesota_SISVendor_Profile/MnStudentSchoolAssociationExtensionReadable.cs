@@ -34,15 +34,21 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// Initializes a new instance of the <see cref="MnStudentSchoolAssociationExtensionReadable" /> class.
         /// </summary>
         /// <param name="SpecialEducationEvaluationStatusDescriptor">An indicator of the students&#39; need for and participation in special education programs during this enrollment period..</param>
+        /// <param name="StateAidCategoryDescriptor">State Aid Category..</param>
         /// <param name="HomeboundServiceIndicator">The Homebound Service Indicator is used to validate Membership Days for students who have no Attendance Days. It is an indication of whether students were medically confined to their home and received instruction in the home during the enrollment period..</param>
         /// <param name="SpecialPupilIndicator">An indicator representing a Student  who qualifies as a Special Pupil for Care and Treatment at some time during the school year..</param>
         /// <param name="ResidentLocalEducationAgencyReference">ResidentLocalEducationAgencyReference.</param>
-        public MnStudentSchoolAssociationExtensionReadable(string SpecialEducationEvaluationStatusDescriptor = default(string), bool? HomeboundServiceIndicator = default(bool?), bool? SpecialPupilIndicator = default(bool?), EdFiLocalEducationAgencyReference ResidentLocalEducationAgencyReference = default(EdFiLocalEducationAgencyReference))
+        /// <param name="Membership">Membership.</param>
+        /// <param name="Transportation">Transportation.</param>
+        public MnStudentSchoolAssociationExtensionReadable(string SpecialEducationEvaluationStatusDescriptor = default(string), string StateAidCategoryDescriptor = default(string), bool? HomeboundServiceIndicator = default(bool?), bool? SpecialPupilIndicator = default(bool?), EdFiLocalEducationAgencyReference ResidentLocalEducationAgencyReference = default(EdFiLocalEducationAgencyReference), MnStudentSchoolAssociationMembershipReadable Membership = default(MnStudentSchoolAssociationMembershipReadable), MnStudentSchoolAssociationTransportationReadable Transportation = default(MnStudentSchoolAssociationTransportationReadable))
         {
             this.SpecialEducationEvaluationStatusDescriptor = SpecialEducationEvaluationStatusDescriptor;
+            this.StateAidCategoryDescriptor = StateAidCategoryDescriptor;
             this.HomeboundServiceIndicator = HomeboundServiceIndicator;
             this.SpecialPupilIndicator = SpecialPupilIndicator;
             this.ResidentLocalEducationAgencyReference = ResidentLocalEducationAgencyReference;
+            this.Membership = Membership;
+            this.Transportation = Transportation;
         }
         
         /// <summary>
@@ -51,6 +57,13 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// <value>An indicator of the students&#39; need for and participation in special education programs during this enrollment period.</value>
         [DataMember(Name="specialEducationEvaluationStatusDescriptor", EmitDefaultValue=false)]
         public string SpecialEducationEvaluationStatusDescriptor { get; set; }
+
+        /// <summary>
+        /// State Aid Category.
+        /// </summary>
+        /// <value>State Aid Category.</value>
+        [DataMember(Name="stateAidCategoryDescriptor", EmitDefaultValue=false)]
+        public string StateAidCategoryDescriptor { get; set; }
 
         /// <summary>
         /// The Homebound Service Indicator is used to validate Membership Days for students who have no Attendance Days. It is an indication of whether students were medically confined to their home and received instruction in the home during the enrollment period.
@@ -73,6 +86,18 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         public EdFiLocalEducationAgencyReference ResidentLocalEducationAgencyReference { get; set; }
 
         /// <summary>
+        /// Gets or Sets Membership
+        /// </summary>
+        [DataMember(Name="membership", EmitDefaultValue=false)]
+        public MnStudentSchoolAssociationMembershipReadable Membership { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Transportation
+        /// </summary>
+        [DataMember(Name="transportation", EmitDefaultValue=false)]
+        public MnStudentSchoolAssociationTransportationReadable Transportation { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -81,9 +106,12 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
             var sb = new StringBuilder();
             sb.Append("class MnStudentSchoolAssociationExtensionReadable {\n");
             sb.Append("  SpecialEducationEvaluationStatusDescriptor: ").Append(SpecialEducationEvaluationStatusDescriptor).Append("\n");
+            sb.Append("  StateAidCategoryDescriptor: ").Append(StateAidCategoryDescriptor).Append("\n");
             sb.Append("  HomeboundServiceIndicator: ").Append(HomeboundServiceIndicator).Append("\n");
             sb.Append("  SpecialPupilIndicator: ").Append(SpecialPupilIndicator).Append("\n");
             sb.Append("  ResidentLocalEducationAgencyReference: ").Append(ResidentLocalEducationAgencyReference).Append("\n");
+            sb.Append("  Membership: ").Append(Membership).Append("\n");
+            sb.Append("  Transportation: ").Append(Transportation).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -124,6 +152,11 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
                     this.SpecialEducationEvaluationStatusDescriptor.Equals(input.SpecialEducationEvaluationStatusDescriptor))
                 ) && 
                 (
+                    this.StateAidCategoryDescriptor == input.StateAidCategoryDescriptor ||
+                    (this.StateAidCategoryDescriptor != null &&
+                    this.StateAidCategoryDescriptor.Equals(input.StateAidCategoryDescriptor))
+                ) && 
+                (
                     this.HomeboundServiceIndicator == input.HomeboundServiceIndicator ||
                     (this.HomeboundServiceIndicator != null &&
                     this.HomeboundServiceIndicator.Equals(input.HomeboundServiceIndicator))
@@ -137,6 +170,16 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
                     this.ResidentLocalEducationAgencyReference == input.ResidentLocalEducationAgencyReference ||
                     (this.ResidentLocalEducationAgencyReference != null &&
                     this.ResidentLocalEducationAgencyReference.Equals(input.ResidentLocalEducationAgencyReference))
+                ) && 
+                (
+                    this.Membership == input.Membership ||
+                    (this.Membership != null &&
+                    this.Membership.Equals(input.Membership))
+                ) && 
+                (
+                    this.Transportation == input.Transportation ||
+                    (this.Transportation != null &&
+                    this.Transportation.Equals(input.Transportation))
                 );
         }
 
@@ -151,12 +194,18 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
                 int hashCode = 41;
                 if (this.SpecialEducationEvaluationStatusDescriptor != null)
                     hashCode = hashCode * 59 + this.SpecialEducationEvaluationStatusDescriptor.GetHashCode();
+                if (this.StateAidCategoryDescriptor != null)
+                    hashCode = hashCode * 59 + this.StateAidCategoryDescriptor.GetHashCode();
                 if (this.HomeboundServiceIndicator != null)
                     hashCode = hashCode * 59 + this.HomeboundServiceIndicator.GetHashCode();
                 if (this.SpecialPupilIndicator != null)
                     hashCode = hashCode * 59 + this.SpecialPupilIndicator.GetHashCode();
                 if (this.ResidentLocalEducationAgencyReference != null)
                     hashCode = hashCode * 59 + this.ResidentLocalEducationAgencyReference.GetHashCode();
+                if (this.Membership != null)
+                    hashCode = hashCode * 59 + this.Membership.GetHashCode();
+                if (this.Transportation != null)
+                    hashCode = hashCode * 59 + this.Transportation.GetHashCode();
                 return hashCode;
             }
         }
@@ -172,6 +221,12 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
             if(this.SpecialEducationEvaluationStatusDescriptor != null && this.SpecialEducationEvaluationStatusDescriptor.Length > 306)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SpecialEducationEvaluationStatusDescriptor, length must be less than 306.", new [] { "SpecialEducationEvaluationStatusDescriptor" });
+            }
+
+            // StateAidCategoryDescriptor (string) maxLength
+            if(this.StateAidCategoryDescriptor != null && this.StateAidCategoryDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for StateAidCategoryDescriptor, length must be less than 306.", new [] { "StateAidCategoryDescriptor" });
             }
 
             yield break;

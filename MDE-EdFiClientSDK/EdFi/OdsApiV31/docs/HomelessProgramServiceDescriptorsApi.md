@@ -1,6 +1,6 @@
 # EdFi.OdsApi.Sdk.Apis.All.HomelessProgramServiceDescriptorsApi
 
-All URIs are relative to *https://localhost:56641/edfi.ods.webapi/data/v3*
+All URIs are relative to *https://test.edfi.education.mn.gov:443/edfi.ods.webapi/data/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

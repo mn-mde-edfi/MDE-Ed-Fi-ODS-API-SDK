@@ -1,6 +1,6 @@
 # EdFi.OdsApi.Sdk.Apis.MN.StudentSAAPProgramAssociationsApi
 
-All URIs are relative to *https://localhost:56641/edfi.ods.webapi/data/v3*
+All URIs are relative to *https://test.edfi.education.mn.gov:443/edfi.ods.webapi/data/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -109,7 +109,7 @@ namespace Example
             var educationOrganizationId = 56;  // int? | The identifier assigned to an education organization. (optional) 
             var programEducationOrganizationId = 56;  // int? | The identifier assigned to an education organization. (optional) 
             var programName = programName_example;  // string | The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional) 
-            var programTypeDescriptor = programTypeDescriptor_example;  // string | Alternative Learning Program or Area Learning Center or Contracted Alternative Program (optional) 
+            var programTypeDescriptor = programTypeDescriptor_example;  // string | The type of program. (optional) 
             var studentUniqueId = studentUniqueId_example;  // string | A unique alphanumeric code assigned to a student. (optional) 
             var independentStudyIndicator = true;  // bool? | State-approved alternative programs (SAAP) that also have a state-approved Independent Study (IS) component use this flag to identify independent study participants. (optional) 
             var saapConcurrentIndicator = true;  // bool? | An indicator representing a Student who is enrolled less than full-time at a traditional school and who is also enrolled at a State Approved Alternative Program (SAAP). (optional) 
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
  **educationOrganizationId** | **int?**| The identifier assigned to an education organization. | [optional] 
  **programEducationOrganizationId** | **int?**| The identifier assigned to an education organization. | [optional] 
  **programName** | **string**| The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. | [optional] 
- **programTypeDescriptor** | **string**| Alternative Learning Program or Area Learning Center or Contracted Alternative Program | [optional] 
+ **programTypeDescriptor** | **string**| The type of program. | [optional] 
  **studentUniqueId** | **string**| A unique alphanumeric code assigned to a student. | [optional] 
  **independentStudyIndicator** | **bool?**| State-approved alternative programs (SAAP) that also have a state-approved Independent Study (IS) component use this flag to identify independent study participants. | [optional] 
  **saapConcurrentIndicator** | **bool?**| An indicator representing a Student who is enrolled less than full-time at a traditional school and who is also enrolled at a State Approved Alternative Program (SAAP). | [optional] 

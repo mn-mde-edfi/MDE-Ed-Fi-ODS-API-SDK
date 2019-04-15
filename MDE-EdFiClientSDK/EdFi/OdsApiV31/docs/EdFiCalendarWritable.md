@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **SchoolReference** | [**EdFiSchoolReference**](EdFiSchoolReference.md) |  | 
 **SchoolYearTypeReference** | [**EdFiSchoolYearTypeReference**](EdFiSchoolYearTypeReference.md) |  | 
 **CalendarTypeDescriptor** | **string** | Indicates the type of Calendar. | 
+**GradeLevels** | [**List&lt;EdFiCalendarGradeLevelWritable&gt;**](EdFiCalendarGradeLevelWritable.md) | An unordered collection of calendarGradeLevels. Indicates the GradeLevel associated with the Calendar. | [optional] 
 **Etag** | **string** | A unique system-generated value that identifies the version of the resource. | [optional] 
 **Ext** | [**CalendarExtensionsWritable**](CalendarExtensionsWritable.md) |  | [optional] 
 

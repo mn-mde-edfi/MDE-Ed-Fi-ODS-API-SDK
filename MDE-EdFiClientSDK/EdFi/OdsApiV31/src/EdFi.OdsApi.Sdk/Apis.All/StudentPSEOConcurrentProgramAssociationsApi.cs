@@ -63,9 +63,8 @@ namespace EdFi.OdsApi.Sdk.Apis.All
         /// <param name="programName">The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)</param>
         /// <param name="programTypeDescriptor">The type of program. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
-        /// <param name="pseoHighSchoolHours">Indicates PSEO High School Hours. (optional)</param>
         /// <returns>List&lt;MnStudentPSEOConcurrentProgramAssociation&gt;</returns>
-        List<MnStudentPSEOConcurrentProgramAssociation> GetStudentPSEOConcurrentProgramAssociations (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, int? pseoHighSchoolHours = null);
+        List<MnStudentPSEOConcurrentProgramAssociation> GetStudentPSEOConcurrentProgramAssociations (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null);
 
         /// <summary>
         /// Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
@@ -83,9 +82,8 @@ namespace EdFi.OdsApi.Sdk.Apis.All
         /// <param name="programName">The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)</param>
         /// <param name="programTypeDescriptor">The type of program. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
-        /// <param name="pseoHighSchoolHours">Indicates PSEO High School Hours. (optional)</param>
         /// <returns>ApiResponse of List&lt;MnStudentPSEOConcurrentProgramAssociation&gt;</returns>
-        ApiResponse<List<MnStudentPSEOConcurrentProgramAssociation>> GetStudentPSEOConcurrentProgramAssociationsWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, int? pseoHighSchoolHours = null);
+        ApiResponse<List<MnStudentPSEOConcurrentProgramAssociation>> GetStudentPSEOConcurrentProgramAssociationsWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null);
         /// <summary>
         /// Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
         /// </summary>
@@ -196,9 +194,8 @@ namespace EdFi.OdsApi.Sdk.Apis.All
         /// <param name="programName">The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)</param>
         /// <param name="programTypeDescriptor">The type of program. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
-        /// <param name="pseoHighSchoolHours">Indicates PSEO High School Hours. (optional)</param>
         /// <returns>Task of List&lt;MnStudentPSEOConcurrentProgramAssociation&gt;</returns>
-        System.Threading.Tasks.Task<List<MnStudentPSEOConcurrentProgramAssociation>> GetStudentPSEOConcurrentProgramAssociationsAsync (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, int? pseoHighSchoolHours = null);
+        System.Threading.Tasks.Task<List<MnStudentPSEOConcurrentProgramAssociation>> GetStudentPSEOConcurrentProgramAssociationsAsync (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null);
 
         /// <summary>
         /// Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
@@ -216,9 +213,8 @@ namespace EdFi.OdsApi.Sdk.Apis.All
         /// <param name="programName">The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)</param>
         /// <param name="programTypeDescriptor">The type of program. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
-        /// <param name="pseoHighSchoolHours">Indicates PSEO High School Hours. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;MnStudentPSEOConcurrentProgramAssociation&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<MnStudentPSEOConcurrentProgramAssociation>>> GetStudentPSEOConcurrentProgramAssociationsAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, int? pseoHighSchoolHours = null);
+        System.Threading.Tasks.Task<ApiResponse<List<MnStudentPSEOConcurrentProgramAssociation>>> GetStudentPSEOConcurrentProgramAssociationsAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null);
         /// <summary>
         /// Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
         /// </summary>
@@ -552,11 +548,10 @@ namespace EdFi.OdsApi.Sdk.Apis.All
         /// <param name="programName">The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)</param>
         /// <param name="programTypeDescriptor">The type of program. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
-        /// <param name="pseoHighSchoolHours">Indicates PSEO High School Hours. (optional)</param>
         /// <returns>List&lt;MnStudentPSEOConcurrentProgramAssociation&gt;</returns>
-        public List<MnStudentPSEOConcurrentProgramAssociation> GetStudentPSEOConcurrentProgramAssociations (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, int? pseoHighSchoolHours = null)
+        public List<MnStudentPSEOConcurrentProgramAssociation> GetStudentPSEOConcurrentProgramAssociations (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null)
         {
-             ApiResponse<List<MnStudentPSEOConcurrentProgramAssociation>> localVarResponse = GetStudentPSEOConcurrentProgramAssociationsWithHttpInfo(offset, limit, totalCount, beginDate, educationOrganizationId, programEducationOrganizationId, programName, programTypeDescriptor, studentUniqueId, pseoHighSchoolHours);
+             ApiResponse<List<MnStudentPSEOConcurrentProgramAssociation>> localVarResponse = GetStudentPSEOConcurrentProgramAssociationsWithHttpInfo(offset, limit, totalCount, beginDate, educationOrganizationId, programEducationOrganizationId, programName, programTypeDescriptor, studentUniqueId);
              return localVarResponse.Data;
         }
 
@@ -573,9 +568,8 @@ namespace EdFi.OdsApi.Sdk.Apis.All
         /// <param name="programName">The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)</param>
         /// <param name="programTypeDescriptor">The type of program. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
-        /// <param name="pseoHighSchoolHours">Indicates PSEO High School Hours. (optional)</param>
         /// <returns>ApiResponse of List&lt;MnStudentPSEOConcurrentProgramAssociation&gt;</returns>
-        public ApiResponse< List<MnStudentPSEOConcurrentProgramAssociation> > GetStudentPSEOConcurrentProgramAssociationsWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, int? pseoHighSchoolHours = null)
+        public ApiResponse< List<MnStudentPSEOConcurrentProgramAssociation> > GetStudentPSEOConcurrentProgramAssociationsWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null)
         {
 
             var localVarPath = "/MN/studentPSEOConcurrentProgramAssociations";
@@ -609,7 +603,6 @@ namespace EdFi.OdsApi.Sdk.Apis.All
             if (programName != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "programName", programName)); // query parameter
             if (programTypeDescriptor != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "programTypeDescriptor", programTypeDescriptor)); // query parameter
             if (studentUniqueId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "studentUniqueId", studentUniqueId)); // query parameter
-            if (pseoHighSchoolHours != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "pseoHighSchoolHours", pseoHighSchoolHours)); // query parameter
 
             // authentication (oauth2_client_credentials) required
             // oauth required
@@ -649,11 +642,10 @@ namespace EdFi.OdsApi.Sdk.Apis.All
         /// <param name="programName">The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)</param>
         /// <param name="programTypeDescriptor">The type of program. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
-        /// <param name="pseoHighSchoolHours">Indicates PSEO High School Hours. (optional)</param>
         /// <returns>Task of List&lt;MnStudentPSEOConcurrentProgramAssociation&gt;</returns>
-        public async System.Threading.Tasks.Task<List<MnStudentPSEOConcurrentProgramAssociation>> GetStudentPSEOConcurrentProgramAssociationsAsync (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, int? pseoHighSchoolHours = null)
+        public async System.Threading.Tasks.Task<List<MnStudentPSEOConcurrentProgramAssociation>> GetStudentPSEOConcurrentProgramAssociationsAsync (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null)
         {
-             ApiResponse<List<MnStudentPSEOConcurrentProgramAssociation>> localVarResponse = await GetStudentPSEOConcurrentProgramAssociationsAsyncWithHttpInfo(offset, limit, totalCount, beginDate, educationOrganizationId, programEducationOrganizationId, programName, programTypeDescriptor, studentUniqueId, pseoHighSchoolHours);
+             ApiResponse<List<MnStudentPSEOConcurrentProgramAssociation>> localVarResponse = await GetStudentPSEOConcurrentProgramAssociationsAsyncWithHttpInfo(offset, limit, totalCount, beginDate, educationOrganizationId, programEducationOrganizationId, programName, programTypeDescriptor, studentUniqueId);
              return localVarResponse.Data;
 
         }
@@ -671,9 +663,8 @@ namespace EdFi.OdsApi.Sdk.Apis.All
         /// <param name="programName">The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)</param>
         /// <param name="programTypeDescriptor">The type of program. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
-        /// <param name="pseoHighSchoolHours">Indicates PSEO High School Hours. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;MnStudentPSEOConcurrentProgramAssociation&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<MnStudentPSEOConcurrentProgramAssociation>>> GetStudentPSEOConcurrentProgramAssociationsAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, int? pseoHighSchoolHours = null)
+        public async System.Threading.Tasks.Task<ApiResponse<List<MnStudentPSEOConcurrentProgramAssociation>>> GetStudentPSEOConcurrentProgramAssociationsAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null)
         {
 
             var localVarPath = "/MN/studentPSEOConcurrentProgramAssociations";
@@ -707,7 +698,6 @@ namespace EdFi.OdsApi.Sdk.Apis.All
             if (programName != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "programName", programName)); // query parameter
             if (programTypeDescriptor != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "programTypeDescriptor", programTypeDescriptor)); // query parameter
             if (studentUniqueId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "studentUniqueId", studentUniqueId)); // query parameter
-            if (pseoHighSchoolHours != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "pseoHighSchoolHours", pseoHighSchoolHours)); // query parameter
 
             // authentication (oauth2_client_credentials) required
             // oauth required

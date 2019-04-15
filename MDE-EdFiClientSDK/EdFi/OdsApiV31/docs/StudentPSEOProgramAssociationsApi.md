@@ -1,6 +1,6 @@
 # EdFi.OdsApi.Sdk.Apis.MN.StudentPSEOProgramAssociationsApi
 
-All URIs are relative to *https://localhost:56641/edfi.ods.webapi/data/v3*
+All URIs are relative to *https://test.edfi.education.mn.gov:443/edfi.ods.webapi/data/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -78,7 +78,7 @@ void (empty response body)
 
 <a name="getstudentpseoprogramassociations"></a>
 # **GetStudentPSEOProgramAssociations**
-> List<MnStudentPSEOProgramAssociation> GetStudentPSEOProgramAssociations (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null)
+> List<MnStudentPSEOProgramAssociation> GetStudentPSEOProgramAssociations (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, int? pseoHighSchoolHours = null)
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
 
@@ -111,11 +111,12 @@ namespace Example
             var programName = programName_example;  // string | The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional) 
             var programTypeDescriptor = programTypeDescriptor_example;  // string | The type of program. (optional) 
             var studentUniqueId = studentUniqueId_example;  // string | A unique alphanumeric code assigned to a student. (optional) 
+            var pseoHighSchoolHours = 56;  // int? | Indicates PSEO High School Hours. (optional) 
 
             try
             {
                 // Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
-                List&lt;MnStudentPSEOProgramAssociation&gt; result = apiInstance.GetStudentPSEOProgramAssociations(offset, limit, totalCount, beginDate, educationOrganizationId, programEducationOrganizationId, programName, programTypeDescriptor, studentUniqueId);
+                List&lt;MnStudentPSEOProgramAssociation&gt; result = apiInstance.GetStudentPSEOProgramAssociations(offset, limit, totalCount, beginDate, educationOrganizationId, programEducationOrganizationId, programName, programTypeDescriptor, studentUniqueId, pseoHighSchoolHours);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -140,6 +141,7 @@ Name | Type | Description  | Notes
  **programName** | **string**| The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. | [optional] 
  **programTypeDescriptor** | **string**| The type of program. | [optional] 
  **studentUniqueId** | **string**| A unique alphanumeric code assigned to a student. | [optional] 
+ **pseoHighSchoolHours** | **int?**| Indicates PSEO High School Hours. | [optional] 
 
 ### Return type
 

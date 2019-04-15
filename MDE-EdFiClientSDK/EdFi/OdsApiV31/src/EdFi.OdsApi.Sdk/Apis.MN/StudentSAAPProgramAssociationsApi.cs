@@ -61,7 +61,7 @@ namespace EdFi.OdsApi.Sdk.Apis.MN
         /// <param name="educationOrganizationId">The identifier assigned to an education organization. (optional)</param>
         /// <param name="programEducationOrganizationId">The identifier assigned to an education organization. (optional)</param>
         /// <param name="programName">The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)</param>
-        /// <param name="programTypeDescriptor">Alternative Learning Program or Area Learning Center or Contracted Alternative Program (optional)</param>
+        /// <param name="programTypeDescriptor">The type of program. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
         /// <param name="independentStudyIndicator">State-approved alternative programs (SAAP) that also have a state-approved Independent Study (IS) component use this flag to identify independent study participants. (optional)</param>
         /// <param name="saapConcurrentIndicator">An indicator representing a Student who is enrolled less than full-time at a traditional school and who is also enrolled at a State Approved Alternative Program (SAAP). (optional)</param>
@@ -83,7 +83,7 @@ namespace EdFi.OdsApi.Sdk.Apis.MN
         /// <param name="educationOrganizationId">The identifier assigned to an education organization. (optional)</param>
         /// <param name="programEducationOrganizationId">The identifier assigned to an education organization. (optional)</param>
         /// <param name="programName">The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)</param>
-        /// <param name="programTypeDescriptor">Alternative Learning Program or Area Learning Center or Contracted Alternative Program (optional)</param>
+        /// <param name="programTypeDescriptor">The type of program. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
         /// <param name="independentStudyIndicator">State-approved alternative programs (SAAP) that also have a state-approved Independent Study (IS) component use this flag to identify independent study participants. (optional)</param>
         /// <param name="saapConcurrentIndicator">An indicator representing a Student who is enrolled less than full-time at a traditional school and who is also enrolled at a State Approved Alternative Program (SAAP). (optional)</param>
@@ -198,7 +198,7 @@ namespace EdFi.OdsApi.Sdk.Apis.MN
         /// <param name="educationOrganizationId">The identifier assigned to an education organization. (optional)</param>
         /// <param name="programEducationOrganizationId">The identifier assigned to an education organization. (optional)</param>
         /// <param name="programName">The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)</param>
-        /// <param name="programTypeDescriptor">Alternative Learning Program or Area Learning Center or Contracted Alternative Program (optional)</param>
+        /// <param name="programTypeDescriptor">The type of program. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
         /// <param name="independentStudyIndicator">State-approved alternative programs (SAAP) that also have a state-approved Independent Study (IS) component use this flag to identify independent study participants. (optional)</param>
         /// <param name="saapConcurrentIndicator">An indicator representing a Student who is enrolled less than full-time at a traditional school and who is also enrolled at a State Approved Alternative Program (SAAP). (optional)</param>
@@ -220,7 +220,7 @@ namespace EdFi.OdsApi.Sdk.Apis.MN
         /// <param name="educationOrganizationId">The identifier assigned to an education organization. (optional)</param>
         /// <param name="programEducationOrganizationId">The identifier assigned to an education organization. (optional)</param>
         /// <param name="programName">The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)</param>
-        /// <param name="programTypeDescriptor">Alternative Learning Program or Area Learning Center or Contracted Alternative Program (optional)</param>
+        /// <param name="programTypeDescriptor">The type of program. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
         /// <param name="independentStudyIndicator">State-approved alternative programs (SAAP) that also have a state-approved Independent Study (IS) component use this flag to identify independent study participants. (optional)</param>
         /// <param name="saapConcurrentIndicator">An indicator representing a Student who is enrolled less than full-time at a traditional school and who is also enrolled at a State Approved Alternative Program (SAAP). (optional)</param>
@@ -558,7 +558,7 @@ namespace EdFi.OdsApi.Sdk.Apis.MN
         /// <param name="educationOrganizationId">The identifier assigned to an education organization. (optional)</param>
         /// <param name="programEducationOrganizationId">The identifier assigned to an education organization. (optional)</param>
         /// <param name="programName">The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)</param>
-        /// <param name="programTypeDescriptor">Alternative Learning Program or Area Learning Center or Contracted Alternative Program (optional)</param>
+        /// <param name="programTypeDescriptor">The type of program. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
         /// <param name="independentStudyIndicator">State-approved alternative programs (SAAP) that also have a state-approved Independent Study (IS) component use this flag to identify independent study participants. (optional)</param>
         /// <param name="saapConcurrentIndicator">An indicator representing a Student who is enrolled less than full-time at a traditional school and who is also enrolled at a State Approved Alternative Program (SAAP). (optional)</param>
@@ -581,7 +581,7 @@ namespace EdFi.OdsApi.Sdk.Apis.MN
         /// <param name="educationOrganizationId">The identifier assigned to an education organization. (optional)</param>
         /// <param name="programEducationOrganizationId">The identifier assigned to an education organization. (optional)</param>
         /// <param name="programName">The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)</param>
-        /// <param name="programTypeDescriptor">Alternative Learning Program or Area Learning Center or Contracted Alternative Program (optional)</param>
+        /// <param name="programTypeDescriptor">The type of program. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
         /// <param name="independentStudyIndicator">State-approved alternative programs (SAAP) that also have a state-approved Independent Study (IS) component use this flag to identify independent study participants. (optional)</param>
         /// <param name="saapConcurrentIndicator">An indicator representing a Student who is enrolled less than full-time at a traditional school and who is also enrolled at a State Approved Alternative Program (SAAP). (optional)</param>
@@ -661,7 +661,7 @@ namespace EdFi.OdsApi.Sdk.Apis.MN
         /// <param name="educationOrganizationId">The identifier assigned to an education organization. (optional)</param>
         /// <param name="programEducationOrganizationId">The identifier assigned to an education organization. (optional)</param>
         /// <param name="programName">The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)</param>
-        /// <param name="programTypeDescriptor">Alternative Learning Program or Area Learning Center or Contracted Alternative Program (optional)</param>
+        /// <param name="programTypeDescriptor">The type of program. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
         /// <param name="independentStudyIndicator">State-approved alternative programs (SAAP) that also have a state-approved Independent Study (IS) component use this flag to identify independent study participants. (optional)</param>
         /// <param name="saapConcurrentIndicator">An indicator representing a Student who is enrolled less than full-time at a traditional school and who is also enrolled at a State Approved Alternative Program (SAAP). (optional)</param>
@@ -685,7 +685,7 @@ namespace EdFi.OdsApi.Sdk.Apis.MN
         /// <param name="educationOrganizationId">The identifier assigned to an education organization. (optional)</param>
         /// <param name="programEducationOrganizationId">The identifier assigned to an education organization. (optional)</param>
         /// <param name="programName">The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)</param>
-        /// <param name="programTypeDescriptor">Alternative Learning Program or Area Learning Center or Contracted Alternative Program (optional)</param>
+        /// <param name="programTypeDescriptor">The type of program. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
         /// <param name="independentStudyIndicator">State-approved alternative programs (SAAP) that also have a state-approved Independent Study (IS) component use this flag to identify independent study participants. (optional)</param>
         /// <param name="saapConcurrentIndicator">An indicator representing a Student who is enrolled less than full-time at a traditional school and who is also enrolled at a State Approved Alternative Program (SAAP). (optional)</param>
