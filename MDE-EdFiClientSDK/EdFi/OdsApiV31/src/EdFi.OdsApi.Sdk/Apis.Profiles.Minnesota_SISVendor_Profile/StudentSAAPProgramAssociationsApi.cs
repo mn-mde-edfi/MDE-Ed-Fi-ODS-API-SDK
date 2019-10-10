@@ -67,7 +67,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
         /// <param name="saapConcurrentIndicator">An indicator representing a Student who is enrolled less than full-time at a traditional school and who is also enrolled at a State Approved Alternative Program (SAAP). (optional)</param>
         /// <param name="saapCredits">SAAP Credits. (optional)</param>
         /// <returns>List&lt;MnStudentSAAPProgramAssociationReadable&gt;</returns>
-        List<MnStudentSAAPProgramAssociationReadable> GetStudentSAAPProgramAssociations (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, bool? independentStudyIndicator = null, bool? saapConcurrentIndicator = null, int? saapCredits = null);
+        List<MnStudentSAAPProgramAssociationReadable> GetStudentSAAPProgramAssociations (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, bool? independentStudyIndicator = null, bool? saapConcurrentIndicator = null, double? saapCredits = null);
 
         /// <summary>
         /// Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
@@ -89,7 +89,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
         /// <param name="saapConcurrentIndicator">An indicator representing a Student who is enrolled less than full-time at a traditional school and who is also enrolled at a State Approved Alternative Program (SAAP). (optional)</param>
         /// <param name="saapCredits">SAAP Credits. (optional)</param>
         /// <returns>ApiResponse of List&lt;MnStudentSAAPProgramAssociationReadable&gt;</returns>
-        ApiResponse<List<MnStudentSAAPProgramAssociationReadable>> GetStudentSAAPProgramAssociationsWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, bool? independentStudyIndicator = null, bool? saapConcurrentIndicator = null, int? saapCredits = null);
+        ApiResponse<List<MnStudentSAAPProgramAssociationReadable>> GetStudentSAAPProgramAssociationsWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, bool? independentStudyIndicator = null, bool? saapConcurrentIndicator = null, double? saapCredits = null);
         /// <summary>
         /// Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
         /// </summary>
@@ -204,7 +204,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
         /// <param name="saapConcurrentIndicator">An indicator representing a Student who is enrolled less than full-time at a traditional school and who is also enrolled at a State Approved Alternative Program (SAAP). (optional)</param>
         /// <param name="saapCredits">SAAP Credits. (optional)</param>
         /// <returns>Task of List&lt;MnStudentSAAPProgramAssociationReadable&gt;</returns>
-        System.Threading.Tasks.Task<List<MnStudentSAAPProgramAssociationReadable>> GetStudentSAAPProgramAssociationsAsync (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, bool? independentStudyIndicator = null, bool? saapConcurrentIndicator = null, int? saapCredits = null);
+        System.Threading.Tasks.Task<List<MnStudentSAAPProgramAssociationReadable>> GetStudentSAAPProgramAssociationsAsync (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, bool? independentStudyIndicator = null, bool? saapConcurrentIndicator = null, double? saapCredits = null);
 
         /// <summary>
         /// Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
@@ -226,7 +226,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
         /// <param name="saapConcurrentIndicator">An indicator representing a Student who is enrolled less than full-time at a traditional school and who is also enrolled at a State Approved Alternative Program (SAAP). (optional)</param>
         /// <param name="saapCredits">SAAP Credits. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;MnStudentSAAPProgramAssociationReadable&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<MnStudentSAAPProgramAssociationReadable>>> GetStudentSAAPProgramAssociationsAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, bool? independentStudyIndicator = null, bool? saapConcurrentIndicator = null, int? saapCredits = null);
+        System.Threading.Tasks.Task<ApiResponse<List<MnStudentSAAPProgramAssociationReadable>>> GetStudentSAAPProgramAssociationsAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, bool? independentStudyIndicator = null, bool? saapConcurrentIndicator = null, double? saapCredits = null);
         /// <summary>
         /// Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
         /// </summary>
@@ -564,7 +564,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
         /// <param name="saapConcurrentIndicator">An indicator representing a Student who is enrolled less than full-time at a traditional school and who is also enrolled at a State Approved Alternative Program (SAAP). (optional)</param>
         /// <param name="saapCredits">SAAP Credits. (optional)</param>
         /// <returns>List&lt;MnStudentSAAPProgramAssociationReadable&gt;</returns>
-        public List<MnStudentSAAPProgramAssociationReadable> GetStudentSAAPProgramAssociations (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, bool? independentStudyIndicator = null, bool? saapConcurrentIndicator = null, int? saapCredits = null)
+        public List<MnStudentSAAPProgramAssociationReadable> GetStudentSAAPProgramAssociations (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, bool? independentStudyIndicator = null, bool? saapConcurrentIndicator = null, double? saapCredits = null)
         {
              ApiResponse<List<MnStudentSAAPProgramAssociationReadable>> localVarResponse = GetStudentSAAPProgramAssociationsWithHttpInfo(offset, limit, totalCount, beginDate, educationOrganizationId, programEducationOrganizationId, programName, programTypeDescriptor, studentUniqueId, independentStudyIndicator, saapConcurrentIndicator, saapCredits);
              return localVarResponse.Data;
@@ -587,7 +587,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
         /// <param name="saapConcurrentIndicator">An indicator representing a Student who is enrolled less than full-time at a traditional school and who is also enrolled at a State Approved Alternative Program (SAAP). (optional)</param>
         /// <param name="saapCredits">SAAP Credits. (optional)</param>
         /// <returns>ApiResponse of List&lt;MnStudentSAAPProgramAssociationReadable&gt;</returns>
-        public ApiResponse< List<MnStudentSAAPProgramAssociationReadable> > GetStudentSAAPProgramAssociationsWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, bool? independentStudyIndicator = null, bool? saapConcurrentIndicator = null, int? saapCredits = null)
+        public ApiResponse< List<MnStudentSAAPProgramAssociationReadable> > GetStudentSAAPProgramAssociationsWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, bool? independentStudyIndicator = null, bool? saapConcurrentIndicator = null, double? saapCredits = null)
         {
 
             var localVarPath = "/MN/studentSAAPProgramAssociations";
@@ -667,7 +667,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
         /// <param name="saapConcurrentIndicator">An indicator representing a Student who is enrolled less than full-time at a traditional school and who is also enrolled at a State Approved Alternative Program (SAAP). (optional)</param>
         /// <param name="saapCredits">SAAP Credits. (optional)</param>
         /// <returns>Task of List&lt;MnStudentSAAPProgramAssociationReadable&gt;</returns>
-        public async System.Threading.Tasks.Task<List<MnStudentSAAPProgramAssociationReadable>> GetStudentSAAPProgramAssociationsAsync (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, bool? independentStudyIndicator = null, bool? saapConcurrentIndicator = null, int? saapCredits = null)
+        public async System.Threading.Tasks.Task<List<MnStudentSAAPProgramAssociationReadable>> GetStudentSAAPProgramAssociationsAsync (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, bool? independentStudyIndicator = null, bool? saapConcurrentIndicator = null, double? saapCredits = null)
         {
              ApiResponse<List<MnStudentSAAPProgramAssociationReadable>> localVarResponse = await GetStudentSAAPProgramAssociationsAsyncWithHttpInfo(offset, limit, totalCount, beginDate, educationOrganizationId, programEducationOrganizationId, programName, programTypeDescriptor, studentUniqueId, independentStudyIndicator, saapConcurrentIndicator, saapCredits);
              return localVarResponse.Data;
@@ -691,7 +691,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
         /// <param name="saapConcurrentIndicator">An indicator representing a Student who is enrolled less than full-time at a traditional school and who is also enrolled at a State Approved Alternative Program (SAAP). (optional)</param>
         /// <param name="saapCredits">SAAP Credits. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;MnStudentSAAPProgramAssociationReadable&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<MnStudentSAAPProgramAssociationReadable>>> GetStudentSAAPProgramAssociationsAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, bool? independentStudyIndicator = null, bool? saapConcurrentIndicator = null, int? saapCredits = null)
+        public async System.Threading.Tasks.Task<ApiResponse<List<MnStudentSAAPProgramAssociationReadable>>> GetStudentSAAPProgramAssociationsAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, bool? independentStudyIndicator = null, bool? saapConcurrentIndicator = null, double? saapCredits = null)
         {
 
             var localVarPath = "/MN/studentSAAPProgramAssociations";

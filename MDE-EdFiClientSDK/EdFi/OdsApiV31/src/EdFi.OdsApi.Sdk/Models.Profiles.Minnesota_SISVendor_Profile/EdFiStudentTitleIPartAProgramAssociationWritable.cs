@@ -44,8 +44,9 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// <param name="ProgramReference">ProgramReference (required).</param>
         /// <param name="StudentReference">StudentReference (required).</param>
         /// <param name="EndDate">The month, day, and year on which the Student exited the Program or stopped receiving services..</param>
+        /// <param name="TitleIPartAParticipantDescriptor">An indication of the type of Title I program, if any, in which the student is participating and by which the student is served:          Public Targeted Assistance Program          Public Schoolwide Program          Private School Students Participating          Local Neglected Program. (required).</param>
         /// <param name="Etag">A unique system-generated value that identifies the version of the resource..</param>
-        public EdFiStudentTitleIPartAProgramAssociationWritable(string Id = default(string), DateTime? BeginDate = default(DateTime?), EdFiEducationOrganizationReference EducationOrganizationReference = default(EdFiEducationOrganizationReference), EdFiProgramReference ProgramReference = default(EdFiProgramReference), EdFiStudentReference StudentReference = default(EdFiStudentReference), DateTime? EndDate = default(DateTime?), string Etag = default(string))
+        public EdFiStudentTitleIPartAProgramAssociationWritable(string Id = default(string), DateTime? BeginDate = default(DateTime?), EdFiEducationOrganizationReference EducationOrganizationReference = default(EdFiEducationOrganizationReference), EdFiProgramReference ProgramReference = default(EdFiProgramReference), EdFiStudentReference StudentReference = default(EdFiStudentReference), DateTime? EndDate = default(DateTime?), string TitleIPartAParticipantDescriptor = default(string), string Etag = default(string))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
@@ -92,6 +93,15 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
             {
                 this.StudentReference = StudentReference;
             }
+            // to ensure "TitleIPartAParticipantDescriptor" is required (not null)
+            if (TitleIPartAParticipantDescriptor == null)
+            {
+                throw new InvalidDataException("TitleIPartAParticipantDescriptor is a required property for EdFiStudentTitleIPartAProgramAssociationWritable and cannot be null");
+            }
+            else
+            {
+                this.TitleIPartAParticipantDescriptor = TitleIPartAParticipantDescriptor;
+            }
             this.EndDate = EndDate;
             this.Etag = Etag;
         }
@@ -137,6 +147,13 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         public DateTime? EndDate { get; set; }
 
         /// <summary>
+        /// An indication of the type of Title I program, if any, in which the student is participating and by which the student is served:          Public Targeted Assistance Program          Public Schoolwide Program          Private School Students Participating          Local Neglected Program.
+        /// </summary>
+        /// <value>An indication of the type of Title I program, if any, in which the student is participating and by which the student is served:          Public Targeted Assistance Program          Public Schoolwide Program          Private School Students Participating          Local Neglected Program.</value>
+        [DataMember(Name="titleIPartAParticipantDescriptor", EmitDefaultValue=false)]
+        public string TitleIPartAParticipantDescriptor { get; set; }
+
+        /// <summary>
         /// A unique system-generated value that identifies the version of the resource.
         /// </summary>
         /// <value>A unique system-generated value that identifies the version of the resource.</value>
@@ -157,6 +174,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
             sb.Append("  ProgramReference: ").Append(ProgramReference).Append("\n");
             sb.Append("  StudentReference: ").Append(StudentReference).Append("\n");
             sb.Append("  EndDate: ").Append(EndDate).Append("\n");
+            sb.Append("  TitleIPartAParticipantDescriptor: ").Append(TitleIPartAParticipantDescriptor).Append("\n");
             sb.Append("  Etag: ").Append(Etag).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -223,6 +241,11 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
                     this.EndDate.Equals(input.EndDate))
                 ) && 
                 (
+                    this.TitleIPartAParticipantDescriptor == input.TitleIPartAParticipantDescriptor ||
+                    (this.TitleIPartAParticipantDescriptor != null &&
+                    this.TitleIPartAParticipantDescriptor.Equals(input.TitleIPartAParticipantDescriptor))
+                ) && 
+                (
                     this.Etag == input.Etag ||
                     (this.Etag != null &&
                     this.Etag.Equals(input.Etag))
@@ -250,6 +273,8 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
                     hashCode = hashCode * 59 + this.StudentReference.GetHashCode();
                 if (this.EndDate != null)
                     hashCode = hashCode * 59 + this.EndDate.GetHashCode();
+                if (this.TitleIPartAParticipantDescriptor != null)
+                    hashCode = hashCode * 59 + this.TitleIPartAParticipantDescriptor.GetHashCode();
                 if (this.Etag != null)
                     hashCode = hashCode * 59 + this.Etag.GetHashCode();
                 return hashCode;
@@ -263,6 +288,12 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // TitleIPartAParticipantDescriptor (string) maxLength
+            if(this.TitleIPartAParticipantDescriptor != null && this.TitleIPartAParticipantDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for TitleIPartAParticipantDescriptor, length must be less than 306.", new [] { "TitleIPartAParticipantDescriptor" });
+            }
+
             yield break;
         }
     }

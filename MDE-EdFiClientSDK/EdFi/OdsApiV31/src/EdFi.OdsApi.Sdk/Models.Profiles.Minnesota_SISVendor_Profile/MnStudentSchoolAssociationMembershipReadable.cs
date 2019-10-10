@@ -42,7 +42,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// <param name="Attendance">The total number of Instructional Days or Hours during which students attended school during the current school year. (required).</param>
         /// <param name="Membership">The total number of Instructional Days or Hours during which students were enrolled in the school during the current school year. (required).</param>
         /// <param name="PercentEnrolled">Percent Enrolled (required).</param>
-        public MnStudentSchoolAssociationMembershipReadable(string MembershipAttendanceUnitDescriptor = default(string), int? Attendance = default(int?), int? Membership = default(int?), double? PercentEnrolled = default(double?))
+        public MnStudentSchoolAssociationMembershipReadable(string MembershipAttendanceUnitDescriptor = default(string), double? Attendance = default(double?), int? Membership = default(int?), int? PercentEnrolled = default(int?))
         {
             // to ensure "MembershipAttendanceUnitDescriptor" is required (not null)
             if (MembershipAttendanceUnitDescriptor == null)
@@ -94,7 +94,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// </summary>
         /// <value>The total number of Instructional Days or Hours during which students attended school during the current school year.</value>
         [DataMember(Name="attendance", EmitDefaultValue=false)]
-        public int? Attendance { get; set; }
+        public double? Attendance { get; set; }
 
         /// <summary>
         /// The total number of Instructional Days or Hours during which students were enrolled in the school during the current school year.
@@ -108,7 +108,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// </summary>
         /// <value>Percent Enrolled</value>
         [DataMember(Name="percentEnrolled", EmitDefaultValue=false)]
-        public double? PercentEnrolled { get; set; }
+        public int? PercentEnrolled { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

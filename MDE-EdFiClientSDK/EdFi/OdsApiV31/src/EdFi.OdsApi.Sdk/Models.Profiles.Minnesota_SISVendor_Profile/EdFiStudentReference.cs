@@ -147,6 +147,12 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // StudentUniqueId (string) maxLength
+            if(this.StudentUniqueId != null && this.StudentUniqueId.Length > 32)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for StudentUniqueId, length must be less than 32.", new [] { "StudentUniqueId" });
+            }
+
             yield break;
         }
     }

@@ -34,7 +34,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// Initializes a new instance of the <see cref="MnStudentSpecialEducationProgramAssociationExtensionReadable" /> class.
         /// </summary>
         /// <param name="SpecialEducationServiceHours">Special Education Service Hours..</param>
-        public MnStudentSpecialEducationProgramAssociationExtensionReadable(int? SpecialEducationServiceHours = default(int?))
+        public MnStudentSpecialEducationProgramAssociationExtensionReadable(double? SpecialEducationServiceHours = default(double?))
         {
             this.SpecialEducationServiceHours = SpecialEducationServiceHours;
         }
@@ -44,7 +44,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// </summary>
         /// <value>Special Education Service Hours.</value>
         [DataMember(Name="specialEducationServiceHours", EmitDefaultValue=false)]
-        public int? SpecialEducationServiceHours { get; set; }
+        public double? SpecialEducationServiceHours { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
