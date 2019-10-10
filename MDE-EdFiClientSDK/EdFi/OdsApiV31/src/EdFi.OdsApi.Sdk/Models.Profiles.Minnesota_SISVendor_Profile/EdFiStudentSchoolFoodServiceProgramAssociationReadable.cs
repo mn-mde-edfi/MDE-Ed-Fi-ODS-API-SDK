@@ -44,8 +44,9 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// <param name="ProgramReference">ProgramReference (required).</param>
         /// <param name="StudentReference">StudentReference (required).</param>
         /// <param name="EndDate">The month, day, and year on which the Student exited the Program or stopped receiving services..</param>
+        /// <param name="SchoolFoodServiceProgramServices">An unordered collection of studentSchoolFoodServiceProgramAssociationSchoolFoodServiceProgramServices. Indicates the service(s) being provided to the Student by the School Food Service Program..</param>
         /// <param name="Etag">A unique system-generated value that identifies the version of the resource..</param>
-        public EdFiStudentSchoolFoodServiceProgramAssociationReadable(string Id = default(string), DateTime? BeginDate = default(DateTime?), EdFiEducationOrganizationReference EducationOrganizationReference = default(EdFiEducationOrganizationReference), EdFiProgramReference ProgramReference = default(EdFiProgramReference), EdFiStudentReference StudentReference = default(EdFiStudentReference), DateTime? EndDate = default(DateTime?), string Etag = default(string))
+        public EdFiStudentSchoolFoodServiceProgramAssociationReadable(string Id = default(string), DateTime? BeginDate = default(DateTime?), EdFiEducationOrganizationReference EducationOrganizationReference = default(EdFiEducationOrganizationReference), EdFiProgramReference ProgramReference = default(EdFiProgramReference), EdFiStudentReference StudentReference = default(EdFiStudentReference), DateTime? EndDate = default(DateTime?), List<EdFiStudentSchoolFoodServiceProgramAssociationSchoolFoodServiceProgramServiceReadable> SchoolFoodServiceProgramServices = default(List<EdFiStudentSchoolFoodServiceProgramAssociationSchoolFoodServiceProgramServiceReadable>), string Etag = default(string))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
@@ -93,6 +94,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
                 this.StudentReference = StudentReference;
             }
             this.EndDate = EndDate;
+            this.SchoolFoodServiceProgramServices = SchoolFoodServiceProgramServices;
             this.Etag = Etag;
         }
         
@@ -137,6 +139,13 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         public DateTime? EndDate { get; set; }
 
         /// <summary>
+        /// An unordered collection of studentSchoolFoodServiceProgramAssociationSchoolFoodServiceProgramServices. Indicates the service(s) being provided to the Student by the School Food Service Program.
+        /// </summary>
+        /// <value>An unordered collection of studentSchoolFoodServiceProgramAssociationSchoolFoodServiceProgramServices. Indicates the service(s) being provided to the Student by the School Food Service Program.</value>
+        [DataMember(Name="schoolFoodServiceProgramServices", EmitDefaultValue=false)]
+        public List<EdFiStudentSchoolFoodServiceProgramAssociationSchoolFoodServiceProgramServiceReadable> SchoolFoodServiceProgramServices { get; set; }
+
+        /// <summary>
         /// A unique system-generated value that identifies the version of the resource.
         /// </summary>
         /// <value>A unique system-generated value that identifies the version of the resource.</value>
@@ -157,6 +166,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
             sb.Append("  ProgramReference: ").Append(ProgramReference).Append("\n");
             sb.Append("  StudentReference: ").Append(StudentReference).Append("\n");
             sb.Append("  EndDate: ").Append(EndDate).Append("\n");
+            sb.Append("  SchoolFoodServiceProgramServices: ").Append(SchoolFoodServiceProgramServices).Append("\n");
             sb.Append("  Etag: ").Append(Etag).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -223,6 +233,11 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
                     this.EndDate.Equals(input.EndDate))
                 ) && 
                 (
+                    this.SchoolFoodServiceProgramServices == input.SchoolFoodServiceProgramServices ||
+                    this.SchoolFoodServiceProgramServices != null &&
+                    this.SchoolFoodServiceProgramServices.SequenceEqual(input.SchoolFoodServiceProgramServices)
+                ) && 
+                (
                     this.Etag == input.Etag ||
                     (this.Etag != null &&
                     this.Etag.Equals(input.Etag))
@@ -250,6 +265,8 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
                     hashCode = hashCode * 59 + this.StudentReference.GetHashCode();
                 if (this.EndDate != null)
                     hashCode = hashCode * 59 + this.EndDate.GetHashCode();
+                if (this.SchoolFoodServiceProgramServices != null)
+                    hashCode = hashCode * 59 + this.SchoolFoodServiceProgramServices.GetHashCode();
                 if (this.Etag != null)
                     hashCode = hashCode * 59 + this.Etag.GetHashCode();
                 return hashCode;

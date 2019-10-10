@@ -48,7 +48,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// <param name="SaapConcurrentIndicator">An indicator representing a Student who is enrolled less than full-time at a traditional school and who is also enrolled at a State Approved Alternative Program (SAAP). (required).</param>
         /// <param name="SaapCredits">SAAP Credits. (required).</param>
         /// <param name="Etag">A unique system-generated value that identifies the version of the resource..</param>
-        public MnStudentSAAPProgramAssociationReadable(string Id = default(string), DateTime? BeginDate = default(DateTime?), MnEducationOrganizationReference EducationOrganizationReference = default(MnEducationOrganizationReference), MnProgramReference ProgramReference = default(MnProgramReference), MnStudentReference StudentReference = default(MnStudentReference), DateTime? EndDate = default(DateTime?), bool? IndependentStudyIndicator = default(bool?), bool? SaapConcurrentIndicator = default(bool?), int? SaapCredits = default(int?), string Etag = default(string))
+        public MnStudentSAAPProgramAssociationReadable(string Id = default(string), DateTime? BeginDate = default(DateTime?), MnEducationOrganizationReference EducationOrganizationReference = default(MnEducationOrganizationReference), MnProgramReference ProgramReference = default(MnProgramReference), MnStudentReference StudentReference = default(MnStudentReference), DateTime? EndDate = default(DateTime?), bool? IndependentStudyIndicator = default(bool?), bool? SaapConcurrentIndicator = default(bool?), double? SaapCredits = default(double?), string Etag = default(string))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
@@ -185,7 +185,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// </summary>
         /// <value>SAAP Credits.</value>
         [DataMember(Name="saapCredits", EmitDefaultValue=false)]
-        public int? SaapCredits { get; set; }
+        public double? SaapCredits { get; set; }
 
         /// <summary>
         /// A unique system-generated value that identifies the version of the resource.
