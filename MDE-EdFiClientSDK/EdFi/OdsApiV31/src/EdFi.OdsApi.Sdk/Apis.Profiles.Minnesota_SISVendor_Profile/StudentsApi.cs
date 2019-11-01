@@ -58,6 +58,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
         /// <param name="limit">Indicates the maximum number of items that should be returned in the results. (optional, default to 25)</param>
         /// <param name="totalCount">Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="birthSexDescriptor">A person&#39;s gender at birth. (optional)</param>
         /// <param name="birthDate">The month, day, and year on which an individual was born. (optional)</param>
         /// <param name="firstName">A name given to an individual at birth, baptism, or during another naming ceremony, or through legal change. (optional)</param>
         /// <param name="generationCodeSuffix">An appendage, if any, used to denote an individual&#39;s generation in his family (e.g., Jr., Sr., III). (optional)</param>
@@ -65,7 +66,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
         /// <param name="lastSurname">The name borne in common by members of a family. (optional)</param>
         /// <param name="middleName">A secondary name given to an individual at birth, baptism, or during another naming ceremony. (optional)</param>
         /// <returns>List&lt;EdFiStudentReadable&gt;</returns>
-        List<EdFiStudentReadable> GetStudents (int? offset = null, int? limit = null, bool? totalCount = null, string studentUniqueId = null, DateTime? birthDate = null, string firstName = null, string generationCodeSuffix = null, string id = null, string lastSurname = null, string middleName = null);
+        List<EdFiStudentReadable> GetStudents (int? offset = null, int? limit = null, bool? totalCount = null, string studentUniqueId = null, string birthSexDescriptor = null, DateTime? birthDate = null, string firstName = null, string generationCodeSuffix = null, string id = null, string lastSurname = null, string middleName = null);
 
         /// <summary>
         /// Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
@@ -78,6 +79,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
         /// <param name="limit">Indicates the maximum number of items that should be returned in the results. (optional, default to 25)</param>
         /// <param name="totalCount">Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="birthSexDescriptor">A person&#39;s gender at birth. (optional)</param>
         /// <param name="birthDate">The month, day, and year on which an individual was born. (optional)</param>
         /// <param name="firstName">A name given to an individual at birth, baptism, or during another naming ceremony, or through legal change. (optional)</param>
         /// <param name="generationCodeSuffix">An appendage, if any, used to denote an individual&#39;s generation in his family (e.g., Jr., Sr., III). (optional)</param>
@@ -85,7 +87,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
         /// <param name="lastSurname">The name borne in common by members of a family. (optional)</param>
         /// <param name="middleName">A secondary name given to an individual at birth, baptism, or during another naming ceremony. (optional)</param>
         /// <returns>ApiResponse of List&lt;EdFiStudentReadable&gt;</returns>
-        ApiResponse<List<EdFiStudentReadable>> GetStudentsWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string studentUniqueId = null, DateTime? birthDate = null, string firstName = null, string generationCodeSuffix = null, string id = null, string lastSurname = null, string middleName = null);
+        ApiResponse<List<EdFiStudentReadable>> GetStudentsWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string studentUniqueId = null, string birthSexDescriptor = null, DateTime? birthDate = null, string firstName = null, string generationCodeSuffix = null, string id = null, string lastSurname = null, string middleName = null);
         /// <summary>
         /// Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
         /// </summary>
@@ -191,6 +193,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
         /// <param name="limit">Indicates the maximum number of items that should be returned in the results. (optional, default to 25)</param>
         /// <param name="totalCount">Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="birthSexDescriptor">A person&#39;s gender at birth. (optional)</param>
         /// <param name="birthDate">The month, day, and year on which an individual was born. (optional)</param>
         /// <param name="firstName">A name given to an individual at birth, baptism, or during another naming ceremony, or through legal change. (optional)</param>
         /// <param name="generationCodeSuffix">An appendage, if any, used to denote an individual&#39;s generation in his family (e.g., Jr., Sr., III). (optional)</param>
@@ -198,7 +201,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
         /// <param name="lastSurname">The name borne in common by members of a family. (optional)</param>
         /// <param name="middleName">A secondary name given to an individual at birth, baptism, or during another naming ceremony. (optional)</param>
         /// <returns>Task of List&lt;EdFiStudentReadable&gt;</returns>
-        System.Threading.Tasks.Task<List<EdFiStudentReadable>> GetStudentsAsync (int? offset = null, int? limit = null, bool? totalCount = null, string studentUniqueId = null, DateTime? birthDate = null, string firstName = null, string generationCodeSuffix = null, string id = null, string lastSurname = null, string middleName = null);
+        System.Threading.Tasks.Task<List<EdFiStudentReadable>> GetStudentsAsync (int? offset = null, int? limit = null, bool? totalCount = null, string studentUniqueId = null, string birthSexDescriptor = null, DateTime? birthDate = null, string firstName = null, string generationCodeSuffix = null, string id = null, string lastSurname = null, string middleName = null);
 
         /// <summary>
         /// Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
@@ -211,6 +214,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
         /// <param name="limit">Indicates the maximum number of items that should be returned in the results. (optional, default to 25)</param>
         /// <param name="totalCount">Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="birthSexDescriptor">A person&#39;s gender at birth. (optional)</param>
         /// <param name="birthDate">The month, day, and year on which an individual was born. (optional)</param>
         /// <param name="firstName">A name given to an individual at birth, baptism, or during another naming ceremony, or through legal change. (optional)</param>
         /// <param name="generationCodeSuffix">An appendage, if any, used to denote an individual&#39;s generation in his family (e.g., Jr., Sr., III). (optional)</param>
@@ -218,7 +222,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
         /// <param name="lastSurname">The name borne in common by members of a family. (optional)</param>
         /// <param name="middleName">A secondary name given to an individual at birth, baptism, or during another naming ceremony. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;EdFiStudentReadable&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<EdFiStudentReadable>>> GetStudentsAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string studentUniqueId = null, DateTime? birthDate = null, string firstName = null, string generationCodeSuffix = null, string id = null, string lastSurname = null, string middleName = null);
+        System.Threading.Tasks.Task<ApiResponse<List<EdFiStudentReadable>>> GetStudentsAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string studentUniqueId = null, string birthSexDescriptor = null, DateTime? birthDate = null, string firstName = null, string generationCodeSuffix = null, string id = null, string lastSurname = null, string middleName = null);
         /// <summary>
         /// Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
         /// </summary>
@@ -547,6 +551,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
         /// <param name="limit">Indicates the maximum number of items that should be returned in the results. (optional, default to 25)</param>
         /// <param name="totalCount">Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="birthSexDescriptor">A person&#39;s gender at birth. (optional)</param>
         /// <param name="birthDate">The month, day, and year on which an individual was born. (optional)</param>
         /// <param name="firstName">A name given to an individual at birth, baptism, or during another naming ceremony, or through legal change. (optional)</param>
         /// <param name="generationCodeSuffix">An appendage, if any, used to denote an individual&#39;s generation in his family (e.g., Jr., Sr., III). (optional)</param>
@@ -554,9 +559,9 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
         /// <param name="lastSurname">The name borne in common by members of a family. (optional)</param>
         /// <param name="middleName">A secondary name given to an individual at birth, baptism, or during another naming ceremony. (optional)</param>
         /// <returns>List&lt;EdFiStudentReadable&gt;</returns>
-        public List<EdFiStudentReadable> GetStudents (int? offset = null, int? limit = null, bool? totalCount = null, string studentUniqueId = null, DateTime? birthDate = null, string firstName = null, string generationCodeSuffix = null, string id = null, string lastSurname = null, string middleName = null)
+        public List<EdFiStudentReadable> GetStudents (int? offset = null, int? limit = null, bool? totalCount = null, string studentUniqueId = null, string birthSexDescriptor = null, DateTime? birthDate = null, string firstName = null, string generationCodeSuffix = null, string id = null, string lastSurname = null, string middleName = null)
         {
-             ApiResponse<List<EdFiStudentReadable>> localVarResponse = GetStudentsWithHttpInfo(offset, limit, totalCount, studentUniqueId, birthDate, firstName, generationCodeSuffix, id, lastSurname, middleName);
+             ApiResponse<List<EdFiStudentReadable>> localVarResponse = GetStudentsWithHttpInfo(offset, limit, totalCount, studentUniqueId, birthSexDescriptor, birthDate, firstName, generationCodeSuffix, id, lastSurname, middleName);
              return localVarResponse.Data;
         }
 
@@ -568,6 +573,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
         /// <param name="limit">Indicates the maximum number of items that should be returned in the results. (optional, default to 25)</param>
         /// <param name="totalCount">Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="birthSexDescriptor">A person&#39;s gender at birth. (optional)</param>
         /// <param name="birthDate">The month, day, and year on which an individual was born. (optional)</param>
         /// <param name="firstName">A name given to an individual at birth, baptism, or during another naming ceremony, or through legal change. (optional)</param>
         /// <param name="generationCodeSuffix">An appendage, if any, used to denote an individual&#39;s generation in his family (e.g., Jr., Sr., III). (optional)</param>
@@ -575,7 +581,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
         /// <param name="lastSurname">The name borne in common by members of a family. (optional)</param>
         /// <param name="middleName">A secondary name given to an individual at birth, baptism, or during another naming ceremony. (optional)</param>
         /// <returns>ApiResponse of List&lt;EdFiStudentReadable&gt;</returns>
-        public ApiResponse< List<EdFiStudentReadable> > GetStudentsWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string studentUniqueId = null, DateTime? birthDate = null, string firstName = null, string generationCodeSuffix = null, string id = null, string lastSurname = null, string middleName = null)
+        public ApiResponse< List<EdFiStudentReadable> > GetStudentsWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string studentUniqueId = null, string birthSexDescriptor = null, DateTime? birthDate = null, string firstName = null, string generationCodeSuffix = null, string id = null, string lastSurname = null, string middleName = null)
         {
 
             var localVarPath = "/ed-fi/students";
@@ -604,6 +610,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
             if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             if (totalCount != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "totalCount", totalCount)); // query parameter
             if (studentUniqueId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "studentUniqueId", studentUniqueId)); // query parameter
+            if (birthSexDescriptor != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "birthSexDescriptor", birthSexDescriptor)); // query parameter
             if (birthDate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "birthDate", birthDate)); // query parameter
             if (firstName != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "firstName", firstName)); // query parameter
             if (generationCodeSuffix != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "generationCodeSuffix", generationCodeSuffix)); // query parameter
@@ -644,6 +651,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
         /// <param name="limit">Indicates the maximum number of items that should be returned in the results. (optional, default to 25)</param>
         /// <param name="totalCount">Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="birthSexDescriptor">A person&#39;s gender at birth. (optional)</param>
         /// <param name="birthDate">The month, day, and year on which an individual was born. (optional)</param>
         /// <param name="firstName">A name given to an individual at birth, baptism, or during another naming ceremony, or through legal change. (optional)</param>
         /// <param name="generationCodeSuffix">An appendage, if any, used to denote an individual&#39;s generation in his family (e.g., Jr., Sr., III). (optional)</param>
@@ -651,9 +659,9 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
         /// <param name="lastSurname">The name borne in common by members of a family. (optional)</param>
         /// <param name="middleName">A secondary name given to an individual at birth, baptism, or during another naming ceremony. (optional)</param>
         /// <returns>Task of List&lt;EdFiStudentReadable&gt;</returns>
-        public async System.Threading.Tasks.Task<List<EdFiStudentReadable>> GetStudentsAsync (int? offset = null, int? limit = null, bool? totalCount = null, string studentUniqueId = null, DateTime? birthDate = null, string firstName = null, string generationCodeSuffix = null, string id = null, string lastSurname = null, string middleName = null)
+        public async System.Threading.Tasks.Task<List<EdFiStudentReadable>> GetStudentsAsync (int? offset = null, int? limit = null, bool? totalCount = null, string studentUniqueId = null, string birthSexDescriptor = null, DateTime? birthDate = null, string firstName = null, string generationCodeSuffix = null, string id = null, string lastSurname = null, string middleName = null)
         {
-             ApiResponse<List<EdFiStudentReadable>> localVarResponse = await GetStudentsAsyncWithHttpInfo(offset, limit, totalCount, studentUniqueId, birthDate, firstName, generationCodeSuffix, id, lastSurname, middleName);
+             ApiResponse<List<EdFiStudentReadable>> localVarResponse = await GetStudentsAsyncWithHttpInfo(offset, limit, totalCount, studentUniqueId, birthSexDescriptor, birthDate, firstName, generationCodeSuffix, id, lastSurname, middleName);
              return localVarResponse.Data;
 
         }
@@ -666,6 +674,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
         /// <param name="limit">Indicates the maximum number of items that should be returned in the results. (optional, default to 25)</param>
         /// <param name="totalCount">Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="birthSexDescriptor">A person&#39;s gender at birth. (optional)</param>
         /// <param name="birthDate">The month, day, and year on which an individual was born. (optional)</param>
         /// <param name="firstName">A name given to an individual at birth, baptism, or during another naming ceremony, or through legal change. (optional)</param>
         /// <param name="generationCodeSuffix">An appendage, if any, used to denote an individual&#39;s generation in his family (e.g., Jr., Sr., III). (optional)</param>
@@ -673,7 +682,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
         /// <param name="lastSurname">The name borne in common by members of a family. (optional)</param>
         /// <param name="middleName">A secondary name given to an individual at birth, baptism, or during another naming ceremony. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;EdFiStudentReadable&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<EdFiStudentReadable>>> GetStudentsAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string studentUniqueId = null, DateTime? birthDate = null, string firstName = null, string generationCodeSuffix = null, string id = null, string lastSurname = null, string middleName = null)
+        public async System.Threading.Tasks.Task<ApiResponse<List<EdFiStudentReadable>>> GetStudentsAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string studentUniqueId = null, string birthSexDescriptor = null, DateTime? birthDate = null, string firstName = null, string generationCodeSuffix = null, string id = null, string lastSurname = null, string middleName = null)
         {
 
             var localVarPath = "/ed-fi/students";
@@ -702,6 +711,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
             if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             if (totalCount != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "totalCount", totalCount)); // query parameter
             if (studentUniqueId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "studentUniqueId", studentUniqueId)); // query parameter
+            if (birthSexDescriptor != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "birthSexDescriptor", birthSexDescriptor)); // query parameter
             if (birthDate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "birthDate", birthDate)); // query parameter
             if (firstName != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "firstName", firstName)); // query parameter
             if (generationCodeSuffix != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "generationCodeSuffix", generationCodeSuffix)); // query parameter

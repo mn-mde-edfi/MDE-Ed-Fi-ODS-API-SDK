@@ -41,12 +41,13 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// <param name="Id">Id (required).</param>
         /// <param name="StudentUniqueId">A unique alphanumeric code assigned to a student. (required).</param>
         /// <param name="BirthDate">The month, day, and year on which an individual was born. (required).</param>
+        /// <param name="BirthSexDescriptor">A person&#39;s gender at birth..</param>
         /// <param name="FirstName">A name given to an individual at birth, baptism, or during another naming ceremony, or through legal change. (required).</param>
         /// <param name="GenerationCodeSuffix">An appendage, if any, used to denote an individual&#39;s generation in his family (e.g., Jr., Sr., III)..</param>
         /// <param name="LastSurname">The name borne in common by members of a family. (required).</param>
         /// <param name="MiddleName">A secondary name given to an individual at birth, baptism, or during another naming ceremony..</param>
         /// <param name="Etag">A unique system-generated value that identifies the version of the resource..</param>
-        public EdFiStudentWritable(string Id = default(string), string StudentUniqueId = default(string), DateTime? BirthDate = default(DateTime?), string FirstName = default(string), string GenerationCodeSuffix = default(string), string LastSurname = default(string), string MiddleName = default(string), string Etag = default(string))
+        public EdFiStudentWritable(string Id = default(string), string StudentUniqueId = default(string), DateTime? BirthDate = default(DateTime?), string BirthSexDescriptor = default(string), string FirstName = default(string), string GenerationCodeSuffix = default(string), string LastSurname = default(string), string MiddleName = default(string), string Etag = default(string))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
@@ -93,6 +94,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
             {
                 this.LastSurname = LastSurname;
             }
+            this.BirthSexDescriptor = BirthSexDescriptor;
             this.GenerationCodeSuffix = GenerationCodeSuffix;
             this.MiddleName = MiddleName;
             this.Etag = Etag;
@@ -118,6 +120,13 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         [DataMember(Name="birthDate", EmitDefaultValue=false)]
         [JsonConverter(typeof(SwaggerDateConverter))]
         public DateTime? BirthDate { get; set; }
+
+        /// <summary>
+        /// A person&#39;s gender at birth.
+        /// </summary>
+        /// <value>A person&#39;s gender at birth.</value>
+        [DataMember(Name="birthSexDescriptor", EmitDefaultValue=false)]
+        public string BirthSexDescriptor { get; set; }
 
         /// <summary>
         /// A name given to an individual at birth, baptism, or during another naming ceremony, or through legal change.
@@ -165,6 +174,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  StudentUniqueId: ").Append(StudentUniqueId).Append("\n");
             sb.Append("  BirthDate: ").Append(BirthDate).Append("\n");
+            sb.Append("  BirthSexDescriptor: ").Append(BirthSexDescriptor).Append("\n");
             sb.Append("  FirstName: ").Append(FirstName).Append("\n");
             sb.Append("  GenerationCodeSuffix: ").Append(GenerationCodeSuffix).Append("\n");
             sb.Append("  LastSurname: ").Append(LastSurname).Append("\n");
@@ -220,6 +230,11 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
                     this.BirthDate.Equals(input.BirthDate))
                 ) && 
                 (
+                    this.BirthSexDescriptor == input.BirthSexDescriptor ||
+                    (this.BirthSexDescriptor != null &&
+                    this.BirthSexDescriptor.Equals(input.BirthSexDescriptor))
+                ) && 
+                (
                     this.FirstName == input.FirstName ||
                     (this.FirstName != null &&
                     this.FirstName.Equals(input.FirstName))
@@ -261,6 +276,8 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
                     hashCode = hashCode * 59 + this.StudentUniqueId.GetHashCode();
                 if (this.BirthDate != null)
                     hashCode = hashCode * 59 + this.BirthDate.GetHashCode();
+                if (this.BirthSexDescriptor != null)
+                    hashCode = hashCode * 59 + this.BirthSexDescriptor.GetHashCode();
                 if (this.FirstName != null)
                     hashCode = hashCode * 59 + this.FirstName.GetHashCode();
                 if (this.GenerationCodeSuffix != null)
@@ -286,6 +303,12 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
             if(this.StudentUniqueId != null && this.StudentUniqueId.Length > 32)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for StudentUniqueId, length must be less than 32.", new [] { "StudentUniqueId" });
+            }
+
+            // BirthSexDescriptor (string) maxLength
+            if(this.BirthSexDescriptor != null && this.BirthSexDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for BirthSexDescriptor, length must be less than 306.", new [] { "BirthSexDescriptor" });
             }
 
             // FirstName (string) maxLength
