@@ -35,10 +35,14 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// </summary>
         /// <param name="SectionEnrollmentTypeDescriptor">Section enrollment type..</param>
         /// <param name="CollegeCourseReference">CollegeCourseReference.</param>
-        public MnStudentSectionAssociationExtensionWritable(string SectionEnrollmentTypeDescriptor = default(string), EdFiCourseReference CollegeCourseReference = default(EdFiCourseReference))
+        /// <param name="InstructionalApproaches">An unordered collection of studentSectionAssociationInstructionalApproaches. Instructional approach as implemented for the student section association. General purpose but intially implemented for Early Education..</param>
+        /// <param name="SiteBasedInitiatives">An unordered collection of studentSectionAssociationSiteBasedInitiatives. Site-based initiative as implemented for the student section association. General purpose but intially implemented for Early Education..</param>
+        public MnStudentSectionAssociationExtensionWritable(string SectionEnrollmentTypeDescriptor = default(string), EdFiCourseReference CollegeCourseReference = default(EdFiCourseReference), List<MnStudentSectionAssociationInstructionalApproachWritable> InstructionalApproaches = default(List<MnStudentSectionAssociationInstructionalApproachWritable>), List<MnStudentSectionAssociationSiteBasedInitiativeWritable> SiteBasedInitiatives = default(List<MnStudentSectionAssociationSiteBasedInitiativeWritable>))
         {
             this.SectionEnrollmentTypeDescriptor = SectionEnrollmentTypeDescriptor;
             this.CollegeCourseReference = CollegeCourseReference;
+            this.InstructionalApproaches = InstructionalApproaches;
+            this.SiteBasedInitiatives = SiteBasedInitiatives;
         }
         
         /// <summary>
@@ -55,6 +59,20 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         public EdFiCourseReference CollegeCourseReference { get; set; }
 
         /// <summary>
+        /// An unordered collection of studentSectionAssociationInstructionalApproaches. Instructional approach as implemented for the student section association. General purpose but intially implemented for Early Education.
+        /// </summary>
+        /// <value>An unordered collection of studentSectionAssociationInstructionalApproaches. Instructional approach as implemented for the student section association. General purpose but intially implemented for Early Education.</value>
+        [DataMember(Name="instructionalApproaches", EmitDefaultValue=false)]
+        public List<MnStudentSectionAssociationInstructionalApproachWritable> InstructionalApproaches { get; set; }
+
+        /// <summary>
+        /// An unordered collection of studentSectionAssociationSiteBasedInitiatives. Site-based initiative as implemented for the student section association. General purpose but intially implemented for Early Education.
+        /// </summary>
+        /// <value>An unordered collection of studentSectionAssociationSiteBasedInitiatives. Site-based initiative as implemented for the student section association. General purpose but intially implemented for Early Education.</value>
+        [DataMember(Name="siteBasedInitiatives", EmitDefaultValue=false)]
+        public List<MnStudentSectionAssociationSiteBasedInitiativeWritable> SiteBasedInitiatives { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -64,6 +82,8 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
             sb.Append("class MnStudentSectionAssociationExtensionWritable {\n");
             sb.Append("  SectionEnrollmentTypeDescriptor: ").Append(SectionEnrollmentTypeDescriptor).Append("\n");
             sb.Append("  CollegeCourseReference: ").Append(CollegeCourseReference).Append("\n");
+            sb.Append("  InstructionalApproaches: ").Append(InstructionalApproaches).Append("\n");
+            sb.Append("  SiteBasedInitiatives: ").Append(SiteBasedInitiatives).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +127,16 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
                     this.CollegeCourseReference == input.CollegeCourseReference ||
                     (this.CollegeCourseReference != null &&
                     this.CollegeCourseReference.Equals(input.CollegeCourseReference))
+                ) && 
+                (
+                    this.InstructionalApproaches == input.InstructionalApproaches ||
+                    this.InstructionalApproaches != null &&
+                    this.InstructionalApproaches.SequenceEqual(input.InstructionalApproaches)
+                ) && 
+                (
+                    this.SiteBasedInitiatives == input.SiteBasedInitiatives ||
+                    this.SiteBasedInitiatives != null &&
+                    this.SiteBasedInitiatives.SequenceEqual(input.SiteBasedInitiatives)
                 );
         }
 
@@ -123,6 +153,10 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
                     hashCode = hashCode * 59 + this.SectionEnrollmentTypeDescriptor.GetHashCode();
                 if (this.CollegeCourseReference != null)
                     hashCode = hashCode * 59 + this.CollegeCourseReference.GetHashCode();
+                if (this.InstructionalApproaches != null)
+                    hashCode = hashCode * 59 + this.InstructionalApproaches.GetHashCode();
+                if (this.SiteBasedInitiatives != null)
+                    hashCode = hashCode * 59 + this.SiteBasedInitiatives.GetHashCode();
                 return hashCode;
             }
         }

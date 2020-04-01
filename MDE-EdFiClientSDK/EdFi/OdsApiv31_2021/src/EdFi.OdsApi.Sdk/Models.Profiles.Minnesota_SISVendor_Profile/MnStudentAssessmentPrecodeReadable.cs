@@ -47,9 +47,10 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// <param name="AssessedGradeLevelDescriptor">The grade level tested for student when assessed..</param>
         /// <param name="AssessmentTitle">Refers to the test name of the assessment taken by the student..</param>
         /// <param name="CustomGroup">District use special sort order.</param>
+        /// <param name="EnrolledGradeLevelDescriptor">The grade level for which student is enrolled..</param>
         /// <param name="GeneralEnrollmentDescriptor">Student enrollment at the time of assessment pre-coding. For example H-Homeschool, N-Nonpublic, R-Regular.</param>
         /// <param name="Etag">A unique system-generated value that identifies the version of the resource..</param>
-        public MnStudentAssessmentPrecodeReadable(string Id = default(string), string PrecodeTypeDescriptor = default(string), MnStudentAssessmentPrecodeSiteReference SiteStudentAssessmentPrecodeSiteReference = default(MnStudentAssessmentPrecodeSiteReference), MnStudentEducationOrganizationAssociationReference StudentEducationOrganizationAssociationReference = default(MnStudentEducationOrganizationAssociationReference), List<MnStudentAssessmentPrecodeAcademicSubjectReadable> AcademicSubjects = default(List<MnStudentAssessmentPrecodeAcademicSubjectReadable>), List<MnStudentAssessmentPrecodeAccommodationReadable> Accommodations = default(List<MnStudentAssessmentPrecodeAccommodationReadable>), string AssessedGradeLevelDescriptor = default(string), string AssessmentTitle = default(string), string CustomGroup = default(string), string GeneralEnrollmentDescriptor = default(string), string Etag = default(string))
+        public MnStudentAssessmentPrecodeReadable(string Id = default(string), string PrecodeTypeDescriptor = default(string), MnStudentAssessmentPrecodeSiteReference SiteStudentAssessmentPrecodeSiteReference = default(MnStudentAssessmentPrecodeSiteReference), MnStudentEducationOrganizationAssociationReference StudentEducationOrganizationAssociationReference = default(MnStudentEducationOrganizationAssociationReference), List<MnStudentAssessmentPrecodeAcademicSubjectReadable> AcademicSubjects = default(List<MnStudentAssessmentPrecodeAcademicSubjectReadable>), List<MnStudentAssessmentPrecodeAccommodationReadable> Accommodations = default(List<MnStudentAssessmentPrecodeAccommodationReadable>), string AssessedGradeLevelDescriptor = default(string), string AssessmentTitle = default(string), string CustomGroup = default(string), string EnrolledGradeLevelDescriptor = default(string), string GeneralEnrollmentDescriptor = default(string), string Etag = default(string))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
@@ -84,6 +85,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
             this.AssessedGradeLevelDescriptor = AssessedGradeLevelDescriptor;
             this.AssessmentTitle = AssessmentTitle;
             this.CustomGroup = CustomGroup;
+            this.EnrolledGradeLevelDescriptor = EnrolledGradeLevelDescriptor;
             this.GeneralEnrollmentDescriptor = GeneralEnrollmentDescriptor;
             this.Etag = Etag;
         }
@@ -149,6 +151,13 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         public string CustomGroup { get; set; }
 
         /// <summary>
+        /// The grade level for which student is enrolled.
+        /// </summary>
+        /// <value>The grade level for which student is enrolled.</value>
+        [DataMember(Name="enrolledGradeLevelDescriptor", EmitDefaultValue=false)]
+        public string EnrolledGradeLevelDescriptor { get; set; }
+
+        /// <summary>
         /// Student enrollment at the time of assessment pre-coding. For example H-Homeschool, N-Nonpublic, R-Regular
         /// </summary>
         /// <value>Student enrollment at the time of assessment pre-coding. For example H-Homeschool, N-Nonpublic, R-Regular</value>
@@ -179,6 +188,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
             sb.Append("  AssessedGradeLevelDescriptor: ").Append(AssessedGradeLevelDescriptor).Append("\n");
             sb.Append("  AssessmentTitle: ").Append(AssessmentTitle).Append("\n");
             sb.Append("  CustomGroup: ").Append(CustomGroup).Append("\n");
+            sb.Append("  EnrolledGradeLevelDescriptor: ").Append(EnrolledGradeLevelDescriptor).Append("\n");
             sb.Append("  GeneralEnrollmentDescriptor: ").Append(GeneralEnrollmentDescriptor).Append("\n");
             sb.Append("  Etag: ").Append(Etag).Append("\n");
             sb.Append("}\n");
@@ -261,6 +271,11 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
                     this.CustomGroup.Equals(input.CustomGroup))
                 ) && 
                 (
+                    this.EnrolledGradeLevelDescriptor == input.EnrolledGradeLevelDescriptor ||
+                    (this.EnrolledGradeLevelDescriptor != null &&
+                    this.EnrolledGradeLevelDescriptor.Equals(input.EnrolledGradeLevelDescriptor))
+                ) && 
+                (
                     this.GeneralEnrollmentDescriptor == input.GeneralEnrollmentDescriptor ||
                     (this.GeneralEnrollmentDescriptor != null &&
                     this.GeneralEnrollmentDescriptor.Equals(input.GeneralEnrollmentDescriptor))
@@ -299,6 +314,8 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
                     hashCode = hashCode * 59 + this.AssessmentTitle.GetHashCode();
                 if (this.CustomGroup != null)
                     hashCode = hashCode * 59 + this.CustomGroup.GetHashCode();
+                if (this.EnrolledGradeLevelDescriptor != null)
+                    hashCode = hashCode * 59 + this.EnrolledGradeLevelDescriptor.GetHashCode();
                 if (this.GeneralEnrollmentDescriptor != null)
                     hashCode = hashCode * 59 + this.GeneralEnrollmentDescriptor.GetHashCode();
                 if (this.Etag != null)
@@ -336,6 +353,12 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
             if(this.CustomGroup != null && this.CustomGroup.Length > 100)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CustomGroup, length must be less than 100.", new [] { "CustomGroup" });
+            }
+
+            // EnrolledGradeLevelDescriptor (string) maxLength
+            if(this.EnrolledGradeLevelDescriptor != null && this.EnrolledGradeLevelDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for EnrolledGradeLevelDescriptor, length must be less than 306.", new [] { "EnrolledGradeLevelDescriptor" });
             }
 
             // GeneralEnrollmentDescriptor (string) maxLength

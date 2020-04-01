@@ -34,7 +34,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_AssessmentVendor_Profile
         /// Initializes a new instance of the <see cref="MnStudentAssessmentStudentObjectiveAssessmentExtensionReadable" /> class.
         /// </summary>
         /// <param name="AssessmentFormatDescriptor">Format for which an objective assessment was administered. E.g., Paper.</param>
-        /// <param name="AssessmentStatusDescriptor">The state of a student assessment. E.g.,         Student has submitted a response for all scored items OR         Student has submitted a response to at least one scored item, but not all scored items.</param>
+        /// <param name="AssessmentStatusDescriptor">The state of a student assessment. E.g.,          Student has submitted a response for all scored items OR          Student has submitted a response to at least one scored item, but not all scored items.</param>
         /// <param name="AssessmentTierDescriptor">Tier descriptor for objective assessment. E.g., Listening, Reading, Speaking, Writing.</param>
         /// <param name="ClusterGradeLevelDescriptor">Grade level for the objective assessment..</param>
         public MnStudentAssessmentStudentObjectiveAssessmentExtensionReadable(string AssessmentFormatDescriptor = default(string), string AssessmentStatusDescriptor = default(string), string AssessmentTierDescriptor = default(string), string ClusterGradeLevelDescriptor = default(string))
@@ -53,9 +53,9 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_AssessmentVendor_Profile
         public string AssessmentFormatDescriptor { get; set; }
 
         /// <summary>
-        /// The state of a student assessment. E.g.,         Student has submitted a response for all scored items OR         Student has submitted a response to at least one scored item, but not all scored items
+        /// The state of a student assessment. E.g.,          Student has submitted a response for all scored items OR          Student has submitted a response to at least one scored item, but not all scored items
         /// </summary>
-        /// <value>The state of a student assessment. E.g.,         Student has submitted a response for all scored items OR         Student has submitted a response to at least one scored item, but not all scored items</value>
+        /// <value>The state of a student assessment. E.g.,          Student has submitted a response for all scored items OR          Student has submitted a response to at least one scored item, but not all scored items</value>
         [DataMember(Name="assessmentStatusDescriptor", EmitDefaultValue=false)]
         public string AssessmentStatusDescriptor { get; set; }
 

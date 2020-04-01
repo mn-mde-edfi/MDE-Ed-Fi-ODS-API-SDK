@@ -3,6 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AcademicSubjectDescriptor** | **string** | This descriptor holds the description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language). | [optional] 
 **CollegeCreditEarned** | **double?** | College credit earned. | [optional] 
 **CollegeGradeEarned** | **string** | College grade earned. | [optional] 
 **LocalCreditEarned** | **double?** | College credit earned. | [optional] 

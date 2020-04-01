@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Code** | **string** | A unique alphanumeric code assigned to a course. | 
+**CourseCode** | **string** | A unique alphanumeric code assigned to a course. | 
 **EducationOrganizationId** | **int?** | The identifier assigned to an education organization. | 
 **Link** | [**Link**](Link.md) |  | [optional] 
 

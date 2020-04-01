@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_AssessmentVendor_Profile.MnLearningStandardReference
+# EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile.MnLearningStandardReference
 ## Properties
 
 Name | Type | Description | Notes

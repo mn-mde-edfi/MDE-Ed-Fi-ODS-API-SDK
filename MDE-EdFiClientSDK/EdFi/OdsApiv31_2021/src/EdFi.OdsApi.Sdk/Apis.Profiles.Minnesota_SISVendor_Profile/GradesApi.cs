@@ -69,9 +69,10 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
         /// <param name="sessionName">The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer). (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
         /// <param name="id"> (optional)</param>
+        /// <param name="letterGradeEarned">A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)</param>
         /// <param name="numericGradeEarned">A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)</param>
         /// <returns>List&lt;EdFiGradeReadable&gt;</returns>
-        List<EdFiGradeReadable> GetGrades (int? offset = null, int? limit = null, bool? totalCount = null, string gradeTypeDescriptor = null, string gradingPeriodDescriptor = null, int? gradingPeriodSequence = null, int? schoolId = null, int? gradingPeriodSchoolYear = null, DateTime? beginDate = null, string localCourseCode = null, int? schoolYear = null, string sectionIdentifier = null, string sessionName = null, string studentUniqueId = null, string id = null, double? numericGradeEarned = null);
+        List<EdFiGradeReadable> GetGrades (int? offset = null, int? limit = null, bool? totalCount = null, string gradeTypeDescriptor = null, string gradingPeriodDescriptor = null, int? gradingPeriodSequence = null, int? schoolId = null, int? gradingPeriodSchoolYear = null, DateTime? beginDate = null, string localCourseCode = null, int? schoolYear = null, string sectionIdentifier = null, string sessionName = null, string studentUniqueId = null, string id = null, string letterGradeEarned = null, double? numericGradeEarned = null);
 
         /// <summary>
         /// Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
@@ -95,9 +96,10 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
         /// <param name="sessionName">The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer). (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
         /// <param name="id"> (optional)</param>
+        /// <param name="letterGradeEarned">A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)</param>
         /// <param name="numericGradeEarned">A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)</param>
         /// <returns>ApiResponse of List&lt;EdFiGradeReadable&gt;</returns>
-        ApiResponse<List<EdFiGradeReadable>> GetGradesWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string gradeTypeDescriptor = null, string gradingPeriodDescriptor = null, int? gradingPeriodSequence = null, int? schoolId = null, int? gradingPeriodSchoolYear = null, DateTime? beginDate = null, string localCourseCode = null, int? schoolYear = null, string sectionIdentifier = null, string sessionName = null, string studentUniqueId = null, string id = null, double? numericGradeEarned = null);
+        ApiResponse<List<EdFiGradeReadable>> GetGradesWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string gradeTypeDescriptor = null, string gradingPeriodDescriptor = null, int? gradingPeriodSequence = null, int? schoolId = null, int? gradingPeriodSchoolYear = null, DateTime? beginDate = null, string localCourseCode = null, int? schoolYear = null, string sectionIdentifier = null, string sessionName = null, string studentUniqueId = null, string id = null, string letterGradeEarned = null, double? numericGradeEarned = null);
         /// <summary>
         /// Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
         /// </summary>
@@ -214,9 +216,10 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
         /// <param name="sessionName">The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer). (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
         /// <param name="id"> (optional)</param>
+        /// <param name="letterGradeEarned">A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)</param>
         /// <param name="numericGradeEarned">A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)</param>
         /// <returns>Task of List&lt;EdFiGradeReadable&gt;</returns>
-        System.Threading.Tasks.Task<List<EdFiGradeReadable>> GetGradesAsync (int? offset = null, int? limit = null, bool? totalCount = null, string gradeTypeDescriptor = null, string gradingPeriodDescriptor = null, int? gradingPeriodSequence = null, int? schoolId = null, int? gradingPeriodSchoolYear = null, DateTime? beginDate = null, string localCourseCode = null, int? schoolYear = null, string sectionIdentifier = null, string sessionName = null, string studentUniqueId = null, string id = null, double? numericGradeEarned = null);
+        System.Threading.Tasks.Task<List<EdFiGradeReadable>> GetGradesAsync (int? offset = null, int? limit = null, bool? totalCount = null, string gradeTypeDescriptor = null, string gradingPeriodDescriptor = null, int? gradingPeriodSequence = null, int? schoolId = null, int? gradingPeriodSchoolYear = null, DateTime? beginDate = null, string localCourseCode = null, int? schoolYear = null, string sectionIdentifier = null, string sessionName = null, string studentUniqueId = null, string id = null, string letterGradeEarned = null, double? numericGradeEarned = null);
 
         /// <summary>
         /// Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
@@ -240,9 +243,10 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
         /// <param name="sessionName">The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer). (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
         /// <param name="id"> (optional)</param>
+        /// <param name="letterGradeEarned">A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)</param>
         /// <param name="numericGradeEarned">A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;EdFiGradeReadable&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<EdFiGradeReadable>>> GetGradesAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string gradeTypeDescriptor = null, string gradingPeriodDescriptor = null, int? gradingPeriodSequence = null, int? schoolId = null, int? gradingPeriodSchoolYear = null, DateTime? beginDate = null, string localCourseCode = null, int? schoolYear = null, string sectionIdentifier = null, string sessionName = null, string studentUniqueId = null, string id = null, double? numericGradeEarned = null);
+        System.Threading.Tasks.Task<ApiResponse<List<EdFiGradeReadable>>> GetGradesAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string gradeTypeDescriptor = null, string gradingPeriodDescriptor = null, int? gradingPeriodSequence = null, int? schoolId = null, int? gradingPeriodSchoolYear = null, DateTime? beginDate = null, string localCourseCode = null, int? schoolYear = null, string sectionIdentifier = null, string sessionName = null, string studentUniqueId = null, string id = null, string letterGradeEarned = null, double? numericGradeEarned = null);
         /// <summary>
         /// Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
         /// </summary>
@@ -582,11 +586,12 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
         /// <param name="sessionName">The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer). (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
         /// <param name="id"> (optional)</param>
+        /// <param name="letterGradeEarned">A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)</param>
         /// <param name="numericGradeEarned">A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)</param>
         /// <returns>List&lt;EdFiGradeReadable&gt;</returns>
-        public List<EdFiGradeReadable> GetGrades (int? offset = null, int? limit = null, bool? totalCount = null, string gradeTypeDescriptor = null, string gradingPeriodDescriptor = null, int? gradingPeriodSequence = null, int? schoolId = null, int? gradingPeriodSchoolYear = null, DateTime? beginDate = null, string localCourseCode = null, int? schoolYear = null, string sectionIdentifier = null, string sessionName = null, string studentUniqueId = null, string id = null, double? numericGradeEarned = null)
+        public List<EdFiGradeReadable> GetGrades (int? offset = null, int? limit = null, bool? totalCount = null, string gradeTypeDescriptor = null, string gradingPeriodDescriptor = null, int? gradingPeriodSequence = null, int? schoolId = null, int? gradingPeriodSchoolYear = null, DateTime? beginDate = null, string localCourseCode = null, int? schoolYear = null, string sectionIdentifier = null, string sessionName = null, string studentUniqueId = null, string id = null, string letterGradeEarned = null, double? numericGradeEarned = null)
         {
-             ApiResponse<List<EdFiGradeReadable>> localVarResponse = GetGradesWithHttpInfo(offset, limit, totalCount, gradeTypeDescriptor, gradingPeriodDescriptor, gradingPeriodSequence, schoolId, gradingPeriodSchoolYear, beginDate, localCourseCode, schoolYear, sectionIdentifier, sessionName, studentUniqueId, id, numericGradeEarned);
+             ApiResponse<List<EdFiGradeReadable>> localVarResponse = GetGradesWithHttpInfo(offset, limit, totalCount, gradeTypeDescriptor, gradingPeriodDescriptor, gradingPeriodSequence, schoolId, gradingPeriodSchoolYear, beginDate, localCourseCode, schoolYear, sectionIdentifier, sessionName, studentUniqueId, id, letterGradeEarned, numericGradeEarned);
              return localVarResponse.Data;
         }
 
@@ -609,9 +614,10 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
         /// <param name="sessionName">The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer). (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
         /// <param name="id"> (optional)</param>
+        /// <param name="letterGradeEarned">A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)</param>
         /// <param name="numericGradeEarned">A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)</param>
         /// <returns>ApiResponse of List&lt;EdFiGradeReadable&gt;</returns>
-        public ApiResponse< List<EdFiGradeReadable> > GetGradesWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string gradeTypeDescriptor = null, string gradingPeriodDescriptor = null, int? gradingPeriodSequence = null, int? schoolId = null, int? gradingPeriodSchoolYear = null, DateTime? beginDate = null, string localCourseCode = null, int? schoolYear = null, string sectionIdentifier = null, string sessionName = null, string studentUniqueId = null, string id = null, double? numericGradeEarned = null)
+        public ApiResponse< List<EdFiGradeReadable> > GetGradesWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string gradeTypeDescriptor = null, string gradingPeriodDescriptor = null, int? gradingPeriodSequence = null, int? schoolId = null, int? gradingPeriodSchoolYear = null, DateTime? beginDate = null, string localCourseCode = null, int? schoolYear = null, string sectionIdentifier = null, string sessionName = null, string studentUniqueId = null, string id = null, string letterGradeEarned = null, double? numericGradeEarned = null)
         {
 
             var localVarPath = "/ed-fi/grades";
@@ -651,6 +657,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
             if (sessionName != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sessionName", sessionName)); // query parameter
             if (studentUniqueId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "studentUniqueId", studentUniqueId)); // query parameter
             if (id != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "id", id)); // query parameter
+            if (letterGradeEarned != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "letterGradeEarned", letterGradeEarned)); // query parameter
             if (numericGradeEarned != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "numericGradeEarned", numericGradeEarned)); // query parameter
 
             // authentication (oauth2_client_credentials) required
@@ -697,11 +704,12 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
         /// <param name="sessionName">The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer). (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
         /// <param name="id"> (optional)</param>
+        /// <param name="letterGradeEarned">A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)</param>
         /// <param name="numericGradeEarned">A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)</param>
         /// <returns>Task of List&lt;EdFiGradeReadable&gt;</returns>
-        public async System.Threading.Tasks.Task<List<EdFiGradeReadable>> GetGradesAsync (int? offset = null, int? limit = null, bool? totalCount = null, string gradeTypeDescriptor = null, string gradingPeriodDescriptor = null, int? gradingPeriodSequence = null, int? schoolId = null, int? gradingPeriodSchoolYear = null, DateTime? beginDate = null, string localCourseCode = null, int? schoolYear = null, string sectionIdentifier = null, string sessionName = null, string studentUniqueId = null, string id = null, double? numericGradeEarned = null)
+        public async System.Threading.Tasks.Task<List<EdFiGradeReadable>> GetGradesAsync (int? offset = null, int? limit = null, bool? totalCount = null, string gradeTypeDescriptor = null, string gradingPeriodDescriptor = null, int? gradingPeriodSequence = null, int? schoolId = null, int? gradingPeriodSchoolYear = null, DateTime? beginDate = null, string localCourseCode = null, int? schoolYear = null, string sectionIdentifier = null, string sessionName = null, string studentUniqueId = null, string id = null, string letterGradeEarned = null, double? numericGradeEarned = null)
         {
-             ApiResponse<List<EdFiGradeReadable>> localVarResponse = await GetGradesAsyncWithHttpInfo(offset, limit, totalCount, gradeTypeDescriptor, gradingPeriodDescriptor, gradingPeriodSequence, schoolId, gradingPeriodSchoolYear, beginDate, localCourseCode, schoolYear, sectionIdentifier, sessionName, studentUniqueId, id, numericGradeEarned);
+             ApiResponse<List<EdFiGradeReadable>> localVarResponse = await GetGradesAsyncWithHttpInfo(offset, limit, totalCount, gradeTypeDescriptor, gradingPeriodDescriptor, gradingPeriodSequence, schoolId, gradingPeriodSchoolYear, beginDate, localCourseCode, schoolYear, sectionIdentifier, sessionName, studentUniqueId, id, letterGradeEarned, numericGradeEarned);
              return localVarResponse.Data;
 
         }
@@ -725,9 +733,10 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
         /// <param name="sessionName">The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer). (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
         /// <param name="id"> (optional)</param>
+        /// <param name="letterGradeEarned">A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)</param>
         /// <param name="numericGradeEarned">A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;EdFiGradeReadable&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<EdFiGradeReadable>>> GetGradesAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string gradeTypeDescriptor = null, string gradingPeriodDescriptor = null, int? gradingPeriodSequence = null, int? schoolId = null, int? gradingPeriodSchoolYear = null, DateTime? beginDate = null, string localCourseCode = null, int? schoolYear = null, string sectionIdentifier = null, string sessionName = null, string studentUniqueId = null, string id = null, double? numericGradeEarned = null)
+        public async System.Threading.Tasks.Task<ApiResponse<List<EdFiGradeReadable>>> GetGradesAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string gradeTypeDescriptor = null, string gradingPeriodDescriptor = null, int? gradingPeriodSequence = null, int? schoolId = null, int? gradingPeriodSchoolYear = null, DateTime? beginDate = null, string localCourseCode = null, int? schoolYear = null, string sectionIdentifier = null, string sessionName = null, string studentUniqueId = null, string id = null, string letterGradeEarned = null, double? numericGradeEarned = null)
         {
 
             var localVarPath = "/ed-fi/grades";
@@ -767,6 +776,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_SISVendor_Profile
             if (sessionName != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sessionName", sessionName)); // query parameter
             if (studentUniqueId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "studentUniqueId", studentUniqueId)); // query parameter
             if (id != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "id", id)); // query parameter
+            if (letterGradeEarned != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "letterGradeEarned", letterGradeEarned)); // query parameter
             if (numericGradeEarned != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "numericGradeEarned", numericGradeEarned)); // query parameter
 
             // authentication (oauth2_client_credentials) required

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **GradeTypeDescriptor** | **string** | The type of grade reported (e.g., Exam, Final, Grading Period). | 
 **GradingPeriodReference** | [**EdFiGradingPeriodReference**](EdFiGradingPeriodReference.md) |  | 
 **StudentSectionAssociationReference** | [**EdFiStudentSectionAssociationReference**](EdFiStudentSectionAssociationReference.md) |  | 
+**LetterGradeEarned** | **string** | A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. | [optional] 
 **NumericGradeEarned** | **double?** | A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. | [optional] 
 **Etag** | **string** | A unique system-generated value that identifies the version of the resource. | [optional] 
 **Ext** | [**GradeExtensionsReadable**](GradeExtensionsReadable.md) |  | [optional] 
