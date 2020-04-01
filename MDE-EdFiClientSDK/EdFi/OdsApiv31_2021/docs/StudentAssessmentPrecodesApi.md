@@ -78,7 +78,7 @@ void (empty response body)
 
 <a name="getstudentassessmentprecodes"></a>
 # **GetStudentAssessmentPrecodes**
-> List<MnStudentAssessmentPrecodeReadable> GetStudentAssessmentPrecodes (int? offset = null, int? limit = null, bool? totalCount = null, string precodeTypeDescriptor = null, int? educationOrganizationId = null, string studentUniqueId = null, int? siteEducationOrganizationId = null, string sitePrecodeTypeDescriptor = null, string generalEnrollmentDescriptor = null, string assessedGradeLevelDescriptor = null, string assessmentTitle = null, string customGroup = null, string id = null)
+> List<MnStudentAssessmentPrecodeReadable> GetStudentAssessmentPrecodes (int? offset = null, int? limit = null, bool? totalCount = null, string precodeTypeDescriptor = null, int? educationOrganizationId = null, string studentUniqueId = null, int? siteEducationOrganizationId = null, string sitePrecodeTypeDescriptor = null, string generalEnrollmentDescriptor = null, string assessedGradeLevelDescriptor = null, string enrolledGradeLevelDescriptor = null, string assessmentTitle = null, string customGroup = null, string id = null)
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
 
@@ -112,6 +112,7 @@ namespace Example
             var sitePrecodeTypeDescriptor = sitePrecodeTypeDescriptor_example;  // string | Type of pre-code site record. For example, MCA/MTAS, ACCESS/ALT-ACCESS (optional) 
             var generalEnrollmentDescriptor = generalEnrollmentDescriptor_example;  // string | Student enrollment at the time of assessment pre-coding. For example H-Homeschool, N-Nonpublic, R-Regular (optional) 
             var assessedGradeLevelDescriptor = assessedGradeLevelDescriptor_example;  // string | The grade level tested for student when assessed. (optional) 
+            var enrolledGradeLevelDescriptor = enrolledGradeLevelDescriptor_example;  // string | The grade level for which student is enrolled. (optional) 
             var assessmentTitle = assessmentTitle_example;  // string | Refers to the test name of the assessment taken by the student. (optional) 
             var customGroup = customGroup_example;  // string | District use special sort order (optional) 
             var id = id_example;  // string |  (optional) 
@@ -119,7 +120,7 @@ namespace Example
             try
             {
                 // Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
-                List&lt;MnStudentAssessmentPrecodeReadable&gt; result = apiInstance.GetStudentAssessmentPrecodes(offset, limit, totalCount, precodeTypeDescriptor, educationOrganizationId, studentUniqueId, siteEducationOrganizationId, sitePrecodeTypeDescriptor, generalEnrollmentDescriptor, assessedGradeLevelDescriptor, assessmentTitle, customGroup, id);
+                List&lt;MnStudentAssessmentPrecodeReadable&gt; result = apiInstance.GetStudentAssessmentPrecodes(offset, limit, totalCount, precodeTypeDescriptor, educationOrganizationId, studentUniqueId, siteEducationOrganizationId, sitePrecodeTypeDescriptor, generalEnrollmentDescriptor, assessedGradeLevelDescriptor, enrolledGradeLevelDescriptor, assessmentTitle, customGroup, id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -145,6 +146,7 @@ Name | Type | Description  | Notes
  **sitePrecodeTypeDescriptor** | **string**| Type of pre-code site record. For example, MCA/MTAS, ACCESS/ALT-ACCESS | [optional] 
  **generalEnrollmentDescriptor** | **string**| Student enrollment at the time of assessment pre-coding. For example H-Homeschool, N-Nonpublic, R-Regular | [optional] 
  **assessedGradeLevelDescriptor** | **string**| The grade level tested for student when assessed. | [optional] 
+ **enrolledGradeLevelDescriptor** | **string**| The grade level for which student is enrolled. | [optional] 
  **assessmentTitle** | **string**| Refers to the test name of the assessment taken by the student. | [optional] 
  **customGroup** | **string**| District use special sort order | [optional] 
  **id** | **string**|  | [optional] 

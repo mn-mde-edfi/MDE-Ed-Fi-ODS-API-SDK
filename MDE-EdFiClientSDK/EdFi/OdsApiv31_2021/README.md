@@ -154,6 +154,11 @@ Class | Method | HTTP request | Description
 *LocalEducationAgenciesApi* | [**GetLocalEducationAgenciesById**](docs/LocalEducationAgenciesApi.md#getlocaleducationagenciesbyid) | **GET** /ed-fi/localEducationAgencies/{id} | Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
 *LocalEducationAgenciesApi* | [**PostlocalEducationAgency**](docs/LocalEducationAgenciesApi.md#postlocaleducationagency) | **POST** /ed-fi/localEducationAgencies | Creates or updates resources based on the natural key values of the supplied resource.
 *LocalEducationAgenciesApi* | [**PutlocalEducationAgency**](docs/LocalEducationAgenciesApi.md#putlocaleducationagency) | **PUT** /ed-fi/localEducationAgencies/{id} | Updates or creates a resource based on the resource identifier.
+*ParentsApi* | [**DeleteparentById**](docs/ParentsApi.md#deleteparentbyid) | **DELETE** /ed-fi/parents/{id} | Deletes an existing resource using the resource identifier.
+*ParentsApi* | [**GetParents**](docs/ParentsApi.md#getparents) | **GET** /ed-fi/parents | Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
+*ParentsApi* | [**GetParentsById**](docs/ParentsApi.md#getparentsbyid) | **GET** /ed-fi/parents/{id} | Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
+*ParentsApi* | [**Postparent**](docs/ParentsApi.md#postparent) | **POST** /ed-fi/parents | Creates or updates resources based on the natural key values of the supplied resource.
+*ParentsApi* | [**Putparent**](docs/ParentsApi.md#putparent) | **PUT** /ed-fi/parents/{id} | Updates or creates a resource based on the resource identifier.
 *PostSecondaryInstitutionsApi* | [**DeletepostSecondaryInstitutionById**](docs/PostSecondaryInstitutionsApi.md#deletepostsecondaryinstitutionbyid) | **DELETE** /ed-fi/postSecondaryInstitutions/{id} | Deletes an existing resource using the resource identifier.
 *PostSecondaryInstitutionsApi* | [**GetPostSecondaryInstitutions**](docs/PostSecondaryInstitutionsApi.md#getpostsecondaryinstitutions) | **GET** /ed-fi/postSecondaryInstitutions | Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
 *PostSecondaryInstitutionsApi* | [**GetPostSecondaryInstitutionsById**](docs/PostSecondaryInstitutionsApi.md#getpostsecondaryinstitutionsbyid) | **GET** /ed-fi/postSecondaryInstitutions/{id} | Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -224,6 +229,11 @@ Class | Method | HTTP request | Description
 *StudentEarlyChildhoodScreeningProgramAssociationsApi* | [**GetStudentEarlyChildhoodScreeningProgramAssociationsById**](docs/StudentEarlyChildhoodScreeningProgramAssociationsApi.md#getstudentearlychildhoodscreeningprogramassociationsbyid) | **GET** /MN/studentEarlyChildhoodScreeningProgramAssociations/{id} | Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
 *StudentEarlyChildhoodScreeningProgramAssociationsApi* | [**PoststudentEarlyChildhoodScreeningProgramAssociation**](docs/StudentEarlyChildhoodScreeningProgramAssociationsApi.md#poststudentearlychildhoodscreeningprogramassociation) | **POST** /MN/studentEarlyChildhoodScreeningProgramAssociations | Creates or updates resources based on the natural key values of the supplied resource.
 *StudentEarlyChildhoodScreeningProgramAssociationsApi* | [**PutstudentEarlyChildhoodScreeningProgramAssociation**](docs/StudentEarlyChildhoodScreeningProgramAssociationsApi.md#putstudentearlychildhoodscreeningprogramassociation) | **PUT** /MN/studentEarlyChildhoodScreeningProgramAssociations/{id} | Updates or creates a resource based on the resource identifier.
+*StudentEarlyEducationProgramAssociationsApi* | [**DeletestudentEarlyEducationProgramAssociationById**](docs/StudentEarlyEducationProgramAssociationsApi.md#deletestudentearlyeducationprogramassociationbyid) | **DELETE** /MN/studentEarlyEducationProgramAssociations/{id} | Deletes an existing resource using the resource identifier.
+*StudentEarlyEducationProgramAssociationsApi* | [**GetStudentEarlyEducationProgramAssociations**](docs/StudentEarlyEducationProgramAssociationsApi.md#getstudentearlyeducationprogramassociations) | **GET** /MN/studentEarlyEducationProgramAssociations | Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
+*StudentEarlyEducationProgramAssociationsApi* | [**GetStudentEarlyEducationProgramAssociationsById**](docs/StudentEarlyEducationProgramAssociationsApi.md#getstudentearlyeducationprogramassociationsbyid) | **GET** /MN/studentEarlyEducationProgramAssociations/{id} | Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
+*StudentEarlyEducationProgramAssociationsApi* | [**PoststudentEarlyEducationProgramAssociation**](docs/StudentEarlyEducationProgramAssociationsApi.md#poststudentearlyeducationprogramassociation) | **POST** /MN/studentEarlyEducationProgramAssociations | Creates or updates resources based on the natural key values of the supplied resource.
+*StudentEarlyEducationProgramAssociationsApi* | [**PutstudentEarlyEducationProgramAssociation**](docs/StudentEarlyEducationProgramAssociationsApi.md#putstudentearlyeducationprogramassociation) | **PUT** /MN/studentEarlyEducationProgramAssociations/{id} | Updates or creates a resource based on the resource identifier.
 *StudentEducationOrganizationAssociationsApi* | [**DeletestudentEducationOrganizationAssociationById**](docs/StudentEducationOrganizationAssociationsApi.md#deletestudenteducationorganizationassociationbyid) | **DELETE** /ed-fi/studentEducationOrganizationAssociations/{id} | Deletes an existing resource using the resource identifier.
 *StudentEducationOrganizationAssociationsApi* | [**GetStudentEducationOrganizationAssociations**](docs/StudentEducationOrganizationAssociationsApi.md#getstudenteducationorganizationassociations) | **GET** /ed-fi/studentEducationOrganizationAssociations | Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
 *StudentEducationOrganizationAssociationsApi* | [**GetStudentEducationOrganizationAssociationsById**](docs/StudentEducationOrganizationAssociationsApi.md#getstudenteducationorganizationassociationsbyid) | **GET** /ed-fi/studentEducationOrganizationAssociations/{id} | Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -254,6 +264,11 @@ Class | Method | HTTP request | Description
 *StudentPSEOProgramAssociationsApi* | [**GetStudentPSEOProgramAssociationsById**](docs/StudentPSEOProgramAssociationsApi.md#getstudentpseoprogramassociationsbyid) | **GET** /MN/studentPSEOProgramAssociations/{id} | Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
 *StudentPSEOProgramAssociationsApi* | [**PoststudentPSEOProgramAssociation**](docs/StudentPSEOProgramAssociationsApi.md#poststudentpseoprogramassociation) | **POST** /MN/studentPSEOProgramAssociations | Creates or updates resources based on the natural key values of the supplied resource.
 *StudentPSEOProgramAssociationsApi* | [**PutstudentPSEOProgramAssociation**](docs/StudentPSEOProgramAssociationsApi.md#putstudentpseoprogramassociation) | **PUT** /MN/studentPSEOProgramAssociations/{id} | Updates or creates a resource based on the resource identifier.
+*StudentParentAssociationsApi* | [**DeletestudentParentAssociationById**](docs/StudentParentAssociationsApi.md#deletestudentparentassociationbyid) | **DELETE** /ed-fi/studentParentAssociations/{id} | Deletes an existing resource using the resource identifier.
+*StudentParentAssociationsApi* | [**GetStudentParentAssociations**](docs/StudentParentAssociationsApi.md#getstudentparentassociations) | **GET** /ed-fi/studentParentAssociations | Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
+*StudentParentAssociationsApi* | [**GetStudentParentAssociationsById**](docs/StudentParentAssociationsApi.md#getstudentparentassociationsbyid) | **GET** /ed-fi/studentParentAssociations/{id} | Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
+*StudentParentAssociationsApi* | [**PoststudentParentAssociation**](docs/StudentParentAssociationsApi.md#poststudentparentassociation) | **POST** /ed-fi/studentParentAssociations | Creates or updates resources based on the natural key values of the supplied resource.
+*StudentParentAssociationsApi* | [**PutstudentParentAssociation**](docs/StudentParentAssociationsApi.md#putstudentparentassociation) | **PUT** /ed-fi/studentParentAssociations/{id} | Updates or creates a resource based on the resource identifier.
 *StudentSAAPProgramAssociationsApi* | [**DeletestudentSAAPProgramAssociationById**](docs/StudentSAAPProgramAssociationsApi.md#deletestudentsaapprogramassociationbyid) | **DELETE** /MN/studentSAAPProgramAssociations/{id} | Deletes an existing resource using the resource identifier.
 *StudentSAAPProgramAssociationsApi* | [**GetStudentSAAPProgramAssociations**](docs/StudentSAAPProgramAssociationsApi.md#getstudentsaapprogramassociations) | **GET** /MN/studentSAAPProgramAssociations | Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
 *StudentSAAPProgramAssociationsApi* | [**GetStudentSAAPProgramAssociationsById**](docs/StudentSAAPProgramAssociationsApi.md#getstudentsaapprogramassociationsbyid) | **GET** /MN/studentSAAPProgramAssociations/{id} | Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
@@ -337,8 +352,12 @@ Class | Method | HTTP request | Description
  - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiClassPeriodWritable](docs/EdFiClassPeriodWritable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiCourseIdentificationCodeReadable](docs/EdFiCourseIdentificationCodeReadable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiCourseIdentificationCodeWritable](docs/EdFiCourseIdentificationCodeWritable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiCourseLearningStandardReadable](docs/EdFiCourseLearningStandardReadable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiCourseLearningStandardWritable](docs/EdFiCourseLearningStandardWritable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiCourseLevelCharacteristicReadable](docs/EdFiCourseLevelCharacteristicReadable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiCourseLevelCharacteristicWritable](docs/EdFiCourseLevelCharacteristicWritable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiCourseOfferedGradeLevelReadable](docs/EdFiCourseOfferedGradeLevelReadable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiCourseOfferedGradeLevelWritable](docs/EdFiCourseOfferedGradeLevelWritable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiCourseOfferingReadable](docs/EdFiCourseOfferingReadable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiCourseOfferingReference](docs/EdFiCourseOfferingReference.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiCourseOfferingWritable](docs/EdFiCourseOfferingWritable.md)
@@ -360,10 +379,32 @@ Class | Method | HTTP request | Description
  - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiGradingPeriodReadable](docs/EdFiGradingPeriodReadable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiGradingPeriodReference](docs/EdFiGradingPeriodReference.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiGradingPeriodWritable](docs/EdFiGradingPeriodWritable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiLearningStandardReference](docs/EdFiLearningStandardReference.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiLocalEducationAgencyReadable](docs/EdFiLocalEducationAgencyReadable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiLocalEducationAgencyReference](docs/EdFiLocalEducationAgencyReference.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiLocalEducationAgencyWritable](docs/EdFiLocalEducationAgencyWritable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiObjectiveAssessmentReference](docs/EdFiObjectiveAssessmentReference.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiParentAddressPeriodReadable](docs/EdFiParentAddressPeriodReadable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiParentAddressPeriodWritable](docs/EdFiParentAddressPeriodWritable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiParentAddressReadable](docs/EdFiParentAddressReadable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiParentAddressWritable](docs/EdFiParentAddressWritable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiParentElectronicMailReadable](docs/EdFiParentElectronicMailReadable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiParentElectronicMailWritable](docs/EdFiParentElectronicMailWritable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiParentInternationalAddressReadable](docs/EdFiParentInternationalAddressReadable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiParentInternationalAddressWritable](docs/EdFiParentInternationalAddressWritable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiParentLanguageReadable](docs/EdFiParentLanguageReadable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiParentLanguageUseReadable](docs/EdFiParentLanguageUseReadable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiParentLanguageUseWritable](docs/EdFiParentLanguageUseWritable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiParentLanguageWritable](docs/EdFiParentLanguageWritable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiParentOtherNameReadable](docs/EdFiParentOtherNameReadable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiParentOtherNameWritable](docs/EdFiParentOtherNameWritable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiParentPersonalIdentificationDocumentReadable](docs/EdFiParentPersonalIdentificationDocumentReadable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiParentPersonalIdentificationDocumentWritable](docs/EdFiParentPersonalIdentificationDocumentWritable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiParentReadable](docs/EdFiParentReadable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiParentReference](docs/EdFiParentReference.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiParentTelephoneReadable](docs/EdFiParentTelephoneReadable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiParentTelephoneWritable](docs/EdFiParentTelephoneWritable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiParentWritable](docs/EdFiParentWritable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiPostSecondaryInstitutionReadable](docs/EdFiPostSecondaryInstitutionReadable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiPostSecondaryInstitutionWritable](docs/EdFiPostSecondaryInstitutionWritable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiProgramReadable](docs/EdFiProgramReadable.md)
@@ -418,6 +459,8 @@ Class | Method | HTTP request | Description
  - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiStudentLanguageInstructionProgramAssociationLanguageInstructionProgramServiceWritable](docs/EdFiStudentLanguageInstructionProgramAssociationLanguageInstructionProgramServiceWritable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiStudentLanguageInstructionProgramAssociationReadable](docs/EdFiStudentLanguageInstructionProgramAssociationReadable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiStudentLanguageInstructionProgramAssociationWritable](docs/EdFiStudentLanguageInstructionProgramAssociationWritable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiStudentParentAssociationReadable](docs/EdFiStudentParentAssociationReadable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiStudentParentAssociationWritable](docs/EdFiStudentParentAssociationWritable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiStudentReadable](docs/EdFiStudentReadable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiStudentReference](docs/EdFiStudentReference.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.EdFiStudentSchoolAssociationReadable](docs/EdFiStudentSchoolAssociationReadable.md)
@@ -447,15 +490,25 @@ Class | Method | HTTP request | Description
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnCalendarReference](docs/MnCalendarReference.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnClassPeriodExtensionReadable](docs/MnClassPeriodExtensionReadable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnClassPeriodExtensionWritable](docs/MnClassPeriodExtensionWritable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.MnCourseAssessmentToolReadable](docs/MnCourseAssessmentToolReadable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.MnCourseAssessmentToolWritable](docs/MnCourseAssessmentToolWritable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnCourseCourseAssociationReadable](docs/MnCourseCourseAssociationReadable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnCourseCourseAssociationWritable](docs/MnCourseCourseAssociationWritable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.MnCourseCurriculumUsedReadable](docs/MnCourseCurriculumUsedReadable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.MnCourseCurriculumUsedWritable](docs/MnCourseCurriculumUsedWritable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnCourseExtensionReadable](docs/MnCourseExtensionReadable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnCourseExtensionWritable](docs/MnCourseExtensionWritable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnCourseLevelTypeReadable](docs/MnCourseLevelTypeReadable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnCourseLevelTypeWritable](docs/MnCourseLevelTypeWritable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnCourseOfferingExtensionReadable](docs/MnCourseOfferingExtensionReadable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnCourseOfferingExtensionWritable](docs/MnCourseOfferingExtensionWritable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.MnCourseOfferingInstructionalApproachReadable](docs/MnCourseOfferingInstructionalApproachReadable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.MnCourseOfferingInstructionalApproachWritable](docs/MnCourseOfferingInstructionalApproachWritable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnCourseOfferingReference](docs/MnCourseOfferingReference.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.MnCourseOfferingSiteBasedInitiativeReadable](docs/MnCourseOfferingSiteBasedInitiativeReadable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.MnCourseOfferingSiteBasedInitiativeWritable](docs/MnCourseOfferingSiteBasedInitiativeWritable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.MnCourseProgramReadable](docs/MnCourseProgramReadable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.MnCourseProgramWritable](docs/MnCourseProgramWritable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnCourseReference](docs/MnCourseReference.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnEducationOrganizationReference](docs/MnEducationOrganizationReference.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnExamReimbursementRequestReadable](docs/MnExamReimbursementRequestReadable.md)
@@ -463,9 +516,15 @@ Class | Method | HTTP request | Description
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnGradeExtensionReadable](docs/MnGradeExtensionReadable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnGradeExtensionWritable](docs/MnGradeExtensionWritable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnGradingPeriodReference](docs/MnGradingPeriodReference.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.MnLearningStandardReference](docs/MnLearningStandardReference.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnLocalEducationAgencyExtensionReadable](docs/MnLocalEducationAgencyExtensionReadable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnLocalEducationAgencyReference](docs/MnLocalEducationAgencyReference.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnObjectiveAssessmentReference](docs/MnObjectiveAssessmentReference.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.MnParentExtensionReadable](docs/MnParentExtensionReadable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.MnParentExtensionWritable](docs/MnParentExtensionWritable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.MnParentIdentificationCodeReadable](docs/MnParentIdentificationCodeReadable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.MnParentIdentificationCodeWritable](docs/MnParentIdentificationCodeWritable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.MnParentReference](docs/MnParentReference.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnProgramReference](docs/MnProgramReference.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnSchoolExtensionReadable](docs/MnSchoolExtensionReadable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnSchoolReference](docs/MnSchoolReference.md)
@@ -500,6 +559,10 @@ Class | Method | HTTP request | Description
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnStudentCEISProgramAssociationWritable](docs/MnStudentCEISProgramAssociationWritable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnStudentEarlyChildhoodScreeningProgramAssociationReadable](docs/MnStudentEarlyChildhoodScreeningProgramAssociationReadable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnStudentEarlyChildhoodScreeningProgramAssociationWritable](docs/MnStudentEarlyChildhoodScreeningProgramAssociationWritable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.MnStudentEarlyEducationProgramAssociationFundingSourceReadable](docs/MnStudentEarlyEducationProgramAssociationFundingSourceReadable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.MnStudentEarlyEducationProgramAssociationFundingSourceWritable](docs/MnStudentEarlyEducationProgramAssociationFundingSourceWritable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.MnStudentEarlyEducationProgramAssociationReadable](docs/MnStudentEarlyEducationProgramAssociationReadable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.MnStudentEarlyEducationProgramAssociationWritable](docs/MnStudentEarlyEducationProgramAssociationWritable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnStudentEducationOrganizationAssociationAncestryEthnicOriginReadable](docs/MnStudentEducationOrganizationAssociationAncestryEthnicOriginReadable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnStudentEducationOrganizationAssociationAncestryEthnicOriginWritable](docs/MnStudentEducationOrganizationAssociationAncestryEthnicOriginWritable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnStudentEducationOrganizationAssociationExtensionReadable](docs/MnStudentEducationOrganizationAssociationExtensionReadable.md)
@@ -526,9 +589,15 @@ Class | Method | HTTP request | Description
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnStudentSection504PlanProgramAssociationWritable](docs/MnStudentSection504PlanProgramAssociationWritable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnStudentSectionAssociationExtensionReadable](docs/MnStudentSectionAssociationExtensionReadable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnStudentSectionAssociationExtensionWritable](docs/MnStudentSectionAssociationExtensionWritable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.MnStudentSectionAssociationInstructionalApproachReadable](docs/MnStudentSectionAssociationInstructionalApproachReadable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.MnStudentSectionAssociationInstructionalApproachWritable](docs/MnStudentSectionAssociationInstructionalApproachWritable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnStudentSectionAssociationReference](docs/MnStudentSectionAssociationReference.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.MnStudentSectionAssociationSiteBasedInitiativeReadable](docs/MnStudentSectionAssociationSiteBasedInitiativeReadable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.MnStudentSectionAssociationSiteBasedInitiativeWritable](docs/MnStudentSectionAssociationSiteBasedInitiativeWritable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnStudentSpecialEducationProgramAssociationExtensionReadable](docs/MnStudentSpecialEducationProgramAssociationExtensionReadable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.MnStudentSpecialEducationProgramAssociationExtensionWritable](docs/MnStudentSpecialEducationProgramAssociationExtensionWritable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.ParentExtensionsReadable](docs/ParentExtensionsReadable.md)
+ - [Models.Profiles.Minnesota_SISVendor_Profile.ParentExtensionsWritable](docs/ParentExtensionsWritable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.SchoolExtensionsReadable](docs/SchoolExtensionsReadable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.SessionExtensionsReadable](docs/SessionExtensionsReadable.md)
  - [Models.Profiles.Minnesota_SISVendor_Profile.SessionExtensionsWritable](docs/SessionExtensionsWritable.md)

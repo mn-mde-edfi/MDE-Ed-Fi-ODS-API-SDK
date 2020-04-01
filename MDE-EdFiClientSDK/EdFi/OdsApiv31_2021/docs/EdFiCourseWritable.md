@@ -12,9 +12,11 @@ Name | Type | Description | Notes
 **CourseTitle** | **string** | The descriptive name given to a course of study offered in a school or other institution or organization. In departmentalized classes at the elementary, secondary, and postsecondary levels (and for staff development activities), this refers to the name by which a course is identified (e.g., American History, English III). For elementary and other non-departmentalized classes, it refers to any portion of the instruction for which a grade or report is assigned (e.g., reading, composition, spelling, and language arts). | 
 **DateCourseAdopted** | **DateTime?** | Date the course was adopted by the education agency. | [optional] 
 **HighSchoolCourseRequirement** | **bool?** | An indication that this course may satisfy high school graduation requirements in the course&#39;s subject area. | [optional] 
+**LearningStandards** | [**List&lt;EdFiCourseLearningStandardWritable&gt;**](EdFiCourseLearningStandardWritable.md) | An unordered collection of courseLearningStandards. Learning Standard(s) to be taught by the course. | [optional] 
 **LevelCharacteristics** | [**List&lt;EdFiCourseLevelCharacteristicWritable&gt;**](EdFiCourseLevelCharacteristicWritable.md) | An unordered collection of courseLevelCharacteristics. The type of specific program or designation with which the course is associated (e.g., AP, IB, Dual Credit, CTE). | [optional] 
 **MaximumAvailableCredits** | **double?** | The value of credits or units of value awarded for the completion of a course. | [optional] 
 **NumberOfParts** | **int?** | The number of parts identified for a course. | 
+**OfferedGradeLevels** | [**List&lt;EdFiCourseOfferedGradeLevelWritable&gt;**](EdFiCourseOfferedGradeLevelWritable.md) | An unordered collection of courseOfferedGradeLevels. The grade levels in which the course is offered. | [optional] 
 **Etag** | **string** | A unique system-generated value that identifies the version of the resource. | [optional] 
 **Ext** | [**CourseExtensionsWritable**](CourseExtensionsWritable.md) |  | [optional] 
 

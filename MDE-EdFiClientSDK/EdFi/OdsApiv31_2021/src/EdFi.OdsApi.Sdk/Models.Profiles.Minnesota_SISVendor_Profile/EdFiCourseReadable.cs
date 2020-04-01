@@ -47,12 +47,14 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// <param name="CourseTitle">The descriptive name given to a course of study offered in a school or other institution or organization. In departmentalized classes at the elementary, secondary, and postsecondary levels (and for staff development activities), this refers to the name by which a course is identified (e.g., American History, English III). For elementary and other non-departmentalized classes, it refers to any portion of the instruction for which a grade or report is assigned (e.g., reading, composition, spelling, and language arts). (required).</param>
         /// <param name="DateCourseAdopted">Date the course was adopted by the education agency..</param>
         /// <param name="HighSchoolCourseRequirement">An indication that this course may satisfy high school graduation requirements in the course&#39;s subject area..</param>
+        /// <param name="LearningStandards">An unordered collection of courseLearningStandards. Learning Standard(s) to be taught by the course..</param>
         /// <param name="LevelCharacteristics">An unordered collection of courseLevelCharacteristics. The type of specific program or designation with which the course is associated (e.g., AP, IB, Dual Credit, CTE)..</param>
         /// <param name="MaximumAvailableCredits">The value of credits or units of value awarded for the completion of a course..</param>
         /// <param name="NumberOfParts">The number of parts identified for a course. (required).</param>
+        /// <param name="OfferedGradeLevels">An unordered collection of courseOfferedGradeLevels. The grade levels in which the course is offered..</param>
         /// <param name="Etag">A unique system-generated value that identifies the version of the resource..</param>
         /// <param name="Ext">Ext.</param>
-        public EdFiCourseReadable(string Id = default(string), string CourseCode = default(string), List<EdFiCourseIdentificationCodeReadable> IdentificationCodes = default(List<EdFiCourseIdentificationCodeReadable>), EdFiEducationOrganizationReference EducationOrganizationReference = default(EdFiEducationOrganizationReference), string CourseDefinedByDescriptor = default(string), string CourseDescription = default(string), string CourseTitle = default(string), DateTime? DateCourseAdopted = default(DateTime?), bool? HighSchoolCourseRequirement = default(bool?), List<EdFiCourseLevelCharacteristicReadable> LevelCharacteristics = default(List<EdFiCourseLevelCharacteristicReadable>), double? MaximumAvailableCredits = default(double?), int? NumberOfParts = default(int?), string Etag = default(string), CourseExtensionsReadable Ext = default(CourseExtensionsReadable))
+        public EdFiCourseReadable(string Id = default(string), string CourseCode = default(string), List<EdFiCourseIdentificationCodeReadable> IdentificationCodes = default(List<EdFiCourseIdentificationCodeReadable>), EdFiEducationOrganizationReference EducationOrganizationReference = default(EdFiEducationOrganizationReference), string CourseDefinedByDescriptor = default(string), string CourseDescription = default(string), string CourseTitle = default(string), DateTime? DateCourseAdopted = default(DateTime?), bool? HighSchoolCourseRequirement = default(bool?), List<EdFiCourseLearningStandardReadable> LearningStandards = default(List<EdFiCourseLearningStandardReadable>), List<EdFiCourseLevelCharacteristicReadable> LevelCharacteristics = default(List<EdFiCourseLevelCharacteristicReadable>), double? MaximumAvailableCredits = default(double?), int? NumberOfParts = default(int?), List<EdFiCourseOfferedGradeLevelReadable> OfferedGradeLevels = default(List<EdFiCourseOfferedGradeLevelReadable>), string Etag = default(string), CourseExtensionsReadable Ext = default(CourseExtensionsReadable))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
@@ -112,8 +114,10 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
             this.CourseDescription = CourseDescription;
             this.DateCourseAdopted = DateCourseAdopted;
             this.HighSchoolCourseRequirement = HighSchoolCourseRequirement;
+            this.LearningStandards = LearningStandards;
             this.LevelCharacteristics = LevelCharacteristics;
             this.MaximumAvailableCredits = MaximumAvailableCredits;
+            this.OfferedGradeLevels = OfferedGradeLevels;
             this.Etag = Etag;
             this.Ext = Ext;
         }
@@ -181,6 +185,13 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         public bool? HighSchoolCourseRequirement { get; set; }
 
         /// <summary>
+        /// An unordered collection of courseLearningStandards. Learning Standard(s) to be taught by the course.
+        /// </summary>
+        /// <value>An unordered collection of courseLearningStandards. Learning Standard(s) to be taught by the course.</value>
+        [DataMember(Name="learningStandards", EmitDefaultValue=false)]
+        public List<EdFiCourseLearningStandardReadable> LearningStandards { get; set; }
+
+        /// <summary>
         /// An unordered collection of courseLevelCharacteristics. The type of specific program or designation with which the course is associated (e.g., AP, IB, Dual Credit, CTE).
         /// </summary>
         /// <value>An unordered collection of courseLevelCharacteristics. The type of specific program or designation with which the course is associated (e.g., AP, IB, Dual Credit, CTE).</value>
@@ -200,6 +211,13 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// <value>The number of parts identified for a course.</value>
         [DataMember(Name="numberOfParts", EmitDefaultValue=false)]
         public int? NumberOfParts { get; set; }
+
+        /// <summary>
+        /// An unordered collection of courseOfferedGradeLevels. The grade levels in which the course is offered.
+        /// </summary>
+        /// <value>An unordered collection of courseOfferedGradeLevels. The grade levels in which the course is offered.</value>
+        [DataMember(Name="offeredGradeLevels", EmitDefaultValue=false)]
+        public List<EdFiCourseOfferedGradeLevelReadable> OfferedGradeLevels { get; set; }
 
         /// <summary>
         /// A unique system-generated value that identifies the version of the resource.
@@ -231,9 +249,11 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
             sb.Append("  CourseTitle: ").Append(CourseTitle).Append("\n");
             sb.Append("  DateCourseAdopted: ").Append(DateCourseAdopted).Append("\n");
             sb.Append("  HighSchoolCourseRequirement: ").Append(HighSchoolCourseRequirement).Append("\n");
+            sb.Append("  LearningStandards: ").Append(LearningStandards).Append("\n");
             sb.Append("  LevelCharacteristics: ").Append(LevelCharacteristics).Append("\n");
             sb.Append("  MaximumAvailableCredits: ").Append(MaximumAvailableCredits).Append("\n");
             sb.Append("  NumberOfParts: ").Append(NumberOfParts).Append("\n");
+            sb.Append("  OfferedGradeLevels: ").Append(OfferedGradeLevels).Append("\n");
             sb.Append("  Etag: ").Append(Etag).Append("\n");
             sb.Append("  Ext: ").Append(Ext).Append("\n");
             sb.Append("}\n");
@@ -316,6 +336,11 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
                     this.HighSchoolCourseRequirement.Equals(input.HighSchoolCourseRequirement))
                 ) && 
                 (
+                    this.LearningStandards == input.LearningStandards ||
+                    this.LearningStandards != null &&
+                    this.LearningStandards.SequenceEqual(input.LearningStandards)
+                ) && 
+                (
                     this.LevelCharacteristics == input.LevelCharacteristics ||
                     this.LevelCharacteristics != null &&
                     this.LevelCharacteristics.SequenceEqual(input.LevelCharacteristics)
@@ -329,6 +354,11 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
                     this.NumberOfParts == input.NumberOfParts ||
                     (this.NumberOfParts != null &&
                     this.NumberOfParts.Equals(input.NumberOfParts))
+                ) && 
+                (
+                    this.OfferedGradeLevels == input.OfferedGradeLevels ||
+                    this.OfferedGradeLevels != null &&
+                    this.OfferedGradeLevels.SequenceEqual(input.OfferedGradeLevels)
                 ) && 
                 (
                     this.Etag == input.Etag ||
@@ -369,12 +399,16 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
                     hashCode = hashCode * 59 + this.DateCourseAdopted.GetHashCode();
                 if (this.HighSchoolCourseRequirement != null)
                     hashCode = hashCode * 59 + this.HighSchoolCourseRequirement.GetHashCode();
+                if (this.LearningStandards != null)
+                    hashCode = hashCode * 59 + this.LearningStandards.GetHashCode();
                 if (this.LevelCharacteristics != null)
                     hashCode = hashCode * 59 + this.LevelCharacteristics.GetHashCode();
                 if (this.MaximumAvailableCredits != null)
                     hashCode = hashCode * 59 + this.MaximumAvailableCredits.GetHashCode();
                 if (this.NumberOfParts != null)
                     hashCode = hashCode * 59 + this.NumberOfParts.GetHashCode();
+                if (this.OfferedGradeLevels != null)
+                    hashCode = hashCode * 59 + this.OfferedGradeLevels.GetHashCode();
                 if (this.Etag != null)
                     hashCode = hashCode * 59 + this.Etag.GetHashCode();
                 if (this.Ext != null)

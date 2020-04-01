@@ -33,16 +33,25 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// <summary>
         /// Initializes a new instance of the <see cref="MnGradeExtensionWritable" /> class.
         /// </summary>
+        /// <param name="AcademicSubjectDescriptor">This descriptor holds the description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language)..</param>
         /// <param name="CollegeCreditEarned">College credit earned..</param>
         /// <param name="CollegeGradeEarned">College grade earned..</param>
         /// <param name="LocalCreditEarned">College credit earned..</param>
-        public MnGradeExtensionWritable(double? CollegeCreditEarned = default(double?), string CollegeGradeEarned = default(string), double? LocalCreditEarned = default(double?))
+        public MnGradeExtensionWritable(string AcademicSubjectDescriptor = default(string), double? CollegeCreditEarned = default(double?), string CollegeGradeEarned = default(string), double? LocalCreditEarned = default(double?))
         {
+            this.AcademicSubjectDescriptor = AcademicSubjectDescriptor;
             this.CollegeCreditEarned = CollegeCreditEarned;
             this.CollegeGradeEarned = CollegeGradeEarned;
             this.LocalCreditEarned = LocalCreditEarned;
         }
         
+        /// <summary>
+        /// This descriptor holds the description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language).
+        /// </summary>
+        /// <value>This descriptor holds the description of the content or subject area (e.g., arts, mathematics, reading, stenography, or a foreign language).</value>
+        [DataMember(Name="academicSubjectDescriptor", EmitDefaultValue=false)]
+        public string AcademicSubjectDescriptor { get; set; }
+
         /// <summary>
         /// College credit earned.
         /// </summary>
@@ -72,6 +81,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         {
             var sb = new StringBuilder();
             sb.Append("class MnGradeExtensionWritable {\n");
+            sb.Append("  AcademicSubjectDescriptor: ").Append(AcademicSubjectDescriptor).Append("\n");
             sb.Append("  CollegeCreditEarned: ").Append(CollegeCreditEarned).Append("\n");
             sb.Append("  CollegeGradeEarned: ").Append(CollegeGradeEarned).Append("\n");
             sb.Append("  LocalCreditEarned: ").Append(LocalCreditEarned).Append("\n");
@@ -110,6 +120,11 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
 
             return 
                 (
+                    this.AcademicSubjectDescriptor == input.AcademicSubjectDescriptor ||
+                    (this.AcademicSubjectDescriptor != null &&
+                    this.AcademicSubjectDescriptor.Equals(input.AcademicSubjectDescriptor))
+                ) && 
+                (
                     this.CollegeCreditEarned == input.CollegeCreditEarned ||
                     (this.CollegeCreditEarned != null &&
                     this.CollegeCreditEarned.Equals(input.CollegeCreditEarned))
@@ -135,6 +150,8 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.AcademicSubjectDescriptor != null)
+                    hashCode = hashCode * 59 + this.AcademicSubjectDescriptor.GetHashCode();
                 if (this.CollegeCreditEarned != null)
                     hashCode = hashCode * 59 + this.CollegeCreditEarned.GetHashCode();
                 if (this.CollegeGradeEarned != null)
@@ -152,6 +169,12 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // AcademicSubjectDescriptor (string) maxLength
+            if(this.AcademicSubjectDescriptor != null && this.AcademicSubjectDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AcademicSubjectDescriptor, length must be less than 306.", new [] { "AcademicSubjectDescriptor" });
+            }
+
             // CollegeGradeEarned (string) maxLength
             if(this.CollegeGradeEarned != null && this.CollegeGradeEarned.Length > 16)
             {

@@ -33,20 +33,58 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// <summary>
         /// Initializes a new instance of the <see cref="MnCourseExtensionWritable" /> class.
         /// </summary>
+        /// <param name="EarlyEducationCourseLocationDescriptor">Classification of instruction site for Early Education. E.g., child&#39;s home or care center..</param>
+        /// <param name="StandardAddressedDescriptor">Locality of entity who&#39;s learning standard is addressed by this course. E.g., State, Federal, or Local..</param>
         /// <param name="SequenceLimit">The upper limit of this course within a sequence. E.g., (1 of N).</param>
+        /// <param name="AssessmentTools">An unordered collection of courseAssessmentTools. Assessment tool that has been implemented for the course. General purpose but intially implemented for Early Education..</param>
+        /// <param name="CurriculumUseds">An unordered collection of courseCurriculumUseds. Curriculum as implemented for the course. General purpose but intially implemented for Early Education..</param>
         /// <param name="LevelTypes">An unordered collection of courseLevelTypes. The &#39;type level&#39; of which the course is associated. E.g, Advanced, Articulated, Basic, Dual, General, No credit, Occupational.</param>
-        public MnCourseExtensionWritable(int? SequenceLimit = default(int?), List<MnCourseLevelTypeWritable> LevelTypes = default(List<MnCourseLevelTypeWritable>))
+        /// <param name="Programs">An unordered collection of coursePrograms. Program associated to the course. General purpose but intially extended for Early Education..</param>
+        public MnCourseExtensionWritable(string EarlyEducationCourseLocationDescriptor = default(string), string StandardAddressedDescriptor = default(string), int? SequenceLimit = default(int?), List<MnCourseAssessmentToolWritable> AssessmentTools = default(List<MnCourseAssessmentToolWritable>), List<MnCourseCurriculumUsedWritable> CurriculumUseds = default(List<MnCourseCurriculumUsedWritable>), List<MnCourseLevelTypeWritable> LevelTypes = default(List<MnCourseLevelTypeWritable>), List<MnCourseProgramWritable> Programs = default(List<MnCourseProgramWritable>))
         {
+            this.EarlyEducationCourseLocationDescriptor = EarlyEducationCourseLocationDescriptor;
+            this.StandardAddressedDescriptor = StandardAddressedDescriptor;
             this.SequenceLimit = SequenceLimit;
+            this.AssessmentTools = AssessmentTools;
+            this.CurriculumUseds = CurriculumUseds;
             this.LevelTypes = LevelTypes;
+            this.Programs = Programs;
         }
         
+        /// <summary>
+        /// Classification of instruction site for Early Education. E.g., child&#39;s home or care center.
+        /// </summary>
+        /// <value>Classification of instruction site for Early Education. E.g., child&#39;s home or care center.</value>
+        [DataMember(Name="earlyEducationCourseLocationDescriptor", EmitDefaultValue=false)]
+        public string EarlyEducationCourseLocationDescriptor { get; set; }
+
+        /// <summary>
+        /// Locality of entity who&#39;s learning standard is addressed by this course. E.g., State, Federal, or Local.
+        /// </summary>
+        /// <value>Locality of entity who&#39;s learning standard is addressed by this course. E.g., State, Federal, or Local.</value>
+        [DataMember(Name="standardAddressedDescriptor", EmitDefaultValue=false)]
+        public string StandardAddressedDescriptor { get; set; }
+
         /// <summary>
         /// The upper limit of this course within a sequence. E.g., (1 of N)
         /// </summary>
         /// <value>The upper limit of this course within a sequence. E.g., (1 of N)</value>
         [DataMember(Name="sequenceLimit", EmitDefaultValue=false)]
         public int? SequenceLimit { get; set; }
+
+        /// <summary>
+        /// An unordered collection of courseAssessmentTools. Assessment tool that has been implemented for the course. General purpose but intially implemented for Early Education.
+        /// </summary>
+        /// <value>An unordered collection of courseAssessmentTools. Assessment tool that has been implemented for the course. General purpose but intially implemented for Early Education.</value>
+        [DataMember(Name="assessmentTools", EmitDefaultValue=false)]
+        public List<MnCourseAssessmentToolWritable> AssessmentTools { get; set; }
+
+        /// <summary>
+        /// An unordered collection of courseCurriculumUseds. Curriculum as implemented for the course. General purpose but intially implemented for Early Education.
+        /// </summary>
+        /// <value>An unordered collection of courseCurriculumUseds. Curriculum as implemented for the course. General purpose but intially implemented for Early Education.</value>
+        [DataMember(Name="curriculumUseds", EmitDefaultValue=false)]
+        public List<MnCourseCurriculumUsedWritable> CurriculumUseds { get; set; }
 
         /// <summary>
         /// An unordered collection of courseLevelTypes. The &#39;type level&#39; of which the course is associated. E.g, Advanced, Articulated, Basic, Dual, General, No credit, Occupational
@@ -56,6 +94,13 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         public List<MnCourseLevelTypeWritable> LevelTypes { get; set; }
 
         /// <summary>
+        /// An unordered collection of coursePrograms. Program associated to the course. General purpose but intially extended for Early Education.
+        /// </summary>
+        /// <value>An unordered collection of coursePrograms. Program associated to the course. General purpose but intially extended for Early Education.</value>
+        [DataMember(Name="programs", EmitDefaultValue=false)]
+        public List<MnCourseProgramWritable> Programs { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -63,8 +108,13 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         {
             var sb = new StringBuilder();
             sb.Append("class MnCourseExtensionWritable {\n");
+            sb.Append("  EarlyEducationCourseLocationDescriptor: ").Append(EarlyEducationCourseLocationDescriptor).Append("\n");
+            sb.Append("  StandardAddressedDescriptor: ").Append(StandardAddressedDescriptor).Append("\n");
             sb.Append("  SequenceLimit: ").Append(SequenceLimit).Append("\n");
+            sb.Append("  AssessmentTools: ").Append(AssessmentTools).Append("\n");
+            sb.Append("  CurriculumUseds: ").Append(CurriculumUseds).Append("\n");
             sb.Append("  LevelTypes: ").Append(LevelTypes).Append("\n");
+            sb.Append("  Programs: ").Append(Programs).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -100,14 +150,39 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
 
             return 
                 (
+                    this.EarlyEducationCourseLocationDescriptor == input.EarlyEducationCourseLocationDescriptor ||
+                    (this.EarlyEducationCourseLocationDescriptor != null &&
+                    this.EarlyEducationCourseLocationDescriptor.Equals(input.EarlyEducationCourseLocationDescriptor))
+                ) && 
+                (
+                    this.StandardAddressedDescriptor == input.StandardAddressedDescriptor ||
+                    (this.StandardAddressedDescriptor != null &&
+                    this.StandardAddressedDescriptor.Equals(input.StandardAddressedDescriptor))
+                ) && 
+                (
                     this.SequenceLimit == input.SequenceLimit ||
                     (this.SequenceLimit != null &&
                     this.SequenceLimit.Equals(input.SequenceLimit))
                 ) && 
                 (
+                    this.AssessmentTools == input.AssessmentTools ||
+                    this.AssessmentTools != null &&
+                    this.AssessmentTools.SequenceEqual(input.AssessmentTools)
+                ) && 
+                (
+                    this.CurriculumUseds == input.CurriculumUseds ||
+                    this.CurriculumUseds != null &&
+                    this.CurriculumUseds.SequenceEqual(input.CurriculumUseds)
+                ) && 
+                (
                     this.LevelTypes == input.LevelTypes ||
                     this.LevelTypes != null &&
                     this.LevelTypes.SequenceEqual(input.LevelTypes)
+                ) && 
+                (
+                    this.Programs == input.Programs ||
+                    this.Programs != null &&
+                    this.Programs.SequenceEqual(input.Programs)
                 );
         }
 
@@ -120,10 +195,20 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.EarlyEducationCourseLocationDescriptor != null)
+                    hashCode = hashCode * 59 + this.EarlyEducationCourseLocationDescriptor.GetHashCode();
+                if (this.StandardAddressedDescriptor != null)
+                    hashCode = hashCode * 59 + this.StandardAddressedDescriptor.GetHashCode();
                 if (this.SequenceLimit != null)
                     hashCode = hashCode * 59 + this.SequenceLimit.GetHashCode();
+                if (this.AssessmentTools != null)
+                    hashCode = hashCode * 59 + this.AssessmentTools.GetHashCode();
+                if (this.CurriculumUseds != null)
+                    hashCode = hashCode * 59 + this.CurriculumUseds.GetHashCode();
                 if (this.LevelTypes != null)
                     hashCode = hashCode * 59 + this.LevelTypes.GetHashCode();
+                if (this.Programs != null)
+                    hashCode = hashCode * 59 + this.Programs.GetHashCode();
                 return hashCode;
             }
         }
@@ -135,6 +220,18 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // EarlyEducationCourseLocationDescriptor (string) maxLength
+            if(this.EarlyEducationCourseLocationDescriptor != null && this.EarlyEducationCourseLocationDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for EarlyEducationCourseLocationDescriptor, length must be less than 306.", new [] { "EarlyEducationCourseLocationDescriptor" });
+            }
+
+            // StandardAddressedDescriptor (string) maxLength
+            if(this.StandardAddressedDescriptor != null && this.StandardAddressedDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for StandardAddressedDescriptor, length must be less than 306.", new [] { "StandardAddressedDescriptor" });
+            }
+
             yield break;
         }
     }

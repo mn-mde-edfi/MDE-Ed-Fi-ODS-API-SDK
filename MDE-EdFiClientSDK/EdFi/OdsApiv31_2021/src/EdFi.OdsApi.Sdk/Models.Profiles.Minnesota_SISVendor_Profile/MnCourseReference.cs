@@ -38,19 +38,19 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// <summary>
         /// Initializes a new instance of the <see cref="MnCourseReference" /> class.
         /// </summary>
-        /// <param name="Code">A unique alphanumeric code assigned to a course. (required).</param>
+        /// <param name="CourseCode">A unique alphanumeric code assigned to a course. (required).</param>
         /// <param name="EducationOrganizationId">The identifier assigned to an education organization. (required).</param>
         /// <param name="Link">Link.</param>
-        public MnCourseReference(string Code = default(string), int? EducationOrganizationId = default(int?), Link Link = default(Link))
+        public MnCourseReference(string CourseCode = default(string), int? EducationOrganizationId = default(int?), Link Link = default(Link))
         {
-            // to ensure "Code" is required (not null)
-            if (Code == null)
+            // to ensure "CourseCode" is required (not null)
+            if (CourseCode == null)
             {
-                throw new InvalidDataException("Code is a required property for MnCourseReference and cannot be null");
+                throw new InvalidDataException("CourseCode is a required property for MnCourseReference and cannot be null");
             }
             else
             {
-                this.Code = Code;
+                this.CourseCode = CourseCode;
             }
             // to ensure "EducationOrganizationId" is required (not null)
             if (EducationOrganizationId == null)
@@ -68,8 +68,8 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// A unique alphanumeric code assigned to a course.
         /// </summary>
         /// <value>A unique alphanumeric code assigned to a course.</value>
-        [DataMember(Name="code", EmitDefaultValue=false)]
-        public string Code { get; set; }
+        [DataMember(Name="courseCode", EmitDefaultValue=false)]
+        public string CourseCode { get; set; }
 
         /// <summary>
         /// The identifier assigned to an education organization.
@@ -92,7 +92,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         {
             var sb = new StringBuilder();
             sb.Append("class MnCourseReference {\n");
-            sb.Append("  Code: ").Append(Code).Append("\n");
+            sb.Append("  CourseCode: ").Append(CourseCode).Append("\n");
             sb.Append("  EducationOrganizationId: ").Append(EducationOrganizationId).Append("\n");
             sb.Append("  Link: ").Append(Link).Append("\n");
             sb.Append("}\n");
@@ -130,9 +130,9 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
 
             return 
                 (
-                    this.Code == input.Code ||
-                    (this.Code != null &&
-                    this.Code.Equals(input.Code))
+                    this.CourseCode == input.CourseCode ||
+                    (this.CourseCode != null &&
+                    this.CourseCode.Equals(input.CourseCode))
                 ) && 
                 (
                     this.EducationOrganizationId == input.EducationOrganizationId ||
@@ -155,8 +155,8 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Code != null)
-                    hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.CourseCode != null)
+                    hashCode = hashCode * 59 + this.CourseCode.GetHashCode();
                 if (this.EducationOrganizationId != null)
                     hashCode = hashCode * 59 + this.EducationOrganizationId.GetHashCode();
                 if (this.Link != null)
@@ -172,10 +172,10 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // Code (string) maxLength
-            if(this.Code != null && this.Code.Length > 60)
+            // CourseCode (string) maxLength
+            if(this.CourseCode != null && this.CourseCode.Length > 60)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Code, length must be less than 60.", new [] { "Code" });
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CourseCode, length must be less than 60.", new [] { "CourseCode" });
             }
 
             yield break;

@@ -78,7 +78,7 @@ void (empty response body)
 
 <a name="getgrades"></a>
 # **GetGrades**
-> List<EdFiGradeReadable> GetGrades (int? offset = null, int? limit = null, bool? totalCount = null, string gradeTypeDescriptor = null, string gradingPeriodDescriptor = null, int? gradingPeriodSequence = null, int? schoolId = null, int? gradingPeriodSchoolYear = null, DateTime? beginDate = null, string localCourseCode = null, int? schoolYear = null, string sectionIdentifier = null, string sessionName = null, string studentUniqueId = null, string id = null, double? numericGradeEarned = null)
+> List<EdFiGradeReadable> GetGrades (int? offset = null, int? limit = null, bool? totalCount = null, string gradeTypeDescriptor = null, string gradingPeriodDescriptor = null, int? gradingPeriodSequence = null, int? schoolId = null, int? gradingPeriodSchoolYear = null, DateTime? beginDate = null, string localCourseCode = null, int? schoolYear = null, string sectionIdentifier = null, string sessionName = null, string studentUniqueId = null, string id = null, string letterGradeEarned = null, double? numericGradeEarned = null)
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
 
@@ -117,12 +117,13 @@ namespace Example
             var sessionName = sessionName_example;  // string | The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer). (optional) 
             var studentUniqueId = studentUniqueId_example;  // string | A unique alphanumeric code assigned to a student. (optional) 
             var id = id_example;  // string |  (optional) 
+            var letterGradeEarned = letterGradeEarned_example;  // string | A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional) 
             var numericGradeEarned = 1.2;  // double? | A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional) 
 
             try
             {
                 // Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
-                List&lt;EdFiGradeReadable&gt; result = apiInstance.GetGrades(offset, limit, totalCount, gradeTypeDescriptor, gradingPeriodDescriptor, gradingPeriodSequence, schoolId, gradingPeriodSchoolYear, beginDate, localCourseCode, schoolYear, sectionIdentifier, sessionName, studentUniqueId, id, numericGradeEarned);
+                List&lt;EdFiGradeReadable&gt; result = apiInstance.GetGrades(offset, limit, totalCount, gradeTypeDescriptor, gradingPeriodDescriptor, gradingPeriodSequence, schoolId, gradingPeriodSchoolYear, beginDate, localCourseCode, schoolYear, sectionIdentifier, sessionName, studentUniqueId, id, letterGradeEarned, numericGradeEarned);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -153,6 +154,7 @@ Name | Type | Description  | Notes
  **sessionName** | **string**| The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer). | [optional] 
  **studentUniqueId** | **string**| A unique alphanumeric code assigned to a student. | [optional] 
  **id** | **string**|  | [optional] 
+ **letterGradeEarned** | **string**| A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. | [optional] 
  **numericGradeEarned** | **double?**| A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. | [optional] 
 
 ### Return type

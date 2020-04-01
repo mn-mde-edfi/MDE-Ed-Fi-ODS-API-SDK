@@ -34,9 +34,13 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// Initializes a new instance of the <see cref="MnCourseOfferingExtensionReadable" /> class.
         /// </summary>
         /// <param name="InstructionMinutesPerTerm">Instruction minutes per term..</param>
-        public MnCourseOfferingExtensionReadable(int? InstructionMinutesPerTerm = default(int?))
+        /// <param name="InstructionalApproaches">An unordered collection of courseOfferingInstructionalApproaches. Instructional approach as implemented for the course offering. General purpose but intially implemented for Early Education..</param>
+        /// <param name="SiteBasedInitiatives">An unordered collection of courseOfferingSiteBasedInitiatives. Site-based initiative as implemented for the course offering. General purpose but intially implemented for Early Education..</param>
+        public MnCourseOfferingExtensionReadable(int? InstructionMinutesPerTerm = default(int?), List<MnCourseOfferingInstructionalApproachReadable> InstructionalApproaches = default(List<MnCourseOfferingInstructionalApproachReadable>), List<MnCourseOfferingSiteBasedInitiativeReadable> SiteBasedInitiatives = default(List<MnCourseOfferingSiteBasedInitiativeReadable>))
         {
             this.InstructionMinutesPerTerm = InstructionMinutesPerTerm;
+            this.InstructionalApproaches = InstructionalApproaches;
+            this.SiteBasedInitiatives = SiteBasedInitiatives;
         }
         
         /// <summary>
@@ -47,6 +51,20 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         public int? InstructionMinutesPerTerm { get; set; }
 
         /// <summary>
+        /// An unordered collection of courseOfferingInstructionalApproaches. Instructional approach as implemented for the course offering. General purpose but intially implemented for Early Education.
+        /// </summary>
+        /// <value>An unordered collection of courseOfferingInstructionalApproaches. Instructional approach as implemented for the course offering. General purpose but intially implemented for Early Education.</value>
+        [DataMember(Name="instructionalApproaches", EmitDefaultValue=false)]
+        public List<MnCourseOfferingInstructionalApproachReadable> InstructionalApproaches { get; set; }
+
+        /// <summary>
+        /// An unordered collection of courseOfferingSiteBasedInitiatives. Site-based initiative as implemented for the course offering. General purpose but intially implemented for Early Education.
+        /// </summary>
+        /// <value>An unordered collection of courseOfferingSiteBasedInitiatives. Site-based initiative as implemented for the course offering. General purpose but intially implemented for Early Education.</value>
+        [DataMember(Name="siteBasedInitiatives", EmitDefaultValue=false)]
+        public List<MnCourseOfferingSiteBasedInitiativeReadable> SiteBasedInitiatives { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -55,6 +73,8 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
             var sb = new StringBuilder();
             sb.Append("class MnCourseOfferingExtensionReadable {\n");
             sb.Append("  InstructionMinutesPerTerm: ").Append(InstructionMinutesPerTerm).Append("\n");
+            sb.Append("  InstructionalApproaches: ").Append(InstructionalApproaches).Append("\n");
+            sb.Append("  SiteBasedInitiatives: ").Append(SiteBasedInitiatives).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,6 +113,16 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
                     this.InstructionMinutesPerTerm == input.InstructionMinutesPerTerm ||
                     (this.InstructionMinutesPerTerm != null &&
                     this.InstructionMinutesPerTerm.Equals(input.InstructionMinutesPerTerm))
+                ) && 
+                (
+                    this.InstructionalApproaches == input.InstructionalApproaches ||
+                    this.InstructionalApproaches != null &&
+                    this.InstructionalApproaches.SequenceEqual(input.InstructionalApproaches)
+                ) && 
+                (
+                    this.SiteBasedInitiatives == input.SiteBasedInitiatives ||
+                    this.SiteBasedInitiatives != null &&
+                    this.SiteBasedInitiatives.SequenceEqual(input.SiteBasedInitiatives)
                 );
         }
 
@@ -107,6 +137,10 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
                 int hashCode = 41;
                 if (this.InstructionMinutesPerTerm != null)
                     hashCode = hashCode * 59 + this.InstructionMinutesPerTerm.GetHashCode();
+                if (this.InstructionalApproaches != null)
+                    hashCode = hashCode * 59 + this.InstructionalApproaches.GetHashCode();
+                if (this.SiteBasedInitiatives != null)
+                    hashCode = hashCode * 59 + this.SiteBasedInitiatives.GetHashCode();
                 return hashCode;
             }
         }

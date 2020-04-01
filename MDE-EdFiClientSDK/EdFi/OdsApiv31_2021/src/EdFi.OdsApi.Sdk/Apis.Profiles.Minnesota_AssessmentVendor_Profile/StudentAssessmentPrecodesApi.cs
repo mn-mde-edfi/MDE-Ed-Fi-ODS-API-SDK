@@ -64,11 +64,12 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_AssessmentVendor_Profile
         /// <param name="sitePrecodeTypeDescriptor">Type of pre-code site record. For example, MCA/MTAS, ACCESS/ALT-ACCESS (optional)</param>
         /// <param name="generalEnrollmentDescriptor">Student enrollment at the time of assessment pre-coding. For example H-Homeschool, N-Nonpublic, R-Regular (optional)</param>
         /// <param name="assessedGradeLevelDescriptor">The grade level tested for student when assessed. (optional)</param>
+        /// <param name="enrolledGradeLevelDescriptor">The grade level for which student is enrolled. (optional)</param>
         /// <param name="assessmentTitle">Refers to the test name of the assessment taken by the student. (optional)</param>
         /// <param name="customGroup">District use special sort order (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <returns>List&lt;MnStudentAssessmentPrecodeReadable&gt;</returns>
-        List<MnStudentAssessmentPrecodeReadable> GetStudentAssessmentPrecodes (int? offset = null, int? limit = null, bool? totalCount = null, string precodeTypeDescriptor = null, int? educationOrganizationId = null, string studentUniqueId = null, int? siteEducationOrganizationId = null, string sitePrecodeTypeDescriptor = null, string generalEnrollmentDescriptor = null, string assessedGradeLevelDescriptor = null, string assessmentTitle = null, string customGroup = null, string id = null);
+        List<MnStudentAssessmentPrecodeReadable> GetStudentAssessmentPrecodes (int? offset = null, int? limit = null, bool? totalCount = null, string precodeTypeDescriptor = null, int? educationOrganizationId = null, string studentUniqueId = null, int? siteEducationOrganizationId = null, string sitePrecodeTypeDescriptor = null, string generalEnrollmentDescriptor = null, string assessedGradeLevelDescriptor = null, string enrolledGradeLevelDescriptor = null, string assessmentTitle = null, string customGroup = null, string id = null);
 
         /// <summary>
         /// Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
@@ -87,11 +88,12 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_AssessmentVendor_Profile
         /// <param name="sitePrecodeTypeDescriptor">Type of pre-code site record. For example, MCA/MTAS, ACCESS/ALT-ACCESS (optional)</param>
         /// <param name="generalEnrollmentDescriptor">Student enrollment at the time of assessment pre-coding. For example H-Homeschool, N-Nonpublic, R-Regular (optional)</param>
         /// <param name="assessedGradeLevelDescriptor">The grade level tested for student when assessed. (optional)</param>
+        /// <param name="enrolledGradeLevelDescriptor">The grade level for which student is enrolled. (optional)</param>
         /// <param name="assessmentTitle">Refers to the test name of the assessment taken by the student. (optional)</param>
         /// <param name="customGroup">District use special sort order (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <returns>ApiResponse of List&lt;MnStudentAssessmentPrecodeReadable&gt;</returns>
-        ApiResponse<List<MnStudentAssessmentPrecodeReadable>> GetStudentAssessmentPrecodesWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string precodeTypeDescriptor = null, int? educationOrganizationId = null, string studentUniqueId = null, int? siteEducationOrganizationId = null, string sitePrecodeTypeDescriptor = null, string generalEnrollmentDescriptor = null, string assessedGradeLevelDescriptor = null, string assessmentTitle = null, string customGroup = null, string id = null);
+        ApiResponse<List<MnStudentAssessmentPrecodeReadable>> GetStudentAssessmentPrecodesWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string precodeTypeDescriptor = null, int? educationOrganizationId = null, string studentUniqueId = null, int? siteEducationOrganizationId = null, string sitePrecodeTypeDescriptor = null, string generalEnrollmentDescriptor = null, string assessedGradeLevelDescriptor = null, string enrolledGradeLevelDescriptor = null, string assessmentTitle = null, string customGroup = null, string id = null);
         /// <summary>
         /// Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
         /// </summary>
@@ -203,11 +205,12 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_AssessmentVendor_Profile
         /// <param name="sitePrecodeTypeDescriptor">Type of pre-code site record. For example, MCA/MTAS, ACCESS/ALT-ACCESS (optional)</param>
         /// <param name="generalEnrollmentDescriptor">Student enrollment at the time of assessment pre-coding. For example H-Homeschool, N-Nonpublic, R-Regular (optional)</param>
         /// <param name="assessedGradeLevelDescriptor">The grade level tested for student when assessed. (optional)</param>
+        /// <param name="enrolledGradeLevelDescriptor">The grade level for which student is enrolled. (optional)</param>
         /// <param name="assessmentTitle">Refers to the test name of the assessment taken by the student. (optional)</param>
         /// <param name="customGroup">District use special sort order (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <returns>Task of List&lt;MnStudentAssessmentPrecodeReadable&gt;</returns>
-        System.Threading.Tasks.Task<List<MnStudentAssessmentPrecodeReadable>> GetStudentAssessmentPrecodesAsync (int? offset = null, int? limit = null, bool? totalCount = null, string precodeTypeDescriptor = null, int? educationOrganizationId = null, string studentUniqueId = null, int? siteEducationOrganizationId = null, string sitePrecodeTypeDescriptor = null, string generalEnrollmentDescriptor = null, string assessedGradeLevelDescriptor = null, string assessmentTitle = null, string customGroup = null, string id = null);
+        System.Threading.Tasks.Task<List<MnStudentAssessmentPrecodeReadable>> GetStudentAssessmentPrecodesAsync (int? offset = null, int? limit = null, bool? totalCount = null, string precodeTypeDescriptor = null, int? educationOrganizationId = null, string studentUniqueId = null, int? siteEducationOrganizationId = null, string sitePrecodeTypeDescriptor = null, string generalEnrollmentDescriptor = null, string assessedGradeLevelDescriptor = null, string enrolledGradeLevelDescriptor = null, string assessmentTitle = null, string customGroup = null, string id = null);
 
         /// <summary>
         /// Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
@@ -226,11 +229,12 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_AssessmentVendor_Profile
         /// <param name="sitePrecodeTypeDescriptor">Type of pre-code site record. For example, MCA/MTAS, ACCESS/ALT-ACCESS (optional)</param>
         /// <param name="generalEnrollmentDescriptor">Student enrollment at the time of assessment pre-coding. For example H-Homeschool, N-Nonpublic, R-Regular (optional)</param>
         /// <param name="assessedGradeLevelDescriptor">The grade level tested for student when assessed. (optional)</param>
+        /// <param name="enrolledGradeLevelDescriptor">The grade level for which student is enrolled. (optional)</param>
         /// <param name="assessmentTitle">Refers to the test name of the assessment taken by the student. (optional)</param>
         /// <param name="customGroup">District use special sort order (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;MnStudentAssessmentPrecodeReadable&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<MnStudentAssessmentPrecodeReadable>>> GetStudentAssessmentPrecodesAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string precodeTypeDescriptor = null, int? educationOrganizationId = null, string studentUniqueId = null, int? siteEducationOrganizationId = null, string sitePrecodeTypeDescriptor = null, string generalEnrollmentDescriptor = null, string assessedGradeLevelDescriptor = null, string assessmentTitle = null, string customGroup = null, string id = null);
+        System.Threading.Tasks.Task<ApiResponse<List<MnStudentAssessmentPrecodeReadable>>> GetStudentAssessmentPrecodesAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string precodeTypeDescriptor = null, int? educationOrganizationId = null, string studentUniqueId = null, int? siteEducationOrganizationId = null, string sitePrecodeTypeDescriptor = null, string generalEnrollmentDescriptor = null, string assessedGradeLevelDescriptor = null, string enrolledGradeLevelDescriptor = null, string assessmentTitle = null, string customGroup = null, string id = null);
         /// <summary>
         /// Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
         /// </summary>
@@ -565,13 +569,14 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_AssessmentVendor_Profile
         /// <param name="sitePrecodeTypeDescriptor">Type of pre-code site record. For example, MCA/MTAS, ACCESS/ALT-ACCESS (optional)</param>
         /// <param name="generalEnrollmentDescriptor">Student enrollment at the time of assessment pre-coding. For example H-Homeschool, N-Nonpublic, R-Regular (optional)</param>
         /// <param name="assessedGradeLevelDescriptor">The grade level tested for student when assessed. (optional)</param>
+        /// <param name="enrolledGradeLevelDescriptor">The grade level for which student is enrolled. (optional)</param>
         /// <param name="assessmentTitle">Refers to the test name of the assessment taken by the student. (optional)</param>
         /// <param name="customGroup">District use special sort order (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <returns>List&lt;MnStudentAssessmentPrecodeReadable&gt;</returns>
-        public List<MnStudentAssessmentPrecodeReadable> GetStudentAssessmentPrecodes (int? offset = null, int? limit = null, bool? totalCount = null, string precodeTypeDescriptor = null, int? educationOrganizationId = null, string studentUniqueId = null, int? siteEducationOrganizationId = null, string sitePrecodeTypeDescriptor = null, string generalEnrollmentDescriptor = null, string assessedGradeLevelDescriptor = null, string assessmentTitle = null, string customGroup = null, string id = null)
+        public List<MnStudentAssessmentPrecodeReadable> GetStudentAssessmentPrecodes (int? offset = null, int? limit = null, bool? totalCount = null, string precodeTypeDescriptor = null, int? educationOrganizationId = null, string studentUniqueId = null, int? siteEducationOrganizationId = null, string sitePrecodeTypeDescriptor = null, string generalEnrollmentDescriptor = null, string assessedGradeLevelDescriptor = null, string enrolledGradeLevelDescriptor = null, string assessmentTitle = null, string customGroup = null, string id = null)
         {
-             ApiResponse<List<MnStudentAssessmentPrecodeReadable>> localVarResponse = GetStudentAssessmentPrecodesWithHttpInfo(offset, limit, totalCount, precodeTypeDescriptor, educationOrganizationId, studentUniqueId, siteEducationOrganizationId, sitePrecodeTypeDescriptor, generalEnrollmentDescriptor, assessedGradeLevelDescriptor, assessmentTitle, customGroup, id);
+             ApiResponse<List<MnStudentAssessmentPrecodeReadable>> localVarResponse = GetStudentAssessmentPrecodesWithHttpInfo(offset, limit, totalCount, precodeTypeDescriptor, educationOrganizationId, studentUniqueId, siteEducationOrganizationId, sitePrecodeTypeDescriptor, generalEnrollmentDescriptor, assessedGradeLevelDescriptor, enrolledGradeLevelDescriptor, assessmentTitle, customGroup, id);
              return localVarResponse.Data;
         }
 
@@ -589,11 +594,12 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_AssessmentVendor_Profile
         /// <param name="sitePrecodeTypeDescriptor">Type of pre-code site record. For example, MCA/MTAS, ACCESS/ALT-ACCESS (optional)</param>
         /// <param name="generalEnrollmentDescriptor">Student enrollment at the time of assessment pre-coding. For example H-Homeschool, N-Nonpublic, R-Regular (optional)</param>
         /// <param name="assessedGradeLevelDescriptor">The grade level tested for student when assessed. (optional)</param>
+        /// <param name="enrolledGradeLevelDescriptor">The grade level for which student is enrolled. (optional)</param>
         /// <param name="assessmentTitle">Refers to the test name of the assessment taken by the student. (optional)</param>
         /// <param name="customGroup">District use special sort order (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <returns>ApiResponse of List&lt;MnStudentAssessmentPrecodeReadable&gt;</returns>
-        public ApiResponse< List<MnStudentAssessmentPrecodeReadable> > GetStudentAssessmentPrecodesWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string precodeTypeDescriptor = null, int? educationOrganizationId = null, string studentUniqueId = null, int? siteEducationOrganizationId = null, string sitePrecodeTypeDescriptor = null, string generalEnrollmentDescriptor = null, string assessedGradeLevelDescriptor = null, string assessmentTitle = null, string customGroup = null, string id = null)
+        public ApiResponse< List<MnStudentAssessmentPrecodeReadable> > GetStudentAssessmentPrecodesWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string precodeTypeDescriptor = null, int? educationOrganizationId = null, string studentUniqueId = null, int? siteEducationOrganizationId = null, string sitePrecodeTypeDescriptor = null, string generalEnrollmentDescriptor = null, string assessedGradeLevelDescriptor = null, string enrolledGradeLevelDescriptor = null, string assessmentTitle = null, string customGroup = null, string id = null)
         {
 
             var localVarPath = "/MN/studentAssessmentPrecodes";
@@ -628,6 +634,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_AssessmentVendor_Profile
             if (sitePrecodeTypeDescriptor != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sitePrecodeTypeDescriptor", sitePrecodeTypeDescriptor)); // query parameter
             if (generalEnrollmentDescriptor != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "generalEnrollmentDescriptor", generalEnrollmentDescriptor)); // query parameter
             if (assessedGradeLevelDescriptor != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "assessedGradeLevelDescriptor", assessedGradeLevelDescriptor)); // query parameter
+            if (enrolledGradeLevelDescriptor != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "enrolledGradeLevelDescriptor", enrolledGradeLevelDescriptor)); // query parameter
             if (assessmentTitle != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "assessmentTitle", assessmentTitle)); // query parameter
             if (customGroup != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "customGroup", customGroup)); // query parameter
             if (id != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "id", id)); // query parameter
@@ -671,13 +678,14 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_AssessmentVendor_Profile
         /// <param name="sitePrecodeTypeDescriptor">Type of pre-code site record. For example, MCA/MTAS, ACCESS/ALT-ACCESS (optional)</param>
         /// <param name="generalEnrollmentDescriptor">Student enrollment at the time of assessment pre-coding. For example H-Homeschool, N-Nonpublic, R-Regular (optional)</param>
         /// <param name="assessedGradeLevelDescriptor">The grade level tested for student when assessed. (optional)</param>
+        /// <param name="enrolledGradeLevelDescriptor">The grade level for which student is enrolled. (optional)</param>
         /// <param name="assessmentTitle">Refers to the test name of the assessment taken by the student. (optional)</param>
         /// <param name="customGroup">District use special sort order (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <returns>Task of List&lt;MnStudentAssessmentPrecodeReadable&gt;</returns>
-        public async System.Threading.Tasks.Task<List<MnStudentAssessmentPrecodeReadable>> GetStudentAssessmentPrecodesAsync (int? offset = null, int? limit = null, bool? totalCount = null, string precodeTypeDescriptor = null, int? educationOrganizationId = null, string studentUniqueId = null, int? siteEducationOrganizationId = null, string sitePrecodeTypeDescriptor = null, string generalEnrollmentDescriptor = null, string assessedGradeLevelDescriptor = null, string assessmentTitle = null, string customGroup = null, string id = null)
+        public async System.Threading.Tasks.Task<List<MnStudentAssessmentPrecodeReadable>> GetStudentAssessmentPrecodesAsync (int? offset = null, int? limit = null, bool? totalCount = null, string precodeTypeDescriptor = null, int? educationOrganizationId = null, string studentUniqueId = null, int? siteEducationOrganizationId = null, string sitePrecodeTypeDescriptor = null, string generalEnrollmentDescriptor = null, string assessedGradeLevelDescriptor = null, string enrolledGradeLevelDescriptor = null, string assessmentTitle = null, string customGroup = null, string id = null)
         {
-             ApiResponse<List<MnStudentAssessmentPrecodeReadable>> localVarResponse = await GetStudentAssessmentPrecodesAsyncWithHttpInfo(offset, limit, totalCount, precodeTypeDescriptor, educationOrganizationId, studentUniqueId, siteEducationOrganizationId, sitePrecodeTypeDescriptor, generalEnrollmentDescriptor, assessedGradeLevelDescriptor, assessmentTitle, customGroup, id);
+             ApiResponse<List<MnStudentAssessmentPrecodeReadable>> localVarResponse = await GetStudentAssessmentPrecodesAsyncWithHttpInfo(offset, limit, totalCount, precodeTypeDescriptor, educationOrganizationId, studentUniqueId, siteEducationOrganizationId, sitePrecodeTypeDescriptor, generalEnrollmentDescriptor, assessedGradeLevelDescriptor, enrolledGradeLevelDescriptor, assessmentTitle, customGroup, id);
              return localVarResponse.Data;
 
         }
@@ -696,11 +704,12 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_AssessmentVendor_Profile
         /// <param name="sitePrecodeTypeDescriptor">Type of pre-code site record. For example, MCA/MTAS, ACCESS/ALT-ACCESS (optional)</param>
         /// <param name="generalEnrollmentDescriptor">Student enrollment at the time of assessment pre-coding. For example H-Homeschool, N-Nonpublic, R-Regular (optional)</param>
         /// <param name="assessedGradeLevelDescriptor">The grade level tested for student when assessed. (optional)</param>
+        /// <param name="enrolledGradeLevelDescriptor">The grade level for which student is enrolled. (optional)</param>
         /// <param name="assessmentTitle">Refers to the test name of the assessment taken by the student. (optional)</param>
         /// <param name="customGroup">District use special sort order (optional)</param>
         /// <param name="id"> (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;MnStudentAssessmentPrecodeReadable&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<MnStudentAssessmentPrecodeReadable>>> GetStudentAssessmentPrecodesAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string precodeTypeDescriptor = null, int? educationOrganizationId = null, string studentUniqueId = null, int? siteEducationOrganizationId = null, string sitePrecodeTypeDescriptor = null, string generalEnrollmentDescriptor = null, string assessedGradeLevelDescriptor = null, string assessmentTitle = null, string customGroup = null, string id = null)
+        public async System.Threading.Tasks.Task<ApiResponse<List<MnStudentAssessmentPrecodeReadable>>> GetStudentAssessmentPrecodesAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string precodeTypeDescriptor = null, int? educationOrganizationId = null, string studentUniqueId = null, int? siteEducationOrganizationId = null, string sitePrecodeTypeDescriptor = null, string generalEnrollmentDescriptor = null, string assessedGradeLevelDescriptor = null, string enrolledGradeLevelDescriptor = null, string assessmentTitle = null, string customGroup = null, string id = null)
         {
 
             var localVarPath = "/MN/studentAssessmentPrecodes";
@@ -735,6 +744,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_AssessmentVendor_Profile
             if (sitePrecodeTypeDescriptor != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sitePrecodeTypeDescriptor", sitePrecodeTypeDescriptor)); // query parameter
             if (generalEnrollmentDescriptor != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "generalEnrollmentDescriptor", generalEnrollmentDescriptor)); // query parameter
             if (assessedGradeLevelDescriptor != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "assessedGradeLevelDescriptor", assessedGradeLevelDescriptor)); // query parameter
+            if (enrolledGradeLevelDescriptor != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "enrolledGradeLevelDescriptor", enrolledGradeLevelDescriptor)); // query parameter
             if (assessmentTitle != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "assessmentTitle", assessmentTitle)); // query parameter
             if (customGroup != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "customGroup", customGroup)); // query parameter
             if (id != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "id", id)); // query parameter

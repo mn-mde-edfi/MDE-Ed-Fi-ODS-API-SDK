@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **AssessedGradeLevelDescriptor** | **string** | The grade level tested for student when assessed. | [optional] 
 **AssessmentTitle** | **string** | Refers to the test name of the assessment taken by the student. | [optional] 
 **CustomGroup** | **string** | District use special sort order | [optional] 
+**EnrolledGradeLevelDescriptor** | **string** | The grade level for which student is enrolled. | [optional] 
 **GeneralEnrollmentDescriptor** | **string** | Student enrollment at the time of assessment pre-coding. For example H-Homeschool, N-Nonpublic, R-Regular | [optional] 
 **Etag** | **string** | A unique system-generated value that identifies the version of the resource. | [optional] 
 
