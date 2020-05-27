@@ -53,12 +53,12 @@ namespace EdFi.OdsApi.Sdk.Client
         public ApiClient()
         {
             Configuration = EdFi.OdsApi.Sdk.Client.Configuration.Default;
-            RestClient = new RestClient("https://localhost:54746/data/v3");
+            RestClient = new RestClient("https://test.edfi.education.mn.gov:443/sb20_/edfi.ods.webapi/data/v3");
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiClient" /> class
-        /// with default base path (https://localhost:54746/data/v3).
+        /// with default base path (https://test.edfi.education.mn.gov:443/sb20_/edfi.ods.webapi/data/v3).
         /// </summary>
         /// <param name="config">An instance of Configuration.</param>
         public ApiClient(Configuration config)
@@ -73,7 +73,7 @@ namespace EdFi.OdsApi.Sdk.Client
         /// with default configuration.
         /// </summary>
         /// <param name="basePath">The base path.</param>
-        public ApiClient(String basePath = "https://localhost:54746/data/v3")
+        public ApiClient(String basePath = "https://test.edfi.education.mn.gov:443/sb20_/edfi.ods.webapi/data/v3")
         {
            if (String.IsNullOrEmpty(basePath))
                 throw new ArgumentException("basePath cannot be empty");

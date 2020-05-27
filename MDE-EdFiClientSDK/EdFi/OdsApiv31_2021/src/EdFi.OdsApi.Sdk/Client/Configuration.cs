@@ -115,7 +115,7 @@ namespace EdFi.OdsApi.Sdk.Client
         public Configuration()
         {
             UserAgent = "Swagger-Codegen/1.0.0/csharp";
-            BasePath = "https://localhost:54746/data/v3";
+            BasePath = "https://test.edfi.education.mn.gov:443/sb20_/edfi.ods.webapi/data/v3";
             DefaultHeader = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
             ApiKeyPrefix = new ConcurrentDictionary<string, string>();
@@ -131,7 +131,7 @@ namespace EdFi.OdsApi.Sdk.Client
             IDictionary<string, string> defaultHeader,
             IDictionary<string, string> apiKey,
             IDictionary<string, string> apiKeyPrefix,
-            string basePath = "https://localhost:54746/data/v3") : this()
+            string basePath = "https://test.edfi.education.mn.gov:443/sb20_/edfi.ods.webapi/data/v3") : this()
         {
             if (string.IsNullOrWhiteSpace(basePath))
                 throw new ArgumentException("The provided basePath is invalid.", "basePath");

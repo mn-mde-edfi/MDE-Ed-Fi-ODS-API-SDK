@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile.EdFiStudentSpecialEducationProgramAssociationDisabilityReadable
+# EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISVendor_Profile.EdFiStudentSpecialEducationProgramAssociationDisabilityReadable
 ## Properties
 
 Name | Type | Description | Notes

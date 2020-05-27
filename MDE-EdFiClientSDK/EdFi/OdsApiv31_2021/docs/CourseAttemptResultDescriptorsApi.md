@@ -1,6 +1,6 @@
 # EdFi.OdsApi.Sdk.Apis.Descriptors.CourseAttemptResultDescriptorsApi
 
-All URIs are relative to *https://localhost:54746/data/v3*
+All URIs are relative to *https://test.edfi.education.mn.gov:443/sb20_/edfi.ods.webapi/data/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
