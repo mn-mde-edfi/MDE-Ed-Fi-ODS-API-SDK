@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile.EdFiStudentAssessmentWritable
+# EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISVendor_Profile.EdFiStudentAssessmentWritable
 ## Properties
 
 Name | Type | Description | Notes

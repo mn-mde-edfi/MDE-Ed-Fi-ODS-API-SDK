@@ -39,13 +39,10 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// Initializes a new instance of the <see cref="EdFiEducationOrganizationAddressLocalEducationAgencyReadable" /> class.
         /// </summary>
         /// <param name="AddressTypeDescriptor">The type of address listed for an individual or organization.    For example:  Physical Address, Mailing Address, Home Address, etc.) (required).</param>
-        /// <param name="StateAbbreviationDescriptor">The abbreviation for the state (within the United States) or outlying area in which an address is located. (required).</param>
-        /// <param name="ApartmentRoomSuiteNumber">The apartment, room, or suite number of an address..</param>
-        /// <param name="BuildingSiteNumber">The number of the building on the site, if more than one building shares the same address..</param>
         /// <param name="City">The name of the city in which an address is located. (required).</param>
         /// <param name="PostalCode">The five or nine digit zip code or overseas postal code portion of an address. (required).</param>
         /// <param name="StreetNumberName">The street number and street name or post office box number of an address. (required).</param>
-        public EdFiEducationOrganizationAddressLocalEducationAgencyReadable(string AddressTypeDescriptor = default(string), string StateAbbreviationDescriptor = default(string), string ApartmentRoomSuiteNumber = default(string), string BuildingSiteNumber = default(string), string City = default(string), string PostalCode = default(string), string StreetNumberName = default(string))
+        public EdFiEducationOrganizationAddressLocalEducationAgencyReadable(string AddressTypeDescriptor = default(string), string City = default(string), string PostalCode = default(string), string StreetNumberName = default(string))
         {
             // to ensure "AddressTypeDescriptor" is required (not null)
             if (AddressTypeDescriptor == null)
@@ -55,15 +52,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
             else
             {
                 this.AddressTypeDescriptor = AddressTypeDescriptor;
-            }
-            // to ensure "StateAbbreviationDescriptor" is required (not null)
-            if (StateAbbreviationDescriptor == null)
-            {
-                throw new InvalidDataException("StateAbbreviationDescriptor is a required property for EdFiEducationOrganizationAddressLocalEducationAgencyReadable and cannot be null");
-            }
-            else
-            {
-                this.StateAbbreviationDescriptor = StateAbbreviationDescriptor;
             }
             // to ensure "City" is required (not null)
             if (City == null)
@@ -92,8 +80,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
             {
                 this.StreetNumberName = StreetNumberName;
             }
-            this.ApartmentRoomSuiteNumber = ApartmentRoomSuiteNumber;
-            this.BuildingSiteNumber = BuildingSiteNumber;
         }
         
         /// <summary>
@@ -102,27 +88,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// <value>The type of address listed for an individual or organization.    For example:  Physical Address, Mailing Address, Home Address, etc.)</value>
         [DataMember(Name="addressTypeDescriptor", EmitDefaultValue=false)]
         public string AddressTypeDescriptor { get; set; }
-
-        /// <summary>
-        /// The abbreviation for the state (within the United States) or outlying area in which an address is located.
-        /// </summary>
-        /// <value>The abbreviation for the state (within the United States) or outlying area in which an address is located.</value>
-        [DataMember(Name="stateAbbreviationDescriptor", EmitDefaultValue=false)]
-        public string StateAbbreviationDescriptor { get; set; }
-
-        /// <summary>
-        /// The apartment, room, or suite number of an address.
-        /// </summary>
-        /// <value>The apartment, room, or suite number of an address.</value>
-        [DataMember(Name="apartmentRoomSuiteNumber", EmitDefaultValue=false)]
-        public string ApartmentRoomSuiteNumber { get; set; }
-
-        /// <summary>
-        /// The number of the building on the site, if more than one building shares the same address.
-        /// </summary>
-        /// <value>The number of the building on the site, if more than one building shares the same address.</value>
-        [DataMember(Name="buildingSiteNumber", EmitDefaultValue=false)]
-        public string BuildingSiteNumber { get; set; }
 
         /// <summary>
         /// The name of the city in which an address is located.
@@ -154,9 +119,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
             var sb = new StringBuilder();
             sb.Append("class EdFiEducationOrganizationAddressLocalEducationAgencyReadable {\n");
             sb.Append("  AddressTypeDescriptor: ").Append(AddressTypeDescriptor).Append("\n");
-            sb.Append("  StateAbbreviationDescriptor: ").Append(StateAbbreviationDescriptor).Append("\n");
-            sb.Append("  ApartmentRoomSuiteNumber: ").Append(ApartmentRoomSuiteNumber).Append("\n");
-            sb.Append("  BuildingSiteNumber: ").Append(BuildingSiteNumber).Append("\n");
             sb.Append("  City: ").Append(City).Append("\n");
             sb.Append("  PostalCode: ").Append(PostalCode).Append("\n");
             sb.Append("  StreetNumberName: ").Append(StreetNumberName).Append("\n");
@@ -200,21 +162,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
                     this.AddressTypeDescriptor.Equals(input.AddressTypeDescriptor))
                 ) && 
                 (
-                    this.StateAbbreviationDescriptor == input.StateAbbreviationDescriptor ||
-                    (this.StateAbbreviationDescriptor != null &&
-                    this.StateAbbreviationDescriptor.Equals(input.StateAbbreviationDescriptor))
-                ) && 
-                (
-                    this.ApartmentRoomSuiteNumber == input.ApartmentRoomSuiteNumber ||
-                    (this.ApartmentRoomSuiteNumber != null &&
-                    this.ApartmentRoomSuiteNumber.Equals(input.ApartmentRoomSuiteNumber))
-                ) && 
-                (
-                    this.BuildingSiteNumber == input.BuildingSiteNumber ||
-                    (this.BuildingSiteNumber != null &&
-                    this.BuildingSiteNumber.Equals(input.BuildingSiteNumber))
-                ) && 
-                (
                     this.City == input.City ||
                     (this.City != null &&
                     this.City.Equals(input.City))
@@ -242,12 +189,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
                 int hashCode = 41;
                 if (this.AddressTypeDescriptor != null)
                     hashCode = hashCode * 59 + this.AddressTypeDescriptor.GetHashCode();
-                if (this.StateAbbreviationDescriptor != null)
-                    hashCode = hashCode * 59 + this.StateAbbreviationDescriptor.GetHashCode();
-                if (this.ApartmentRoomSuiteNumber != null)
-                    hashCode = hashCode * 59 + this.ApartmentRoomSuiteNumber.GetHashCode();
-                if (this.BuildingSiteNumber != null)
-                    hashCode = hashCode * 59 + this.BuildingSiteNumber.GetHashCode();
                 if (this.City != null)
                     hashCode = hashCode * 59 + this.City.GetHashCode();
                 if (this.PostalCode != null)
@@ -269,24 +210,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
             if(this.AddressTypeDescriptor != null && this.AddressTypeDescriptor.Length > 306)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AddressTypeDescriptor, length must be less than 306.", new [] { "AddressTypeDescriptor" });
-            }
-
-            // StateAbbreviationDescriptor (string) maxLength
-            if(this.StateAbbreviationDescriptor != null && this.StateAbbreviationDescriptor.Length > 306)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for StateAbbreviationDescriptor, length must be less than 306.", new [] { "StateAbbreviationDescriptor" });
-            }
-
-            // ApartmentRoomSuiteNumber (string) maxLength
-            if(this.ApartmentRoomSuiteNumber != null && this.ApartmentRoomSuiteNumber.Length > 50)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ApartmentRoomSuiteNumber, length must be less than 50.", new [] { "ApartmentRoomSuiteNumber" });
-            }
-
-            // BuildingSiteNumber (string) maxLength
-            if(this.BuildingSiteNumber != null && this.BuildingSiteNumber.Length > 20)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for BuildingSiteNumber, length must be less than 20.", new [] { "BuildingSiteNumber" });
             }
 
             // City (string) maxLength

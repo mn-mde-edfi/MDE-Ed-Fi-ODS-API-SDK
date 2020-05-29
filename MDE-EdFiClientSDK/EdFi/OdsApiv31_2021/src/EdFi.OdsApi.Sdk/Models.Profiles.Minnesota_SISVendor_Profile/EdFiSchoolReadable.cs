@@ -40,18 +40,16 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// </summary>
         /// <param name="Id">Id (required).</param>
         /// <param name="Addresses">An unordered collection of educationOrganizationAddresses. The set of elements that describes the physical location of the education entity, including the street address, city, state, ZIP code, and ZIP code + 4. (required).</param>
-        /// <param name="EducationOrganizationCategories">An unordered collection of educationOrganizationCategories. The classification of the education agency within the geographic boundaries of a state according to the level of administrative and operational control granted by the state. (required).</param>
+        /// <param name="Categories">An unordered collection of educationOrganizationCategories. The classification of the education agency within the geographic boundaries of a state according to the level of administrative and operational control granted by the state. (required).</param>
         /// <param name="GradeLevels">An unordered collection of schoolGradeLevels. The grade levels served at the school. (required).</param>
         /// <param name="SchoolId">The identifier assigned to a school. (required).</param>
         /// <param name="LocalEducationAgencyReference">LocalEducationAgencyReference.</param>
         /// <param name="IdentificationCodes">An unordered collection of educationOrganizationIdentificationCodes. A unique number or alphanumeric code assigned to an education organization by a school, school system, a state, or other agency or entity..</param>
-        /// <param name="InstitutionTelephones">An unordered collection of educationOrganizationInstitutionTelephones. The 10-digit telephone number, including the area code, for the education entity..</param>
         /// <param name="NameOfInstitution">The full, legally accepted name of the institution. (required).</param>
-        /// <param name="SchoolCategories">An unordered collection of schoolCategories. The one or more categories of school. For example: High School, Middle School, and/or Elementary School..</param>
         /// <param name="TitleIPartASchoolDesignationDescriptor">Denotes the Title I Part A designation for the school..</param>
         /// <param name="Etag">A unique system-generated value that identifies the version of the resource..</param>
         /// <param name="Ext">Ext.</param>
-        public EdFiSchoolReadable(string Id = default(string), List<EdFiEducationOrganizationAddressSchoolReadable> Addresses = default(List<EdFiEducationOrganizationAddressSchoolReadable>), List<EdFiEducationOrganizationCategorySchoolReadable> EducationOrganizationCategories = default(List<EdFiEducationOrganizationCategorySchoolReadable>), List<EdFiSchoolGradeLevelReadable> GradeLevels = default(List<EdFiSchoolGradeLevelReadable>), int? SchoolId = default(int?), EdFiLocalEducationAgencyReference LocalEducationAgencyReference = default(EdFiLocalEducationAgencyReference), List<EdFiEducationOrganizationIdentificationCodeSchoolReadable> IdentificationCodes = default(List<EdFiEducationOrganizationIdentificationCodeSchoolReadable>), List<EdFiEducationOrganizationInstitutionTelephoneSchoolReadable> InstitutionTelephones = default(List<EdFiEducationOrganizationInstitutionTelephoneSchoolReadable>), string NameOfInstitution = default(string), List<EdFiSchoolCategoryReadable> SchoolCategories = default(List<EdFiSchoolCategoryReadable>), string TitleIPartASchoolDesignationDescriptor = default(string), string Etag = default(string), SchoolExtensionsReadable Ext = default(SchoolExtensionsReadable))
+        public EdFiSchoolReadable(string Id = default(string), List<EdFiEducationOrganizationAddressSchoolReadable> Addresses = default(List<EdFiEducationOrganizationAddressSchoolReadable>), List<EdFiEducationOrganizationCategorySchoolReadable> Categories = default(List<EdFiEducationOrganizationCategorySchoolReadable>), List<EdFiSchoolGradeLevelReadable> GradeLevels = default(List<EdFiSchoolGradeLevelReadable>), int? SchoolId = default(int?), EdFiLocalEducationAgencyReference LocalEducationAgencyReference = default(EdFiLocalEducationAgencyReference), List<EdFiEducationOrganizationIdentificationCodeSchoolReadable> IdentificationCodes = default(List<EdFiEducationOrganizationIdentificationCodeSchoolReadable>), string NameOfInstitution = default(string), string TitleIPartASchoolDesignationDescriptor = default(string), string Etag = default(string), SchoolExtensionsReadable Ext = default(SchoolExtensionsReadable))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
@@ -71,14 +69,14 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
             {
                 this.Addresses = Addresses;
             }
-            // to ensure "EducationOrganizationCategories" is required (not null)
-            if (EducationOrganizationCategories == null)
+            // to ensure "Categories" is required (not null)
+            if (Categories == null)
             {
-                throw new InvalidDataException("EducationOrganizationCategories is a required property for EdFiSchoolReadable and cannot be null");
+                throw new InvalidDataException("Categories is a required property for EdFiSchoolReadable and cannot be null");
             }
             else
             {
-                this.EducationOrganizationCategories = EducationOrganizationCategories;
+                this.Categories = Categories;
             }
             // to ensure "GradeLevels" is required (not null)
             if (GradeLevels == null)
@@ -109,8 +107,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
             }
             this.LocalEducationAgencyReference = LocalEducationAgencyReference;
             this.IdentificationCodes = IdentificationCodes;
-            this.InstitutionTelephones = InstitutionTelephones;
-            this.SchoolCategories = SchoolCategories;
             this.TitleIPartASchoolDesignationDescriptor = TitleIPartASchoolDesignationDescriptor;
             this.Etag = Etag;
             this.Ext = Ext;
@@ -133,8 +129,8 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// An unordered collection of educationOrganizationCategories. The classification of the education agency within the geographic boundaries of a state according to the level of administrative and operational control granted by the state.
         /// </summary>
         /// <value>An unordered collection of educationOrganizationCategories. The classification of the education agency within the geographic boundaries of a state according to the level of administrative and operational control granted by the state.</value>
-        [DataMember(Name="educationOrganizationCategories", EmitDefaultValue=false)]
-        public List<EdFiEducationOrganizationCategorySchoolReadable> EducationOrganizationCategories { get; set; }
+        [DataMember(Name="categories", EmitDefaultValue=false)]
+        public List<EdFiEducationOrganizationCategorySchoolReadable> Categories { get; set; }
 
         /// <summary>
         /// An unordered collection of schoolGradeLevels. The grade levels served at the school.
@@ -164,25 +160,11 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         public List<EdFiEducationOrganizationIdentificationCodeSchoolReadable> IdentificationCodes { get; set; }
 
         /// <summary>
-        /// An unordered collection of educationOrganizationInstitutionTelephones. The 10-digit telephone number, including the area code, for the education entity.
-        /// </summary>
-        /// <value>An unordered collection of educationOrganizationInstitutionTelephones. The 10-digit telephone number, including the area code, for the education entity.</value>
-        [DataMember(Name="institutionTelephones", EmitDefaultValue=false)]
-        public List<EdFiEducationOrganizationInstitutionTelephoneSchoolReadable> InstitutionTelephones { get; set; }
-
-        /// <summary>
         /// The full, legally accepted name of the institution.
         /// </summary>
         /// <value>The full, legally accepted name of the institution.</value>
         [DataMember(Name="nameOfInstitution", EmitDefaultValue=false)]
         public string NameOfInstitution { get; set; }
-
-        /// <summary>
-        /// An unordered collection of schoolCategories. The one or more categories of school. For example: High School, Middle School, and/or Elementary School.
-        /// </summary>
-        /// <value>An unordered collection of schoolCategories. The one or more categories of school. For example: High School, Middle School, and/or Elementary School.</value>
-        [DataMember(Name="schoolCategories", EmitDefaultValue=false)]
-        public List<EdFiSchoolCategoryReadable> SchoolCategories { get; set; }
 
         /// <summary>
         /// Denotes the Title I Part A designation for the school.
@@ -214,14 +196,12 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
             sb.Append("class EdFiSchoolReadable {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Addresses: ").Append(Addresses).Append("\n");
-            sb.Append("  EducationOrganizationCategories: ").Append(EducationOrganizationCategories).Append("\n");
+            sb.Append("  Categories: ").Append(Categories).Append("\n");
             sb.Append("  GradeLevels: ").Append(GradeLevels).Append("\n");
             sb.Append("  SchoolId: ").Append(SchoolId).Append("\n");
             sb.Append("  LocalEducationAgencyReference: ").Append(LocalEducationAgencyReference).Append("\n");
             sb.Append("  IdentificationCodes: ").Append(IdentificationCodes).Append("\n");
-            sb.Append("  InstitutionTelephones: ").Append(InstitutionTelephones).Append("\n");
             sb.Append("  NameOfInstitution: ").Append(NameOfInstitution).Append("\n");
-            sb.Append("  SchoolCategories: ").Append(SchoolCategories).Append("\n");
             sb.Append("  TitleIPartASchoolDesignationDescriptor: ").Append(TitleIPartASchoolDesignationDescriptor).Append("\n");
             sb.Append("  Etag: ").Append(Etag).Append("\n");
             sb.Append("  Ext: ").Append(Ext).Append("\n");
@@ -270,9 +250,9 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
                     this.Addresses.SequenceEqual(input.Addresses)
                 ) && 
                 (
-                    this.EducationOrganizationCategories == input.EducationOrganizationCategories ||
-                    this.EducationOrganizationCategories != null &&
-                    this.EducationOrganizationCategories.SequenceEqual(input.EducationOrganizationCategories)
+                    this.Categories == input.Categories ||
+                    this.Categories != null &&
+                    this.Categories.SequenceEqual(input.Categories)
                 ) && 
                 (
                     this.GradeLevels == input.GradeLevels ||
@@ -295,19 +275,9 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
                     this.IdentificationCodes.SequenceEqual(input.IdentificationCodes)
                 ) && 
                 (
-                    this.InstitutionTelephones == input.InstitutionTelephones ||
-                    this.InstitutionTelephones != null &&
-                    this.InstitutionTelephones.SequenceEqual(input.InstitutionTelephones)
-                ) && 
-                (
                     this.NameOfInstitution == input.NameOfInstitution ||
                     (this.NameOfInstitution != null &&
                     this.NameOfInstitution.Equals(input.NameOfInstitution))
-                ) && 
-                (
-                    this.SchoolCategories == input.SchoolCategories ||
-                    this.SchoolCategories != null &&
-                    this.SchoolCategories.SequenceEqual(input.SchoolCategories)
                 ) && 
                 (
                     this.TitleIPartASchoolDesignationDescriptor == input.TitleIPartASchoolDesignationDescriptor ||
@@ -339,8 +309,8 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.Addresses != null)
                     hashCode = hashCode * 59 + this.Addresses.GetHashCode();
-                if (this.EducationOrganizationCategories != null)
-                    hashCode = hashCode * 59 + this.EducationOrganizationCategories.GetHashCode();
+                if (this.Categories != null)
+                    hashCode = hashCode * 59 + this.Categories.GetHashCode();
                 if (this.GradeLevels != null)
                     hashCode = hashCode * 59 + this.GradeLevels.GetHashCode();
                 if (this.SchoolId != null)
@@ -349,12 +319,8 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
                     hashCode = hashCode * 59 + this.LocalEducationAgencyReference.GetHashCode();
                 if (this.IdentificationCodes != null)
                     hashCode = hashCode * 59 + this.IdentificationCodes.GetHashCode();
-                if (this.InstitutionTelephones != null)
-                    hashCode = hashCode * 59 + this.InstitutionTelephones.GetHashCode();
                 if (this.NameOfInstitution != null)
                     hashCode = hashCode * 59 + this.NameOfInstitution.GetHashCode();
-                if (this.SchoolCategories != null)
-                    hashCode = hashCode * 59 + this.SchoolCategories.GetHashCode();
                 if (this.TitleIPartASchoolDesignationDescriptor != null)
                     hashCode = hashCode * 59 + this.TitleIPartASchoolDesignationDescriptor.GetHashCode();
                 if (this.Etag != null)

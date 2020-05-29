@@ -34,15 +34,11 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// Initializes a new instance of the <see cref="MnCalendarExtensionWritable" /> class.
         /// </summary>
         /// <param name="KindergartenScheduleDescriptor">Kindergarten Schedule.</param>
-        /// <param name="CalendarDescription">Calendar description..</param>
-        /// <param name="DaysInSession">Days in session..</param>
         /// <param name="InstructionalDays">The total number of Instructional days during the current school year..</param>
         /// <param name="LengthOfDay">Length of Day..</param>
-        public MnCalendarExtensionWritable(string KindergartenScheduleDescriptor = default(string), string CalendarDescription = default(string), double? DaysInSession = default(double?), double? InstructionalDays = default(double?), int? LengthOfDay = default(int?))
+        public MnCalendarExtensionWritable(string KindergartenScheduleDescriptor = default(string), double? InstructionalDays = default(double?), int? LengthOfDay = default(int?))
         {
             this.KindergartenScheduleDescriptor = KindergartenScheduleDescriptor;
-            this.CalendarDescription = CalendarDescription;
-            this.DaysInSession = DaysInSession;
             this.InstructionalDays = InstructionalDays;
             this.LengthOfDay = LengthOfDay;
         }
@@ -53,20 +49,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
         /// <value>Kindergarten Schedule</value>
         [DataMember(Name="kindergartenScheduleDescriptor", EmitDefaultValue=false)]
         public string KindergartenScheduleDescriptor { get; set; }
-
-        /// <summary>
-        /// Calendar description.
-        /// </summary>
-        /// <value>Calendar description.</value>
-        [DataMember(Name="calendarDescription", EmitDefaultValue=false)]
-        public string CalendarDescription { get; set; }
-
-        /// <summary>
-        /// Days in session.
-        /// </summary>
-        /// <value>Days in session.</value>
-        [DataMember(Name="daysInSession", EmitDefaultValue=false)]
-        public double? DaysInSession { get; set; }
 
         /// <summary>
         /// The total number of Instructional days during the current school year.
@@ -91,8 +73,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
             var sb = new StringBuilder();
             sb.Append("class MnCalendarExtensionWritable {\n");
             sb.Append("  KindergartenScheduleDescriptor: ").Append(KindergartenScheduleDescriptor).Append("\n");
-            sb.Append("  CalendarDescription: ").Append(CalendarDescription).Append("\n");
-            sb.Append("  DaysInSession: ").Append(DaysInSession).Append("\n");
             sb.Append("  InstructionalDays: ").Append(InstructionalDays).Append("\n");
             sb.Append("  LengthOfDay: ").Append(LengthOfDay).Append("\n");
             sb.Append("}\n");
@@ -135,16 +115,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
                     this.KindergartenScheduleDescriptor.Equals(input.KindergartenScheduleDescriptor))
                 ) && 
                 (
-                    this.CalendarDescription == input.CalendarDescription ||
-                    (this.CalendarDescription != null &&
-                    this.CalendarDescription.Equals(input.CalendarDescription))
-                ) && 
-                (
-                    this.DaysInSession == input.DaysInSession ||
-                    (this.DaysInSession != null &&
-                    this.DaysInSession.Equals(input.DaysInSession))
-                ) && 
-                (
                     this.InstructionalDays == input.InstructionalDays ||
                     (this.InstructionalDays != null &&
                     this.InstructionalDays.Equals(input.InstructionalDays))
@@ -167,10 +137,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
                 int hashCode = 41;
                 if (this.KindergartenScheduleDescriptor != null)
                     hashCode = hashCode * 59 + this.KindergartenScheduleDescriptor.GetHashCode();
-                if (this.CalendarDescription != null)
-                    hashCode = hashCode * 59 + this.CalendarDescription.GetHashCode();
-                if (this.DaysInSession != null)
-                    hashCode = hashCode * 59 + this.DaysInSession.GetHashCode();
                 if (this.InstructionalDays != null)
                     hashCode = hashCode * 59 + this.InstructionalDays.GetHashCode();
                 if (this.LengthOfDay != null)
@@ -190,12 +156,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_SISVendor_Profile
             if(this.KindergartenScheduleDescriptor != null && this.KindergartenScheduleDescriptor.Length > 306)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for KindergartenScheduleDescriptor, length must be less than 306.", new [] { "KindergartenScheduleDescriptor" });
-            }
-
-            // CalendarDescription (string) maxLength
-            if(this.CalendarDescription != null && this.CalendarDescription.Length > 100)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CalendarDescription, length must be less than 100.", new [] { "CalendarDescription" });
             }
 
             yield break;

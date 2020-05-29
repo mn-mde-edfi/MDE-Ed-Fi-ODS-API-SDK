@@ -1,6 +1,6 @@
 # EdFi.OdsApi.Sdk.Apis.Identity.IdentitiesApi
 
-All URIs are relative to *https://localhost:54746/Identity/v2*
+All URIs are relative to *https://test.edfi.education.mn.gov:443/sb20_/edfi.ods.webapi/Identity/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
