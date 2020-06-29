@@ -22,21 +22,21 @@ using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = EdFi.OdsApi.Sdk.Client.SwaggerDateConverter;
 
-namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISVendor_Profile
+namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_Profile
 {
     /// <summary>
-    /// EdFiParentReadable
+    /// EdFiParentWritable
     /// </summary>
     [DataContract]
-    public partial class EdFiParentReadable :  IEquatable<EdFiParentReadable>, IValidatableObject
+    public partial class EdFiParentWritable :  IEquatable<EdFiParentWritable>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="EdFiParentReadable" /> class.
+        /// Initializes a new instance of the <see cref="EdFiParentWritable" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected EdFiParentReadable() { }
+        protected EdFiParentWritable() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="EdFiParentReadable" /> class.
+        /// Initializes a new instance of the <see cref="EdFiParentWritable" /> class.
         /// </summary>
         /// <param name="Id">Id (required).</param>
         /// <param name="ParentUniqueId">A unique alphanumeric code assigned to a parent. (required).</param>
@@ -47,12 +47,12 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SI
         /// <param name="SexDescriptor">A person&#39;s gender..</param>
         /// <param name="Etag">A unique system-generated value that identifies the version of the resource..</param>
         /// <param name="Ext">Ext.</param>
-        public EdFiParentReadable(string Id = default(string), string ParentUniqueId = default(string), string FirstName = default(string), string GenerationCodeSuffix = default(string), string LastSurname = default(string), string MiddleName = default(string), string SexDescriptor = default(string), string Etag = default(string), ParentExtensionsReadable Ext = default(ParentExtensionsReadable))
+        public EdFiParentWritable(string Id = default(string), string ParentUniqueId = default(string), string FirstName = default(string), string GenerationCodeSuffix = default(string), string LastSurname = default(string), string MiddleName = default(string), string SexDescriptor = default(string), string Etag = default(string), ParentExtensionsWritable Ext = default(ParentExtensionsWritable))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
             {
-                throw new InvalidDataException("Id is a required property for EdFiParentReadable and cannot be null");
+                throw new InvalidDataException("Id is a required property for EdFiParentWritable and cannot be null");
             }
             else
             {
@@ -61,7 +61,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SI
             // to ensure "ParentUniqueId" is required (not null)
             if (ParentUniqueId == null)
             {
-                throw new InvalidDataException("ParentUniqueId is a required property for EdFiParentReadable and cannot be null");
+                throw new InvalidDataException("ParentUniqueId is a required property for EdFiParentWritable and cannot be null");
             }
             else
             {
@@ -70,7 +70,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SI
             // to ensure "FirstName" is required (not null)
             if (FirstName == null)
             {
-                throw new InvalidDataException("FirstName is a required property for EdFiParentReadable and cannot be null");
+                throw new InvalidDataException("FirstName is a required property for EdFiParentWritable and cannot be null");
             }
             else
             {
@@ -79,7 +79,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SI
             // to ensure "LastSurname" is required (not null)
             if (LastSurname == null)
             {
-                throw new InvalidDataException("LastSurname is a required property for EdFiParentReadable and cannot be null");
+                throw new InvalidDataException("LastSurname is a required property for EdFiParentWritable and cannot be null");
             }
             else
             {
@@ -151,7 +151,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SI
         /// Gets or Sets Ext
         /// </summary>
         [DataMember(Name="_ext", EmitDefaultValue=false)]
-        public ParentExtensionsReadable Ext { get; set; }
+        public ParentExtensionsWritable Ext { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -160,7 +160,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SI
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class EdFiParentReadable {\n");
+            sb.Append("class EdFiParentWritable {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  ParentUniqueId: ").Append(ParentUniqueId).Append("\n");
             sb.Append("  FirstName: ").Append(FirstName).Append("\n");
@@ -190,15 +190,15 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SI
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as EdFiParentReadable);
+            return this.Equals(input as EdFiParentWritable);
         }
 
         /// <summary>
-        /// Returns true if EdFiParentReadable instances are equal
+        /// Returns true if EdFiParentWritable instances are equal
         /// </summary>
-        /// <param name="input">Instance of EdFiParentReadable to be compared</param>
+        /// <param name="input">Instance of EdFiParentWritable to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(EdFiParentReadable input)
+        public bool Equals(EdFiParentWritable input)
         {
             if (input == null)
                 return false;

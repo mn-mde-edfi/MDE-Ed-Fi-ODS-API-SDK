@@ -78,7 +78,7 @@ void (empty response body)
 
 <a name="getparents"></a>
 # **GetParents**
-> List<EdFiParentReadable> GetParents (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string sexDescriptor = null, string firstName = null, string generationCodeSuffix = null, string id = null, string lastSurname = null, string loginId = null, string maidenName = null, string middleName = null, string personalTitlePrefix = null)
+> List<EdFiParentReadable> GetParents (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string sexDescriptor = null, string firstName = null, string generationCodeSuffix = null, string id = null, string lastSurname = null, string middleName = null)
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
 
@@ -111,15 +111,12 @@ namespace Example
             var generationCodeSuffix = generationCodeSuffix_example;  // string | An appendage, if any, used to denote an individual's generation in his family (e.g., Jr., Sr., III). (optional) 
             var id = id_example;  // string |  (optional) 
             var lastSurname = lastSurname_example;  // string | The name borne in common by members of a family. (optional) 
-            var loginId = loginId_example;  // string | The login ID for the user; used for security access control interface. (optional) 
-            var maidenName = maidenName_example;  // string | The person's maiden name. (optional) 
             var middleName = middleName_example;  // string | A secondary name given to an individual at birth, baptism, or during another naming ceremony. (optional) 
-            var personalTitlePrefix = personalTitlePrefix_example;  // string | A prefix used to denote the title, degree, position, or seniority of the person. (optional) 
 
             try
             {
                 // Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
-                List&lt;EdFiParentReadable&gt; result = apiInstance.GetParents(offset, limit, totalCount, parentUniqueId, sexDescriptor, firstName, generationCodeSuffix, id, lastSurname, loginId, maidenName, middleName, personalTitlePrefix);
+                List&lt;EdFiParentReadable&gt; result = apiInstance.GetParents(offset, limit, totalCount, parentUniqueId, sexDescriptor, firstName, generationCodeSuffix, id, lastSurname, middleName);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -144,10 +141,7 @@ Name | Type | Description  | Notes
  **generationCodeSuffix** | **string**| An appendage, if any, used to denote an individual&#39;s generation in his family (e.g., Jr., Sr., III). | [optional] 
  **id** | **string**|  | [optional] 
  **lastSurname** | **string**| The name borne in common by members of a family. | [optional] 
- **loginId** | **string**| The login ID for the user; used for security access control interface. | [optional] 
- **maidenName** | **string**| The person&#39;s maiden name. | [optional] 
  **middleName** | **string**| A secondary name given to an individual at birth, baptism, or during another naming ceremony. | [optional] 
- **personalTitlePrefix** | **string**| A prefix used to denote the title, degree, position, or seniority of the person. | [optional] 
 
 ### Return type
 
