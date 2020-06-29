@@ -78,7 +78,7 @@ void (empty response body)
 
 <a name="getstudentparentassociations"></a>
 # **GetStudentParentAssociations**
-> List<EdFiStudentParentAssociationReadable> GetStudentParentAssociations (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string studentUniqueId = null, string relationDescriptor = null, int? contactPriority = null, string contactRestrictions = null, bool? emergencyContactStatus = null, string id = null, bool? livesWith = null, bool? primaryContactStatus = null)
+> List<EdFiStudentParentAssociationReadable> GetStudentParentAssociations (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string studentUniqueId = null, string relationDescriptor = null, string id = null)
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
 
@@ -108,17 +108,12 @@ namespace Example
             var parentUniqueId = parentUniqueId_example;  // string | A unique alphanumeric code assigned to a parent. (optional) 
             var studentUniqueId = studentUniqueId_example;  // string | A unique alphanumeric code assigned to a student. (optional) 
             var relationDescriptor = relationDescriptor_example;  // string | The nature of an individual's relationship to a student; for example:          Father, Mother, Step Father, Step Mother, Foster Father, Foster Mother, Guardian, etc. (optional) 
-            var contactPriority = 56;  // int? | The numeric order of the preferred sequence or priority of contact. (optional) 
-            var contactRestrictions = contactRestrictions_example;  // string | Restrictions for student and/or teacher contact with the individual (e.g., the student may not be picked up by the individual). (optional) 
-            var emergencyContactStatus = true;  // bool? | Indicator of whether the person is a designated emergency contact for the Student. (optional) 
             var id = id_example;  // string |  (optional) 
-            var livesWith = true;  // bool? | Indicator of whether the Student lives with the associated parent. (optional) 
-            var primaryContactStatus = true;  // bool? | Indicator of whether the person is a primary parental contact for the Student. (optional) 
 
             try
             {
                 // Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
-                List&lt;EdFiStudentParentAssociationReadable&gt; result = apiInstance.GetStudentParentAssociations(offset, limit, totalCount, parentUniqueId, studentUniqueId, relationDescriptor, contactPriority, contactRestrictions, emergencyContactStatus, id, livesWith, primaryContactStatus);
+                List&lt;EdFiStudentParentAssociationReadable&gt; result = apiInstance.GetStudentParentAssociations(offset, limit, totalCount, parentUniqueId, studentUniqueId, relationDescriptor, id);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -140,12 +135,7 @@ Name | Type | Description  | Notes
  **parentUniqueId** | **string**| A unique alphanumeric code assigned to a parent. | [optional] 
  **studentUniqueId** | **string**| A unique alphanumeric code assigned to a student. | [optional] 
  **relationDescriptor** | **string**| The nature of an individual&#39;s relationship to a student; for example:          Father, Mother, Step Father, Step Mother, Foster Father, Foster Mother, Guardian, etc. | [optional] 
- **contactPriority** | **int?**| The numeric order of the preferred sequence or priority of contact. | [optional] 
- **contactRestrictions** | **string**| Restrictions for student and/or teacher contact with the individual (e.g., the student may not be picked up by the individual). | [optional] 
- **emergencyContactStatus** | **bool?**| Indicator of whether the person is a designated emergency contact for the Student. | [optional] 
  **id** | **string**|  | [optional] 
- **livesWith** | **bool?**| Indicator of whether the Student lives with the associated parent. | [optional] 
- **primaryContactStatus** | **bool?**| Indicator of whether the person is a primary parental contact for the Student. | [optional] 
 
 ### Return type
 

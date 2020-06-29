@@ -41,14 +41,9 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SI
         /// <param name="Id">Id (required).</param>
         /// <param name="ParentReference">ParentReference (required).</param>
         /// <param name="StudentReference">StudentReference (required).</param>
-        /// <param name="ContactPriority">The numeric order of the preferred sequence or priority of contact..</param>
-        /// <param name="ContactRestrictions">Restrictions for student and/or teacher contact with the individual (e.g., the student may not be picked up by the individual)..</param>
-        /// <param name="EmergencyContactStatus">Indicator of whether the person is a designated emergency contact for the Student..</param>
-        /// <param name="LivesWith">Indicator of whether the Student lives with the associated parent..</param>
-        /// <param name="PrimaryContactStatus">Indicator of whether the person is a primary parental contact for the Student..</param>
         /// <param name="RelationDescriptor">The nature of an individual&#39;s relationship to a student; for example:          Father, Mother, Step Father, Step Mother, Foster Father, Foster Mother, Guardian, etc..</param>
         /// <param name="Etag">A unique system-generated value that identifies the version of the resource..</param>
-        public EdFiStudentParentAssociationWritable(string Id = default(string), EdFiParentReference ParentReference = default(EdFiParentReference), EdFiStudentReference StudentReference = default(EdFiStudentReference), int? ContactPriority = default(int?), string ContactRestrictions = default(string), bool? EmergencyContactStatus = default(bool?), bool? LivesWith = default(bool?), bool? PrimaryContactStatus = default(bool?), string RelationDescriptor = default(string), string Etag = default(string))
+        public EdFiStudentParentAssociationWritable(string Id = default(string), EdFiParentReference ParentReference = default(EdFiParentReference), EdFiStudentReference StudentReference = default(EdFiStudentReference), string RelationDescriptor = default(string), string Etag = default(string))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
@@ -77,11 +72,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SI
             {
                 this.StudentReference = StudentReference;
             }
-            this.ContactPriority = ContactPriority;
-            this.ContactRestrictions = ContactRestrictions;
-            this.EmergencyContactStatus = EmergencyContactStatus;
-            this.LivesWith = LivesWith;
-            this.PrimaryContactStatus = PrimaryContactStatus;
             this.RelationDescriptor = RelationDescriptor;
             this.Etag = Etag;
         }
@@ -103,41 +93,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SI
         /// </summary>
         [DataMember(Name="studentReference", EmitDefaultValue=false)]
         public EdFiStudentReference StudentReference { get; set; }
-
-        /// <summary>
-        /// The numeric order of the preferred sequence or priority of contact.
-        /// </summary>
-        /// <value>The numeric order of the preferred sequence or priority of contact.</value>
-        [DataMember(Name="contactPriority", EmitDefaultValue=false)]
-        public int? ContactPriority { get; set; }
-
-        /// <summary>
-        /// Restrictions for student and/or teacher contact with the individual (e.g., the student may not be picked up by the individual).
-        /// </summary>
-        /// <value>Restrictions for student and/or teacher contact with the individual (e.g., the student may not be picked up by the individual).</value>
-        [DataMember(Name="contactRestrictions", EmitDefaultValue=false)]
-        public string ContactRestrictions { get; set; }
-
-        /// <summary>
-        /// Indicator of whether the person is a designated emergency contact for the Student.
-        /// </summary>
-        /// <value>Indicator of whether the person is a designated emergency contact for the Student.</value>
-        [DataMember(Name="emergencyContactStatus", EmitDefaultValue=false)]
-        public bool? EmergencyContactStatus { get; set; }
-
-        /// <summary>
-        /// Indicator of whether the Student lives with the associated parent.
-        /// </summary>
-        /// <value>Indicator of whether the Student lives with the associated parent.</value>
-        [DataMember(Name="livesWith", EmitDefaultValue=false)]
-        public bool? LivesWith { get; set; }
-
-        /// <summary>
-        /// Indicator of whether the person is a primary parental contact for the Student.
-        /// </summary>
-        /// <value>Indicator of whether the person is a primary parental contact for the Student.</value>
-        [DataMember(Name="primaryContactStatus", EmitDefaultValue=false)]
-        public bool? PrimaryContactStatus { get; set; }
 
         /// <summary>
         /// The nature of an individual&#39;s relationship to a student; for example:          Father, Mother, Step Father, Step Mother, Foster Father, Foster Mother, Guardian, etc.
@@ -164,11 +119,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SI
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  ParentReference: ").Append(ParentReference).Append("\n");
             sb.Append("  StudentReference: ").Append(StudentReference).Append("\n");
-            sb.Append("  ContactPriority: ").Append(ContactPriority).Append("\n");
-            sb.Append("  ContactRestrictions: ").Append(ContactRestrictions).Append("\n");
-            sb.Append("  EmergencyContactStatus: ").Append(EmergencyContactStatus).Append("\n");
-            sb.Append("  LivesWith: ").Append(LivesWith).Append("\n");
-            sb.Append("  PrimaryContactStatus: ").Append(PrimaryContactStatus).Append("\n");
             sb.Append("  RelationDescriptor: ").Append(RelationDescriptor).Append("\n");
             sb.Append("  Etag: ").Append(Etag).Append("\n");
             sb.Append("}\n");
@@ -221,31 +171,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SI
                     this.StudentReference.Equals(input.StudentReference))
                 ) && 
                 (
-                    this.ContactPriority == input.ContactPriority ||
-                    (this.ContactPriority != null &&
-                    this.ContactPriority.Equals(input.ContactPriority))
-                ) && 
-                (
-                    this.ContactRestrictions == input.ContactRestrictions ||
-                    (this.ContactRestrictions != null &&
-                    this.ContactRestrictions.Equals(input.ContactRestrictions))
-                ) && 
-                (
-                    this.EmergencyContactStatus == input.EmergencyContactStatus ||
-                    (this.EmergencyContactStatus != null &&
-                    this.EmergencyContactStatus.Equals(input.EmergencyContactStatus))
-                ) && 
-                (
-                    this.LivesWith == input.LivesWith ||
-                    (this.LivesWith != null &&
-                    this.LivesWith.Equals(input.LivesWith))
-                ) && 
-                (
-                    this.PrimaryContactStatus == input.PrimaryContactStatus ||
-                    (this.PrimaryContactStatus != null &&
-                    this.PrimaryContactStatus.Equals(input.PrimaryContactStatus))
-                ) && 
-                (
                     this.RelationDescriptor == input.RelationDescriptor ||
                     (this.RelationDescriptor != null &&
                     this.RelationDescriptor.Equals(input.RelationDescriptor))
@@ -272,16 +197,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SI
                     hashCode = hashCode * 59 + this.ParentReference.GetHashCode();
                 if (this.StudentReference != null)
                     hashCode = hashCode * 59 + this.StudentReference.GetHashCode();
-                if (this.ContactPriority != null)
-                    hashCode = hashCode * 59 + this.ContactPriority.GetHashCode();
-                if (this.ContactRestrictions != null)
-                    hashCode = hashCode * 59 + this.ContactRestrictions.GetHashCode();
-                if (this.EmergencyContactStatus != null)
-                    hashCode = hashCode * 59 + this.EmergencyContactStatus.GetHashCode();
-                if (this.LivesWith != null)
-                    hashCode = hashCode * 59 + this.LivesWith.GetHashCode();
-                if (this.PrimaryContactStatus != null)
-                    hashCode = hashCode * 59 + this.PrimaryContactStatus.GetHashCode();
                 if (this.RelationDescriptor != null)
                     hashCode = hashCode * 59 + this.RelationDescriptor.GetHashCode();
                 if (this.Etag != null)
@@ -297,12 +212,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SI
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // ContactRestrictions (string) maxLength
-            if(this.ContactRestrictions != null && this.ContactRestrictions.Length > 250)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ContactRestrictions, length must be less than 250.", new [] { "ContactRestrictions" });
-            }
-
             // RelationDescriptor (string) maxLength
             if(this.RelationDescriptor != null && this.RelationDescriptor.Length > 306)
             {

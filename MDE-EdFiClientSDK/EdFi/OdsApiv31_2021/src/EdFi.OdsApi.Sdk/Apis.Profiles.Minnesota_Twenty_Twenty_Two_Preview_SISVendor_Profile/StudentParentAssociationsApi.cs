@@ -60,14 +60,9 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// <param name="parentUniqueId">A unique alphanumeric code assigned to a parent. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
         /// <param name="relationDescriptor">The nature of an individual&#39;s relationship to a student; for example:          Father, Mother, Step Father, Step Mother, Foster Father, Foster Mother, Guardian, etc. (optional)</param>
-        /// <param name="contactPriority">The numeric order of the preferred sequence or priority of contact. (optional)</param>
-        /// <param name="contactRestrictions">Restrictions for student and/or teacher contact with the individual (e.g., the student may not be picked up by the individual). (optional)</param>
-        /// <param name="emergencyContactStatus">Indicator of whether the person is a designated emergency contact for the Student. (optional)</param>
         /// <param name="id"> (optional)</param>
-        /// <param name="livesWith">Indicator of whether the Student lives with the associated parent. (optional)</param>
-        /// <param name="primaryContactStatus">Indicator of whether the person is a primary parental contact for the Student. (optional)</param>
         /// <returns>List&lt;EdFiStudentParentAssociationReadable&gt;</returns>
-        List<EdFiStudentParentAssociationReadable> GetStudentParentAssociations (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string studentUniqueId = null, string relationDescriptor = null, int? contactPriority = null, string contactRestrictions = null, bool? emergencyContactStatus = null, string id = null, bool? livesWith = null, bool? primaryContactStatus = null);
+        List<EdFiStudentParentAssociationReadable> GetStudentParentAssociations (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string studentUniqueId = null, string relationDescriptor = null, string id = null);
 
         /// <summary>
         /// Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
@@ -82,14 +77,9 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// <param name="parentUniqueId">A unique alphanumeric code assigned to a parent. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
         /// <param name="relationDescriptor">The nature of an individual&#39;s relationship to a student; for example:          Father, Mother, Step Father, Step Mother, Foster Father, Foster Mother, Guardian, etc. (optional)</param>
-        /// <param name="contactPriority">The numeric order of the preferred sequence or priority of contact. (optional)</param>
-        /// <param name="contactRestrictions">Restrictions for student and/or teacher contact with the individual (e.g., the student may not be picked up by the individual). (optional)</param>
-        /// <param name="emergencyContactStatus">Indicator of whether the person is a designated emergency contact for the Student. (optional)</param>
         /// <param name="id"> (optional)</param>
-        /// <param name="livesWith">Indicator of whether the Student lives with the associated parent. (optional)</param>
-        /// <param name="primaryContactStatus">Indicator of whether the person is a primary parental contact for the Student. (optional)</param>
         /// <returns>ApiResponse of List&lt;EdFiStudentParentAssociationReadable&gt;</returns>
-        ApiResponse<List<EdFiStudentParentAssociationReadable>> GetStudentParentAssociationsWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string studentUniqueId = null, string relationDescriptor = null, int? contactPriority = null, string contactRestrictions = null, bool? emergencyContactStatus = null, string id = null, bool? livesWith = null, bool? primaryContactStatus = null);
+        ApiResponse<List<EdFiStudentParentAssociationReadable>> GetStudentParentAssociationsWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string studentUniqueId = null, string relationDescriptor = null, string id = null);
         /// <summary>
         /// Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
         /// </summary>
@@ -197,14 +187,9 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// <param name="parentUniqueId">A unique alphanumeric code assigned to a parent. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
         /// <param name="relationDescriptor">The nature of an individual&#39;s relationship to a student; for example:          Father, Mother, Step Father, Step Mother, Foster Father, Foster Mother, Guardian, etc. (optional)</param>
-        /// <param name="contactPriority">The numeric order of the preferred sequence or priority of contact. (optional)</param>
-        /// <param name="contactRestrictions">Restrictions for student and/or teacher contact with the individual (e.g., the student may not be picked up by the individual). (optional)</param>
-        /// <param name="emergencyContactStatus">Indicator of whether the person is a designated emergency contact for the Student. (optional)</param>
         /// <param name="id"> (optional)</param>
-        /// <param name="livesWith">Indicator of whether the Student lives with the associated parent. (optional)</param>
-        /// <param name="primaryContactStatus">Indicator of whether the person is a primary parental contact for the Student. (optional)</param>
         /// <returns>Task of List&lt;EdFiStudentParentAssociationReadable&gt;</returns>
-        System.Threading.Tasks.Task<List<EdFiStudentParentAssociationReadable>> GetStudentParentAssociationsAsync (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string studentUniqueId = null, string relationDescriptor = null, int? contactPriority = null, string contactRestrictions = null, bool? emergencyContactStatus = null, string id = null, bool? livesWith = null, bool? primaryContactStatus = null);
+        System.Threading.Tasks.Task<List<EdFiStudentParentAssociationReadable>> GetStudentParentAssociationsAsync (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string studentUniqueId = null, string relationDescriptor = null, string id = null);
 
         /// <summary>
         /// Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
@@ -219,14 +204,9 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// <param name="parentUniqueId">A unique alphanumeric code assigned to a parent. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
         /// <param name="relationDescriptor">The nature of an individual&#39;s relationship to a student; for example:          Father, Mother, Step Father, Step Mother, Foster Father, Foster Mother, Guardian, etc. (optional)</param>
-        /// <param name="contactPriority">The numeric order of the preferred sequence or priority of contact. (optional)</param>
-        /// <param name="contactRestrictions">Restrictions for student and/or teacher contact with the individual (e.g., the student may not be picked up by the individual). (optional)</param>
-        /// <param name="emergencyContactStatus">Indicator of whether the person is a designated emergency contact for the Student. (optional)</param>
         /// <param name="id"> (optional)</param>
-        /// <param name="livesWith">Indicator of whether the Student lives with the associated parent. (optional)</param>
-        /// <param name="primaryContactStatus">Indicator of whether the person is a primary parental contact for the Student. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;EdFiStudentParentAssociationReadable&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<EdFiStudentParentAssociationReadable>>> GetStudentParentAssociationsAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string studentUniqueId = null, string relationDescriptor = null, int? contactPriority = null, string contactRestrictions = null, bool? emergencyContactStatus = null, string id = null, bool? livesWith = null, bool? primaryContactStatus = null);
+        System.Threading.Tasks.Task<ApiResponse<List<EdFiStudentParentAssociationReadable>>> GetStudentParentAssociationsAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string studentUniqueId = null, string relationDescriptor = null, string id = null);
         /// <summary>
         /// Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
         /// </summary>
@@ -557,16 +537,11 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// <param name="parentUniqueId">A unique alphanumeric code assigned to a parent. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
         /// <param name="relationDescriptor">The nature of an individual&#39;s relationship to a student; for example:          Father, Mother, Step Father, Step Mother, Foster Father, Foster Mother, Guardian, etc. (optional)</param>
-        /// <param name="contactPriority">The numeric order of the preferred sequence or priority of contact. (optional)</param>
-        /// <param name="contactRestrictions">Restrictions for student and/or teacher contact with the individual (e.g., the student may not be picked up by the individual). (optional)</param>
-        /// <param name="emergencyContactStatus">Indicator of whether the person is a designated emergency contact for the Student. (optional)</param>
         /// <param name="id"> (optional)</param>
-        /// <param name="livesWith">Indicator of whether the Student lives with the associated parent. (optional)</param>
-        /// <param name="primaryContactStatus">Indicator of whether the person is a primary parental contact for the Student. (optional)</param>
         /// <returns>List&lt;EdFiStudentParentAssociationReadable&gt;</returns>
-        public List<EdFiStudentParentAssociationReadable> GetStudentParentAssociations (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string studentUniqueId = null, string relationDescriptor = null, int? contactPriority = null, string contactRestrictions = null, bool? emergencyContactStatus = null, string id = null, bool? livesWith = null, bool? primaryContactStatus = null)
+        public List<EdFiStudentParentAssociationReadable> GetStudentParentAssociations (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string studentUniqueId = null, string relationDescriptor = null, string id = null)
         {
-             ApiResponse<List<EdFiStudentParentAssociationReadable>> localVarResponse = GetStudentParentAssociationsWithHttpInfo(offset, limit, totalCount, parentUniqueId, studentUniqueId, relationDescriptor, contactPriority, contactRestrictions, emergencyContactStatus, id, livesWith, primaryContactStatus);
+             ApiResponse<List<EdFiStudentParentAssociationReadable>> localVarResponse = GetStudentParentAssociationsWithHttpInfo(offset, limit, totalCount, parentUniqueId, studentUniqueId, relationDescriptor, id);
              return localVarResponse.Data;
         }
 
@@ -580,14 +555,9 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// <param name="parentUniqueId">A unique alphanumeric code assigned to a parent. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
         /// <param name="relationDescriptor">The nature of an individual&#39;s relationship to a student; for example:          Father, Mother, Step Father, Step Mother, Foster Father, Foster Mother, Guardian, etc. (optional)</param>
-        /// <param name="contactPriority">The numeric order of the preferred sequence or priority of contact. (optional)</param>
-        /// <param name="contactRestrictions">Restrictions for student and/or teacher contact with the individual (e.g., the student may not be picked up by the individual). (optional)</param>
-        /// <param name="emergencyContactStatus">Indicator of whether the person is a designated emergency contact for the Student. (optional)</param>
         /// <param name="id"> (optional)</param>
-        /// <param name="livesWith">Indicator of whether the Student lives with the associated parent. (optional)</param>
-        /// <param name="primaryContactStatus">Indicator of whether the person is a primary parental contact for the Student. (optional)</param>
         /// <returns>ApiResponse of List&lt;EdFiStudentParentAssociationReadable&gt;</returns>
-        public ApiResponse< List<EdFiStudentParentAssociationReadable> > GetStudentParentAssociationsWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string studentUniqueId = null, string relationDescriptor = null, int? contactPriority = null, string contactRestrictions = null, bool? emergencyContactStatus = null, string id = null, bool? livesWith = null, bool? primaryContactStatus = null)
+        public ApiResponse< List<EdFiStudentParentAssociationReadable> > GetStudentParentAssociationsWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string studentUniqueId = null, string relationDescriptor = null, string id = null)
         {
 
             var localVarPath = "/ed-fi/studentParentAssociations";
@@ -618,12 +588,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
             if (parentUniqueId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "parentUniqueId", parentUniqueId)); // query parameter
             if (studentUniqueId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "studentUniqueId", studentUniqueId)); // query parameter
             if (relationDescriptor != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "relationDescriptor", relationDescriptor)); // query parameter
-            if (contactPriority != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "contactPriority", contactPriority)); // query parameter
-            if (contactRestrictions != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "contactRestrictions", contactRestrictions)); // query parameter
-            if (emergencyContactStatus != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "emergencyContactStatus", emergencyContactStatus)); // query parameter
             if (id != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "id", id)); // query parameter
-            if (livesWith != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "livesWith", livesWith)); // query parameter
-            if (primaryContactStatus != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "primaryContactStatus", primaryContactStatus)); // query parameter
 
             // authentication (oauth2_client_credentials) required
             // oauth required
@@ -660,16 +625,11 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// <param name="parentUniqueId">A unique alphanumeric code assigned to a parent. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
         /// <param name="relationDescriptor">The nature of an individual&#39;s relationship to a student; for example:          Father, Mother, Step Father, Step Mother, Foster Father, Foster Mother, Guardian, etc. (optional)</param>
-        /// <param name="contactPriority">The numeric order of the preferred sequence or priority of contact. (optional)</param>
-        /// <param name="contactRestrictions">Restrictions for student and/or teacher contact with the individual (e.g., the student may not be picked up by the individual). (optional)</param>
-        /// <param name="emergencyContactStatus">Indicator of whether the person is a designated emergency contact for the Student. (optional)</param>
         /// <param name="id"> (optional)</param>
-        /// <param name="livesWith">Indicator of whether the Student lives with the associated parent. (optional)</param>
-        /// <param name="primaryContactStatus">Indicator of whether the person is a primary parental contact for the Student. (optional)</param>
         /// <returns>Task of List&lt;EdFiStudentParentAssociationReadable&gt;</returns>
-        public async System.Threading.Tasks.Task<List<EdFiStudentParentAssociationReadable>> GetStudentParentAssociationsAsync (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string studentUniqueId = null, string relationDescriptor = null, int? contactPriority = null, string contactRestrictions = null, bool? emergencyContactStatus = null, string id = null, bool? livesWith = null, bool? primaryContactStatus = null)
+        public async System.Threading.Tasks.Task<List<EdFiStudentParentAssociationReadable>> GetStudentParentAssociationsAsync (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string studentUniqueId = null, string relationDescriptor = null, string id = null)
         {
-             ApiResponse<List<EdFiStudentParentAssociationReadable>> localVarResponse = await GetStudentParentAssociationsAsyncWithHttpInfo(offset, limit, totalCount, parentUniqueId, studentUniqueId, relationDescriptor, contactPriority, contactRestrictions, emergencyContactStatus, id, livesWith, primaryContactStatus);
+             ApiResponse<List<EdFiStudentParentAssociationReadable>> localVarResponse = await GetStudentParentAssociationsAsyncWithHttpInfo(offset, limit, totalCount, parentUniqueId, studentUniqueId, relationDescriptor, id);
              return localVarResponse.Data;
 
         }
@@ -684,14 +644,9 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// <param name="parentUniqueId">A unique alphanumeric code assigned to a parent. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
         /// <param name="relationDescriptor">The nature of an individual&#39;s relationship to a student; for example:          Father, Mother, Step Father, Step Mother, Foster Father, Foster Mother, Guardian, etc. (optional)</param>
-        /// <param name="contactPriority">The numeric order of the preferred sequence or priority of contact. (optional)</param>
-        /// <param name="contactRestrictions">Restrictions for student and/or teacher contact with the individual (e.g., the student may not be picked up by the individual). (optional)</param>
-        /// <param name="emergencyContactStatus">Indicator of whether the person is a designated emergency contact for the Student. (optional)</param>
         /// <param name="id"> (optional)</param>
-        /// <param name="livesWith">Indicator of whether the Student lives with the associated parent. (optional)</param>
-        /// <param name="primaryContactStatus">Indicator of whether the person is a primary parental contact for the Student. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;EdFiStudentParentAssociationReadable&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<EdFiStudentParentAssociationReadable>>> GetStudentParentAssociationsAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string studentUniqueId = null, string relationDescriptor = null, int? contactPriority = null, string contactRestrictions = null, bool? emergencyContactStatus = null, string id = null, bool? livesWith = null, bool? primaryContactStatus = null)
+        public async System.Threading.Tasks.Task<ApiResponse<List<EdFiStudentParentAssociationReadable>>> GetStudentParentAssociationsAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string studentUniqueId = null, string relationDescriptor = null, string id = null)
         {
 
             var localVarPath = "/ed-fi/studentParentAssociations";
@@ -722,12 +677,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
             if (parentUniqueId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "parentUniqueId", parentUniqueId)); // query parameter
             if (studentUniqueId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "studentUniqueId", studentUniqueId)); // query parameter
             if (relationDescriptor != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "relationDescriptor", relationDescriptor)); // query parameter
-            if (contactPriority != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "contactPriority", contactPriority)); // query parameter
-            if (contactRestrictions != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "contactRestrictions", contactRestrictions)); // query parameter
-            if (emergencyContactStatus != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "emergencyContactStatus", emergencyContactStatus)); // query parameter
             if (id != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "id", id)); // query parameter
-            if (livesWith != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "livesWith", livesWith)); // query parameter
-            if (primaryContactStatus != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "primaryContactStatus", primaryContactStatus)); // query parameter
 
             // authentication (oauth2_client_credentials) required
             // oauth required

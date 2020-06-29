@@ -14,14 +14,14 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using RestSharp;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_Profile;
 
-namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISVendor_Profile
+namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_Profile
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IParentsApi : IApiAccessor
+    public interface IStudentParentAssociationsApi : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
@@ -34,7 +34,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
         /// <param name="ifMatch">The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)</param>
         /// <returns></returns>
-        void DeleteparentById (string id, string ifMatch = null);
+        void DeletestudentParentAssociationById (string id, string ifMatch = null);
 
         /// <summary>
         /// Deletes an existing resource using the resource identifier.
@@ -46,7 +46,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
         /// <param name="ifMatch">The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteparentByIdWithHttpInfo (string id, string ifMatch = null);
+        ApiResponse<Object> DeletestudentParentAssociationByIdWithHttpInfo (string id, string ifMatch = null);
         /// <summary>
         /// Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
         /// </summary>
@@ -58,14 +58,11 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// <param name="limit">Indicates the maximum number of items that should be returned in the results. (optional, default to 25)</param>
         /// <param name="totalCount">Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)</param>
         /// <param name="parentUniqueId">A unique alphanumeric code assigned to a parent. (optional)</param>
-        /// <param name="sexDescriptor">A person&#39;s gender. (optional)</param>
-        /// <param name="firstName">A name given to an individual at birth, baptism, or during another naming ceremony, or through legal change. (optional)</param>
-        /// <param name="generationCodeSuffix">An appendage, if any, used to denote an individual&#39;s generation in his family (e.g., Jr., Sr., III). (optional)</param>
+        /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="relationDescriptor">The nature of an individual&#39;s relationship to a student; for example:          Father, Mother, Step Father, Step Mother, Foster Father, Foster Mother, Guardian, etc. (optional)</param>
         /// <param name="id"> (optional)</param>
-        /// <param name="lastSurname">The name borne in common by members of a family. (optional)</param>
-        /// <param name="middleName">A secondary name given to an individual at birth, baptism, or during another naming ceremony. (optional)</param>
-        /// <returns>List&lt;EdFiParentReadable&gt;</returns>
-        List<EdFiParentReadable> GetParents (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string sexDescriptor = null, string firstName = null, string generationCodeSuffix = null, string id = null, string lastSurname = null, string middleName = null);
+        /// <returns>List&lt;EdFiStudentParentAssociationReadable&gt;</returns>
+        List<EdFiStudentParentAssociationReadable> GetStudentParentAssociations (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string studentUniqueId = null, string relationDescriptor = null, string id = null);
 
         /// <summary>
         /// Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
@@ -78,14 +75,11 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// <param name="limit">Indicates the maximum number of items that should be returned in the results. (optional, default to 25)</param>
         /// <param name="totalCount">Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)</param>
         /// <param name="parentUniqueId">A unique alphanumeric code assigned to a parent. (optional)</param>
-        /// <param name="sexDescriptor">A person&#39;s gender. (optional)</param>
-        /// <param name="firstName">A name given to an individual at birth, baptism, or during another naming ceremony, or through legal change. (optional)</param>
-        /// <param name="generationCodeSuffix">An appendage, if any, used to denote an individual&#39;s generation in his family (e.g., Jr., Sr., III). (optional)</param>
+        /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="relationDescriptor">The nature of an individual&#39;s relationship to a student; for example:          Father, Mother, Step Father, Step Mother, Foster Father, Foster Mother, Guardian, etc. (optional)</param>
         /// <param name="id"> (optional)</param>
-        /// <param name="lastSurname">The name borne in common by members of a family. (optional)</param>
-        /// <param name="middleName">A secondary name given to an individual at birth, baptism, or during another naming ceremony. (optional)</param>
-        /// <returns>ApiResponse of List&lt;EdFiParentReadable&gt;</returns>
-        ApiResponse<List<EdFiParentReadable>> GetParentsWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string sexDescriptor = null, string firstName = null, string generationCodeSuffix = null, string id = null, string lastSurname = null, string middleName = null);
+        /// <returns>ApiResponse of List&lt;EdFiStudentParentAssociationReadable&gt;</returns>
+        ApiResponse<List<EdFiStudentParentAssociationReadable>> GetStudentParentAssociationsWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string studentUniqueId = null, string relationDescriptor = null, string id = null);
         /// <summary>
         /// Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
         /// </summary>
@@ -95,8 +89,8 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
         /// <param name="ifNoneMatch">The previously returned ETag header value, used here to prevent the unnecessary data transfer of an unchanged resource. (optional)</param>
-        /// <returns>EdFiParentReadable</returns>
-        EdFiParentReadable GetParentsById (string id, string ifNoneMatch = null);
+        /// <returns>EdFiStudentParentAssociationReadable</returns>
+        EdFiStudentParentAssociationReadable GetStudentParentAssociationsById (string id, string ifNoneMatch = null);
 
         /// <summary>
         /// Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
@@ -107,8 +101,8 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
         /// <param name="ifNoneMatch">The previously returned ETag header value, used here to prevent the unnecessary data transfer of an unchanged resource. (optional)</param>
-        /// <returns>ApiResponse of EdFiParentReadable</returns>
-        ApiResponse<EdFiParentReadable> GetParentsByIdWithHttpInfo (string id, string ifNoneMatch = null);
+        /// <returns>ApiResponse of EdFiStudentParentAssociationReadable</returns>
+        ApiResponse<EdFiStudentParentAssociationReadable> GetStudentParentAssociationsByIdWithHttpInfo (string id, string ifNoneMatch = null);
         /// <summary>
         /// Creates or updates resources based on the natural key values of the supplied resource.
         /// </summary>
@@ -116,9 +110,9 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// The POST operation can be used to create or update resources. In database terms, this is often referred to as an \&quot;upsert\&quot; operation (insert + update). Clients should NOT include the resource \&quot;id\&quot; in the JSON body because it will result in an error (you must use a PUT operation to update a resource by \&quot;id\&quot;). The web service will identify whether the resource already exists based on the natural key values provided, and update or create the resource appropriately.
         /// </remarks>
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="parent">The JSON representation of the \&quot;parent\&quot; resource to be created or updated.</param>
+        /// <param name="studentParentAssociation">The JSON representation of the \&quot;studentParentAssociation\&quot; resource to be created or updated.</param>
         /// <returns></returns>
-        void Postparent (EdFiParentWritable parent);
+        void PoststudentParentAssociation (EdFiStudentParentAssociationWritable studentParentAssociation);
 
         /// <summary>
         /// Creates or updates resources based on the natural key values of the supplied resource.
@@ -127,9 +121,9 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// The POST operation can be used to create or update resources. In database terms, this is often referred to as an \&quot;upsert\&quot; operation (insert + update). Clients should NOT include the resource \&quot;id\&quot; in the JSON body because it will result in an error (you must use a PUT operation to update a resource by \&quot;id\&quot;). The web service will identify whether the resource already exists based on the natural key values provided, and update or create the resource appropriately.
         /// </remarks>
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="parent">The JSON representation of the \&quot;parent\&quot; resource to be created or updated.</param>
+        /// <param name="studentParentAssociation">The JSON representation of the \&quot;studentParentAssociation\&quot; resource to be created or updated.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> PostparentWithHttpInfo (EdFiParentWritable parent);
+        ApiResponse<Object> PoststudentParentAssociationWithHttpInfo (EdFiStudentParentAssociationWritable studentParentAssociation);
         /// <summary>
         /// Updates or creates a resource based on the resource identifier.
         /// </summary>
@@ -138,10 +132,10 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// </remarks>
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
-        /// <param name="parent">The JSON representation of the \&quot;parent\&quot; resource to be created or updated.</param>
+        /// <param name="studentParentAssociation">The JSON representation of the \&quot;studentParentAssociation\&quot; resource to be created or updated.</param>
         /// <param name="ifMatch">The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)</param>
         /// <returns></returns>
-        void Putparent (string id, EdFiParentWritable parent, string ifMatch = null);
+        void PutstudentParentAssociation (string id, EdFiStudentParentAssociationWritable studentParentAssociation, string ifMatch = null);
 
         /// <summary>
         /// Updates or creates a resource based on the resource identifier.
@@ -151,10 +145,10 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// </remarks>
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
-        /// <param name="parent">The JSON representation of the \&quot;parent\&quot; resource to be created or updated.</param>
+        /// <param name="studentParentAssociation">The JSON representation of the \&quot;studentParentAssociation\&quot; resource to be created or updated.</param>
         /// <param name="ifMatch">The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> PutparentWithHttpInfo (string id, EdFiParentWritable parent, string ifMatch = null);
+        ApiResponse<Object> PutstudentParentAssociationWithHttpInfo (string id, EdFiStudentParentAssociationWritable studentParentAssociation, string ifMatch = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -167,7 +161,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
         /// <param name="ifMatch">The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteparentByIdAsync (string id, string ifMatch = null);
+        System.Threading.Tasks.Task DeletestudentParentAssociationByIdAsync (string id, string ifMatch = null);
 
         /// <summary>
         /// Deletes an existing resource using the resource identifier.
@@ -179,7 +173,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
         /// <param name="ifMatch">The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteparentByIdAsyncWithHttpInfo (string id, string ifMatch = null);
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeletestudentParentAssociationByIdAsyncWithHttpInfo (string id, string ifMatch = null);
         /// <summary>
         /// Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
         /// </summary>
@@ -191,14 +185,11 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// <param name="limit">Indicates the maximum number of items that should be returned in the results. (optional, default to 25)</param>
         /// <param name="totalCount">Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)</param>
         /// <param name="parentUniqueId">A unique alphanumeric code assigned to a parent. (optional)</param>
-        /// <param name="sexDescriptor">A person&#39;s gender. (optional)</param>
-        /// <param name="firstName">A name given to an individual at birth, baptism, or during another naming ceremony, or through legal change. (optional)</param>
-        /// <param name="generationCodeSuffix">An appendage, if any, used to denote an individual&#39;s generation in his family (e.g., Jr., Sr., III). (optional)</param>
+        /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="relationDescriptor">The nature of an individual&#39;s relationship to a student; for example:          Father, Mother, Step Father, Step Mother, Foster Father, Foster Mother, Guardian, etc. (optional)</param>
         /// <param name="id"> (optional)</param>
-        /// <param name="lastSurname">The name borne in common by members of a family. (optional)</param>
-        /// <param name="middleName">A secondary name given to an individual at birth, baptism, or during another naming ceremony. (optional)</param>
-        /// <returns>Task of List&lt;EdFiParentReadable&gt;</returns>
-        System.Threading.Tasks.Task<List<EdFiParentReadable>> GetParentsAsync (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string sexDescriptor = null, string firstName = null, string generationCodeSuffix = null, string id = null, string lastSurname = null, string middleName = null);
+        /// <returns>Task of List&lt;EdFiStudentParentAssociationReadable&gt;</returns>
+        System.Threading.Tasks.Task<List<EdFiStudentParentAssociationReadable>> GetStudentParentAssociationsAsync (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string studentUniqueId = null, string relationDescriptor = null, string id = null);
 
         /// <summary>
         /// Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
@@ -211,14 +202,11 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// <param name="limit">Indicates the maximum number of items that should be returned in the results. (optional, default to 25)</param>
         /// <param name="totalCount">Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)</param>
         /// <param name="parentUniqueId">A unique alphanumeric code assigned to a parent. (optional)</param>
-        /// <param name="sexDescriptor">A person&#39;s gender. (optional)</param>
-        /// <param name="firstName">A name given to an individual at birth, baptism, or during another naming ceremony, or through legal change. (optional)</param>
-        /// <param name="generationCodeSuffix">An appendage, if any, used to denote an individual&#39;s generation in his family (e.g., Jr., Sr., III). (optional)</param>
+        /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="relationDescriptor">The nature of an individual&#39;s relationship to a student; for example:          Father, Mother, Step Father, Step Mother, Foster Father, Foster Mother, Guardian, etc. (optional)</param>
         /// <param name="id"> (optional)</param>
-        /// <param name="lastSurname">The name borne in common by members of a family. (optional)</param>
-        /// <param name="middleName">A secondary name given to an individual at birth, baptism, or during another naming ceremony. (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;EdFiParentReadable&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<EdFiParentReadable>>> GetParentsAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string sexDescriptor = null, string firstName = null, string generationCodeSuffix = null, string id = null, string lastSurname = null, string middleName = null);
+        /// <returns>Task of ApiResponse (List&lt;EdFiStudentParentAssociationReadable&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<EdFiStudentParentAssociationReadable>>> GetStudentParentAssociationsAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string studentUniqueId = null, string relationDescriptor = null, string id = null);
         /// <summary>
         /// Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
         /// </summary>
@@ -228,8 +216,8 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
         /// <param name="ifNoneMatch">The previously returned ETag header value, used here to prevent the unnecessary data transfer of an unchanged resource. (optional)</param>
-        /// <returns>Task of EdFiParentReadable</returns>
-        System.Threading.Tasks.Task<EdFiParentReadable> GetParentsByIdAsync (string id, string ifNoneMatch = null);
+        /// <returns>Task of EdFiStudentParentAssociationReadable</returns>
+        System.Threading.Tasks.Task<EdFiStudentParentAssociationReadable> GetStudentParentAssociationsByIdAsync (string id, string ifNoneMatch = null);
 
         /// <summary>
         /// Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
@@ -240,8 +228,8 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
         /// <param name="ifNoneMatch">The previously returned ETag header value, used here to prevent the unnecessary data transfer of an unchanged resource. (optional)</param>
-        /// <returns>Task of ApiResponse (EdFiParentReadable)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EdFiParentReadable>> GetParentsByIdAsyncWithHttpInfo (string id, string ifNoneMatch = null);
+        /// <returns>Task of ApiResponse (EdFiStudentParentAssociationReadable)</returns>
+        System.Threading.Tasks.Task<ApiResponse<EdFiStudentParentAssociationReadable>> GetStudentParentAssociationsByIdAsyncWithHttpInfo (string id, string ifNoneMatch = null);
         /// <summary>
         /// Creates or updates resources based on the natural key values of the supplied resource.
         /// </summary>
@@ -249,9 +237,9 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// The POST operation can be used to create or update resources. In database terms, this is often referred to as an \&quot;upsert\&quot; operation (insert + update). Clients should NOT include the resource \&quot;id\&quot; in the JSON body because it will result in an error (you must use a PUT operation to update a resource by \&quot;id\&quot;). The web service will identify whether the resource already exists based on the natural key values provided, and update or create the resource appropriately.
         /// </remarks>
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="parent">The JSON representation of the \&quot;parent\&quot; resource to be created or updated.</param>
+        /// <param name="studentParentAssociation">The JSON representation of the \&quot;studentParentAssociation\&quot; resource to be created or updated.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task PostparentAsync (EdFiParentWritable parent);
+        System.Threading.Tasks.Task PoststudentParentAssociationAsync (EdFiStudentParentAssociationWritable studentParentAssociation);
 
         /// <summary>
         /// Creates or updates resources based on the natural key values of the supplied resource.
@@ -260,9 +248,9 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// The POST operation can be used to create or update resources. In database terms, this is often referred to as an \&quot;upsert\&quot; operation (insert + update). Clients should NOT include the resource \&quot;id\&quot; in the JSON body because it will result in an error (you must use a PUT operation to update a resource by \&quot;id\&quot;). The web service will identify whether the resource already exists based on the natural key values provided, and update or create the resource appropriately.
         /// </remarks>
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="parent">The JSON representation of the \&quot;parent\&quot; resource to be created or updated.</param>
+        /// <param name="studentParentAssociation">The JSON representation of the \&quot;studentParentAssociation\&quot; resource to be created or updated.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> PostparentAsyncWithHttpInfo (EdFiParentWritable parent);
+        System.Threading.Tasks.Task<ApiResponse<Object>> PoststudentParentAssociationAsyncWithHttpInfo (EdFiStudentParentAssociationWritable studentParentAssociation);
         /// <summary>
         /// Updates or creates a resource based on the resource identifier.
         /// </summary>
@@ -271,10 +259,10 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// </remarks>
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
-        /// <param name="parent">The JSON representation of the \&quot;parent\&quot; resource to be created or updated.</param>
+        /// <param name="studentParentAssociation">The JSON representation of the \&quot;studentParentAssociation\&quot; resource to be created or updated.</param>
         /// <param name="ifMatch">The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task PutparentAsync (string id, EdFiParentWritable parent, string ifMatch = null);
+        System.Threading.Tasks.Task PutstudentParentAssociationAsync (string id, EdFiStudentParentAssociationWritable studentParentAssociation, string ifMatch = null);
 
         /// <summary>
         /// Updates or creates a resource based on the resource identifier.
@@ -284,25 +272,25 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// </remarks>
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
-        /// <param name="parent">The JSON representation of the \&quot;parent\&quot; resource to be created or updated.</param>
+        /// <param name="studentParentAssociation">The JSON representation of the \&quot;studentParentAssociation\&quot; resource to be created or updated.</param>
         /// <param name="ifMatch">The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> PutparentAsyncWithHttpInfo (string id, EdFiParentWritable parent, string ifMatch = null);
+        System.Threading.Tasks.Task<ApiResponse<Object>> PutstudentParentAssociationAsyncWithHttpInfo (string id, EdFiStudentParentAssociationWritable studentParentAssociation, string ifMatch = null);
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class ParentsApi : IParentsApi
+    public partial class StudentParentAssociationsApi : IStudentParentAssociationsApi
     {
         private EdFi.OdsApi.Sdk.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ParentsApi"/> class.
+        /// Initializes a new instance of the <see cref="StudentParentAssociationsApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public ParentsApi(String basePath)
+        public StudentParentAssociationsApi(String basePath)
         {
             this.Configuration = new Configuration { BasePath = basePath };
 
@@ -310,12 +298,12 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ParentsApi"/> class
+        /// Initializes a new instance of the <see cref="StudentParentAssociationsApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public ParentsApi(Configuration configuration = null)
+        public StudentParentAssociationsApi(Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
                 this.Configuration = Configuration.Default;
@@ -395,9 +383,9 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
         /// <param name="ifMatch">The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)</param>
         /// <returns></returns>
-        public void DeleteparentById (string id, string ifMatch = null)
+        public void DeletestudentParentAssociationById (string id, string ifMatch = null)
         {
-             DeleteparentByIdWithHttpInfo(id, ifMatch);
+             DeletestudentParentAssociationByIdWithHttpInfo(id, ifMatch);
         }
 
         /// <summary>
@@ -407,13 +395,13 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
         /// <param name="ifMatch">The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeleteparentByIdWithHttpInfo (string id, string ifMatch = null)
+        public ApiResponse<Object> DeletestudentParentAssociationByIdWithHttpInfo (string id, string ifMatch = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling ParentsApi->DeleteparentById");
+                throw new ApiException(400, "Missing required parameter 'id' when calling StudentParentAssociationsApi->DeletestudentParentAssociationById");
 
-            var localVarPath = "/ed-fi/parents/{id}";
+            var localVarPath = "/ed-fi/studentParentAssociations/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -423,7 +411,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/vnd.ed-fi.parent.minnesota-twentytwentytwopreview-sisvendorprofile.writable+json"
+                "application/vnd.ed-fi.studentparentassociation.minnesota-twentytwentyone-sisvendorprofile.writable+json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -454,7 +442,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("DeleteparentById", localVarResponse);
+                Exception exception = ExceptionFactory("DeletestudentParentAssociationById", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -470,9 +458,9 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
         /// <param name="ifMatch">The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteparentByIdAsync (string id, string ifMatch = null)
+        public async System.Threading.Tasks.Task DeletestudentParentAssociationByIdAsync (string id, string ifMatch = null)
         {
-             await DeleteparentByIdAsyncWithHttpInfo(id, ifMatch);
+             await DeletestudentParentAssociationByIdAsyncWithHttpInfo(id, ifMatch);
 
         }
 
@@ -483,13 +471,13 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
         /// <param name="ifMatch">The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteparentByIdAsyncWithHttpInfo (string id, string ifMatch = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeletestudentParentAssociationByIdAsyncWithHttpInfo (string id, string ifMatch = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling ParentsApi->DeleteparentById");
+                throw new ApiException(400, "Missing required parameter 'id' when calling StudentParentAssociationsApi->DeletestudentParentAssociationById");
 
-            var localVarPath = "/ed-fi/parents/{id}";
+            var localVarPath = "/ed-fi/studentParentAssociations/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -499,7 +487,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/vnd.ed-fi.parent.minnesota-twentytwentytwopreview-sisvendorprofile.writable+json"
+                "application/vnd.ed-fi.studentparentassociation.minnesota-twentytwentyone-sisvendorprofile.writable+json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -530,7 +518,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("DeleteparentById", localVarResponse);
+                Exception exception = ExceptionFactory("DeletestudentParentAssociationById", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -547,16 +535,13 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// <param name="limit">Indicates the maximum number of items that should be returned in the results. (optional, default to 25)</param>
         /// <param name="totalCount">Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)</param>
         /// <param name="parentUniqueId">A unique alphanumeric code assigned to a parent. (optional)</param>
-        /// <param name="sexDescriptor">A person&#39;s gender. (optional)</param>
-        /// <param name="firstName">A name given to an individual at birth, baptism, or during another naming ceremony, or through legal change. (optional)</param>
-        /// <param name="generationCodeSuffix">An appendage, if any, used to denote an individual&#39;s generation in his family (e.g., Jr., Sr., III). (optional)</param>
+        /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="relationDescriptor">The nature of an individual&#39;s relationship to a student; for example:          Father, Mother, Step Father, Step Mother, Foster Father, Foster Mother, Guardian, etc. (optional)</param>
         /// <param name="id"> (optional)</param>
-        /// <param name="lastSurname">The name borne in common by members of a family. (optional)</param>
-        /// <param name="middleName">A secondary name given to an individual at birth, baptism, or during another naming ceremony. (optional)</param>
-        /// <returns>List&lt;EdFiParentReadable&gt;</returns>
-        public List<EdFiParentReadable> GetParents (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string sexDescriptor = null, string firstName = null, string generationCodeSuffix = null, string id = null, string lastSurname = null, string middleName = null)
+        /// <returns>List&lt;EdFiStudentParentAssociationReadable&gt;</returns>
+        public List<EdFiStudentParentAssociationReadable> GetStudentParentAssociations (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string studentUniqueId = null, string relationDescriptor = null, string id = null)
         {
-             ApiResponse<List<EdFiParentReadable>> localVarResponse = GetParentsWithHttpInfo(offset, limit, totalCount, parentUniqueId, sexDescriptor, firstName, generationCodeSuffix, id, lastSurname, middleName);
+             ApiResponse<List<EdFiStudentParentAssociationReadable>> localVarResponse = GetStudentParentAssociationsWithHttpInfo(offset, limit, totalCount, parentUniqueId, studentUniqueId, relationDescriptor, id);
              return localVarResponse.Data;
         }
 
@@ -568,17 +553,14 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// <param name="limit">Indicates the maximum number of items that should be returned in the results. (optional, default to 25)</param>
         /// <param name="totalCount">Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)</param>
         /// <param name="parentUniqueId">A unique alphanumeric code assigned to a parent. (optional)</param>
-        /// <param name="sexDescriptor">A person&#39;s gender. (optional)</param>
-        /// <param name="firstName">A name given to an individual at birth, baptism, or during another naming ceremony, or through legal change. (optional)</param>
-        /// <param name="generationCodeSuffix">An appendage, if any, used to denote an individual&#39;s generation in his family (e.g., Jr., Sr., III). (optional)</param>
+        /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="relationDescriptor">The nature of an individual&#39;s relationship to a student; for example:          Father, Mother, Step Father, Step Mother, Foster Father, Foster Mother, Guardian, etc. (optional)</param>
         /// <param name="id"> (optional)</param>
-        /// <param name="lastSurname">The name borne in common by members of a family. (optional)</param>
-        /// <param name="middleName">A secondary name given to an individual at birth, baptism, or during another naming ceremony. (optional)</param>
-        /// <returns>ApiResponse of List&lt;EdFiParentReadable&gt;</returns>
-        public ApiResponse< List<EdFiParentReadable> > GetParentsWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string sexDescriptor = null, string firstName = null, string generationCodeSuffix = null, string id = null, string lastSurname = null, string middleName = null)
+        /// <returns>ApiResponse of List&lt;EdFiStudentParentAssociationReadable&gt;</returns>
+        public ApiResponse< List<EdFiStudentParentAssociationReadable> > GetStudentParentAssociationsWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string studentUniqueId = null, string relationDescriptor = null, string id = null)
         {
 
-            var localVarPath = "/ed-fi/parents";
+            var localVarPath = "/ed-fi/studentParentAssociations";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -594,7 +576,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/vnd.ed-fi.parent.minnesota-twentytwentytwopreview-sisvendorprofile.readable+json"
+                "application/vnd.ed-fi.studentparentassociation.minnesota-twentytwentyone-sisvendorprofile.readable+json"
             };
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -604,12 +586,9 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
             if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             if (totalCount != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "totalCount", totalCount)); // query parameter
             if (parentUniqueId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "parentUniqueId", parentUniqueId)); // query parameter
-            if (sexDescriptor != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sexDescriptor", sexDescriptor)); // query parameter
-            if (firstName != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "firstName", firstName)); // query parameter
-            if (generationCodeSuffix != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "generationCodeSuffix", generationCodeSuffix)); // query parameter
+            if (studentUniqueId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "studentUniqueId", studentUniqueId)); // query parameter
+            if (relationDescriptor != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "relationDescriptor", relationDescriptor)); // query parameter
             if (id != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "id", id)); // query parameter
-            if (lastSurname != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "lastSurname", lastSurname)); // query parameter
-            if (middleName != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "middleName", middleName)); // query parameter
 
             // authentication (oauth2_client_credentials) required
             // oauth required
@@ -627,13 +606,13 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetParents", localVarResponse);
+                Exception exception = ExceptionFactory("GetStudentParentAssociations", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<EdFiParentReadable>>(localVarStatusCode,
+            return new ApiResponse<List<EdFiStudentParentAssociationReadable>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<EdFiParentReadable>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<EdFiParentReadable>)));
+                (List<EdFiStudentParentAssociationReadable>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<EdFiStudentParentAssociationReadable>)));
         }
 
         /// <summary>
@@ -644,16 +623,13 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// <param name="limit">Indicates the maximum number of items that should be returned in the results. (optional, default to 25)</param>
         /// <param name="totalCount">Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)</param>
         /// <param name="parentUniqueId">A unique alphanumeric code assigned to a parent. (optional)</param>
-        /// <param name="sexDescriptor">A person&#39;s gender. (optional)</param>
-        /// <param name="firstName">A name given to an individual at birth, baptism, or during another naming ceremony, or through legal change. (optional)</param>
-        /// <param name="generationCodeSuffix">An appendage, if any, used to denote an individual&#39;s generation in his family (e.g., Jr., Sr., III). (optional)</param>
+        /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="relationDescriptor">The nature of an individual&#39;s relationship to a student; for example:          Father, Mother, Step Father, Step Mother, Foster Father, Foster Mother, Guardian, etc. (optional)</param>
         /// <param name="id"> (optional)</param>
-        /// <param name="lastSurname">The name borne in common by members of a family. (optional)</param>
-        /// <param name="middleName">A secondary name given to an individual at birth, baptism, or during another naming ceremony. (optional)</param>
-        /// <returns>Task of List&lt;EdFiParentReadable&gt;</returns>
-        public async System.Threading.Tasks.Task<List<EdFiParentReadable>> GetParentsAsync (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string sexDescriptor = null, string firstName = null, string generationCodeSuffix = null, string id = null, string lastSurname = null, string middleName = null)
+        /// <returns>Task of List&lt;EdFiStudentParentAssociationReadable&gt;</returns>
+        public async System.Threading.Tasks.Task<List<EdFiStudentParentAssociationReadable>> GetStudentParentAssociationsAsync (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string studentUniqueId = null, string relationDescriptor = null, string id = null)
         {
-             ApiResponse<List<EdFiParentReadable>> localVarResponse = await GetParentsAsyncWithHttpInfo(offset, limit, totalCount, parentUniqueId, sexDescriptor, firstName, generationCodeSuffix, id, lastSurname, middleName);
+             ApiResponse<List<EdFiStudentParentAssociationReadable>> localVarResponse = await GetStudentParentAssociationsAsyncWithHttpInfo(offset, limit, totalCount, parentUniqueId, studentUniqueId, relationDescriptor, id);
              return localVarResponse.Data;
 
         }
@@ -666,17 +642,14 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// <param name="limit">Indicates the maximum number of items that should be returned in the results. (optional, default to 25)</param>
         /// <param name="totalCount">Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)</param>
         /// <param name="parentUniqueId">A unique alphanumeric code assigned to a parent. (optional)</param>
-        /// <param name="sexDescriptor">A person&#39;s gender. (optional)</param>
-        /// <param name="firstName">A name given to an individual at birth, baptism, or during another naming ceremony, or through legal change. (optional)</param>
-        /// <param name="generationCodeSuffix">An appendage, if any, used to denote an individual&#39;s generation in his family (e.g., Jr., Sr., III). (optional)</param>
+        /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="relationDescriptor">The nature of an individual&#39;s relationship to a student; for example:          Father, Mother, Step Father, Step Mother, Foster Father, Foster Mother, Guardian, etc. (optional)</param>
         /// <param name="id"> (optional)</param>
-        /// <param name="lastSurname">The name borne in common by members of a family. (optional)</param>
-        /// <param name="middleName">A secondary name given to an individual at birth, baptism, or during another naming ceremony. (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;EdFiParentReadable&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<EdFiParentReadable>>> GetParentsAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string sexDescriptor = null, string firstName = null, string generationCodeSuffix = null, string id = null, string lastSurname = null, string middleName = null)
+        /// <returns>Task of ApiResponse (List&lt;EdFiStudentParentAssociationReadable&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<EdFiStudentParentAssociationReadable>>> GetStudentParentAssociationsAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string parentUniqueId = null, string studentUniqueId = null, string relationDescriptor = null, string id = null)
         {
 
-            var localVarPath = "/ed-fi/parents";
+            var localVarPath = "/ed-fi/studentParentAssociations";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -692,7 +665,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/vnd.ed-fi.parent.minnesota-twentytwentytwopreview-sisvendorprofile.readable+json"
+                "application/vnd.ed-fi.studentparentassociation.minnesota-twentytwentyone-sisvendorprofile.readable+json"
             };
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -702,12 +675,9 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
             if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             if (totalCount != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "totalCount", totalCount)); // query parameter
             if (parentUniqueId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "parentUniqueId", parentUniqueId)); // query parameter
-            if (sexDescriptor != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sexDescriptor", sexDescriptor)); // query parameter
-            if (firstName != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "firstName", firstName)); // query parameter
-            if (generationCodeSuffix != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "generationCodeSuffix", generationCodeSuffix)); // query parameter
+            if (studentUniqueId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "studentUniqueId", studentUniqueId)); // query parameter
+            if (relationDescriptor != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "relationDescriptor", relationDescriptor)); // query parameter
             if (id != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "id", id)); // query parameter
-            if (lastSurname != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "lastSurname", lastSurname)); // query parameter
-            if (middleName != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "middleName", middleName)); // query parameter
 
             // authentication (oauth2_client_credentials) required
             // oauth required
@@ -725,13 +695,13 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetParents", localVarResponse);
+                Exception exception = ExceptionFactory("GetStudentParentAssociations", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<EdFiParentReadable>>(localVarStatusCode,
+            return new ApiResponse<List<EdFiStudentParentAssociationReadable>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<EdFiParentReadable>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<EdFiParentReadable>)));
+                (List<EdFiStudentParentAssociationReadable>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<EdFiStudentParentAssociationReadable>)));
         }
 
         /// <summary>
@@ -740,10 +710,10 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
         /// <param name="ifNoneMatch">The previously returned ETag header value, used here to prevent the unnecessary data transfer of an unchanged resource. (optional)</param>
-        /// <returns>EdFiParentReadable</returns>
-        public EdFiParentReadable GetParentsById (string id, string ifNoneMatch = null)
+        /// <returns>EdFiStudentParentAssociationReadable</returns>
+        public EdFiStudentParentAssociationReadable GetStudentParentAssociationsById (string id, string ifNoneMatch = null)
         {
-             ApiResponse<EdFiParentReadable> localVarResponse = GetParentsByIdWithHttpInfo(id, ifNoneMatch);
+             ApiResponse<EdFiStudentParentAssociationReadable> localVarResponse = GetStudentParentAssociationsByIdWithHttpInfo(id, ifNoneMatch);
              return localVarResponse.Data;
         }
 
@@ -753,14 +723,14 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
         /// <param name="ifNoneMatch">The previously returned ETag header value, used here to prevent the unnecessary data transfer of an unchanged resource. (optional)</param>
-        /// <returns>ApiResponse of EdFiParentReadable</returns>
-        public ApiResponse< EdFiParentReadable > GetParentsByIdWithHttpInfo (string id, string ifNoneMatch = null)
+        /// <returns>ApiResponse of EdFiStudentParentAssociationReadable</returns>
+        public ApiResponse< EdFiStudentParentAssociationReadable > GetStudentParentAssociationsByIdWithHttpInfo (string id, string ifNoneMatch = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling ParentsApi->GetParentsById");
+                throw new ApiException(400, "Missing required parameter 'id' when calling StudentParentAssociationsApi->GetStudentParentAssociationsById");
 
-            var localVarPath = "/ed-fi/parents/{id}";
+            var localVarPath = "/ed-fi/studentParentAssociations/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -776,7 +746,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/vnd.ed-fi.parent.minnesota-twentytwentytwopreview-sisvendorprofile.readable+json"
+                "application/vnd.ed-fi.studentparentassociation.minnesota-twentytwentyone-sisvendorprofile.readable+json"
             };
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -801,13 +771,13 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetParentsById", localVarResponse);
+                Exception exception = ExceptionFactory("GetStudentParentAssociationsById", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<EdFiParentReadable>(localVarStatusCode,
+            return new ApiResponse<EdFiStudentParentAssociationReadable>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (EdFiParentReadable) Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdFiParentReadable)));
+                (EdFiStudentParentAssociationReadable) Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdFiStudentParentAssociationReadable)));
         }
 
         /// <summary>
@@ -816,10 +786,10 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
         /// <param name="ifNoneMatch">The previously returned ETag header value, used here to prevent the unnecessary data transfer of an unchanged resource. (optional)</param>
-        /// <returns>Task of EdFiParentReadable</returns>
-        public async System.Threading.Tasks.Task<EdFiParentReadable> GetParentsByIdAsync (string id, string ifNoneMatch = null)
+        /// <returns>Task of EdFiStudentParentAssociationReadable</returns>
+        public async System.Threading.Tasks.Task<EdFiStudentParentAssociationReadable> GetStudentParentAssociationsByIdAsync (string id, string ifNoneMatch = null)
         {
-             ApiResponse<EdFiParentReadable> localVarResponse = await GetParentsByIdAsyncWithHttpInfo(id, ifNoneMatch);
+             ApiResponse<EdFiStudentParentAssociationReadable> localVarResponse = await GetStudentParentAssociationsByIdAsyncWithHttpInfo(id, ifNoneMatch);
              return localVarResponse.Data;
 
         }
@@ -830,14 +800,14 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
         /// <param name="ifNoneMatch">The previously returned ETag header value, used here to prevent the unnecessary data transfer of an unchanged resource. (optional)</param>
-        /// <returns>Task of ApiResponse (EdFiParentReadable)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<EdFiParentReadable>> GetParentsByIdAsyncWithHttpInfo (string id, string ifNoneMatch = null)
+        /// <returns>Task of ApiResponse (EdFiStudentParentAssociationReadable)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<EdFiStudentParentAssociationReadable>> GetStudentParentAssociationsByIdAsyncWithHttpInfo (string id, string ifNoneMatch = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling ParentsApi->GetParentsById");
+                throw new ApiException(400, "Missing required parameter 'id' when calling StudentParentAssociationsApi->GetStudentParentAssociationsById");
 
-            var localVarPath = "/ed-fi/parents/{id}";
+            var localVarPath = "/ed-fi/studentParentAssociations/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -853,7 +823,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/vnd.ed-fi.parent.minnesota-twentytwentytwopreview-sisvendorprofile.readable+json"
+                "application/vnd.ed-fi.studentparentassociation.minnesota-twentytwentyone-sisvendorprofile.readable+json"
             };
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -878,39 +848,39 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetParentsById", localVarResponse);
+                Exception exception = ExceptionFactory("GetStudentParentAssociationsById", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<EdFiParentReadable>(localVarStatusCode,
+            return new ApiResponse<EdFiStudentParentAssociationReadable>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (EdFiParentReadable) Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdFiParentReadable)));
+                (EdFiStudentParentAssociationReadable) Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdFiStudentParentAssociationReadable)));
         }
 
         /// <summary>
         /// Creates or updates resources based on the natural key values of the supplied resource. The POST operation can be used to create or update resources. In database terms, this is often referred to as an \&quot;upsert\&quot; operation (insert + update). Clients should NOT include the resource \&quot;id\&quot; in the JSON body because it will result in an error (you must use a PUT operation to update a resource by \&quot;id\&quot;). The web service will identify whether the resource already exists based on the natural key values provided, and update or create the resource appropriately.
         /// </summary>
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="parent">The JSON representation of the \&quot;parent\&quot; resource to be created or updated.</param>
+        /// <param name="studentParentAssociation">The JSON representation of the \&quot;studentParentAssociation\&quot; resource to be created or updated.</param>
         /// <returns></returns>
-        public void Postparent (EdFiParentWritable parent)
+        public void PoststudentParentAssociation (EdFiStudentParentAssociationWritable studentParentAssociation)
         {
-             PostparentWithHttpInfo(parent);
+             PoststudentParentAssociationWithHttpInfo(studentParentAssociation);
         }
 
         /// <summary>
         /// Creates or updates resources based on the natural key values of the supplied resource. The POST operation can be used to create or update resources. In database terms, this is often referred to as an \&quot;upsert\&quot; operation (insert + update). Clients should NOT include the resource \&quot;id\&quot; in the JSON body because it will result in an error (you must use a PUT operation to update a resource by \&quot;id\&quot;). The web service will identify whether the resource already exists based on the natural key values provided, and update or create the resource appropriately.
         /// </summary>
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="parent">The JSON representation of the \&quot;parent\&quot; resource to be created or updated.</param>
+        /// <param name="studentParentAssociation">The JSON representation of the \&quot;studentParentAssociation\&quot; resource to be created or updated.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> PostparentWithHttpInfo (EdFiParentWritable parent)
+        public ApiResponse<Object> PoststudentParentAssociationWithHttpInfo (EdFiStudentParentAssociationWritable studentParentAssociation)
         {
-            // verify the required parameter 'parent' is set
-            if (parent == null)
-                throw new ApiException(400, "Missing required parameter 'parent' when calling ParentsApi->Postparent");
+            // verify the required parameter 'studentParentAssociation' is set
+            if (studentParentAssociation == null)
+                throw new ApiException(400, "Missing required parameter 'studentParentAssociation' when calling StudentParentAssociationsApi->PoststudentParentAssociation");
 
-            var localVarPath = "/ed-fi/parents";
+            var localVarPath = "/ed-fi/studentParentAssociations";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -920,7 +890,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/vnd.ed-fi.parent.minnesota-twentytwentytwopreview-sisvendorprofile.writable+json"
+                "application/vnd.ed-fi.studentparentassociation.minnesota-twentytwentyone-sisvendorprofile.writable+json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -932,13 +902,13 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (parent != null && parent.GetType() != typeof(byte[]))
+            if (studentParentAssociation != null && studentParentAssociation.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(parent); // http body (model) parameter
+                localVarPostBody = Configuration.ApiClient.Serialize(studentParentAssociation); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = parent; // byte array
+                localVarPostBody = studentParentAssociation; // byte array
             }
 
             // authentication (oauth2_client_credentials) required
@@ -957,7 +927,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("Postparent", localVarResponse);
+                Exception exception = ExceptionFactory("PoststudentParentAssociation", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -970,11 +940,11 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// Creates or updates resources based on the natural key values of the supplied resource. The POST operation can be used to create or update resources. In database terms, this is often referred to as an \&quot;upsert\&quot; operation (insert + update). Clients should NOT include the resource \&quot;id\&quot; in the JSON body because it will result in an error (you must use a PUT operation to update a resource by \&quot;id\&quot;). The web service will identify whether the resource already exists based on the natural key values provided, and update or create the resource appropriately.
         /// </summary>
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="parent">The JSON representation of the \&quot;parent\&quot; resource to be created or updated.</param>
+        /// <param name="studentParentAssociation">The JSON representation of the \&quot;studentParentAssociation\&quot; resource to be created or updated.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task PostparentAsync (EdFiParentWritable parent)
+        public async System.Threading.Tasks.Task PoststudentParentAssociationAsync (EdFiStudentParentAssociationWritable studentParentAssociation)
         {
-             await PostparentAsyncWithHttpInfo(parent);
+             await PoststudentParentAssociationAsyncWithHttpInfo(studentParentAssociation);
 
         }
 
@@ -982,15 +952,15 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// Creates or updates resources based on the natural key values of the supplied resource. The POST operation can be used to create or update resources. In database terms, this is often referred to as an \&quot;upsert\&quot; operation (insert + update). Clients should NOT include the resource \&quot;id\&quot; in the JSON body because it will result in an error (you must use a PUT operation to update a resource by \&quot;id\&quot;). The web service will identify whether the resource already exists based on the natural key values provided, and update or create the resource appropriately.
         /// </summary>
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="parent">The JSON representation of the \&quot;parent\&quot; resource to be created or updated.</param>
+        /// <param name="studentParentAssociation">The JSON representation of the \&quot;studentParentAssociation\&quot; resource to be created or updated.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> PostparentAsyncWithHttpInfo (EdFiParentWritable parent)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> PoststudentParentAssociationAsyncWithHttpInfo (EdFiStudentParentAssociationWritable studentParentAssociation)
         {
-            // verify the required parameter 'parent' is set
-            if (parent == null)
-                throw new ApiException(400, "Missing required parameter 'parent' when calling ParentsApi->Postparent");
+            // verify the required parameter 'studentParentAssociation' is set
+            if (studentParentAssociation == null)
+                throw new ApiException(400, "Missing required parameter 'studentParentAssociation' when calling StudentParentAssociationsApi->PoststudentParentAssociation");
 
-            var localVarPath = "/ed-fi/parents";
+            var localVarPath = "/ed-fi/studentParentAssociations";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1000,7 +970,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/vnd.ed-fi.parent.minnesota-twentytwentytwopreview-sisvendorprofile.writable+json"
+                "application/vnd.ed-fi.studentparentassociation.minnesota-twentytwentyone-sisvendorprofile.writable+json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1012,13 +982,13 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (parent != null && parent.GetType() != typeof(byte[]))
+            if (studentParentAssociation != null && studentParentAssociation.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(parent); // http body (model) parameter
+                localVarPostBody = Configuration.ApiClient.Serialize(studentParentAssociation); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = parent; // byte array
+                localVarPostBody = studentParentAssociation; // byte array
             }
 
             // authentication (oauth2_client_credentials) required
@@ -1037,7 +1007,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("Postparent", localVarResponse);
+                Exception exception = ExceptionFactory("PoststudentParentAssociation", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1051,12 +1021,12 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// </summary>
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
-        /// <param name="parent">The JSON representation of the \&quot;parent\&quot; resource to be created or updated.</param>
+        /// <param name="studentParentAssociation">The JSON representation of the \&quot;studentParentAssociation\&quot; resource to be created or updated.</param>
         /// <param name="ifMatch">The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)</param>
         /// <returns></returns>
-        public void Putparent (string id, EdFiParentWritable parent, string ifMatch = null)
+        public void PutstudentParentAssociation (string id, EdFiStudentParentAssociationWritable studentParentAssociation, string ifMatch = null)
         {
-             PutparentWithHttpInfo(id, parent, ifMatch);
+             PutstudentParentAssociationWithHttpInfo(id, studentParentAssociation, ifMatch);
         }
 
         /// <summary>
@@ -1064,19 +1034,19 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// </summary>
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
-        /// <param name="parent">The JSON representation of the \&quot;parent\&quot; resource to be created or updated.</param>
+        /// <param name="studentParentAssociation">The JSON representation of the \&quot;studentParentAssociation\&quot; resource to be created or updated.</param>
         /// <param name="ifMatch">The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> PutparentWithHttpInfo (string id, EdFiParentWritable parent, string ifMatch = null)
+        public ApiResponse<Object> PutstudentParentAssociationWithHttpInfo (string id, EdFiStudentParentAssociationWritable studentParentAssociation, string ifMatch = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling ParentsApi->Putparent");
-            // verify the required parameter 'parent' is set
-            if (parent == null)
-                throw new ApiException(400, "Missing required parameter 'parent' when calling ParentsApi->Putparent");
+                throw new ApiException(400, "Missing required parameter 'id' when calling StudentParentAssociationsApi->PutstudentParentAssociation");
+            // verify the required parameter 'studentParentAssociation' is set
+            if (studentParentAssociation == null)
+                throw new ApiException(400, "Missing required parameter 'studentParentAssociation' when calling StudentParentAssociationsApi->PutstudentParentAssociation");
 
-            var localVarPath = "/ed-fi/parents/{id}";
+            var localVarPath = "/ed-fi/studentParentAssociations/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1086,7 +1056,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/vnd.ed-fi.parent.minnesota-twentytwentytwopreview-sisvendorprofile.writable+json"
+                "application/vnd.ed-fi.studentparentassociation.minnesota-twentytwentyone-sisvendorprofile.writable+json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1100,13 +1070,13 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
 
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
             if (ifMatch != null) localVarHeaderParams.Add("If-Match", Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
-            if (parent != null && parent.GetType() != typeof(byte[]))
+            if (studentParentAssociation != null && studentParentAssociation.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(parent); // http body (model) parameter
+                localVarPostBody = Configuration.ApiClient.Serialize(studentParentAssociation); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = parent; // byte array
+                localVarPostBody = studentParentAssociation; // byte array
             }
 
             // authentication (oauth2_client_credentials) required
@@ -1125,7 +1095,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("Putparent", localVarResponse);
+                Exception exception = ExceptionFactory("PutstudentParentAssociation", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1139,12 +1109,12 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// </summary>
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
-        /// <param name="parent">The JSON representation of the \&quot;parent\&quot; resource to be created or updated.</param>
+        /// <param name="studentParentAssociation">The JSON representation of the \&quot;studentParentAssociation\&quot; resource to be created or updated.</param>
         /// <param name="ifMatch">The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task PutparentAsync (string id, EdFiParentWritable parent, string ifMatch = null)
+        public async System.Threading.Tasks.Task PutstudentParentAssociationAsync (string id, EdFiStudentParentAssociationWritable studentParentAssociation, string ifMatch = null)
         {
-             await PutparentAsyncWithHttpInfo(id, parent, ifMatch);
+             await PutstudentParentAssociationAsyncWithHttpInfo(id, studentParentAssociation, ifMatch);
 
         }
 
@@ -1153,19 +1123,19 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
         /// </summary>
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
-        /// <param name="parent">The JSON representation of the \&quot;parent\&quot; resource to be created or updated.</param>
+        /// <param name="studentParentAssociation">The JSON representation of the \&quot;studentParentAssociation\&quot; resource to be created or updated.</param>
         /// <param name="ifMatch">The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> PutparentAsyncWithHttpInfo (string id, EdFiParentWritable parent, string ifMatch = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> PutstudentParentAssociationAsyncWithHttpInfo (string id, EdFiStudentParentAssociationWritable studentParentAssociation, string ifMatch = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling ParentsApi->Putparent");
-            // verify the required parameter 'parent' is set
-            if (parent == null)
-                throw new ApiException(400, "Missing required parameter 'parent' when calling ParentsApi->Putparent");
+                throw new ApiException(400, "Missing required parameter 'id' when calling StudentParentAssociationsApi->PutstudentParentAssociation");
+            // verify the required parameter 'studentParentAssociation' is set
+            if (studentParentAssociation == null)
+                throw new ApiException(400, "Missing required parameter 'studentParentAssociation' when calling StudentParentAssociationsApi->PutstudentParentAssociation");
 
-            var localVarPath = "/ed-fi/parents/{id}";
+            var localVarPath = "/ed-fi/studentParentAssociations/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1175,7 +1145,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/vnd.ed-fi.parent.minnesota-twentytwentytwopreview-sisvendorprofile.writable+json"
+                "application/vnd.ed-fi.studentparentassociation.minnesota-twentytwentyone-sisvendorprofile.writable+json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1189,13 +1159,13 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
 
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
             if (ifMatch != null) localVarHeaderParams.Add("If-Match", Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
-            if (parent != null && parent.GetType() != typeof(byte[]))
+            if (studentParentAssociation != null && studentParentAssociation.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(parent); // http body (model) parameter
+                localVarPostBody = Configuration.ApiClient.Serialize(studentParentAssociation); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = parent; // byte array
+                localVarPostBody = studentParentAssociation; // byte array
             }
 
             // authentication (oauth2_client_credentials) required
@@ -1214,7 +1184,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISV
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("Putparent", localVarResponse);
+                Exception exception = ExceptionFactory("PutstudentParentAssociation", localVarResponse);
                 if (exception != null) throw exception;
             }
 

@@ -22,33 +22,33 @@ using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = EdFi.OdsApi.Sdk.Client.SwaggerDateConverter;
 
-namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SISVendor_Profile
+namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_Profile
 {
     /// <summary>
-    /// EdFiStudentParentAssociationReadable
+    /// EdFiStudentParentAssociationWritable
     /// </summary>
     [DataContract]
-    public partial class EdFiStudentParentAssociationReadable :  IEquatable<EdFiStudentParentAssociationReadable>, IValidatableObject
+    public partial class EdFiStudentParentAssociationWritable :  IEquatable<EdFiStudentParentAssociationWritable>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="EdFiStudentParentAssociationReadable" /> class.
+        /// Initializes a new instance of the <see cref="EdFiStudentParentAssociationWritable" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected EdFiStudentParentAssociationReadable() { }
+        protected EdFiStudentParentAssociationWritable() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="EdFiStudentParentAssociationReadable" /> class.
+        /// Initializes a new instance of the <see cref="EdFiStudentParentAssociationWritable" /> class.
         /// </summary>
         /// <param name="Id">Id (required).</param>
         /// <param name="ParentReference">ParentReference (required).</param>
         /// <param name="StudentReference">StudentReference (required).</param>
         /// <param name="RelationDescriptor">The nature of an individual&#39;s relationship to a student; for example:          Father, Mother, Step Father, Step Mother, Foster Father, Foster Mother, Guardian, etc..</param>
         /// <param name="Etag">A unique system-generated value that identifies the version of the resource..</param>
-        public EdFiStudentParentAssociationReadable(string Id = default(string), EdFiParentReference ParentReference = default(EdFiParentReference), EdFiStudentReference StudentReference = default(EdFiStudentReference), string RelationDescriptor = default(string), string Etag = default(string))
+        public EdFiStudentParentAssociationWritable(string Id = default(string), EdFiParentReference ParentReference = default(EdFiParentReference), EdFiStudentReference StudentReference = default(EdFiStudentReference), string RelationDescriptor = default(string), string Etag = default(string))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
             {
-                throw new InvalidDataException("Id is a required property for EdFiStudentParentAssociationReadable and cannot be null");
+                throw new InvalidDataException("Id is a required property for EdFiStudentParentAssociationWritable and cannot be null");
             }
             else
             {
@@ -57,7 +57,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SI
             // to ensure "ParentReference" is required (not null)
             if (ParentReference == null)
             {
-                throw new InvalidDataException("ParentReference is a required property for EdFiStudentParentAssociationReadable and cannot be null");
+                throw new InvalidDataException("ParentReference is a required property for EdFiStudentParentAssociationWritable and cannot be null");
             }
             else
             {
@@ -66,7 +66,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SI
             // to ensure "StudentReference" is required (not null)
             if (StudentReference == null)
             {
-                throw new InvalidDataException("StudentReference is a required property for EdFiStudentParentAssociationReadable and cannot be null");
+                throw new InvalidDataException("StudentReference is a required property for EdFiStudentParentAssociationWritable and cannot be null");
             }
             else
             {
@@ -115,7 +115,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SI
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class EdFiStudentParentAssociationReadable {\n");
+            sb.Append("class EdFiStudentParentAssociationWritable {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  ParentReference: ").Append(ParentReference).Append("\n");
             sb.Append("  StudentReference: ").Append(StudentReference).Append("\n");
@@ -141,15 +141,15 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_Two_Preview_SI
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as EdFiStudentParentAssociationReadable);
+            return this.Equals(input as EdFiStudentParentAssociationWritable);
         }
 
         /// <summary>
-        /// Returns true if EdFiStudentParentAssociationReadable instances are equal
+        /// Returns true if EdFiStudentParentAssociationWritable instances are equal
         /// </summary>
-        /// <param name="input">Instance of EdFiStudentParentAssociationReadable to be compared</param>
+        /// <param name="input">Instance of EdFiStudentParentAssociationWritable to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(EdFiStudentParentAssociationReadable input)
+        public bool Equals(EdFiStudentParentAssociationWritable input)
         {
             if (input == null)
                 return false;
