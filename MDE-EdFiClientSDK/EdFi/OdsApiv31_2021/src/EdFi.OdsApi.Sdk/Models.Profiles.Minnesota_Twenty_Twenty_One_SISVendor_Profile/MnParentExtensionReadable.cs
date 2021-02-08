@@ -39,8 +39,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_
         /// <param name="HouseholdIncome">Annual income of the household in monetary units..</param>
         /// <param name="HouseholdSize">Number of people in the household..</param>
         /// <param name="ReceivingInterpreterAssistance">Is parent is receiving interpreter assistance?.</param>
-        /// <param name="IdentificationCodes">An unordered collection of parentIdentificationCodes. Miscellaneous parent Identification Code. E.g., MARSS ID of of a related student..</param>
-        public MnParentExtensionReadable(string ClassroomVolunteerDescriptor = default(string), string HighestCompletedLevelOfEducationDescriptor = default(string), DateTime? BirthDate = default(DateTime?), double? HouseholdIncome = default(double?), int? HouseholdSize = default(int?), bool? ReceivingInterpreterAssistance = default(bool?), List<MnParentIdentificationCodeReadable> IdentificationCodes = default(List<MnParentIdentificationCodeReadable>))
+        public MnParentExtensionReadable(string ClassroomVolunteerDescriptor = default(string), string HighestCompletedLevelOfEducationDescriptor = default(string), DateTime? BirthDate = default(DateTime?), double? HouseholdIncome = default(double?), int? HouseholdSize = default(int?), bool? ReceivingInterpreterAssistance = default(bool?))
         {
             this.ClassroomVolunteerDescriptor = ClassroomVolunteerDescriptor;
             this.HighestCompletedLevelOfEducationDescriptor = HighestCompletedLevelOfEducationDescriptor;
@@ -48,7 +47,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_
             this.HouseholdIncome = HouseholdIncome;
             this.HouseholdSize = HouseholdSize;
             this.ReceivingInterpreterAssistance = ReceivingInterpreterAssistance;
-            this.IdentificationCodes = IdentificationCodes;
         }
         
         /// <summary>
@@ -95,13 +93,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_
         public bool? ReceivingInterpreterAssistance { get; set; }
 
         /// <summary>
-        /// An unordered collection of parentIdentificationCodes. Miscellaneous parent Identification Code. E.g., MARSS ID of of a related student.
-        /// </summary>
-        /// <value>An unordered collection of parentIdentificationCodes. Miscellaneous parent Identification Code. E.g., MARSS ID of of a related student.</value>
-        [DataMember(Name="identificationCodes", EmitDefaultValue=false)]
-        public List<MnParentIdentificationCodeReadable> IdentificationCodes { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -115,7 +106,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_
             sb.Append("  HouseholdIncome: ").Append(HouseholdIncome).Append("\n");
             sb.Append("  HouseholdSize: ").Append(HouseholdSize).Append("\n");
             sb.Append("  ReceivingInterpreterAssistance: ").Append(ReceivingInterpreterAssistance).Append("\n");
-            sb.Append("  IdentificationCodes: ").Append(IdentificationCodes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -179,11 +169,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_
                     this.ReceivingInterpreterAssistance == input.ReceivingInterpreterAssistance ||
                     (this.ReceivingInterpreterAssistance != null &&
                     this.ReceivingInterpreterAssistance.Equals(input.ReceivingInterpreterAssistance))
-                ) && 
-                (
-                    this.IdentificationCodes == input.IdentificationCodes ||
-                    this.IdentificationCodes != null &&
-                    this.IdentificationCodes.SequenceEqual(input.IdentificationCodes)
                 );
         }
 
@@ -208,8 +193,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_
                     hashCode = hashCode * 59 + this.HouseholdSize.GetHashCode();
                 if (this.ReceivingInterpreterAssistance != null)
                     hashCode = hashCode * 59 + this.ReceivingInterpreterAssistance.GetHashCode();
-                if (this.IdentificationCodes != null)
-                    hashCode = hashCode * 59 + this.IdentificationCodes.GetHashCode();
                 return hashCode;
             }
         }
