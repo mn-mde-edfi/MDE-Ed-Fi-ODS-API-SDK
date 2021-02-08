@@ -23,7 +23,7 @@ namespace EdFi.OdsApi.SdkClient
             System.Net.ServicePointManager.SecurityProtocol |= System.Net.SecurityProtocolType.Tls11 | System.Net.SecurityProtocolType.Tls12;
 
             // Oauth configuration
-            var oauthUrl = "https://test.edfi.education.mn.gov/SB20_/edfi.ods.webapi";
+            var oauthUrl = "https://test.edfi.education.mn.gov/sb21_/edfi.ods.webapi";
             var clientKey = "populatedSandbox";
             var clientSecret = "populatedSandboxSecret";
 
@@ -34,7 +34,7 @@ namespace EdFi.OdsApi.SdkClient
             var configuration = new Configuration 
                                 {
                                     AccessToken = tokenRetriever.ObtainNewBearerToken(), 
-                                    BasePath = "https://test.edfi.education.mn.gov/SB20_/edfi.ods.webapi/data/v3"
+                                    BasePath = "https://test.edfi.education.mn.gov/sb21_/edfi.ods.webapi/data/v3"
                                 };
             
             Console.WriteLine("GET MN extension StudentSchoolAssociations");
