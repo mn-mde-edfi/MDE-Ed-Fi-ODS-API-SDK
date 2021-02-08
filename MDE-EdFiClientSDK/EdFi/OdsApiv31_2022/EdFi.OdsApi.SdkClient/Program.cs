@@ -2,7 +2,7 @@
 using System.Linq;
 
 using EdFi.OdsApi.Sdk.Apis.Descriptors;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
 
 namespace EdFi.OdsApi.SdkClient
