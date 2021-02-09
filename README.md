@@ -12,12 +12,12 @@ A C sharp client SDK to interact with the MN Ed-Fi ODS API.
 * \Resources
 * \Descriptors
 * \Types
-* \Minnesota-SISVendor-Profile
+* \Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile
 #### Models
 * \Resources
 * \Descriptors
 * \Types
-* \Minnesota-SISVendor-Profile
+* \Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile
 
 
 5. Right-click on each of the folders and add the existing classes for each package. The files can be found at the following location: MDE-Ed-Fi-ODS-API-SDK/MDE-EdFiClientSDK/EdFi/OdsApi/. Be sure to select all of the generated SDK files for each package.
@@ -28,7 +28,7 @@ The client key and secret are will need to be replaced to match a MN sandbox env
 
 ```
 // OAuth configuration
-var oauthUrl = "https://test.edfi.education.mn.gov/EdFi.Ods.WebApi/";
+var oauthUrl = "https://test.edfi.education.mn.gov/sb21_/EdFi.Ods.WebApi/";
 var clientKey = "RvcohKxyzXYZ";
 var clientSecret = "ABCabcaNf81xzCxwHfbolkC";
  
