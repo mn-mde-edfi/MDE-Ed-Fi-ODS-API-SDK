@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_Profile.MnStudentEducationOrganizationAssociationOptOutIndicatorsReadable
+# EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile.MnStudentEducationOrganizationAssociationOptOutIndicatorsReadable
 ## Properties
 
 Name | Type | Description | Notes
