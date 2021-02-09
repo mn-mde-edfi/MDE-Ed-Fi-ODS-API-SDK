@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_Profile.EdFiEducationOrganizationAddressLocalEducationAgencyReadable
+# EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile.EdFiEducationOrganizationAddressLocalEducationAgencyReadable
 ## Properties
 
 Name | Type | Description | Notes

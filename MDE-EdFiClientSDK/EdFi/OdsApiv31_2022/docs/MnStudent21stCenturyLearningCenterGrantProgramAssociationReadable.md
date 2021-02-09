@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_Profile.MnStudent21stCenturyLearningCenterGrantProgramAssociationReadable
+# EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile.MnStudent21stCenturyLearningCenterGrantProgramAssociationReadable
 ## Properties
 
 Name | Type | Description | Notes
@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **EducationOrganizationReference** | [**MnEducationOrganizationReference**](MnEducationOrganizationReference.md) |  | 
 **ProgramReference** | [**MnProgramReference**](MnProgramReference.md) |  | 
 **StudentReference** | [**MnStudentReference**](MnStudentReference.md) |  | 
+**AttendanceDays** | **int?** | Attendance days | [optional] 
+**AttendanceHours** | **double?** | Attendance hours | [optional] 
 **EndDate** | **DateTime?** | The month, day, and year on which the Student exited the Program or stopped receiving services. | [optional] 
 **Etag** | **string** | A unique system-generated value that identifies the version of the resource. | [optional] 
 

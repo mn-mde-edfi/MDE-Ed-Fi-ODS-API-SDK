@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_Profile.Student21stCenturyLearningCenterGrantProgramAssociationsApi
+# EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile.Student21stCenturyLearningCenterGrantProgramAssociationsApi
 
 All URIs are relative to *https://test.edfi.education.mn.gov:443/sb21_/edfi.ods.webapi/data/v3*
 
@@ -23,9 +23,9 @@ The DELETE operation is used to delete an existing resource by identifier. If th
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile;
 
 namespace Example
 {
@@ -71,14 +71,14 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/vnd.ed-fi.student21stcenturylearningcentergrantprogramassociation.minnesota-twentytwentyone-sisvendorprofile.writable+json
+ - **Content-Type**: application/vnd.ed-fi.student21stcenturylearningcentergrantprogramassociation.minnesota-twentyone-twentytwo-sisvendorprofile.writable+json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getstudent21stcenturylearningcentergrantprogramassociations"></a>
 # **GetStudent21stCenturyLearningCenterGrantProgramAssociations**
-> List<MnStudent21stCenturyLearningCenterGrantProgramAssociationReadable> GetStudent21stCenturyLearningCenterGrantProgramAssociations (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null)
+> List<MnStudent21stCenturyLearningCenterGrantProgramAssociationReadable> GetStudent21stCenturyLearningCenterGrantProgramAssociations (int? offset = null, int? limit = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, int? attendanceDays = null, double? attendanceHours = null)
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
 
@@ -88,9 +88,9 @@ This GET operation provides access to resources using the \"Get\" search pattern
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile;
 
 namespace Example
 {
@@ -111,11 +111,13 @@ namespace Example
             var programName = programName_example;  // string | The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional) 
             var programTypeDescriptor = programTypeDescriptor_example;  // string | The type of program. (optional) 
             var studentUniqueId = studentUniqueId_example;  // string | A unique alphanumeric code assigned to a student. (optional) 
+            var attendanceDays = 56;  // int? | Attendance days (optional) 
+            var attendanceHours = 1.2;  // double? | Attendance hours (optional) 
 
             try
             {
                 // Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
-                List&lt;MnStudent21stCenturyLearningCenterGrantProgramAssociationReadable&gt; result = apiInstance.GetStudent21stCenturyLearningCenterGrantProgramAssociations(offset, limit, totalCount, beginDate, educationOrganizationId, programEducationOrganizationId, programName, programTypeDescriptor, studentUniqueId);
+                List&lt;MnStudent21stCenturyLearningCenterGrantProgramAssociationReadable&gt; result = apiInstance.GetStudent21stCenturyLearningCenterGrantProgramAssociations(offset, limit, totalCount, beginDate, educationOrganizationId, programEducationOrganizationId, programName, programTypeDescriptor, studentUniqueId, attendanceDays, attendanceHours);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -140,6 +142,8 @@ Name | Type | Description  | Notes
  **programName** | **string**| The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. | [optional] 
  **programTypeDescriptor** | **string**| The type of program. | [optional] 
  **studentUniqueId** | **string**| A unique alphanumeric code assigned to a student. | [optional] 
+ **attendanceDays** | **int?**| Attendance days | [optional] 
+ **attendanceHours** | **double?**| Attendance hours | [optional] 
 
 ### Return type
 
@@ -152,7 +156,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/vnd.ed-fi.student21stcenturylearningcentergrantprogramassociation.minnesota-twentytwentyone-sisvendorprofile.readable+json
+ - **Accept**: application/vnd.ed-fi.student21stcenturylearningcentergrantprogramassociation.minnesota-twentyone-twentytwo-sisvendorprofile.readable+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -168,9 +172,9 @@ This GET operation retrieves a resource by the specified resource identifier.
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile;
 
 namespace Example
 {
@@ -218,7 +222,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/vnd.ed-fi.student21stcenturylearningcentergrantprogramassociation.minnesota-twentytwentyone-sisvendorprofile.readable+json
+ - **Accept**: application/vnd.ed-fi.student21stcenturylearningcentergrantprogramassociation.minnesota-twentyone-twentytwo-sisvendorprofile.readable+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -234,9 +238,9 @@ The POST operation can be used to create or update resources. In database terms,
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile;
 
 namespace Example
 {
@@ -280,7 +284,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/vnd.ed-fi.student21stcenturylearningcentergrantprogramassociation.minnesota-twentytwentyone-sisvendorprofile.writable+json
+ - **Content-Type**: application/vnd.ed-fi.student21stcenturylearningcentergrantprogramassociation.minnesota-twentyone-twentytwo-sisvendorprofile.writable+json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -297,9 +301,9 @@ The PUT operation is used to update or create a resource by identifier. If the r
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile;
 
 namespace Example
 {
@@ -347,7 +351,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/vnd.ed-fi.student21stcenturylearningcentergrantprogramassociation.minnesota-twentytwentyone-sisvendorprofile.writable+json
+ - **Content-Type**: application/vnd.ed-fi.student21stcenturylearningcentergrantprogramassociation.minnesota-twentyone-twentytwo-sisvendorprofile.writable+json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_Profile.StudentSpecialEducationProgramAssociationsApi
+# EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile.StudentSpecialEducationProgramAssociationsApi
 
 All URIs are relative to *https://test.edfi.education.mn.gov:443/sb21_/edfi.ods.webapi/data/v3*
 
@@ -23,9 +23,9 @@ The DELETE operation is used to delete an existing resource by identifier. If th
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile;
 
 namespace Example
 {
@@ -71,7 +71,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/vnd.ed-fi.studentspecialeducationprogramassociation.minnesota-twentytwentyone-sisvendorprofile.writable+json
+ - **Content-Type**: application/vnd.ed-fi.studentspecialeducationprogramassociation.minnesota-twentyone-twentytwo-sisvendorprofile.writable+json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -88,9 +88,9 @@ This GET operation provides access to resources using the \"Get\" search pattern
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile;
 
 namespace Example
 {
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/vnd.ed-fi.studentspecialeducationprogramassociation.minnesota-twentytwentyone-sisvendorprofile.readable+json
+ - **Accept**: application/vnd.ed-fi.studentspecialeducationprogramassociation.minnesota-twentyone-twentytwo-sisvendorprofile.readable+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -170,9 +170,9 @@ This GET operation retrieves a resource by the specified resource identifier.
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile;
 
 namespace Example
 {
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/vnd.ed-fi.studentspecialeducationprogramassociation.minnesota-twentytwentyone-sisvendorprofile.readable+json
+ - **Accept**: application/vnd.ed-fi.studentspecialeducationprogramassociation.minnesota-twentyone-twentytwo-sisvendorprofile.readable+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -236,9 +236,9 @@ The POST operation can be used to create or update resources. In database terms,
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile;
 
 namespace Example
 {
@@ -282,7 +282,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/vnd.ed-fi.studentspecialeducationprogramassociation.minnesota-twentytwentyone-sisvendorprofile.writable+json
+ - **Content-Type**: application/vnd.ed-fi.studentspecialeducationprogramassociation.minnesota-twentyone-twentytwo-sisvendorprofile.writable+json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -299,9 +299,9 @@ The PUT operation is used to update or create a resource by identifier. If the r
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Twenty_One_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile;
 
 namespace Example
 {
@@ -349,7 +349,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/vnd.ed-fi.studentspecialeducationprogramassociation.minnesota-twentytwentyone-sisvendorprofile.writable+json
+ - **Content-Type**: application/vnd.ed-fi.studentspecialeducationprogramassociation.minnesota-twentyone-twentytwo-sisvendorprofile.writable+json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
