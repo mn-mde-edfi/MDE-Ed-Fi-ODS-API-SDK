@@ -28,12 +28,12 @@ The client key and secret are will need to be replaced to match a MN sandbox env
 
 ```
 // OAuth configuration
-var oauthUrl = "https://test.edfi.education.mn.gov/sb21_/EdFi.Ods.WebApi/";
+var oauthUrl = "https://test.edfi.education.mn.gov/sb21_/edfi.ods.webapi/";
 var clientKey = "RvcohKxyzXYZ";
 var clientSecret = "ABCabcaNf81xzCxwHfbolkC";
  
 // RestSharp dependency, install via NuGet
-var client = new RestClient("https://test.edfi.education.mn.gov/EdFi.Ods.WebApi/api/v2/2018/");
+var client = new RestClient("https://test.edfi.education.mn.gov/sb21_/edfi.ods.webapi/");
 ```
 
 Build the project and run it without debugging (Ctrl+F5) and a console will open and display the results of your API request.
