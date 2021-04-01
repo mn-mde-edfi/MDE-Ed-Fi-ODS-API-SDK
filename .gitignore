@@ -43,3 +43,5 @@ CSharpSDK/EdFi.OdsApi.Sdk/Program.cs
 CSharpSDK/EdFi.OdsApi.Sdk/*.nupkg
 CSharpSDK/EdFi.OdsApi.Sdk/Helpers
 /MDE-EdFiClientSDK/EdFi/OdsApiV31/.vs/
+
+**/.vs/
