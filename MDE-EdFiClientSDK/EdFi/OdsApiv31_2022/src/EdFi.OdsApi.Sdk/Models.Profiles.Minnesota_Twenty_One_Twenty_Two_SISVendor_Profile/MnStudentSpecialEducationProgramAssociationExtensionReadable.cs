@@ -34,9 +34,11 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
         /// Initializes a new instance of the <see cref="MnStudentSpecialEducationProgramAssociationExtensionReadable" /> class.
         /// </summary>
         /// <param name="SpecialEducationServiceHours">Special Education Service Hours..</param>
-        public MnStudentSpecialEducationProgramAssociationExtensionReadable(double? SpecialEducationServiceHours = default(double?))
+        /// <param name="PlacingLocalEducationAgencyReference">PlacingLocalEducationAgencyReference.</param>
+        public MnStudentSpecialEducationProgramAssociationExtensionReadable(double? SpecialEducationServiceHours = default(double?), EdFiLocalEducationAgencyReference PlacingLocalEducationAgencyReference = default(EdFiLocalEducationAgencyReference))
         {
             this.SpecialEducationServiceHours = SpecialEducationServiceHours;
+            this.PlacingLocalEducationAgencyReference = PlacingLocalEducationAgencyReference;
         }
         
         /// <summary>
@@ -47,6 +49,12 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
         public double? SpecialEducationServiceHours { get; set; }
 
         /// <summary>
+        /// Gets or Sets PlacingLocalEducationAgencyReference
+        /// </summary>
+        [DataMember(Name="placingLocalEducationAgencyReference", EmitDefaultValue=false)]
+        public EdFiLocalEducationAgencyReference PlacingLocalEducationAgencyReference { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -55,6 +63,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
             var sb = new StringBuilder();
             sb.Append("class MnStudentSpecialEducationProgramAssociationExtensionReadable {\n");
             sb.Append("  SpecialEducationServiceHours: ").Append(SpecialEducationServiceHours).Append("\n");
+            sb.Append("  PlacingLocalEducationAgencyReference: ").Append(PlacingLocalEducationAgencyReference).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,6 +102,11 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
                     this.SpecialEducationServiceHours == input.SpecialEducationServiceHours ||
                     (this.SpecialEducationServiceHours != null &&
                     this.SpecialEducationServiceHours.Equals(input.SpecialEducationServiceHours))
+                ) && 
+                (
+                    this.PlacingLocalEducationAgencyReference == input.PlacingLocalEducationAgencyReference ||
+                    (this.PlacingLocalEducationAgencyReference != null &&
+                    this.PlacingLocalEducationAgencyReference.Equals(input.PlacingLocalEducationAgencyReference))
                 );
         }
 
@@ -107,6 +121,8 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
                 int hashCode = 41;
                 if (this.SpecialEducationServiceHours != null)
                     hashCode = hashCode * 59 + this.SpecialEducationServiceHours.GetHashCode();
+                if (this.PlacingLocalEducationAgencyReference != null)
+                    hashCode = hashCode * 59 + this.PlacingLocalEducationAgencyReference.GetHashCode();
                 return hashCode;
             }
         }

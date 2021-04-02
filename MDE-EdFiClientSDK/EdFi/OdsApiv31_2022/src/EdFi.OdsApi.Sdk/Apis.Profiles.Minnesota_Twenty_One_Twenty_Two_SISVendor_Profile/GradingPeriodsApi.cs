@@ -61,9 +61,12 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// <param name="periodSequence">The sequential order of this period relative to other periods. (optional)</param>
         /// <param name="schoolId">The identifier assigned to a school. (optional)</param>
         /// <param name="schoolYear">The identifier for the grading period school year. (optional)</param>
+        /// <param name="beginDate">Month, day, and year of the first day of the GradingPeriod. (optional)</param>
+        /// <param name="endDate">Month, day, and year of the last day of the GradingPeriod. (optional)</param>
         /// <param name="id"> (optional)</param>
+        /// <param name="totalInstructionalDays">Total days available for educational instruction during the GradingPeriod. (optional)</param>
         /// <returns>List&lt;EdFiGradingPeriodReadable&gt;</returns>
-        List<EdFiGradingPeriodReadable> GetGradingPeriods (int? offset = null, int? limit = null, bool? totalCount = null, string gradingPeriodDescriptor = null, int? periodSequence = null, int? schoolId = null, int? schoolYear = null, string id = null);
+        List<EdFiGradingPeriodReadable> GetGradingPeriods (int? offset = null, int? limit = null, bool? totalCount = null, string gradingPeriodDescriptor = null, int? periodSequence = null, int? schoolId = null, int? schoolYear = null, DateTime? beginDate = null, DateTime? endDate = null, string id = null, int? totalInstructionalDays = null);
 
         /// <summary>
         /// Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
@@ -79,9 +82,12 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// <param name="periodSequence">The sequential order of this period relative to other periods. (optional)</param>
         /// <param name="schoolId">The identifier assigned to a school. (optional)</param>
         /// <param name="schoolYear">The identifier for the grading period school year. (optional)</param>
+        /// <param name="beginDate">Month, day, and year of the first day of the GradingPeriod. (optional)</param>
+        /// <param name="endDate">Month, day, and year of the last day of the GradingPeriod. (optional)</param>
         /// <param name="id"> (optional)</param>
+        /// <param name="totalInstructionalDays">Total days available for educational instruction during the GradingPeriod. (optional)</param>
         /// <returns>ApiResponse of List&lt;EdFiGradingPeriodReadable&gt;</returns>
-        ApiResponse<List<EdFiGradingPeriodReadable>> GetGradingPeriodsWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string gradingPeriodDescriptor = null, int? periodSequence = null, int? schoolId = null, int? schoolYear = null, string id = null);
+        ApiResponse<List<EdFiGradingPeriodReadable>> GetGradingPeriodsWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string gradingPeriodDescriptor = null, int? periodSequence = null, int? schoolId = null, int? schoolYear = null, DateTime? beginDate = null, DateTime? endDate = null, string id = null, int? totalInstructionalDays = null);
         /// <summary>
         /// Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
         /// </summary>
@@ -190,9 +196,12 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// <param name="periodSequence">The sequential order of this period relative to other periods. (optional)</param>
         /// <param name="schoolId">The identifier assigned to a school. (optional)</param>
         /// <param name="schoolYear">The identifier for the grading period school year. (optional)</param>
+        /// <param name="beginDate">Month, day, and year of the first day of the GradingPeriod. (optional)</param>
+        /// <param name="endDate">Month, day, and year of the last day of the GradingPeriod. (optional)</param>
         /// <param name="id"> (optional)</param>
+        /// <param name="totalInstructionalDays">Total days available for educational instruction during the GradingPeriod. (optional)</param>
         /// <returns>Task of List&lt;EdFiGradingPeriodReadable&gt;</returns>
-        System.Threading.Tasks.Task<List<EdFiGradingPeriodReadable>> GetGradingPeriodsAsync (int? offset = null, int? limit = null, bool? totalCount = null, string gradingPeriodDescriptor = null, int? periodSequence = null, int? schoolId = null, int? schoolYear = null, string id = null);
+        System.Threading.Tasks.Task<List<EdFiGradingPeriodReadable>> GetGradingPeriodsAsync (int? offset = null, int? limit = null, bool? totalCount = null, string gradingPeriodDescriptor = null, int? periodSequence = null, int? schoolId = null, int? schoolYear = null, DateTime? beginDate = null, DateTime? endDate = null, string id = null, int? totalInstructionalDays = null);
 
         /// <summary>
         /// Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
@@ -208,9 +217,12 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// <param name="periodSequence">The sequential order of this period relative to other periods. (optional)</param>
         /// <param name="schoolId">The identifier assigned to a school. (optional)</param>
         /// <param name="schoolYear">The identifier for the grading period school year. (optional)</param>
+        /// <param name="beginDate">Month, day, and year of the first day of the GradingPeriod. (optional)</param>
+        /// <param name="endDate">Month, day, and year of the last day of the GradingPeriod. (optional)</param>
         /// <param name="id"> (optional)</param>
+        /// <param name="totalInstructionalDays">Total days available for educational instruction during the GradingPeriod. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;EdFiGradingPeriodReadable&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<EdFiGradingPeriodReadable>>> GetGradingPeriodsAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string gradingPeriodDescriptor = null, int? periodSequence = null, int? schoolId = null, int? schoolYear = null, string id = null);
+        System.Threading.Tasks.Task<ApiResponse<List<EdFiGradingPeriodReadable>>> GetGradingPeriodsAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string gradingPeriodDescriptor = null, int? periodSequence = null, int? schoolId = null, int? schoolYear = null, DateTime? beginDate = null, DateTime? endDate = null, string id = null, int? totalInstructionalDays = null);
         /// <summary>
         /// Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
         /// </summary>
@@ -542,11 +554,14 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// <param name="periodSequence">The sequential order of this period relative to other periods. (optional)</param>
         /// <param name="schoolId">The identifier assigned to a school. (optional)</param>
         /// <param name="schoolYear">The identifier for the grading period school year. (optional)</param>
+        /// <param name="beginDate">Month, day, and year of the first day of the GradingPeriod. (optional)</param>
+        /// <param name="endDate">Month, day, and year of the last day of the GradingPeriod. (optional)</param>
         /// <param name="id"> (optional)</param>
+        /// <param name="totalInstructionalDays">Total days available for educational instruction during the GradingPeriod. (optional)</param>
         /// <returns>List&lt;EdFiGradingPeriodReadable&gt;</returns>
-        public List<EdFiGradingPeriodReadable> GetGradingPeriods (int? offset = null, int? limit = null, bool? totalCount = null, string gradingPeriodDescriptor = null, int? periodSequence = null, int? schoolId = null, int? schoolYear = null, string id = null)
+        public List<EdFiGradingPeriodReadable> GetGradingPeriods (int? offset = null, int? limit = null, bool? totalCount = null, string gradingPeriodDescriptor = null, int? periodSequence = null, int? schoolId = null, int? schoolYear = null, DateTime? beginDate = null, DateTime? endDate = null, string id = null, int? totalInstructionalDays = null)
         {
-             ApiResponse<List<EdFiGradingPeriodReadable>> localVarResponse = GetGradingPeriodsWithHttpInfo(offset, limit, totalCount, gradingPeriodDescriptor, periodSequence, schoolId, schoolYear, id);
+             ApiResponse<List<EdFiGradingPeriodReadable>> localVarResponse = GetGradingPeriodsWithHttpInfo(offset, limit, totalCount, gradingPeriodDescriptor, periodSequence, schoolId, schoolYear, beginDate, endDate, id, totalInstructionalDays);
              return localVarResponse.Data;
         }
 
@@ -561,9 +576,12 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// <param name="periodSequence">The sequential order of this period relative to other periods. (optional)</param>
         /// <param name="schoolId">The identifier assigned to a school. (optional)</param>
         /// <param name="schoolYear">The identifier for the grading period school year. (optional)</param>
+        /// <param name="beginDate">Month, day, and year of the first day of the GradingPeriod. (optional)</param>
+        /// <param name="endDate">Month, day, and year of the last day of the GradingPeriod. (optional)</param>
         /// <param name="id"> (optional)</param>
+        /// <param name="totalInstructionalDays">Total days available for educational instruction during the GradingPeriod. (optional)</param>
         /// <returns>ApiResponse of List&lt;EdFiGradingPeriodReadable&gt;</returns>
-        public ApiResponse< List<EdFiGradingPeriodReadable> > GetGradingPeriodsWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string gradingPeriodDescriptor = null, int? periodSequence = null, int? schoolId = null, int? schoolYear = null, string id = null)
+        public ApiResponse< List<EdFiGradingPeriodReadable> > GetGradingPeriodsWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string gradingPeriodDescriptor = null, int? periodSequence = null, int? schoolId = null, int? schoolYear = null, DateTime? beginDate = null, DateTime? endDate = null, string id = null, int? totalInstructionalDays = null)
         {
 
             var localVarPath = "/ed-fi/gradingPeriods";
@@ -595,7 +613,10 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
             if (periodSequence != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "periodSequence", periodSequence)); // query parameter
             if (schoolId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "schoolId", schoolId)); // query parameter
             if (schoolYear != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "schoolYear", schoolYear)); // query parameter
+            if (beginDate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "beginDate", beginDate)); // query parameter
+            if (endDate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "endDate", endDate)); // query parameter
             if (id != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "id", id)); // query parameter
+            if (totalInstructionalDays != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "totalInstructionalDays", totalInstructionalDays)); // query parameter
 
             // authentication (oauth2_client_credentials) required
             // oauth required
@@ -633,11 +654,14 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// <param name="periodSequence">The sequential order of this period relative to other periods. (optional)</param>
         /// <param name="schoolId">The identifier assigned to a school. (optional)</param>
         /// <param name="schoolYear">The identifier for the grading period school year. (optional)</param>
+        /// <param name="beginDate">Month, day, and year of the first day of the GradingPeriod. (optional)</param>
+        /// <param name="endDate">Month, day, and year of the last day of the GradingPeriod. (optional)</param>
         /// <param name="id"> (optional)</param>
+        /// <param name="totalInstructionalDays">Total days available for educational instruction during the GradingPeriod. (optional)</param>
         /// <returns>Task of List&lt;EdFiGradingPeriodReadable&gt;</returns>
-        public async System.Threading.Tasks.Task<List<EdFiGradingPeriodReadable>> GetGradingPeriodsAsync (int? offset = null, int? limit = null, bool? totalCount = null, string gradingPeriodDescriptor = null, int? periodSequence = null, int? schoolId = null, int? schoolYear = null, string id = null)
+        public async System.Threading.Tasks.Task<List<EdFiGradingPeriodReadable>> GetGradingPeriodsAsync (int? offset = null, int? limit = null, bool? totalCount = null, string gradingPeriodDescriptor = null, int? periodSequence = null, int? schoolId = null, int? schoolYear = null, DateTime? beginDate = null, DateTime? endDate = null, string id = null, int? totalInstructionalDays = null)
         {
-             ApiResponse<List<EdFiGradingPeriodReadable>> localVarResponse = await GetGradingPeriodsAsyncWithHttpInfo(offset, limit, totalCount, gradingPeriodDescriptor, periodSequence, schoolId, schoolYear, id);
+             ApiResponse<List<EdFiGradingPeriodReadable>> localVarResponse = await GetGradingPeriodsAsyncWithHttpInfo(offset, limit, totalCount, gradingPeriodDescriptor, periodSequence, schoolId, schoolYear, beginDate, endDate, id, totalInstructionalDays);
              return localVarResponse.Data;
 
         }
@@ -653,9 +677,12 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// <param name="periodSequence">The sequential order of this period relative to other periods. (optional)</param>
         /// <param name="schoolId">The identifier assigned to a school. (optional)</param>
         /// <param name="schoolYear">The identifier for the grading period school year. (optional)</param>
+        /// <param name="beginDate">Month, day, and year of the first day of the GradingPeriod. (optional)</param>
+        /// <param name="endDate">Month, day, and year of the last day of the GradingPeriod. (optional)</param>
         /// <param name="id"> (optional)</param>
+        /// <param name="totalInstructionalDays">Total days available for educational instruction during the GradingPeriod. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;EdFiGradingPeriodReadable&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<EdFiGradingPeriodReadable>>> GetGradingPeriodsAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string gradingPeriodDescriptor = null, int? periodSequence = null, int? schoolId = null, int? schoolYear = null, string id = null)
+        public async System.Threading.Tasks.Task<ApiResponse<List<EdFiGradingPeriodReadable>>> GetGradingPeriodsAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string gradingPeriodDescriptor = null, int? periodSequence = null, int? schoolId = null, int? schoolYear = null, DateTime? beginDate = null, DateTime? endDate = null, string id = null, int? totalInstructionalDays = null)
         {
 
             var localVarPath = "/ed-fi/gradingPeriods";
@@ -687,7 +714,10 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
             if (periodSequence != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "periodSequence", periodSequence)); // query parameter
             if (schoolId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "schoolId", schoolId)); // query parameter
             if (schoolYear != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "schoolYear", schoolYear)); // query parameter
+            if (beginDate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "beginDate", beginDate)); // query parameter
+            if (endDate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "endDate", endDate)); // query parameter
             if (id != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "id", id)); // query parameter
+            if (totalInstructionalDays != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "totalInstructionalDays", totalInstructionalDays)); // query parameter
 
             // authentication (oauth2_client_credentials) required
             // oauth required

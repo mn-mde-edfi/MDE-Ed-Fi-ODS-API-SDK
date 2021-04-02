@@ -78,7 +78,7 @@ void (empty response body)
 
 <a name="getgradingperiods"></a>
 # **GetGradingPeriods**
-> List<EdFiGradingPeriodReadable> GetGradingPeriods (int? offset = null, int? limit = null, bool? totalCount = null, string gradingPeriodDescriptor = null, int? periodSequence = null, int? schoolId = null, int? schoolYear = null, string id = null)
+> List<EdFiGradingPeriodReadable> GetGradingPeriods (int? offset = null, int? limit = null, bool? totalCount = null, string gradingPeriodDescriptor = null, int? periodSequence = null, int? schoolId = null, int? schoolYear = null, DateTime? beginDate = null, DateTime? endDate = null, string id = null, int? totalInstructionalDays = null)
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
 
@@ -109,12 +109,15 @@ namespace Example
             var periodSequence = 56;  // int? | The sequential order of this period relative to other periods. (optional) 
             var schoolId = 56;  // int? | The identifier assigned to a school. (optional) 
             var schoolYear = 56;  // int? | The identifier for the grading period school year. (optional) 
+            var beginDate = 2013-10-20;  // DateTime? | Month, day, and year of the first day of the GradingPeriod. (optional) 
+            var endDate = 2013-10-20;  // DateTime? | Month, day, and year of the last day of the GradingPeriod. (optional) 
             var id = id_example;  // string |  (optional) 
+            var totalInstructionalDays = 56;  // int? | Total days available for educational instruction during the GradingPeriod. (optional) 
 
             try
             {
                 // Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
-                List&lt;EdFiGradingPeriodReadable&gt; result = apiInstance.GetGradingPeriods(offset, limit, totalCount, gradingPeriodDescriptor, periodSequence, schoolId, schoolYear, id);
+                List&lt;EdFiGradingPeriodReadable&gt; result = apiInstance.GetGradingPeriods(offset, limit, totalCount, gradingPeriodDescriptor, periodSequence, schoolId, schoolYear, beginDate, endDate, id, totalInstructionalDays);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -137,7 +140,10 @@ Name | Type | Description  | Notes
  **periodSequence** | **int?**| The sequential order of this period relative to other periods. | [optional] 
  **schoolId** | **int?**| The identifier assigned to a school. | [optional] 
  **schoolYear** | **int?**| The identifier for the grading period school year. | [optional] 
+ **beginDate** | **DateTime?**| Month, day, and year of the first day of the GradingPeriod. | [optional] 
+ **endDate** | **DateTime?**| Month, day, and year of the last day of the GradingPeriod. | [optional] 
  **id** | **string**|  | [optional] 
+ **totalInstructionalDays** | **int?**| Total days available for educational instruction during the GradingPeriod. | [optional] 
 
 ### Return type
 

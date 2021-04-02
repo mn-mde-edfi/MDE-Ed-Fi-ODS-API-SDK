@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.Link
+# EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile.Link
 ## Properties
 
 Name | Type | Description | Notes

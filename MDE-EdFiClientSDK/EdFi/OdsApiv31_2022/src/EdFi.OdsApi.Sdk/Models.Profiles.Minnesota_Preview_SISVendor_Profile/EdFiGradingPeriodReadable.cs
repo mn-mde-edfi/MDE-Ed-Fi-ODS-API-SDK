@@ -43,8 +43,10 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
         /// <param name="PeriodSequence">The sequential order of this period relative to other periods. (required).</param>
         /// <param name="SchoolReference">SchoolReference (required).</param>
         /// <param name="SchoolYearTypeReference">SchoolYearTypeReference (required).</param>
+        /// <param name="BeginDate">Month, day, and year of the first day of the GradingPeriod. (required).</param>
+        /// <param name="EndDate">Month, day, and year of the last day of the GradingPeriod. (required).</param>
         /// <param name="Etag">A unique system-generated value that identifies the version of the resource..</param>
-        public EdFiGradingPeriodReadable(string Id = default(string), string GradingPeriodDescriptor = default(string), int? PeriodSequence = default(int?), EdFiSchoolReference SchoolReference = default(EdFiSchoolReference), EdFiSchoolYearTypeReference SchoolYearTypeReference = default(EdFiSchoolYearTypeReference), string Etag = default(string))
+        public EdFiGradingPeriodReadable(string Id = default(string), string GradingPeriodDescriptor = default(string), int? PeriodSequence = default(int?), EdFiSchoolReference SchoolReference = default(EdFiSchoolReference), EdFiSchoolYearTypeReference SchoolYearTypeReference = default(EdFiSchoolYearTypeReference), DateTime? BeginDate = default(DateTime?), DateTime? EndDate = default(DateTime?), string Etag = default(string))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
@@ -91,6 +93,24 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
             {
                 this.SchoolYearTypeReference = SchoolYearTypeReference;
             }
+            // to ensure "BeginDate" is required (not null)
+            if (BeginDate == null)
+            {
+                throw new InvalidDataException("BeginDate is a required property for EdFiGradingPeriodReadable and cannot be null");
+            }
+            else
+            {
+                this.BeginDate = BeginDate;
+            }
+            // to ensure "EndDate" is required (not null)
+            if (EndDate == null)
+            {
+                throw new InvalidDataException("EndDate is a required property for EdFiGradingPeriodReadable and cannot be null");
+            }
+            else
+            {
+                this.EndDate = EndDate;
+            }
             this.Etag = Etag;
         }
         
@@ -127,6 +147,22 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
         public EdFiSchoolYearTypeReference SchoolYearTypeReference { get; set; }
 
         /// <summary>
+        /// Month, day, and year of the first day of the GradingPeriod.
+        /// </summary>
+        /// <value>Month, day, and year of the first day of the GradingPeriod.</value>
+        [DataMember(Name="beginDate", EmitDefaultValue=false)]
+        [JsonConverter(typeof(SwaggerDateConverter))]
+        public DateTime? BeginDate { get; set; }
+
+        /// <summary>
+        /// Month, day, and year of the last day of the GradingPeriod.
+        /// </summary>
+        /// <value>Month, day, and year of the last day of the GradingPeriod.</value>
+        [DataMember(Name="endDate", EmitDefaultValue=false)]
+        [JsonConverter(typeof(SwaggerDateConverter))]
+        public DateTime? EndDate { get; set; }
+
+        /// <summary>
         /// A unique system-generated value that identifies the version of the resource.
         /// </summary>
         /// <value>A unique system-generated value that identifies the version of the resource.</value>
@@ -146,6 +182,8 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
             sb.Append("  PeriodSequence: ").Append(PeriodSequence).Append("\n");
             sb.Append("  SchoolReference: ").Append(SchoolReference).Append("\n");
             sb.Append("  SchoolYearTypeReference: ").Append(SchoolYearTypeReference).Append("\n");
+            sb.Append("  BeginDate: ").Append(BeginDate).Append("\n");
+            sb.Append("  EndDate: ").Append(EndDate).Append("\n");
             sb.Append("  Etag: ").Append(Etag).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -207,6 +245,16 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
                     this.SchoolYearTypeReference.Equals(input.SchoolYearTypeReference))
                 ) && 
                 (
+                    this.BeginDate == input.BeginDate ||
+                    (this.BeginDate != null &&
+                    this.BeginDate.Equals(input.BeginDate))
+                ) && 
+                (
+                    this.EndDate == input.EndDate ||
+                    (this.EndDate != null &&
+                    this.EndDate.Equals(input.EndDate))
+                ) && 
+                (
                     this.Etag == input.Etag ||
                     (this.Etag != null &&
                     this.Etag.Equals(input.Etag))
@@ -232,6 +280,10 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
                     hashCode = hashCode * 59 + this.SchoolReference.GetHashCode();
                 if (this.SchoolYearTypeReference != null)
                     hashCode = hashCode * 59 + this.SchoolYearTypeReference.GetHashCode();
+                if (this.BeginDate != null)
+                    hashCode = hashCode * 59 + this.BeginDate.GetHashCode();
+                if (this.EndDate != null)
+                    hashCode = hashCode * 59 + this.EndDate.GetHashCode();
                 if (this.Etag != null)
                     hashCode = hashCode * 59 + this.Etag.GetHashCode();
                 return hashCode;

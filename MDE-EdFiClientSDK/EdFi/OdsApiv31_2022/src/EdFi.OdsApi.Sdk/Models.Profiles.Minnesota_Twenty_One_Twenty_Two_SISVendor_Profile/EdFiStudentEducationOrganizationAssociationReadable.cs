@@ -47,9 +47,10 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
         /// <param name="SexDescriptor">A person&#39;s gender. (required).</param>
         /// <param name="StudentCharacteristics">An unordered collection of studentEducationOrganizationAssociationStudentCharacteristics. Reflects important characteristics of the student&#39;s home situation:          Displaced Homemaker, Immigrant, Migratory, Military Parent, Pregnant Teen, Single Parent, and Unaccompanied Youth..</param>
         /// <param name="StudentIdentificationCodes">An unordered collection of studentEducationOrganizationAssociationStudentIdentificationCodes. A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to a student..</param>
+        /// <param name="StudentIndicators">An unordered collection of studentEducationOrganizationAssociationStudentIndicators. Indicator(s) or metric(s) computed for the student (e.g., at risk) to influence more effective education or direct specific interventions..</param>
         /// <param name="Etag">A unique system-generated value that identifies the version of the resource..</param>
         /// <param name="Ext">Ext.</param>
-        public EdFiStudentEducationOrganizationAssociationReadable(string Id = default(string), EdFiEducationOrganizationReference EducationOrganizationReference = default(EdFiEducationOrganizationReference), EdFiStudentReference StudentReference = default(EdFiStudentReference), bool? HispanicLatinoEthnicity = default(bool?), List<EdFiStudentEducationOrganizationAssociationLanguageReadable> Languages = default(List<EdFiStudentEducationOrganizationAssociationLanguageReadable>), List<EdFiStudentEducationOrganizationAssociationRaceReadable> Races = default(List<EdFiStudentEducationOrganizationAssociationRaceReadable>), string SexDescriptor = default(string), List<EdFiStudentEducationOrganizationAssociationStudentCharacteristicReadable> StudentCharacteristics = default(List<EdFiStudentEducationOrganizationAssociationStudentCharacteristicReadable>), List<EdFiStudentEducationOrganizationAssociationStudentIdentificationCodeReadable> StudentIdentificationCodes = default(List<EdFiStudentEducationOrganizationAssociationStudentIdentificationCodeReadable>), string Etag = default(string), StudentEducationOrganizationAssociationExtensionsReadable Ext = default(StudentEducationOrganizationAssociationExtensionsReadable))
+        public EdFiStudentEducationOrganizationAssociationReadable(string Id = default(string), EdFiEducationOrganizationReference EducationOrganizationReference = default(EdFiEducationOrganizationReference), EdFiStudentReference StudentReference = default(EdFiStudentReference), bool? HispanicLatinoEthnicity = default(bool?), List<EdFiStudentEducationOrganizationAssociationLanguageReadable> Languages = default(List<EdFiStudentEducationOrganizationAssociationLanguageReadable>), List<EdFiStudentEducationOrganizationAssociationRaceReadable> Races = default(List<EdFiStudentEducationOrganizationAssociationRaceReadable>), string SexDescriptor = default(string), List<EdFiStudentEducationOrganizationAssociationStudentCharacteristicReadable> StudentCharacteristics = default(List<EdFiStudentEducationOrganizationAssociationStudentCharacteristicReadable>), List<EdFiStudentEducationOrganizationAssociationStudentIdentificationCodeReadable> StudentIdentificationCodes = default(List<EdFiStudentEducationOrganizationAssociationStudentIdentificationCodeReadable>), List<EdFiStudentEducationOrganizationAssociationStudentIndicatorReadable> StudentIndicators = default(List<EdFiStudentEducationOrganizationAssociationStudentIndicatorReadable>), string Etag = default(string), StudentEducationOrganizationAssociationExtensionsReadable Ext = default(StudentEducationOrganizationAssociationExtensionsReadable))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
@@ -92,6 +93,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
             this.Races = Races;
             this.StudentCharacteristics = StudentCharacteristics;
             this.StudentIdentificationCodes = StudentIdentificationCodes;
+            this.StudentIndicators = StudentIndicators;
             this.Etag = Etag;
             this.Ext = Ext;
         }
@@ -157,6 +159,13 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
         public List<EdFiStudentEducationOrganizationAssociationStudentIdentificationCodeReadable> StudentIdentificationCodes { get; set; }
 
         /// <summary>
+        /// An unordered collection of studentEducationOrganizationAssociationStudentIndicators. Indicator(s) or metric(s) computed for the student (e.g., at risk) to influence more effective education or direct specific interventions.
+        /// </summary>
+        /// <value>An unordered collection of studentEducationOrganizationAssociationStudentIndicators. Indicator(s) or metric(s) computed for the student (e.g., at risk) to influence more effective education or direct specific interventions.</value>
+        [DataMember(Name="studentIndicators", EmitDefaultValue=false)]
+        public List<EdFiStudentEducationOrganizationAssociationStudentIndicatorReadable> StudentIndicators { get; set; }
+
+        /// <summary>
         /// A unique system-generated value that identifies the version of the resource.
         /// </summary>
         /// <value>A unique system-generated value that identifies the version of the resource.</value>
@@ -186,6 +195,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
             sb.Append("  SexDescriptor: ").Append(SexDescriptor).Append("\n");
             sb.Append("  StudentCharacteristics: ").Append(StudentCharacteristics).Append("\n");
             sb.Append("  StudentIdentificationCodes: ").Append(StudentIdentificationCodes).Append("\n");
+            sb.Append("  StudentIndicators: ").Append(StudentIndicators).Append("\n");
             sb.Append("  Etag: ").Append(Etag).Append("\n");
             sb.Append("  Ext: ").Append(Ext).Append("\n");
             sb.Append("}\n");
@@ -268,6 +278,11 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
                     this.StudentIdentificationCodes.SequenceEqual(input.StudentIdentificationCodes)
                 ) && 
                 (
+                    this.StudentIndicators == input.StudentIndicators ||
+                    this.StudentIndicators != null &&
+                    this.StudentIndicators.SequenceEqual(input.StudentIndicators)
+                ) && 
+                (
                     this.Etag == input.Etag ||
                     (this.Etag != null &&
                     this.Etag.Equals(input.Etag))
@@ -306,6 +321,8 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
                     hashCode = hashCode * 59 + this.StudentCharacteristics.GetHashCode();
                 if (this.StudentIdentificationCodes != null)
                     hashCode = hashCode * 59 + this.StudentIdentificationCodes.GetHashCode();
+                if (this.StudentIndicators != null)
+                    hashCode = hashCode * 59 + this.StudentIndicators.GetHashCode();
                 if (this.Etag != null)
                     hashCode = hashCode * 59 + this.Etag.GetHashCode();
                 if (this.Ext != null)
