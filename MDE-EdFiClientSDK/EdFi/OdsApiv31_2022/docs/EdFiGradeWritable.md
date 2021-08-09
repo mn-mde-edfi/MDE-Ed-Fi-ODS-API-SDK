@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **GradingPeriodReference** | [**EdFiGradingPeriodReference**](EdFiGradingPeriodReference.md) |  | 
 **StudentSectionAssociationReference** | [**EdFiStudentSectionAssociationReference**](EdFiStudentSectionAssociationReference.md) |  | 
 **LetterGradeEarned** | **string** | A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. | [optional] 
-**NumericGradeEarned** | **double?** | A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. | [optional] 
 **Etag** | **string** | A unique system-generated value that identifies the version of the resource. | [optional] 
 **Ext** | [**GradeExtensionsWritable**](GradeExtensionsWritable.md) |  | [optional] 
 

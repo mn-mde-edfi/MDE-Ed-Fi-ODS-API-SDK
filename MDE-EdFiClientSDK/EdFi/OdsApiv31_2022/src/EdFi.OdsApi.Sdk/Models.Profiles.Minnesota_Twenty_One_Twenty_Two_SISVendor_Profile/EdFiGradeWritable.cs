@@ -43,10 +43,9 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
         /// <param name="GradingPeriodReference">GradingPeriodReference (required).</param>
         /// <param name="StudentSectionAssociationReference">StudentSectionAssociationReference (required).</param>
         /// <param name="LetterGradeEarned">A final or interim (grading period) indicator of student performance in a class as submitted by the instructor..</param>
-        /// <param name="NumericGradeEarned">A final or interim (grading period) indicator of student performance in a class as submitted by the instructor..</param>
         /// <param name="Etag">A unique system-generated value that identifies the version of the resource..</param>
         /// <param name="Ext">Ext.</param>
-        public EdFiGradeWritable(string Id = default(string), string GradeTypeDescriptor = default(string), EdFiGradingPeriodReference GradingPeriodReference = default(EdFiGradingPeriodReference), EdFiStudentSectionAssociationReference StudentSectionAssociationReference = default(EdFiStudentSectionAssociationReference), string LetterGradeEarned = default(string), double? NumericGradeEarned = default(double?), string Etag = default(string), GradeExtensionsWritable Ext = default(GradeExtensionsWritable))
+        public EdFiGradeWritable(string Id = default(string), string GradeTypeDescriptor = default(string), EdFiGradingPeriodReference GradingPeriodReference = default(EdFiGradingPeriodReference), EdFiStudentSectionAssociationReference StudentSectionAssociationReference = default(EdFiStudentSectionAssociationReference), string LetterGradeEarned = default(string), string Etag = default(string), GradeExtensionsWritable Ext = default(GradeExtensionsWritable))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
@@ -85,7 +84,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
                 this.StudentSectionAssociationReference = StudentSectionAssociationReference;
             }
             this.LetterGradeEarned = LetterGradeEarned;
-            this.NumericGradeEarned = NumericGradeEarned;
             this.Etag = Etag;
             this.Ext = Ext;
         }
@@ -123,13 +121,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
         public string LetterGradeEarned { get; set; }
 
         /// <summary>
-        /// A final or interim (grading period) indicator of student performance in a class as submitted by the instructor.
-        /// </summary>
-        /// <value>A final or interim (grading period) indicator of student performance in a class as submitted by the instructor.</value>
-        [DataMember(Name="numericGradeEarned", EmitDefaultValue=false)]
-        public double? NumericGradeEarned { get; set; }
-
-        /// <summary>
         /// A unique system-generated value that identifies the version of the resource.
         /// </summary>
         /// <value>A unique system-generated value that identifies the version of the resource.</value>
@@ -155,7 +146,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
             sb.Append("  GradingPeriodReference: ").Append(GradingPeriodReference).Append("\n");
             sb.Append("  StudentSectionAssociationReference: ").Append(StudentSectionAssociationReference).Append("\n");
             sb.Append("  LetterGradeEarned: ").Append(LetterGradeEarned).Append("\n");
-            sb.Append("  NumericGradeEarned: ").Append(NumericGradeEarned).Append("\n");
             sb.Append("  Etag: ").Append(Etag).Append("\n");
             sb.Append("  Ext: ").Append(Ext).Append("\n");
             sb.Append("}\n");
@@ -218,11 +208,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
                     this.LetterGradeEarned.Equals(input.LetterGradeEarned))
                 ) && 
                 (
-                    this.NumericGradeEarned == input.NumericGradeEarned ||
-                    (this.NumericGradeEarned != null &&
-                    this.NumericGradeEarned.Equals(input.NumericGradeEarned))
-                ) && 
-                (
                     this.Etag == input.Etag ||
                     (this.Etag != null &&
                     this.Etag.Equals(input.Etag))
@@ -253,8 +238,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
                     hashCode = hashCode * 59 + this.StudentSectionAssociationReference.GetHashCode();
                 if (this.LetterGradeEarned != null)
                     hashCode = hashCode * 59 + this.LetterGradeEarned.GetHashCode();
-                if (this.NumericGradeEarned != null)
-                    hashCode = hashCode * 59 + this.NumericGradeEarned.GetHashCode();
                 if (this.Etag != null)
                     hashCode = hashCode * 59 + this.Etag.GetHashCode();
                 if (this.Ext != null)

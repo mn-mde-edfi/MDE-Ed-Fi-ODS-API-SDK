@@ -42,9 +42,10 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
         /// <param name="Addresses">An unordered collection of educationOrganizationAddresses. The set of elements that describes the physical location of the education entity, including the street address, city, state, ZIP code, and ZIP code + 4. (required).</param>
         /// <param name="Categories">An unordered collection of educationOrganizationCategories. The classification of the education agency within the geographic boundaries of a state according to the level of administrative and operational control granted by the state. (required).</param>
         /// <param name="PostSecondaryInstitutionId">The ID of the post secondary institution. (required).</param>
+        /// <param name="IdentificationCodes">An unordered collection of educationOrganizationIdentificationCodes. A unique number or alphanumeric code assigned to an education organization by a school, school system, a state, or other agency or entity..</param>
         /// <param name="NameOfInstitution">The full, legally accepted name of the institution. (required).</param>
         /// <param name="Etag">A unique system-generated value that identifies the version of the resource..</param>
-        public EdFiPostSecondaryInstitutionReadable(string Id = default(string), List<EdFiEducationOrganizationAddressPostSecondaryInstitutionReadable> Addresses = default(List<EdFiEducationOrganizationAddressPostSecondaryInstitutionReadable>), List<EdFiEducationOrganizationCategoryPostSecondaryInstitutionReadable> Categories = default(List<EdFiEducationOrganizationCategoryPostSecondaryInstitutionReadable>), int? PostSecondaryInstitutionId = default(int?), string NameOfInstitution = default(string), string Etag = default(string))
+        public EdFiPostSecondaryInstitutionReadable(string Id = default(string), List<EdFiEducationOrganizationAddressPostSecondaryInstitutionReadable> Addresses = default(List<EdFiEducationOrganizationAddressPostSecondaryInstitutionReadable>), List<EdFiEducationOrganizationCategoryPostSecondaryInstitutionReadable> Categories = default(List<EdFiEducationOrganizationCategoryPostSecondaryInstitutionReadable>), int? PostSecondaryInstitutionId = default(int?), List<EdFiEducationOrganizationIdentificationCodePostSecondaryInstitutionReadable> IdentificationCodes = default(List<EdFiEducationOrganizationIdentificationCodePostSecondaryInstitutionReadable>), string NameOfInstitution = default(string), string Etag = default(string))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
@@ -91,6 +92,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
             {
                 this.NameOfInstitution = NameOfInstitution;
             }
+            this.IdentificationCodes = IdentificationCodes;
             this.Etag = Etag;
         }
         
@@ -122,6 +124,13 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
         public int? PostSecondaryInstitutionId { get; set; }
 
         /// <summary>
+        /// An unordered collection of educationOrganizationIdentificationCodes. A unique number or alphanumeric code assigned to an education organization by a school, school system, a state, or other agency or entity.
+        /// </summary>
+        /// <value>An unordered collection of educationOrganizationIdentificationCodes. A unique number or alphanumeric code assigned to an education organization by a school, school system, a state, or other agency or entity.</value>
+        [DataMember(Name="identificationCodes", EmitDefaultValue=false)]
+        public List<EdFiEducationOrganizationIdentificationCodePostSecondaryInstitutionReadable> IdentificationCodes { get; set; }
+
+        /// <summary>
         /// The full, legally accepted name of the institution.
         /// </summary>
         /// <value>The full, legally accepted name of the institution.</value>
@@ -147,6 +156,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
             sb.Append("  Addresses: ").Append(Addresses).Append("\n");
             sb.Append("  Categories: ").Append(Categories).Append("\n");
             sb.Append("  PostSecondaryInstitutionId: ").Append(PostSecondaryInstitutionId).Append("\n");
+            sb.Append("  IdentificationCodes: ").Append(IdentificationCodes).Append("\n");
             sb.Append("  NameOfInstitution: ").Append(NameOfInstitution).Append("\n");
             sb.Append("  Etag: ").Append(Etag).Append("\n");
             sb.Append("}\n");
@@ -204,6 +214,11 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
                     this.PostSecondaryInstitutionId.Equals(input.PostSecondaryInstitutionId))
                 ) && 
                 (
+                    this.IdentificationCodes == input.IdentificationCodes ||
+                    this.IdentificationCodes != null &&
+                    this.IdentificationCodes.SequenceEqual(input.IdentificationCodes)
+                ) && 
+                (
                     this.NameOfInstitution == input.NameOfInstitution ||
                     (this.NameOfInstitution != null &&
                     this.NameOfInstitution.Equals(input.NameOfInstitution))
@@ -232,6 +247,8 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
                     hashCode = hashCode * 59 + this.Categories.GetHashCode();
                 if (this.PostSecondaryInstitutionId != null)
                     hashCode = hashCode * 59 + this.PostSecondaryInstitutionId.GetHashCode();
+                if (this.IdentificationCodes != null)
+                    hashCode = hashCode * 59 + this.IdentificationCodes.GetHashCode();
                 if (this.NameOfInstitution != null)
                     hashCode = hashCode * 59 + this.NameOfInstitution.GetHashCode();
                 if (this.Etag != null)

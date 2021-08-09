@@ -42,12 +42,13 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
         /// <param name="SectionIdentifier">The local identifier assigned to a section. (required).</param>
         /// <param name="CourseOfferingReference">CourseOfferingReference (required).</param>
         /// <param name="Characteristics">An unordered collection of sectionCharacteristics. Reflects important characteristics of the Section, such as whether or not attendance is taken and the Section is graded..</param>
+        /// <param name="ClassPeriods">An unordered collection of sectionClassPeriods. The class period during which the Section meets..</param>
         /// <param name="InstructionLanguageDescriptor">The primary language of instruction, if omitted English is assumed..</param>
         /// <param name="MediumOfInstructionDescriptor">The media through which teachers provide instruction to students and students and teachers communicate about instructional matters; for example:          Technology-based instruction in classroom          Correspondence instruction          Face-to-face instruction          Virtual/On-line Distance learning          Center-based instruction          ....</param>
         /// <param name="SequenceOfCourse">When a section is part of a sequence of parts for a course, the number of the sequence. If the course has only one part, the value of this section attribute should be 1..</param>
         /// <param name="Etag">A unique system-generated value that identifies the version of the resource..</param>
         /// <param name="Ext">Ext.</param>
-        public EdFiSectionReadable(string Id = default(string), string SectionIdentifier = default(string), EdFiCourseOfferingReference CourseOfferingReference = default(EdFiCourseOfferingReference), List<EdFiSectionCharacteristicReadable> Characteristics = default(List<EdFiSectionCharacteristicReadable>), string InstructionLanguageDescriptor = default(string), string MediumOfInstructionDescriptor = default(string), int? SequenceOfCourse = default(int?), string Etag = default(string), SectionExtensionsReadable Ext = default(SectionExtensionsReadable))
+        public EdFiSectionReadable(string Id = default(string), string SectionIdentifier = default(string), EdFiCourseOfferingReference CourseOfferingReference = default(EdFiCourseOfferingReference), List<EdFiSectionCharacteristicReadable> Characteristics = default(List<EdFiSectionCharacteristicReadable>), List<EdFiSectionClassPeriodReadable> ClassPeriods = default(List<EdFiSectionClassPeriodReadable>), string InstructionLanguageDescriptor = default(string), string MediumOfInstructionDescriptor = default(string), int? SequenceOfCourse = default(int?), string Etag = default(string), SectionExtensionsReadable Ext = default(SectionExtensionsReadable))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
@@ -77,6 +78,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
                 this.CourseOfferingReference = CourseOfferingReference;
             }
             this.Characteristics = Characteristics;
+            this.ClassPeriods = ClassPeriods;
             this.InstructionLanguageDescriptor = InstructionLanguageDescriptor;
             this.MediumOfInstructionDescriptor = MediumOfInstructionDescriptor;
             this.SequenceOfCourse = SequenceOfCourse;
@@ -109,6 +111,13 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
         /// <value>An unordered collection of sectionCharacteristics. Reflects important characteristics of the Section, such as whether or not attendance is taken and the Section is graded.</value>
         [DataMember(Name="characteristics", EmitDefaultValue=false)]
         public List<EdFiSectionCharacteristicReadable> Characteristics { get; set; }
+
+        /// <summary>
+        /// An unordered collection of sectionClassPeriods. The class period during which the Section meets.
+        /// </summary>
+        /// <value>An unordered collection of sectionClassPeriods. The class period during which the Section meets.</value>
+        [DataMember(Name="classPeriods", EmitDefaultValue=false)]
+        public List<EdFiSectionClassPeriodReadable> ClassPeriods { get; set; }
 
         /// <summary>
         /// The primary language of instruction, if omitted English is assumed.
@@ -156,6 +165,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
             sb.Append("  SectionIdentifier: ").Append(SectionIdentifier).Append("\n");
             sb.Append("  CourseOfferingReference: ").Append(CourseOfferingReference).Append("\n");
             sb.Append("  Characteristics: ").Append(Characteristics).Append("\n");
+            sb.Append("  ClassPeriods: ").Append(ClassPeriods).Append("\n");
             sb.Append("  InstructionLanguageDescriptor: ").Append(InstructionLanguageDescriptor).Append("\n");
             sb.Append("  MediumOfInstructionDescriptor: ").Append(MediumOfInstructionDescriptor).Append("\n");
             sb.Append("  SequenceOfCourse: ").Append(SequenceOfCourse).Append("\n");
@@ -216,6 +226,11 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
                     this.Characteristics.SequenceEqual(input.Characteristics)
                 ) && 
                 (
+                    this.ClassPeriods == input.ClassPeriods ||
+                    this.ClassPeriods != null &&
+                    this.ClassPeriods.SequenceEqual(input.ClassPeriods)
+                ) && 
+                (
                     this.InstructionLanguageDescriptor == input.InstructionLanguageDescriptor ||
                     (this.InstructionLanguageDescriptor != null &&
                     this.InstructionLanguageDescriptor.Equals(input.InstructionLanguageDescriptor))
@@ -259,6 +274,8 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
                     hashCode = hashCode * 59 + this.CourseOfferingReference.GetHashCode();
                 if (this.Characteristics != null)
                     hashCode = hashCode * 59 + this.Characteristics.GetHashCode();
+                if (this.ClassPeriods != null)
+                    hashCode = hashCode * 59 + this.ClassPeriods.GetHashCode();
                 if (this.InstructionLanguageDescriptor != null)
                     hashCode = hashCode * 59 + this.InstructionLanguageDescriptor.GetHashCode();
                 if (this.MediumOfInstructionDescriptor != null)

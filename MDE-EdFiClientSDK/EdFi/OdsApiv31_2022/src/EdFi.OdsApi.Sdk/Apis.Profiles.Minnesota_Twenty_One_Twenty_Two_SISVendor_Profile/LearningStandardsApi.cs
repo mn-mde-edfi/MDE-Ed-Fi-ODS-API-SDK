@@ -21,7 +21,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IGradesApi : IApiAccessor
+    public interface ILearningStandardsApi : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
@@ -34,7 +34,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
         /// <param name="ifMatch">The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)</param>
         /// <returns></returns>
-        void DeletegradeById (string id, string ifMatch = null);
+        void DeletelearningStandardById (string id, string ifMatch = null);
 
         /// <summary>
         /// Deletes an existing resource using the resource identifier.
@@ -46,7 +46,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
         /// <param name="ifMatch">The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeletegradeByIdWithHttpInfo (string id, string ifMatch = null);
+        ApiResponse<Object> DeletelearningStandardByIdWithHttpInfo (string id, string ifMatch = null);
         /// <summary>
         /// Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
         /// </summary>
@@ -57,21 +57,12 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// <param name="offset">Indicates how many items should be skipped before returning results. (optional, default to 0)</param>
         /// <param name="limit">Indicates the maximum number of items that should be returned in the results. (optional, default to 25)</param>
         /// <param name="totalCount">Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)</param>
-        /// <param name="gradeTypeDescriptor">The type of grade reported (e.g., Exam, Final, Grading Period). (optional)</param>
-        /// <param name="gradingPeriodDescriptor">The name of the period for which grades are reported. (optional)</param>
-        /// <param name="gradingPeriodSequence">The sequential order of this period relative to other periods. (optional)</param>
-        /// <param name="schoolId">The identifier assigned to a school. (optional)</param>
-        /// <param name="gradingPeriodSchoolYear">The identifier for the grading period school year. (optional)</param>
-        /// <param name="beginDate">Month, day, and year of the Student&#39;s entry or assignment to the Section. (optional)</param>
-        /// <param name="localCourseCode">The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)</param>
-        /// <param name="schoolYear">The identifier for the school year. (optional)</param>
-        /// <param name="sectionIdentifier">The local identifier assigned to a section. (optional)</param>
-        /// <param name="sessionName">The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer). (optional)</param>
-        /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="learningStandardId">The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)</param>
+        /// <param name="description">The text of the statement. The textual content that either describes a specific competency such as \&quot;Apply the Pythagorean Theorem to determine unknown side lengths in right triangles in real-world and mathematical problems in two and three dimensions.\&quot; or describes a less granular group of competencies within the taxonomy of the standards document, e.g. \&quot;Understand and apply the Pythagorean Theorem,\&quot; or \&quot;Geometry\&quot;. (optional)</param>
         /// <param name="id"> (optional)</param>
-        /// <param name="letterGradeEarned">A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)</param>
-        /// <returns>List&lt;EdFiGradeReadable&gt;</returns>
-        List<EdFiGradeReadable> GetGrades (int? offset = null, int? limit = null, bool? totalCount = null, string gradeTypeDescriptor = null, string gradingPeriodDescriptor = null, int? gradingPeriodSequence = null, int? schoolId = null, int? gradingPeriodSchoolYear = null, DateTime? beginDate = null, string localCourseCode = null, int? schoolYear = null, string sectionIdentifier = null, string sessionName = null, string studentUniqueId = null, string id = null, string letterGradeEarned = null);
+        /// <param name="_namespace">Namespace for the LearningStandard. (optional)</param>
+        /// <returns>List&lt;EdFiLearningStandardReadable&gt;</returns>
+        List<EdFiLearningStandardReadable> GetLearningStandards (int? offset = null, int? limit = null, bool? totalCount = null, string learningStandardId = null, string description = null, string id = null, string _namespace = null);
 
         /// <summary>
         /// Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
@@ -83,21 +74,12 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// <param name="offset">Indicates how many items should be skipped before returning results. (optional, default to 0)</param>
         /// <param name="limit">Indicates the maximum number of items that should be returned in the results. (optional, default to 25)</param>
         /// <param name="totalCount">Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)</param>
-        /// <param name="gradeTypeDescriptor">The type of grade reported (e.g., Exam, Final, Grading Period). (optional)</param>
-        /// <param name="gradingPeriodDescriptor">The name of the period for which grades are reported. (optional)</param>
-        /// <param name="gradingPeriodSequence">The sequential order of this period relative to other periods. (optional)</param>
-        /// <param name="schoolId">The identifier assigned to a school. (optional)</param>
-        /// <param name="gradingPeriodSchoolYear">The identifier for the grading period school year. (optional)</param>
-        /// <param name="beginDate">Month, day, and year of the Student&#39;s entry or assignment to the Section. (optional)</param>
-        /// <param name="localCourseCode">The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)</param>
-        /// <param name="schoolYear">The identifier for the school year. (optional)</param>
-        /// <param name="sectionIdentifier">The local identifier assigned to a section. (optional)</param>
-        /// <param name="sessionName">The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer). (optional)</param>
-        /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="learningStandardId">The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)</param>
+        /// <param name="description">The text of the statement. The textual content that either describes a specific competency such as \&quot;Apply the Pythagorean Theorem to determine unknown side lengths in right triangles in real-world and mathematical problems in two and three dimensions.\&quot; or describes a less granular group of competencies within the taxonomy of the standards document, e.g. \&quot;Understand and apply the Pythagorean Theorem,\&quot; or \&quot;Geometry\&quot;. (optional)</param>
         /// <param name="id"> (optional)</param>
-        /// <param name="letterGradeEarned">A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)</param>
-        /// <returns>ApiResponse of List&lt;EdFiGradeReadable&gt;</returns>
-        ApiResponse<List<EdFiGradeReadable>> GetGradesWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string gradeTypeDescriptor = null, string gradingPeriodDescriptor = null, int? gradingPeriodSequence = null, int? schoolId = null, int? gradingPeriodSchoolYear = null, DateTime? beginDate = null, string localCourseCode = null, int? schoolYear = null, string sectionIdentifier = null, string sessionName = null, string studentUniqueId = null, string id = null, string letterGradeEarned = null);
+        /// <param name="_namespace">Namespace for the LearningStandard. (optional)</param>
+        /// <returns>ApiResponse of List&lt;EdFiLearningStandardReadable&gt;</returns>
+        ApiResponse<List<EdFiLearningStandardReadable>> GetLearningStandardsWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string learningStandardId = null, string description = null, string id = null, string _namespace = null);
         /// <summary>
         /// Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
         /// </summary>
@@ -107,8 +89,8 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
         /// <param name="ifNoneMatch">The previously returned ETag header value, used here to prevent the unnecessary data transfer of an unchanged resource. (optional)</param>
-        /// <returns>EdFiGradeReadable</returns>
-        EdFiGradeReadable GetGradesById (string id, string ifNoneMatch = null);
+        /// <returns>EdFiLearningStandardReadable</returns>
+        EdFiLearningStandardReadable GetLearningStandardsById (string id, string ifNoneMatch = null);
 
         /// <summary>
         /// Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
@@ -119,8 +101,8 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
         /// <param name="ifNoneMatch">The previously returned ETag header value, used here to prevent the unnecessary data transfer of an unchanged resource. (optional)</param>
-        /// <returns>ApiResponse of EdFiGradeReadable</returns>
-        ApiResponse<EdFiGradeReadable> GetGradesByIdWithHttpInfo (string id, string ifNoneMatch = null);
+        /// <returns>ApiResponse of EdFiLearningStandardReadable</returns>
+        ApiResponse<EdFiLearningStandardReadable> GetLearningStandardsByIdWithHttpInfo (string id, string ifNoneMatch = null);
         /// <summary>
         /// Creates or updates resources based on the natural key values of the supplied resource.
         /// </summary>
@@ -128,9 +110,9 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// The POST operation can be used to create or update resources. In database terms, this is often referred to as an \&quot;upsert\&quot; operation (insert + update). Clients should NOT include the resource \&quot;id\&quot; in the JSON body because it will result in an error (you must use a PUT operation to update a resource by \&quot;id\&quot;). The web service will identify whether the resource already exists based on the natural key values provided, and update or create the resource appropriately.
         /// </remarks>
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="grade">The JSON representation of the \&quot;grade\&quot; resource to be created or updated.</param>
+        /// <param name="learningStandard">The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated.</param>
         /// <returns></returns>
-        void Postgrade (EdFiGradeWritable grade);
+        void PostlearningStandard (EdFiLearningStandardWritable learningStandard);
 
         /// <summary>
         /// Creates or updates resources based on the natural key values of the supplied resource.
@@ -139,9 +121,9 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// The POST operation can be used to create or update resources. In database terms, this is often referred to as an \&quot;upsert\&quot; operation (insert + update). Clients should NOT include the resource \&quot;id\&quot; in the JSON body because it will result in an error (you must use a PUT operation to update a resource by \&quot;id\&quot;). The web service will identify whether the resource already exists based on the natural key values provided, and update or create the resource appropriately.
         /// </remarks>
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="grade">The JSON representation of the \&quot;grade\&quot; resource to be created or updated.</param>
+        /// <param name="learningStandard">The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> PostgradeWithHttpInfo (EdFiGradeWritable grade);
+        ApiResponse<Object> PostlearningStandardWithHttpInfo (EdFiLearningStandardWritable learningStandard);
         /// <summary>
         /// Updates or creates a resource based on the resource identifier.
         /// </summary>
@@ -150,10 +132,10 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// </remarks>
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
-        /// <param name="grade">The JSON representation of the \&quot;grade\&quot; resource to be created or updated.</param>
+        /// <param name="learningStandard">The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated.</param>
         /// <param name="ifMatch">The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)</param>
         /// <returns></returns>
-        void Putgrade (string id, EdFiGradeWritable grade, string ifMatch = null);
+        void PutlearningStandard (string id, EdFiLearningStandardWritable learningStandard, string ifMatch = null);
 
         /// <summary>
         /// Updates or creates a resource based on the resource identifier.
@@ -163,10 +145,10 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// </remarks>
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
-        /// <param name="grade">The JSON representation of the \&quot;grade\&quot; resource to be created or updated.</param>
+        /// <param name="learningStandard">The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated.</param>
         /// <param name="ifMatch">The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> PutgradeWithHttpInfo (string id, EdFiGradeWritable grade, string ifMatch = null);
+        ApiResponse<Object> PutlearningStandardWithHttpInfo (string id, EdFiLearningStandardWritable learningStandard, string ifMatch = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -179,7 +161,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
         /// <param name="ifMatch">The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeletegradeByIdAsync (string id, string ifMatch = null);
+        System.Threading.Tasks.Task DeletelearningStandardByIdAsync (string id, string ifMatch = null);
 
         /// <summary>
         /// Deletes an existing resource using the resource identifier.
@@ -191,7 +173,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
         /// <param name="ifMatch">The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeletegradeByIdAsyncWithHttpInfo (string id, string ifMatch = null);
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeletelearningStandardByIdAsyncWithHttpInfo (string id, string ifMatch = null);
         /// <summary>
         /// Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
         /// </summary>
@@ -202,21 +184,12 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// <param name="offset">Indicates how many items should be skipped before returning results. (optional, default to 0)</param>
         /// <param name="limit">Indicates the maximum number of items that should be returned in the results. (optional, default to 25)</param>
         /// <param name="totalCount">Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)</param>
-        /// <param name="gradeTypeDescriptor">The type of grade reported (e.g., Exam, Final, Grading Period). (optional)</param>
-        /// <param name="gradingPeriodDescriptor">The name of the period for which grades are reported. (optional)</param>
-        /// <param name="gradingPeriodSequence">The sequential order of this period relative to other periods. (optional)</param>
-        /// <param name="schoolId">The identifier assigned to a school. (optional)</param>
-        /// <param name="gradingPeriodSchoolYear">The identifier for the grading period school year. (optional)</param>
-        /// <param name="beginDate">Month, day, and year of the Student&#39;s entry or assignment to the Section. (optional)</param>
-        /// <param name="localCourseCode">The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)</param>
-        /// <param name="schoolYear">The identifier for the school year. (optional)</param>
-        /// <param name="sectionIdentifier">The local identifier assigned to a section. (optional)</param>
-        /// <param name="sessionName">The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer). (optional)</param>
-        /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="learningStandardId">The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)</param>
+        /// <param name="description">The text of the statement. The textual content that either describes a specific competency such as \&quot;Apply the Pythagorean Theorem to determine unknown side lengths in right triangles in real-world and mathematical problems in two and three dimensions.\&quot; or describes a less granular group of competencies within the taxonomy of the standards document, e.g. \&quot;Understand and apply the Pythagorean Theorem,\&quot; or \&quot;Geometry\&quot;. (optional)</param>
         /// <param name="id"> (optional)</param>
-        /// <param name="letterGradeEarned">A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)</param>
-        /// <returns>Task of List&lt;EdFiGradeReadable&gt;</returns>
-        System.Threading.Tasks.Task<List<EdFiGradeReadable>> GetGradesAsync (int? offset = null, int? limit = null, bool? totalCount = null, string gradeTypeDescriptor = null, string gradingPeriodDescriptor = null, int? gradingPeriodSequence = null, int? schoolId = null, int? gradingPeriodSchoolYear = null, DateTime? beginDate = null, string localCourseCode = null, int? schoolYear = null, string sectionIdentifier = null, string sessionName = null, string studentUniqueId = null, string id = null, string letterGradeEarned = null);
+        /// <param name="_namespace">Namespace for the LearningStandard. (optional)</param>
+        /// <returns>Task of List&lt;EdFiLearningStandardReadable&gt;</returns>
+        System.Threading.Tasks.Task<List<EdFiLearningStandardReadable>> GetLearningStandardsAsync (int? offset = null, int? limit = null, bool? totalCount = null, string learningStandardId = null, string description = null, string id = null, string _namespace = null);
 
         /// <summary>
         /// Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
@@ -228,21 +201,12 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// <param name="offset">Indicates how many items should be skipped before returning results. (optional, default to 0)</param>
         /// <param name="limit">Indicates the maximum number of items that should be returned in the results. (optional, default to 25)</param>
         /// <param name="totalCount">Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)</param>
-        /// <param name="gradeTypeDescriptor">The type of grade reported (e.g., Exam, Final, Grading Period). (optional)</param>
-        /// <param name="gradingPeriodDescriptor">The name of the period for which grades are reported. (optional)</param>
-        /// <param name="gradingPeriodSequence">The sequential order of this period relative to other periods. (optional)</param>
-        /// <param name="schoolId">The identifier assigned to a school. (optional)</param>
-        /// <param name="gradingPeriodSchoolYear">The identifier for the grading period school year. (optional)</param>
-        /// <param name="beginDate">Month, day, and year of the Student&#39;s entry or assignment to the Section. (optional)</param>
-        /// <param name="localCourseCode">The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)</param>
-        /// <param name="schoolYear">The identifier for the school year. (optional)</param>
-        /// <param name="sectionIdentifier">The local identifier assigned to a section. (optional)</param>
-        /// <param name="sessionName">The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer). (optional)</param>
-        /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="learningStandardId">The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)</param>
+        /// <param name="description">The text of the statement. The textual content that either describes a specific competency such as \&quot;Apply the Pythagorean Theorem to determine unknown side lengths in right triangles in real-world and mathematical problems in two and three dimensions.\&quot; or describes a less granular group of competencies within the taxonomy of the standards document, e.g. \&quot;Understand and apply the Pythagorean Theorem,\&quot; or \&quot;Geometry\&quot;. (optional)</param>
         /// <param name="id"> (optional)</param>
-        /// <param name="letterGradeEarned">A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;EdFiGradeReadable&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<EdFiGradeReadable>>> GetGradesAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string gradeTypeDescriptor = null, string gradingPeriodDescriptor = null, int? gradingPeriodSequence = null, int? schoolId = null, int? gradingPeriodSchoolYear = null, DateTime? beginDate = null, string localCourseCode = null, int? schoolYear = null, string sectionIdentifier = null, string sessionName = null, string studentUniqueId = null, string id = null, string letterGradeEarned = null);
+        /// <param name="_namespace">Namespace for the LearningStandard. (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;EdFiLearningStandardReadable&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<EdFiLearningStandardReadable>>> GetLearningStandardsAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string learningStandardId = null, string description = null, string id = null, string _namespace = null);
         /// <summary>
         /// Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
         /// </summary>
@@ -252,8 +216,8 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
         /// <param name="ifNoneMatch">The previously returned ETag header value, used here to prevent the unnecessary data transfer of an unchanged resource. (optional)</param>
-        /// <returns>Task of EdFiGradeReadable</returns>
-        System.Threading.Tasks.Task<EdFiGradeReadable> GetGradesByIdAsync (string id, string ifNoneMatch = null);
+        /// <returns>Task of EdFiLearningStandardReadable</returns>
+        System.Threading.Tasks.Task<EdFiLearningStandardReadable> GetLearningStandardsByIdAsync (string id, string ifNoneMatch = null);
 
         /// <summary>
         /// Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
@@ -264,8 +228,8 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
         /// <param name="ifNoneMatch">The previously returned ETag header value, used here to prevent the unnecessary data transfer of an unchanged resource. (optional)</param>
-        /// <returns>Task of ApiResponse (EdFiGradeReadable)</returns>
-        System.Threading.Tasks.Task<ApiResponse<EdFiGradeReadable>> GetGradesByIdAsyncWithHttpInfo (string id, string ifNoneMatch = null);
+        /// <returns>Task of ApiResponse (EdFiLearningStandardReadable)</returns>
+        System.Threading.Tasks.Task<ApiResponse<EdFiLearningStandardReadable>> GetLearningStandardsByIdAsyncWithHttpInfo (string id, string ifNoneMatch = null);
         /// <summary>
         /// Creates or updates resources based on the natural key values of the supplied resource.
         /// </summary>
@@ -273,9 +237,9 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// The POST operation can be used to create or update resources. In database terms, this is often referred to as an \&quot;upsert\&quot; operation (insert + update). Clients should NOT include the resource \&quot;id\&quot; in the JSON body because it will result in an error (you must use a PUT operation to update a resource by \&quot;id\&quot;). The web service will identify whether the resource already exists based on the natural key values provided, and update or create the resource appropriately.
         /// </remarks>
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="grade">The JSON representation of the \&quot;grade\&quot; resource to be created or updated.</param>
+        /// <param name="learningStandard">The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task PostgradeAsync (EdFiGradeWritable grade);
+        System.Threading.Tasks.Task PostlearningStandardAsync (EdFiLearningStandardWritable learningStandard);
 
         /// <summary>
         /// Creates or updates resources based on the natural key values of the supplied resource.
@@ -284,9 +248,9 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// The POST operation can be used to create or update resources. In database terms, this is often referred to as an \&quot;upsert\&quot; operation (insert + update). Clients should NOT include the resource \&quot;id\&quot; in the JSON body because it will result in an error (you must use a PUT operation to update a resource by \&quot;id\&quot;). The web service will identify whether the resource already exists based on the natural key values provided, and update or create the resource appropriately.
         /// </remarks>
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="grade">The JSON representation of the \&quot;grade\&quot; resource to be created or updated.</param>
+        /// <param name="learningStandard">The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> PostgradeAsyncWithHttpInfo (EdFiGradeWritable grade);
+        System.Threading.Tasks.Task<ApiResponse<Object>> PostlearningStandardAsyncWithHttpInfo (EdFiLearningStandardWritable learningStandard);
         /// <summary>
         /// Updates or creates a resource based on the resource identifier.
         /// </summary>
@@ -295,10 +259,10 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// </remarks>
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
-        /// <param name="grade">The JSON representation of the \&quot;grade\&quot; resource to be created or updated.</param>
+        /// <param name="learningStandard">The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated.</param>
         /// <param name="ifMatch">The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task PutgradeAsync (string id, EdFiGradeWritable grade, string ifMatch = null);
+        System.Threading.Tasks.Task PutlearningStandardAsync (string id, EdFiLearningStandardWritable learningStandard, string ifMatch = null);
 
         /// <summary>
         /// Updates or creates a resource based on the resource identifier.
@@ -308,25 +272,25 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// </remarks>
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
-        /// <param name="grade">The JSON representation of the \&quot;grade\&quot; resource to be created or updated.</param>
+        /// <param name="learningStandard">The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated.</param>
         /// <param name="ifMatch">The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> PutgradeAsyncWithHttpInfo (string id, EdFiGradeWritable grade, string ifMatch = null);
+        System.Threading.Tasks.Task<ApiResponse<Object>> PutlearningStandardAsyncWithHttpInfo (string id, EdFiLearningStandardWritable learningStandard, string ifMatch = null);
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class GradesApi : IGradesApi
+    public partial class LearningStandardsApi : ILearningStandardsApi
     {
         private EdFi.OdsApi.Sdk.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GradesApi"/> class.
+        /// Initializes a new instance of the <see cref="LearningStandardsApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public GradesApi(String basePath)
+        public LearningStandardsApi(String basePath)
         {
             this.Configuration = new Configuration { BasePath = basePath };
 
@@ -334,12 +298,12 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GradesApi"/> class
+        /// Initializes a new instance of the <see cref="LearningStandardsApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public GradesApi(Configuration configuration = null)
+        public LearningStandardsApi(Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
                 this.Configuration = Configuration.Default;
@@ -419,9 +383,9 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
         /// <param name="ifMatch">The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)</param>
         /// <returns></returns>
-        public void DeletegradeById (string id, string ifMatch = null)
+        public void DeletelearningStandardById (string id, string ifMatch = null)
         {
-             DeletegradeByIdWithHttpInfo(id, ifMatch);
+             DeletelearningStandardByIdWithHttpInfo(id, ifMatch);
         }
 
         /// <summary>
@@ -431,13 +395,13 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
         /// <param name="ifMatch">The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> DeletegradeByIdWithHttpInfo (string id, string ifMatch = null)
+        public ApiResponse<Object> DeletelearningStandardByIdWithHttpInfo (string id, string ifMatch = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling GradesApi->DeletegradeById");
+                throw new ApiException(400, "Missing required parameter 'id' when calling LearningStandardsApi->DeletelearningStandardById");
 
-            var localVarPath = "/ed-fi/grades/{id}";
+            var localVarPath = "/ed-fi/learningStandards/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -447,7 +411,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/vnd.ed-fi.grade.minnesota-twentyone-twentytwo-sisvendorprofile.writable+json"
+                "application/vnd.ed-fi.learningstandard.minnesota-twentyone-twentytwo-sisvendorprofile.writable+json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -478,7 +442,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("DeletegradeById", localVarResponse);
+                Exception exception = ExceptionFactory("DeletelearningStandardById", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -494,9 +458,9 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
         /// <param name="ifMatch">The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeletegradeByIdAsync (string id, string ifMatch = null)
+        public async System.Threading.Tasks.Task DeletelearningStandardByIdAsync (string id, string ifMatch = null)
         {
-             await DeletegradeByIdAsyncWithHttpInfo(id, ifMatch);
+             await DeletelearningStandardByIdAsyncWithHttpInfo(id, ifMatch);
 
         }
 
@@ -507,13 +471,13 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
         /// <param name="ifMatch">The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeletegradeByIdAsyncWithHttpInfo (string id, string ifMatch = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeletelearningStandardByIdAsyncWithHttpInfo (string id, string ifMatch = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling GradesApi->DeletegradeById");
+                throw new ApiException(400, "Missing required parameter 'id' when calling LearningStandardsApi->DeletelearningStandardById");
 
-            var localVarPath = "/ed-fi/grades/{id}";
+            var localVarPath = "/ed-fi/learningStandards/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -523,7 +487,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/vnd.ed-fi.grade.minnesota-twentyone-twentytwo-sisvendorprofile.writable+json"
+                "application/vnd.ed-fi.learningstandard.minnesota-twentyone-twentytwo-sisvendorprofile.writable+json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -554,7 +518,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("DeletegradeById", localVarResponse);
+                Exception exception = ExceptionFactory("DeletelearningStandardById", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -570,23 +534,14 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// <param name="offset">Indicates how many items should be skipped before returning results. (optional, default to 0)</param>
         /// <param name="limit">Indicates the maximum number of items that should be returned in the results. (optional, default to 25)</param>
         /// <param name="totalCount">Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)</param>
-        /// <param name="gradeTypeDescriptor">The type of grade reported (e.g., Exam, Final, Grading Period). (optional)</param>
-        /// <param name="gradingPeriodDescriptor">The name of the period for which grades are reported. (optional)</param>
-        /// <param name="gradingPeriodSequence">The sequential order of this period relative to other periods. (optional)</param>
-        /// <param name="schoolId">The identifier assigned to a school. (optional)</param>
-        /// <param name="gradingPeriodSchoolYear">The identifier for the grading period school year. (optional)</param>
-        /// <param name="beginDate">Month, day, and year of the Student&#39;s entry or assignment to the Section. (optional)</param>
-        /// <param name="localCourseCode">The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)</param>
-        /// <param name="schoolYear">The identifier for the school year. (optional)</param>
-        /// <param name="sectionIdentifier">The local identifier assigned to a section. (optional)</param>
-        /// <param name="sessionName">The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer). (optional)</param>
-        /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="learningStandardId">The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)</param>
+        /// <param name="description">The text of the statement. The textual content that either describes a specific competency such as \&quot;Apply the Pythagorean Theorem to determine unknown side lengths in right triangles in real-world and mathematical problems in two and three dimensions.\&quot; or describes a less granular group of competencies within the taxonomy of the standards document, e.g. \&quot;Understand and apply the Pythagorean Theorem,\&quot; or \&quot;Geometry\&quot;. (optional)</param>
         /// <param name="id"> (optional)</param>
-        /// <param name="letterGradeEarned">A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)</param>
-        /// <returns>List&lt;EdFiGradeReadable&gt;</returns>
-        public List<EdFiGradeReadable> GetGrades (int? offset = null, int? limit = null, bool? totalCount = null, string gradeTypeDescriptor = null, string gradingPeriodDescriptor = null, int? gradingPeriodSequence = null, int? schoolId = null, int? gradingPeriodSchoolYear = null, DateTime? beginDate = null, string localCourseCode = null, int? schoolYear = null, string sectionIdentifier = null, string sessionName = null, string studentUniqueId = null, string id = null, string letterGradeEarned = null)
+        /// <param name="_namespace">Namespace for the LearningStandard. (optional)</param>
+        /// <returns>List&lt;EdFiLearningStandardReadable&gt;</returns>
+        public List<EdFiLearningStandardReadable> GetLearningStandards (int? offset = null, int? limit = null, bool? totalCount = null, string learningStandardId = null, string description = null, string id = null, string _namespace = null)
         {
-             ApiResponse<List<EdFiGradeReadable>> localVarResponse = GetGradesWithHttpInfo(offset, limit, totalCount, gradeTypeDescriptor, gradingPeriodDescriptor, gradingPeriodSequence, schoolId, gradingPeriodSchoolYear, beginDate, localCourseCode, schoolYear, sectionIdentifier, sessionName, studentUniqueId, id, letterGradeEarned);
+             ApiResponse<List<EdFiLearningStandardReadable>> localVarResponse = GetLearningStandardsWithHttpInfo(offset, limit, totalCount, learningStandardId, description, id, _namespace);
              return localVarResponse.Data;
         }
 
@@ -597,24 +552,15 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// <param name="offset">Indicates how many items should be skipped before returning results. (optional, default to 0)</param>
         /// <param name="limit">Indicates the maximum number of items that should be returned in the results. (optional, default to 25)</param>
         /// <param name="totalCount">Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)</param>
-        /// <param name="gradeTypeDescriptor">The type of grade reported (e.g., Exam, Final, Grading Period). (optional)</param>
-        /// <param name="gradingPeriodDescriptor">The name of the period for which grades are reported. (optional)</param>
-        /// <param name="gradingPeriodSequence">The sequential order of this period relative to other periods. (optional)</param>
-        /// <param name="schoolId">The identifier assigned to a school. (optional)</param>
-        /// <param name="gradingPeriodSchoolYear">The identifier for the grading period school year. (optional)</param>
-        /// <param name="beginDate">Month, day, and year of the Student&#39;s entry or assignment to the Section. (optional)</param>
-        /// <param name="localCourseCode">The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)</param>
-        /// <param name="schoolYear">The identifier for the school year. (optional)</param>
-        /// <param name="sectionIdentifier">The local identifier assigned to a section. (optional)</param>
-        /// <param name="sessionName">The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer). (optional)</param>
-        /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="learningStandardId">The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)</param>
+        /// <param name="description">The text of the statement. The textual content that either describes a specific competency such as \&quot;Apply the Pythagorean Theorem to determine unknown side lengths in right triangles in real-world and mathematical problems in two and three dimensions.\&quot; or describes a less granular group of competencies within the taxonomy of the standards document, e.g. \&quot;Understand and apply the Pythagorean Theorem,\&quot; or \&quot;Geometry\&quot;. (optional)</param>
         /// <param name="id"> (optional)</param>
-        /// <param name="letterGradeEarned">A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)</param>
-        /// <returns>ApiResponse of List&lt;EdFiGradeReadable&gt;</returns>
-        public ApiResponse< List<EdFiGradeReadable> > GetGradesWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string gradeTypeDescriptor = null, string gradingPeriodDescriptor = null, int? gradingPeriodSequence = null, int? schoolId = null, int? gradingPeriodSchoolYear = null, DateTime? beginDate = null, string localCourseCode = null, int? schoolYear = null, string sectionIdentifier = null, string sessionName = null, string studentUniqueId = null, string id = null, string letterGradeEarned = null)
+        /// <param name="_namespace">Namespace for the LearningStandard. (optional)</param>
+        /// <returns>ApiResponse of List&lt;EdFiLearningStandardReadable&gt;</returns>
+        public ApiResponse< List<EdFiLearningStandardReadable> > GetLearningStandardsWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string learningStandardId = null, string description = null, string id = null, string _namespace = null)
         {
 
-            var localVarPath = "/ed-fi/grades";
+            var localVarPath = "/ed-fi/learningStandards";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -630,7 +576,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/vnd.ed-fi.grade.minnesota-twentyone-twentytwo-sisvendorprofile.readable+json"
+                "application/vnd.ed-fi.learningstandard.minnesota-twentyone-twentytwo-sisvendorprofile.readable+json"
             };
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -639,19 +585,10 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
             if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
             if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             if (totalCount != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "totalCount", totalCount)); // query parameter
-            if (gradeTypeDescriptor != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "gradeTypeDescriptor", gradeTypeDescriptor)); // query parameter
-            if (gradingPeriodDescriptor != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "gradingPeriodDescriptor", gradingPeriodDescriptor)); // query parameter
-            if (gradingPeriodSequence != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "gradingPeriodSequence", gradingPeriodSequence)); // query parameter
-            if (schoolId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "schoolId", schoolId)); // query parameter
-            if (gradingPeriodSchoolYear != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "gradingPeriodSchoolYear", gradingPeriodSchoolYear)); // query parameter
-            if (beginDate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "beginDate", beginDate)); // query parameter
-            if (localCourseCode != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "localCourseCode", localCourseCode)); // query parameter
-            if (schoolYear != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "schoolYear", schoolYear)); // query parameter
-            if (sectionIdentifier != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sectionIdentifier", sectionIdentifier)); // query parameter
-            if (sessionName != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sessionName", sessionName)); // query parameter
-            if (studentUniqueId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "studentUniqueId", studentUniqueId)); // query parameter
+            if (learningStandardId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "learningStandardId", learningStandardId)); // query parameter
+            if (description != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "description", description)); // query parameter
             if (id != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "id", id)); // query parameter
-            if (letterGradeEarned != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "letterGradeEarned", letterGradeEarned)); // query parameter
+            if (_namespace != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "namespace", _namespace)); // query parameter
 
             // authentication (oauth2_client_credentials) required
             // oauth required
@@ -669,13 +606,13 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetGrades", localVarResponse);
+                Exception exception = ExceptionFactory("GetLearningStandards", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<EdFiGradeReadable>>(localVarStatusCode,
+            return new ApiResponse<List<EdFiLearningStandardReadable>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<EdFiGradeReadable>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<EdFiGradeReadable>)));
+                (List<EdFiLearningStandardReadable>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<EdFiLearningStandardReadable>)));
         }
 
         /// <summary>
@@ -685,23 +622,14 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// <param name="offset">Indicates how many items should be skipped before returning results. (optional, default to 0)</param>
         /// <param name="limit">Indicates the maximum number of items that should be returned in the results. (optional, default to 25)</param>
         /// <param name="totalCount">Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)</param>
-        /// <param name="gradeTypeDescriptor">The type of grade reported (e.g., Exam, Final, Grading Period). (optional)</param>
-        /// <param name="gradingPeriodDescriptor">The name of the period for which grades are reported. (optional)</param>
-        /// <param name="gradingPeriodSequence">The sequential order of this period relative to other periods. (optional)</param>
-        /// <param name="schoolId">The identifier assigned to a school. (optional)</param>
-        /// <param name="gradingPeriodSchoolYear">The identifier for the grading period school year. (optional)</param>
-        /// <param name="beginDate">Month, day, and year of the Student&#39;s entry or assignment to the Section. (optional)</param>
-        /// <param name="localCourseCode">The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)</param>
-        /// <param name="schoolYear">The identifier for the school year. (optional)</param>
-        /// <param name="sectionIdentifier">The local identifier assigned to a section. (optional)</param>
-        /// <param name="sessionName">The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer). (optional)</param>
-        /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="learningStandardId">The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)</param>
+        /// <param name="description">The text of the statement. The textual content that either describes a specific competency such as \&quot;Apply the Pythagorean Theorem to determine unknown side lengths in right triangles in real-world and mathematical problems in two and three dimensions.\&quot; or describes a less granular group of competencies within the taxonomy of the standards document, e.g. \&quot;Understand and apply the Pythagorean Theorem,\&quot; or \&quot;Geometry\&quot;. (optional)</param>
         /// <param name="id"> (optional)</param>
-        /// <param name="letterGradeEarned">A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)</param>
-        /// <returns>Task of List&lt;EdFiGradeReadable&gt;</returns>
-        public async System.Threading.Tasks.Task<List<EdFiGradeReadable>> GetGradesAsync (int? offset = null, int? limit = null, bool? totalCount = null, string gradeTypeDescriptor = null, string gradingPeriodDescriptor = null, int? gradingPeriodSequence = null, int? schoolId = null, int? gradingPeriodSchoolYear = null, DateTime? beginDate = null, string localCourseCode = null, int? schoolYear = null, string sectionIdentifier = null, string sessionName = null, string studentUniqueId = null, string id = null, string letterGradeEarned = null)
+        /// <param name="_namespace">Namespace for the LearningStandard. (optional)</param>
+        /// <returns>Task of List&lt;EdFiLearningStandardReadable&gt;</returns>
+        public async System.Threading.Tasks.Task<List<EdFiLearningStandardReadable>> GetLearningStandardsAsync (int? offset = null, int? limit = null, bool? totalCount = null, string learningStandardId = null, string description = null, string id = null, string _namespace = null)
         {
-             ApiResponse<List<EdFiGradeReadable>> localVarResponse = await GetGradesAsyncWithHttpInfo(offset, limit, totalCount, gradeTypeDescriptor, gradingPeriodDescriptor, gradingPeriodSequence, schoolId, gradingPeriodSchoolYear, beginDate, localCourseCode, schoolYear, sectionIdentifier, sessionName, studentUniqueId, id, letterGradeEarned);
+             ApiResponse<List<EdFiLearningStandardReadable>> localVarResponse = await GetLearningStandardsAsyncWithHttpInfo(offset, limit, totalCount, learningStandardId, description, id, _namespace);
              return localVarResponse.Data;
 
         }
@@ -713,24 +641,15 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// <param name="offset">Indicates how many items should be skipped before returning results. (optional, default to 0)</param>
         /// <param name="limit">Indicates the maximum number of items that should be returned in the results. (optional, default to 25)</param>
         /// <param name="totalCount">Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. (optional, default to false)</param>
-        /// <param name="gradeTypeDescriptor">The type of grade reported (e.g., Exam, Final, Grading Period). (optional)</param>
-        /// <param name="gradingPeriodDescriptor">The name of the period for which grades are reported. (optional)</param>
-        /// <param name="gradingPeriodSequence">The sequential order of this period relative to other periods. (optional)</param>
-        /// <param name="schoolId">The identifier assigned to a school. (optional)</param>
-        /// <param name="gradingPeriodSchoolYear">The identifier for the grading period school year. (optional)</param>
-        /// <param name="beginDate">Month, day, and year of the Student&#39;s entry or assignment to the Section. (optional)</param>
-        /// <param name="localCourseCode">The local code assigned by the School that identifies the course offering provided for the instruction of students. (optional)</param>
-        /// <param name="schoolYear">The identifier for the school year. (optional)</param>
-        /// <param name="sectionIdentifier">The local identifier assigned to a section. (optional)</param>
-        /// <param name="sessionName">The identifier for the calendar for the academic session (e.g., 2010/11, 2011 Summer). (optional)</param>
-        /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="learningStandardId">The identifier for the specific learning standard (e.g., 111.15.3.1.A). (optional)</param>
+        /// <param name="description">The text of the statement. The textual content that either describes a specific competency such as \&quot;Apply the Pythagorean Theorem to determine unknown side lengths in right triangles in real-world and mathematical problems in two and three dimensions.\&quot; or describes a less granular group of competencies within the taxonomy of the standards document, e.g. \&quot;Understand and apply the Pythagorean Theorem,\&quot; or \&quot;Geometry\&quot;. (optional)</param>
         /// <param name="id"> (optional)</param>
-        /// <param name="letterGradeEarned">A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;EdFiGradeReadable&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<EdFiGradeReadable>>> GetGradesAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string gradeTypeDescriptor = null, string gradingPeriodDescriptor = null, int? gradingPeriodSequence = null, int? schoolId = null, int? gradingPeriodSchoolYear = null, DateTime? beginDate = null, string localCourseCode = null, int? schoolYear = null, string sectionIdentifier = null, string sessionName = null, string studentUniqueId = null, string id = null, string letterGradeEarned = null)
+        /// <param name="_namespace">Namespace for the LearningStandard. (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;EdFiLearningStandardReadable&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<EdFiLearningStandardReadable>>> GetLearningStandardsAsyncWithHttpInfo (int? offset = null, int? limit = null, bool? totalCount = null, string learningStandardId = null, string description = null, string id = null, string _namespace = null)
         {
 
-            var localVarPath = "/ed-fi/grades";
+            var localVarPath = "/ed-fi/learningStandards";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -746,7 +665,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/vnd.ed-fi.grade.minnesota-twentyone-twentytwo-sisvendorprofile.readable+json"
+                "application/vnd.ed-fi.learningstandard.minnesota-twentyone-twentytwo-sisvendorprofile.readable+json"
             };
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -755,19 +674,10 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
             if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
             if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             if (totalCount != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "totalCount", totalCount)); // query parameter
-            if (gradeTypeDescriptor != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "gradeTypeDescriptor", gradeTypeDescriptor)); // query parameter
-            if (gradingPeriodDescriptor != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "gradingPeriodDescriptor", gradingPeriodDescriptor)); // query parameter
-            if (gradingPeriodSequence != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "gradingPeriodSequence", gradingPeriodSequence)); // query parameter
-            if (schoolId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "schoolId", schoolId)); // query parameter
-            if (gradingPeriodSchoolYear != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "gradingPeriodSchoolYear", gradingPeriodSchoolYear)); // query parameter
-            if (beginDate != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "beginDate", beginDate)); // query parameter
-            if (localCourseCode != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "localCourseCode", localCourseCode)); // query parameter
-            if (schoolYear != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "schoolYear", schoolYear)); // query parameter
-            if (sectionIdentifier != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sectionIdentifier", sectionIdentifier)); // query parameter
-            if (sessionName != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "sessionName", sessionName)); // query parameter
-            if (studentUniqueId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "studentUniqueId", studentUniqueId)); // query parameter
+            if (learningStandardId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "learningStandardId", learningStandardId)); // query parameter
+            if (description != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "description", description)); // query parameter
             if (id != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "id", id)); // query parameter
-            if (letterGradeEarned != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "letterGradeEarned", letterGradeEarned)); // query parameter
+            if (_namespace != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "namespace", _namespace)); // query parameter
 
             // authentication (oauth2_client_credentials) required
             // oauth required
@@ -785,13 +695,13 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetGrades", localVarResponse);
+                Exception exception = ExceptionFactory("GetLearningStandards", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<EdFiGradeReadable>>(localVarStatusCode,
+            return new ApiResponse<List<EdFiLearningStandardReadable>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<EdFiGradeReadable>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<EdFiGradeReadable>)));
+                (List<EdFiLearningStandardReadable>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<EdFiLearningStandardReadable>)));
         }
 
         /// <summary>
@@ -800,10 +710,10 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
         /// <param name="ifNoneMatch">The previously returned ETag header value, used here to prevent the unnecessary data transfer of an unchanged resource. (optional)</param>
-        /// <returns>EdFiGradeReadable</returns>
-        public EdFiGradeReadable GetGradesById (string id, string ifNoneMatch = null)
+        /// <returns>EdFiLearningStandardReadable</returns>
+        public EdFiLearningStandardReadable GetLearningStandardsById (string id, string ifNoneMatch = null)
         {
-             ApiResponse<EdFiGradeReadable> localVarResponse = GetGradesByIdWithHttpInfo(id, ifNoneMatch);
+             ApiResponse<EdFiLearningStandardReadable> localVarResponse = GetLearningStandardsByIdWithHttpInfo(id, ifNoneMatch);
              return localVarResponse.Data;
         }
 
@@ -813,14 +723,14 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
         /// <param name="ifNoneMatch">The previously returned ETag header value, used here to prevent the unnecessary data transfer of an unchanged resource. (optional)</param>
-        /// <returns>ApiResponse of EdFiGradeReadable</returns>
-        public ApiResponse< EdFiGradeReadable > GetGradesByIdWithHttpInfo (string id, string ifNoneMatch = null)
+        /// <returns>ApiResponse of EdFiLearningStandardReadable</returns>
+        public ApiResponse< EdFiLearningStandardReadable > GetLearningStandardsByIdWithHttpInfo (string id, string ifNoneMatch = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling GradesApi->GetGradesById");
+                throw new ApiException(400, "Missing required parameter 'id' when calling LearningStandardsApi->GetLearningStandardsById");
 
-            var localVarPath = "/ed-fi/grades/{id}";
+            var localVarPath = "/ed-fi/learningStandards/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -836,7 +746,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/vnd.ed-fi.grade.minnesota-twentyone-twentytwo-sisvendorprofile.readable+json"
+                "application/vnd.ed-fi.learningstandard.minnesota-twentyone-twentytwo-sisvendorprofile.readable+json"
             };
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -861,13 +771,13 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetGradesById", localVarResponse);
+                Exception exception = ExceptionFactory("GetLearningStandardsById", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<EdFiGradeReadable>(localVarStatusCode,
+            return new ApiResponse<EdFiLearningStandardReadable>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (EdFiGradeReadable) Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdFiGradeReadable)));
+                (EdFiLearningStandardReadable) Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdFiLearningStandardReadable)));
         }
 
         /// <summary>
@@ -876,10 +786,10 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
         /// <param name="ifNoneMatch">The previously returned ETag header value, used here to prevent the unnecessary data transfer of an unchanged resource. (optional)</param>
-        /// <returns>Task of EdFiGradeReadable</returns>
-        public async System.Threading.Tasks.Task<EdFiGradeReadable> GetGradesByIdAsync (string id, string ifNoneMatch = null)
+        /// <returns>Task of EdFiLearningStandardReadable</returns>
+        public async System.Threading.Tasks.Task<EdFiLearningStandardReadable> GetLearningStandardsByIdAsync (string id, string ifNoneMatch = null)
         {
-             ApiResponse<EdFiGradeReadable> localVarResponse = await GetGradesByIdAsyncWithHttpInfo(id, ifNoneMatch);
+             ApiResponse<EdFiLearningStandardReadable> localVarResponse = await GetLearningStandardsByIdAsyncWithHttpInfo(id, ifNoneMatch);
              return localVarResponse.Data;
 
         }
@@ -890,14 +800,14 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
         /// <param name="ifNoneMatch">The previously returned ETag header value, used here to prevent the unnecessary data transfer of an unchanged resource. (optional)</param>
-        /// <returns>Task of ApiResponse (EdFiGradeReadable)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<EdFiGradeReadable>> GetGradesByIdAsyncWithHttpInfo (string id, string ifNoneMatch = null)
+        /// <returns>Task of ApiResponse (EdFiLearningStandardReadable)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<EdFiLearningStandardReadable>> GetLearningStandardsByIdAsyncWithHttpInfo (string id, string ifNoneMatch = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling GradesApi->GetGradesById");
+                throw new ApiException(400, "Missing required parameter 'id' when calling LearningStandardsApi->GetLearningStandardsById");
 
-            var localVarPath = "/ed-fi/grades/{id}";
+            var localVarPath = "/ed-fi/learningStandards/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -913,7 +823,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/vnd.ed-fi.grade.minnesota-twentyone-twentytwo-sisvendorprofile.readable+json"
+                "application/vnd.ed-fi.learningstandard.minnesota-twentyone-twentytwo-sisvendorprofile.readable+json"
             };
             String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -938,39 +848,39 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetGradesById", localVarResponse);
+                Exception exception = ExceptionFactory("GetLearningStandardsById", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<EdFiGradeReadable>(localVarStatusCode,
+            return new ApiResponse<EdFiLearningStandardReadable>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (EdFiGradeReadable) Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdFiGradeReadable)));
+                (EdFiLearningStandardReadable) Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdFiLearningStandardReadable)));
         }
 
         /// <summary>
         /// Creates or updates resources based on the natural key values of the supplied resource. The POST operation can be used to create or update resources. In database terms, this is often referred to as an \&quot;upsert\&quot; operation (insert + update). Clients should NOT include the resource \&quot;id\&quot; in the JSON body because it will result in an error (you must use a PUT operation to update a resource by \&quot;id\&quot;). The web service will identify whether the resource already exists based on the natural key values provided, and update or create the resource appropriately.
         /// </summary>
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="grade">The JSON representation of the \&quot;grade\&quot; resource to be created or updated.</param>
+        /// <param name="learningStandard">The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated.</param>
         /// <returns></returns>
-        public void Postgrade (EdFiGradeWritable grade)
+        public void PostlearningStandard (EdFiLearningStandardWritable learningStandard)
         {
-             PostgradeWithHttpInfo(grade);
+             PostlearningStandardWithHttpInfo(learningStandard);
         }
 
         /// <summary>
         /// Creates or updates resources based on the natural key values of the supplied resource. The POST operation can be used to create or update resources. In database terms, this is often referred to as an \&quot;upsert\&quot; operation (insert + update). Clients should NOT include the resource \&quot;id\&quot; in the JSON body because it will result in an error (you must use a PUT operation to update a resource by \&quot;id\&quot;). The web service will identify whether the resource already exists based on the natural key values provided, and update or create the resource appropriately.
         /// </summary>
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="grade">The JSON representation of the \&quot;grade\&quot; resource to be created or updated.</param>
+        /// <param name="learningStandard">The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> PostgradeWithHttpInfo (EdFiGradeWritable grade)
+        public ApiResponse<Object> PostlearningStandardWithHttpInfo (EdFiLearningStandardWritable learningStandard)
         {
-            // verify the required parameter 'grade' is set
-            if (grade == null)
-                throw new ApiException(400, "Missing required parameter 'grade' when calling GradesApi->Postgrade");
+            // verify the required parameter 'learningStandard' is set
+            if (learningStandard == null)
+                throw new ApiException(400, "Missing required parameter 'learningStandard' when calling LearningStandardsApi->PostlearningStandard");
 
-            var localVarPath = "/ed-fi/grades";
+            var localVarPath = "/ed-fi/learningStandards";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -980,7 +890,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/vnd.ed-fi.grade.minnesota-twentyone-twentytwo-sisvendorprofile.writable+json"
+                "application/vnd.ed-fi.learningstandard.minnesota-twentyone-twentytwo-sisvendorprofile.writable+json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -992,13 +902,13 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (grade != null && grade.GetType() != typeof(byte[]))
+            if (learningStandard != null && learningStandard.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(grade); // http body (model) parameter
+                localVarPostBody = Configuration.ApiClient.Serialize(learningStandard); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = grade; // byte array
+                localVarPostBody = learningStandard; // byte array
             }
 
             // authentication (oauth2_client_credentials) required
@@ -1017,7 +927,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("Postgrade", localVarResponse);
+                Exception exception = ExceptionFactory("PostlearningStandard", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1030,11 +940,11 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// Creates or updates resources based on the natural key values of the supplied resource. The POST operation can be used to create or update resources. In database terms, this is often referred to as an \&quot;upsert\&quot; operation (insert + update). Clients should NOT include the resource \&quot;id\&quot; in the JSON body because it will result in an error (you must use a PUT operation to update a resource by \&quot;id\&quot;). The web service will identify whether the resource already exists based on the natural key values provided, and update or create the resource appropriately.
         /// </summary>
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="grade">The JSON representation of the \&quot;grade\&quot; resource to be created or updated.</param>
+        /// <param name="learningStandard">The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task PostgradeAsync (EdFiGradeWritable grade)
+        public async System.Threading.Tasks.Task PostlearningStandardAsync (EdFiLearningStandardWritable learningStandard)
         {
-             await PostgradeAsyncWithHttpInfo(grade);
+             await PostlearningStandardAsyncWithHttpInfo(learningStandard);
 
         }
 
@@ -1042,15 +952,15 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// Creates or updates resources based on the natural key values of the supplied resource. The POST operation can be used to create or update resources. In database terms, this is often referred to as an \&quot;upsert\&quot; operation (insert + update). Clients should NOT include the resource \&quot;id\&quot; in the JSON body because it will result in an error (you must use a PUT operation to update a resource by \&quot;id\&quot;). The web service will identify whether the resource already exists based on the natural key values provided, and update or create the resource appropriately.
         /// </summary>
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="grade">The JSON representation of the \&quot;grade\&quot; resource to be created or updated.</param>
+        /// <param name="learningStandard">The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> PostgradeAsyncWithHttpInfo (EdFiGradeWritable grade)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> PostlearningStandardAsyncWithHttpInfo (EdFiLearningStandardWritable learningStandard)
         {
-            // verify the required parameter 'grade' is set
-            if (grade == null)
-                throw new ApiException(400, "Missing required parameter 'grade' when calling GradesApi->Postgrade");
+            // verify the required parameter 'learningStandard' is set
+            if (learningStandard == null)
+                throw new ApiException(400, "Missing required parameter 'learningStandard' when calling LearningStandardsApi->PostlearningStandard");
 
-            var localVarPath = "/ed-fi/grades";
+            var localVarPath = "/ed-fi/learningStandards";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1060,7 +970,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/vnd.ed-fi.grade.minnesota-twentyone-twentytwo-sisvendorprofile.writable+json"
+                "application/vnd.ed-fi.learningstandard.minnesota-twentyone-twentytwo-sisvendorprofile.writable+json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1072,13 +982,13 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (grade != null && grade.GetType() != typeof(byte[]))
+            if (learningStandard != null && learningStandard.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(grade); // http body (model) parameter
+                localVarPostBody = Configuration.ApiClient.Serialize(learningStandard); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = grade; // byte array
+                localVarPostBody = learningStandard; // byte array
             }
 
             // authentication (oauth2_client_credentials) required
@@ -1097,7 +1007,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("Postgrade", localVarResponse);
+                Exception exception = ExceptionFactory("PostlearningStandard", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1111,12 +1021,12 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// </summary>
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
-        /// <param name="grade">The JSON representation of the \&quot;grade\&quot; resource to be created or updated.</param>
+        /// <param name="learningStandard">The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated.</param>
         /// <param name="ifMatch">The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)</param>
         /// <returns></returns>
-        public void Putgrade (string id, EdFiGradeWritable grade, string ifMatch = null)
+        public void PutlearningStandard (string id, EdFiLearningStandardWritable learningStandard, string ifMatch = null)
         {
-             PutgradeWithHttpInfo(id, grade, ifMatch);
+             PutlearningStandardWithHttpInfo(id, learningStandard, ifMatch);
         }
 
         /// <summary>
@@ -1124,19 +1034,19 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// </summary>
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
-        /// <param name="grade">The JSON representation of the \&quot;grade\&quot; resource to be created or updated.</param>
+        /// <param name="learningStandard">The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated.</param>
         /// <param name="ifMatch">The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> PutgradeWithHttpInfo (string id, EdFiGradeWritable grade, string ifMatch = null)
+        public ApiResponse<Object> PutlearningStandardWithHttpInfo (string id, EdFiLearningStandardWritable learningStandard, string ifMatch = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling GradesApi->Putgrade");
-            // verify the required parameter 'grade' is set
-            if (grade == null)
-                throw new ApiException(400, "Missing required parameter 'grade' when calling GradesApi->Putgrade");
+                throw new ApiException(400, "Missing required parameter 'id' when calling LearningStandardsApi->PutlearningStandard");
+            // verify the required parameter 'learningStandard' is set
+            if (learningStandard == null)
+                throw new ApiException(400, "Missing required parameter 'learningStandard' when calling LearningStandardsApi->PutlearningStandard");
 
-            var localVarPath = "/ed-fi/grades/{id}";
+            var localVarPath = "/ed-fi/learningStandards/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1146,7 +1056,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/vnd.ed-fi.grade.minnesota-twentyone-twentytwo-sisvendorprofile.writable+json"
+                "application/vnd.ed-fi.learningstandard.minnesota-twentyone-twentytwo-sisvendorprofile.writable+json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1160,13 +1070,13 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
             if (ifMatch != null) localVarHeaderParams.Add("If-Match", Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
-            if (grade != null && grade.GetType() != typeof(byte[]))
+            if (learningStandard != null && learningStandard.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(grade); // http body (model) parameter
+                localVarPostBody = Configuration.ApiClient.Serialize(learningStandard); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = grade; // byte array
+                localVarPostBody = learningStandard; // byte array
             }
 
             // authentication (oauth2_client_credentials) required
@@ -1185,7 +1095,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("Putgrade", localVarResponse);
+                Exception exception = ExceptionFactory("PutlearningStandard", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1199,12 +1109,12 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// </summary>
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
-        /// <param name="grade">The JSON representation of the \&quot;grade\&quot; resource to be created or updated.</param>
+        /// <param name="learningStandard">The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated.</param>
         /// <param name="ifMatch">The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task PutgradeAsync (string id, EdFiGradeWritable grade, string ifMatch = null)
+        public async System.Threading.Tasks.Task PutlearningStandardAsync (string id, EdFiLearningStandardWritable learningStandard, string ifMatch = null)
         {
-             await PutgradeAsyncWithHttpInfo(id, grade, ifMatch);
+             await PutlearningStandardAsyncWithHttpInfo(id, learningStandard, ifMatch);
 
         }
 
@@ -1213,19 +1123,19 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
         /// </summary>
         /// <exception cref="EdFi.OdsApi.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">A resource identifier that uniquely identifies the resource.</param>
-        /// <param name="grade">The JSON representation of the \&quot;grade\&quot; resource to be created or updated.</param>
+        /// <param name="learningStandard">The JSON representation of the \&quot;learningStandard\&quot; resource to be created or updated.</param>
         /// <param name="ifMatch">The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> PutgradeAsyncWithHttpInfo (string id, EdFiGradeWritable grade, string ifMatch = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> PutlearningStandardAsyncWithHttpInfo (string id, EdFiLearningStandardWritable learningStandard, string ifMatch = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new ApiException(400, "Missing required parameter 'id' when calling GradesApi->Putgrade");
-            // verify the required parameter 'grade' is set
-            if (grade == null)
-                throw new ApiException(400, "Missing required parameter 'grade' when calling GradesApi->Putgrade");
+                throw new ApiException(400, "Missing required parameter 'id' when calling LearningStandardsApi->PutlearningStandard");
+            // verify the required parameter 'learningStandard' is set
+            if (learningStandard == null)
+                throw new ApiException(400, "Missing required parameter 'learningStandard' when calling LearningStandardsApi->PutlearningStandard");
 
-            var localVarPath = "/ed-fi/grades/{id}";
+            var localVarPath = "/ed-fi/learningStandards/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1235,7 +1145,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/vnd.ed-fi.grade.minnesota-twentyone-twentytwo-sisvendorprofile.writable+json"
+                "application/vnd.ed-fi.learningstandard.minnesota-twentyone-twentytwo-sisvendorprofile.writable+json"
             };
             String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1249,13 +1159,13 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
             if (ifMatch != null) localVarHeaderParams.Add("If-Match", Configuration.ApiClient.ParameterToString(ifMatch)); // header parameter
-            if (grade != null && grade.GetType() != typeof(byte[]))
+            if (learningStandard != null && learningStandard.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(grade); // http body (model) parameter
+                localVarPostBody = Configuration.ApiClient.Serialize(learningStandard); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = grade; // byte array
+                localVarPostBody = learningStandard; // byte array
             }
 
             // authentication (oauth2_client_credentials) required
@@ -1274,7 +1184,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("Putgrade", localVarResponse);
+                Exception exception = ExceptionFactory("PutlearningStandard", localVarResponse);
                 if (exception != null) throw exception;
             }
 

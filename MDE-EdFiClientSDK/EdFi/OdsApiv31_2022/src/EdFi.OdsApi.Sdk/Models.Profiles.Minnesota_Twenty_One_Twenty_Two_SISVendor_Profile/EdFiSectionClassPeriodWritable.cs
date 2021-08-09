@@ -25,26 +25,38 @@ using SwaggerDateConverter = EdFi.OdsApi.Sdk.Client.SwaggerDateConverter;
 namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile
 {
     /// <summary>
-    /// MnClassPeriodExtensionWritable
+    /// EdFiSectionClassPeriodWritable
     /// </summary>
     [DataContract]
-    public partial class MnClassPeriodExtensionWritable :  IEquatable<MnClassPeriodExtensionWritable>, IValidatableObject
+    public partial class EdFiSectionClassPeriodWritable :  IEquatable<EdFiSectionClassPeriodWritable>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="MnClassPeriodExtensionWritable" /> class.
+        /// Initializes a new instance of the <see cref="EdFiSectionClassPeriodWritable" /> class.
         /// </summary>
-        /// <param name="ClassPeriodTypeDescriptor">Class period type. E.g., Before School, During School, After School, Evening School.</param>
-        public MnClassPeriodExtensionWritable(string ClassPeriodTypeDescriptor = default(string))
+        [JsonConstructorAttribute]
+        protected EdFiSectionClassPeriodWritable() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EdFiSectionClassPeriodWritable" /> class.
+        /// </summary>
+        /// <param name="ClassPeriodReference">ClassPeriodReference (required).</param>
+        public EdFiSectionClassPeriodWritable(EdFiClassPeriodReference ClassPeriodReference = default(EdFiClassPeriodReference))
         {
-            this.ClassPeriodTypeDescriptor = ClassPeriodTypeDescriptor;
+            // to ensure "ClassPeriodReference" is required (not null)
+            if (ClassPeriodReference == null)
+            {
+                throw new InvalidDataException("ClassPeriodReference is a required property for EdFiSectionClassPeriodWritable and cannot be null");
+            }
+            else
+            {
+                this.ClassPeriodReference = ClassPeriodReference;
+            }
         }
         
         /// <summary>
-        /// Class period type. E.g., Before School, During School, After School, Evening School
+        /// Gets or Sets ClassPeriodReference
         /// </summary>
-        /// <value>Class period type. E.g., Before School, During School, After School, Evening School</value>
-        [DataMember(Name="classPeriodTypeDescriptor", EmitDefaultValue=false)]
-        public string ClassPeriodTypeDescriptor { get; set; }
+        [DataMember(Name="classPeriodReference", EmitDefaultValue=false)]
+        public EdFiClassPeriodReference ClassPeriodReference { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -53,8 +65,8 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class MnClassPeriodExtensionWritable {\n");
-            sb.Append("  ClassPeriodTypeDescriptor: ").Append(ClassPeriodTypeDescriptor).Append("\n");
+            sb.Append("class EdFiSectionClassPeriodWritable {\n");
+            sb.Append("  ClassPeriodReference: ").Append(ClassPeriodReference).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -75,24 +87,24 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as MnClassPeriodExtensionWritable);
+            return this.Equals(input as EdFiSectionClassPeriodWritable);
         }
 
         /// <summary>
-        /// Returns true if MnClassPeriodExtensionWritable instances are equal
+        /// Returns true if EdFiSectionClassPeriodWritable instances are equal
         /// </summary>
-        /// <param name="input">Instance of MnClassPeriodExtensionWritable to be compared</param>
+        /// <param name="input">Instance of EdFiSectionClassPeriodWritable to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(MnClassPeriodExtensionWritable input)
+        public bool Equals(EdFiSectionClassPeriodWritable input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.ClassPeriodTypeDescriptor == input.ClassPeriodTypeDescriptor ||
-                    (this.ClassPeriodTypeDescriptor != null &&
-                    this.ClassPeriodTypeDescriptor.Equals(input.ClassPeriodTypeDescriptor))
+                    this.ClassPeriodReference == input.ClassPeriodReference ||
+                    (this.ClassPeriodReference != null &&
+                    this.ClassPeriodReference.Equals(input.ClassPeriodReference))
                 );
         }
 
@@ -105,8 +117,8 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ClassPeriodTypeDescriptor != null)
-                    hashCode = hashCode * 59 + this.ClassPeriodTypeDescriptor.GetHashCode();
+                if (this.ClassPeriodReference != null)
+                    hashCode = hashCode * 59 + this.ClassPeriodReference.GetHashCode();
                 return hashCode;
             }
         }
@@ -118,12 +130,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // ClassPeriodTypeDescriptor (string) maxLength
-            if(this.ClassPeriodTypeDescriptor != null && this.ClassPeriodTypeDescriptor.Length > 306)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ClassPeriodTypeDescriptor, length must be less than 306.", new [] { "ClassPeriodTypeDescriptor" });
-            }
-
             yield break;
         }
     }
