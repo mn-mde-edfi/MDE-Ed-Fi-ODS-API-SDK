@@ -4,8 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **KindergartenScheduleDescriptor** | **string** | Kindergarten Schedule | [optional] 
-**CalendarDescription** | **string** | Calendar description. | [optional] 
-**DaysInSession** | **double?** | Days in session. | [optional] 
 **InstructionalDays** | **double?** | The total number of Instructional days during the current school year. | [optional] 
 **LengthOfDay** | **int?** | Length of Day. | [optional] 
 

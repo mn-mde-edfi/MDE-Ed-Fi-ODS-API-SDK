@@ -34,11 +34,9 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
         /// Initializes a new instance of the <see cref="MnClassPeriodExtensionReadable" /> class.
         /// </summary>
         /// <param name="ClassPeriodTypeDescriptor">Class period type. E.g., Before School, During School, After School, Evening School.</param>
-        /// <param name="ClassPeriodDescription">Class period description..</param>
-        public MnClassPeriodExtensionReadable(string ClassPeriodTypeDescriptor = default(string), string ClassPeriodDescription = default(string))
+        public MnClassPeriodExtensionReadable(string ClassPeriodTypeDescriptor = default(string))
         {
             this.ClassPeriodTypeDescriptor = ClassPeriodTypeDescriptor;
-            this.ClassPeriodDescription = ClassPeriodDescription;
         }
         
         /// <summary>
@@ -49,13 +47,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
         public string ClassPeriodTypeDescriptor { get; set; }
 
         /// <summary>
-        /// Class period description.
-        /// </summary>
-        /// <value>Class period description.</value>
-        [DataMember(Name="classPeriodDescription", EmitDefaultValue=false)]
-        public string ClassPeriodDescription { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -64,7 +55,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
             var sb = new StringBuilder();
             sb.Append("class MnClassPeriodExtensionReadable {\n");
             sb.Append("  ClassPeriodTypeDescriptor: ").Append(ClassPeriodTypeDescriptor).Append("\n");
-            sb.Append("  ClassPeriodDescription: ").Append(ClassPeriodDescription).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -103,11 +93,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
                     this.ClassPeriodTypeDescriptor == input.ClassPeriodTypeDescriptor ||
                     (this.ClassPeriodTypeDescriptor != null &&
                     this.ClassPeriodTypeDescriptor.Equals(input.ClassPeriodTypeDescriptor))
-                ) && 
-                (
-                    this.ClassPeriodDescription == input.ClassPeriodDescription ||
-                    (this.ClassPeriodDescription != null &&
-                    this.ClassPeriodDescription.Equals(input.ClassPeriodDescription))
                 );
         }
 
@@ -122,8 +107,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
                 int hashCode = 41;
                 if (this.ClassPeriodTypeDescriptor != null)
                     hashCode = hashCode * 59 + this.ClassPeriodTypeDescriptor.GetHashCode();
-                if (this.ClassPeriodDescription != null)
-                    hashCode = hashCode * 59 + this.ClassPeriodDescription.GetHashCode();
                 return hashCode;
             }
         }
@@ -139,12 +122,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVen
             if(this.ClassPeriodTypeDescriptor != null && this.ClassPeriodTypeDescriptor.Length > 306)
             {
                 yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ClassPeriodTypeDescriptor, length must be less than 306.", new [] { "ClassPeriodTypeDescriptor" });
-            }
-
-            // ClassPeriodDescription (string) maxLength
-            if(this.ClassPeriodDescription != null && this.ClassPeriodDescription.Length > 100)
-            {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ClassPeriodDescription, length must be less than 100.", new [] { "ClassPeriodDescription" });
             }
 
             yield break;
