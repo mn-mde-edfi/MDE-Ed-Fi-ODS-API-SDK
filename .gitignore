@@ -30,7 +30,7 @@ target
 atlassian-ide-plugin.xml
 .DS_Store
 
-/generated-sdk
+**/generated-sdk
 
 CSharpSDK/**/bin
 CSharpSDK/**/obj
