@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiCohortTypeDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiCohortTypeDescriptor
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiAchievementCategoryDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiAchievementCategoryDescriptor
 ## Properties
 
 Name | Type | Description | Notes

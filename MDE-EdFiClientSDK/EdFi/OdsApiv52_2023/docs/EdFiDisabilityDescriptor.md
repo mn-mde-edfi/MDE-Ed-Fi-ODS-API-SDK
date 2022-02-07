@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiDisabilityDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiDisabilityDescriptor
 ## Properties
 
 Name | Type | Description | Notes

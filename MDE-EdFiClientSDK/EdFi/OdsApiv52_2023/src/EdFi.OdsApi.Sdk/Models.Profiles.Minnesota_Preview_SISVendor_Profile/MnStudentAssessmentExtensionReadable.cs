@@ -12,12 +12,14 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = EdFi.OdsApi.Sdk.Client.SwaggerDateConverter;
 
 namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
@@ -26,7 +28,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
     /// MnStudentAssessmentExtensionReadable
     /// </summary>
     [DataContract]
-    public partial class MnStudentAssessmentExtensionReadable :  IEquatable<MnStudentAssessmentExtensionReadable>
+    public partial class MnStudentAssessmentExtensionReadable :  IEquatable<MnStudentAssessmentExtensionReadable>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MnStudentAssessmentExtensionReadable" /> class.
@@ -225,6 +227,46 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
                     hashCode = hashCode * 59 + this.Characteristics.GetHashCode();
                 return hashCode;
             }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            // AssessmentFormatDescriptor (string) maxLength
+            if(this.AssessmentFormatDescriptor != null && this.AssessmentFormatDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AssessmentFormatDescriptor, length must be less than 306.", new [] { "AssessmentFormatDescriptor" });
+            }
+
+            // AssessmentTierDescriptor (string) maxLength
+            if(this.AssessmentTierDescriptor != null && this.AssessmentTierDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AssessmentTierDescriptor, length must be less than 306.", new [] { "AssessmentTierDescriptor" });
+            }
+
+            // GeneralEnrollmentDescriptor (string) maxLength
+            if(this.GeneralEnrollmentDescriptor != null && this.GeneralEnrollmentDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for GeneralEnrollmentDescriptor, length must be less than 306.", new [] { "GeneralEnrollmentDescriptor" });
+            }
+
+            // CatStudentTestId (string) maxLength
+            if(this.CatStudentTestId != null && this.CatStudentTestId.Length > 100)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CatStudentTestId, length must be less than 100.", new [] { "CatStudentTestId" });
+            }
+
+            // LearningLocatorCode (string) maxLength
+            if(this.LearningLocatorCode != null && this.LearningLocatorCode.Length > 100)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for LearningLocatorCode, length must be less than 100.", new [] { "LearningLocatorCode" });
+            }
+
+            yield break;
         }
     }
 

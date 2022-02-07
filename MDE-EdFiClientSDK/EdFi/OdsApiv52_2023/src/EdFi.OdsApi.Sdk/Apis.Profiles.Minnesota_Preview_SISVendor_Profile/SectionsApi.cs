@@ -12,7 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp.Portable;
+using RestSharp;
 using EdFi.OdsApi.Sdk.Client;
 using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile;
 
@@ -499,7 +499,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
         public ApiResponse< List<DeletedResource> > DeletesSectionsWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, string snapshotIdentifier = null)
         {
 
-            var localVarPath = "./ed-fi/sections/deletes";
+            var localVarPath = "/ed-fi/sections/deletes";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -548,7 +548,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<List<DeletedResource>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (List<DeletedResource>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<DeletedResource>)));
         }
 
@@ -582,7 +582,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
         public async System.Threading.Tasks.Task<ApiResponse<List<DeletedResource>>> DeletesSectionsAsyncWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, string snapshotIdentifier = null)
         {
 
-            var localVarPath = "./ed-fi/sections/deletes";
+            var localVarPath = "/ed-fi/sections/deletes";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -631,7 +631,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<List<DeletedResource>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (List<DeletedResource>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<DeletedResource>)));
         }
 
@@ -660,7 +660,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling SectionsApi->DeletesectionById");
 
-            var localVarPath = "./ed-fi/sections/{id}";
+            var localVarPath = "/ed-fi/sections/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -706,7 +706,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
         }
 
@@ -736,7 +736,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling SectionsApi->DeletesectionById");
 
-            var localVarPath = "./ed-fi/sections/{id}";
+            var localVarPath = "/ed-fi/sections/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -782,7 +782,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
         }
 
@@ -835,7 +835,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
         public ApiResponse< List<EdFiSectionReadable> > GetSectionsWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, string sectionIdentifier = null, string localCourseCode = null, int? schoolId = null, int? schoolYear = null, string sessionName = null, string instructionLanguageDescriptor = null, string mediumOfInstructionDescriptor = null, string id = null, int? sequenceOfCourse = null, string snapshotIdentifier = null)
         {
 
-            var localVarPath = "./ed-fi/sections";
+            var localVarPath = "/ed-fi/sections";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -894,7 +894,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<List<EdFiSectionReadable>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (List<EdFiSectionReadable>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<EdFiSectionReadable>)));
         }
 
@@ -948,7 +948,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
         public async System.Threading.Tasks.Task<ApiResponse<List<EdFiSectionReadable>>> GetSectionsAsyncWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, string sectionIdentifier = null, string localCourseCode = null, int? schoolId = null, int? schoolYear = null, string sessionName = null, string instructionLanguageDescriptor = null, string mediumOfInstructionDescriptor = null, string id = null, int? sequenceOfCourse = null, string snapshotIdentifier = null)
         {
 
-            var localVarPath = "./ed-fi/sections";
+            var localVarPath = "/ed-fi/sections";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1007,7 +1007,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<List<EdFiSectionReadable>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (List<EdFiSectionReadable>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<EdFiSectionReadable>)));
         }
 
@@ -1039,7 +1039,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling SectionsApi->GetSectionsById");
 
-            var localVarPath = "./ed-fi/sections/{id}";
+            var localVarPath = "/ed-fi/sections/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1086,7 +1086,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<EdFiSectionReadable>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (EdFiSectionReadable) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdFiSectionReadable)));
         }
 
@@ -1119,7 +1119,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling SectionsApi->GetSectionsById");
 
-            var localVarPath = "./ed-fi/sections/{id}";
+            var localVarPath = "/ed-fi/sections/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1166,7 +1166,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<EdFiSectionReadable>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (EdFiSectionReadable) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdFiSectionReadable)));
         }
 
@@ -1193,7 +1193,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             if (section == null)
                 throw new ApiException(400, "Missing required parameter 'section' when calling SectionsApi->Postsection");
 
-            var localVarPath = "./ed-fi/sections";
+            var localVarPath = "/ed-fi/sections";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1245,7 +1245,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
         }
 
@@ -1273,7 +1273,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             if (section == null)
                 throw new ApiException(400, "Missing required parameter 'section' when calling SectionsApi->Postsection");
 
-            var localVarPath = "./ed-fi/sections";
+            var localVarPath = "/ed-fi/sections";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1325,7 +1325,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
         }
 
@@ -1359,7 +1359,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             if (section == null)
                 throw new ApiException(400, "Missing required parameter 'section' when calling SectionsApi->Putsection");
 
-            var localVarPath = "./ed-fi/sections/{id}";
+            var localVarPath = "/ed-fi/sections/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1413,7 +1413,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
         }
 
@@ -1448,7 +1448,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             if (section == null)
                 throw new ApiException(400, "Missing required parameter 'section' when calling SectionsApi->Putsection");
 
-            var localVarPath = "./ed-fi/sections/{id}";
+            var localVarPath = "/ed-fi/sections/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1502,7 +1502,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
         }
 

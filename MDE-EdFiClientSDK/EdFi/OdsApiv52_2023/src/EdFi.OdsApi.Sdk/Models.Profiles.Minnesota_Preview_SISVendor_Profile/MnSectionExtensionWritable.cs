@@ -12,12 +12,14 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = EdFi.OdsApi.Sdk.Client.SwaggerDateConverter;
 
 namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
@@ -26,15 +28,17 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
     /// MnSectionExtensionWritable
     /// </summary>
     [DataContract]
-    public partial class MnSectionExtensionWritable :  IEquatable<MnSectionExtensionWritable>
+    public partial class MnSectionExtensionWritable :  IEquatable<MnSectionExtensionWritable>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MnSectionExtensionWritable" /> class.
         /// </summary>
         /// <param name="instructionalDeliveryModeDescriptor">The delivery mode of instuction. E.g, On-ground, Online, etc.</param>
-        public MnSectionExtensionWritable(string instructionalDeliveryModeDescriptor = default(string))
+        /// <param name="instructionMinutesPerTerm">Instruction minutes per term..</param>
+        public MnSectionExtensionWritable(string instructionalDeliveryModeDescriptor = default(string), int? instructionMinutesPerTerm = default(int?))
         {
             this.InstructionalDeliveryModeDescriptor = instructionalDeliveryModeDescriptor;
+            this.InstructionMinutesPerTerm = instructionMinutesPerTerm;
         }
         
         /// <summary>
@@ -45,6 +49,13 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
         public string InstructionalDeliveryModeDescriptor { get; set; }
 
         /// <summary>
+        /// Instruction minutes per term.
+        /// </summary>
+        /// <value>Instruction minutes per term.</value>
+        [DataMember(Name="instructionMinutesPerTerm", EmitDefaultValue=false)]
+        public int? InstructionMinutesPerTerm { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -53,6 +64,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
             var sb = new StringBuilder();
             sb.Append("class MnSectionExtensionWritable {\n");
             sb.Append("  InstructionalDeliveryModeDescriptor: ").Append(InstructionalDeliveryModeDescriptor).Append("\n");
+            sb.Append("  InstructionMinutesPerTerm: ").Append(InstructionMinutesPerTerm).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,6 +103,11 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
                     this.InstructionalDeliveryModeDescriptor == input.InstructionalDeliveryModeDescriptor ||
                     (this.InstructionalDeliveryModeDescriptor != null &&
                     this.InstructionalDeliveryModeDescriptor.Equals(input.InstructionalDeliveryModeDescriptor))
+                ) && 
+                (
+                    this.InstructionMinutesPerTerm == input.InstructionMinutesPerTerm ||
+                    (this.InstructionMinutesPerTerm != null &&
+                    this.InstructionMinutesPerTerm.Equals(input.InstructionMinutesPerTerm))
                 );
         }
 
@@ -105,8 +122,26 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
                 int hashCode = 41;
                 if (this.InstructionalDeliveryModeDescriptor != null)
                     hashCode = hashCode * 59 + this.InstructionalDeliveryModeDescriptor.GetHashCode();
+                if (this.InstructionMinutesPerTerm != null)
+                    hashCode = hashCode * 59 + this.InstructionMinutesPerTerm.GetHashCode();
                 return hashCode;
             }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            // InstructionalDeliveryModeDescriptor (string) maxLength
+            if(this.InstructionalDeliveryModeDescriptor != null && this.InstructionalDeliveryModeDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for InstructionalDeliveryModeDescriptor, length must be less than 306.", new [] { "InstructionalDeliveryModeDescriptor" });
+            }
+
+            yield break;
         }
     }
 

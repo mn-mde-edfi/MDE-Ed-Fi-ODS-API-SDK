@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiRestraintEventReasonDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiRestraintEventReasonDescriptor
 ## Properties
 
 Name | Type | Description | Notes

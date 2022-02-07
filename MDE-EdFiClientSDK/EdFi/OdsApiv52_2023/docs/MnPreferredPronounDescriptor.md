@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.MnPreferredPronounDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.MnPreferredPronounDescriptor
 ## Properties
 
 Name | Type | Description | Notes

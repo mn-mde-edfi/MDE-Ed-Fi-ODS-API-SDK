@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiTitleIPartAParticipantDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiTitleIPartAParticipantDescriptor
 ## Properties
 
 Name | Type | Description | Notes

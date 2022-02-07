@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiPublicationStatusDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiPublicationStatusDescriptor
 ## Properties
 
 Name | Type | Description | Notes

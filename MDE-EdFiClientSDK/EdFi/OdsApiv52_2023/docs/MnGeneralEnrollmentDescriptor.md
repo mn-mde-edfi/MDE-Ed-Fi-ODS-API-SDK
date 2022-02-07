@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.MnGeneralEnrollmentDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.MnGeneralEnrollmentDescriptor
 ## Properties
 
 Name | Type | Description | Notes

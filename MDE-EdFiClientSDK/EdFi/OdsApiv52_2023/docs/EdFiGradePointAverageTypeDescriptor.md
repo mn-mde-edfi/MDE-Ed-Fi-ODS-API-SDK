@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiGradePointAverageTypeDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiGradePointAverageTypeDescriptor
 ## Properties
 
 Name | Type | Description | Notes

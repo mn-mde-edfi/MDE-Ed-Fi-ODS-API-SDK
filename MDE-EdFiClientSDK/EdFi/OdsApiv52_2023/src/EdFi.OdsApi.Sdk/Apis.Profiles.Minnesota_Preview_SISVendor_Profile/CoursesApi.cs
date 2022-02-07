@@ -12,7 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp.Portable;
+using RestSharp;
 using EdFi.OdsApi.Sdk.Client;
 using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile;
 
@@ -499,7 +499,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling CoursesApi->DeletecourseById");
 
-            var localVarPath = "./ed-fi/courses/{id}";
+            var localVarPath = "/ed-fi/courses/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -545,7 +545,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
         }
 
@@ -575,7 +575,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling CoursesApi->DeletecourseById");
 
-            var localVarPath = "./ed-fi/courses/{id}";
+            var localVarPath = "/ed-fi/courses/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -621,7 +621,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
         }
 
@@ -654,7 +654,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
         public ApiResponse< List<DeletedResource> > DeletesCoursesWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, string snapshotIdentifier = null)
         {
 
-            var localVarPath = "./ed-fi/courses/deletes";
+            var localVarPath = "/ed-fi/courses/deletes";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -703,7 +703,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<List<DeletedResource>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (List<DeletedResource>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<DeletedResource>)));
         }
 
@@ -737,7 +737,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
         public async System.Threading.Tasks.Task<ApiResponse<List<DeletedResource>>> DeletesCoursesAsyncWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, string snapshotIdentifier = null)
         {
 
-            var localVarPath = "./ed-fi/courses/deletes";
+            var localVarPath = "/ed-fi/courses/deletes";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -786,7 +786,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<List<DeletedResource>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (List<DeletedResource>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<DeletedResource>)));
         }
 
@@ -841,7 +841,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
         public ApiResponse< List<EdFiCourseReadable> > GetCoursesWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, string courseCode = null, int? educationOrganizationId = null, string courseDefinedByDescriptor = null, string courseDescription = null, string courseTitle = null, DateTime? dateCourseAdopted = null, bool? highSchoolCourseRequirement = null, string id = null, double? maximumAvailableCredits = null, int? numberOfParts = null, string snapshotIdentifier = null)
         {
 
-            var localVarPath = "./ed-fi/courses";
+            var localVarPath = "/ed-fi/courses";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -901,7 +901,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<List<EdFiCourseReadable>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (List<EdFiCourseReadable>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<EdFiCourseReadable>)));
         }
 
@@ -957,7 +957,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
         public async System.Threading.Tasks.Task<ApiResponse<List<EdFiCourseReadable>>> GetCoursesAsyncWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, string courseCode = null, int? educationOrganizationId = null, string courseDefinedByDescriptor = null, string courseDescription = null, string courseTitle = null, DateTime? dateCourseAdopted = null, bool? highSchoolCourseRequirement = null, string id = null, double? maximumAvailableCredits = null, int? numberOfParts = null, string snapshotIdentifier = null)
         {
 
-            var localVarPath = "./ed-fi/courses";
+            var localVarPath = "/ed-fi/courses";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1017,7 +1017,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<List<EdFiCourseReadable>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (List<EdFiCourseReadable>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<EdFiCourseReadable>)));
         }
 
@@ -1049,7 +1049,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling CoursesApi->GetCoursesById");
 
-            var localVarPath = "./ed-fi/courses/{id}";
+            var localVarPath = "/ed-fi/courses/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1096,7 +1096,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<EdFiCourseReadable>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (EdFiCourseReadable) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdFiCourseReadable)));
         }
 
@@ -1129,7 +1129,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling CoursesApi->GetCoursesById");
 
-            var localVarPath = "./ed-fi/courses/{id}";
+            var localVarPath = "/ed-fi/courses/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1176,7 +1176,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<EdFiCourseReadable>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (EdFiCourseReadable) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdFiCourseReadable)));
         }
 
@@ -1203,7 +1203,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             if (course == null)
                 throw new ApiException(400, "Missing required parameter 'course' when calling CoursesApi->Postcourse");
 
-            var localVarPath = "./ed-fi/courses";
+            var localVarPath = "/ed-fi/courses";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1255,7 +1255,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
         }
 
@@ -1283,7 +1283,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             if (course == null)
                 throw new ApiException(400, "Missing required parameter 'course' when calling CoursesApi->Postcourse");
 
-            var localVarPath = "./ed-fi/courses";
+            var localVarPath = "/ed-fi/courses";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1335,7 +1335,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
         }
 
@@ -1369,7 +1369,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             if (course == null)
                 throw new ApiException(400, "Missing required parameter 'course' when calling CoursesApi->Putcourse");
 
-            var localVarPath = "./ed-fi/courses/{id}";
+            var localVarPath = "/ed-fi/courses/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1423,7 +1423,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
         }
 
@@ -1458,7 +1458,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             if (course == null)
                 throw new ApiException(400, "Missing required parameter 'course' when calling CoursesApi->Putcourse");
 
-            var localVarPath = "./ed-fi/courses/{id}";
+            var localVarPath = "/ed-fi/courses/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1512,7 +1512,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
         }
 

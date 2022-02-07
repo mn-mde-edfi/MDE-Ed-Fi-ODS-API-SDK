@@ -12,12 +12,14 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = EdFi.OdsApi.Sdk.Client.SwaggerDateConverter;
 
 namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
@@ -26,7 +28,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
     /// EdFiEducationOrganizationAddressSchoolReadable
     /// </summary>
     [DataContract]
-    public partial class EdFiEducationOrganizationAddressSchoolReadable :  IEquatable<EdFiEducationOrganizationAddressSchoolReadable>
+    public partial class EdFiEducationOrganizationAddressSchoolReadable :  IEquatable<EdFiEducationOrganizationAddressSchoolReadable>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="EdFiEducationOrganizationAddressSchoolReadable" /> class.
@@ -254,6 +256,58 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
                     hashCode = hashCode * 59 + this.BuildingSiteNumber.GetHashCode();
                 return hashCode;
             }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            // AddressTypeDescriptor (string) maxLength
+            if(this.AddressTypeDescriptor != null && this.AddressTypeDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AddressTypeDescriptor, length must be less than 306.", new [] { "AddressTypeDescriptor" });
+            }
+
+            // StateAbbreviationDescriptor (string) maxLength
+            if(this.StateAbbreviationDescriptor != null && this.StateAbbreviationDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for StateAbbreviationDescriptor, length must be less than 306.", new [] { "StateAbbreviationDescriptor" });
+            }
+
+            // City (string) maxLength
+            if(this.City != null && this.City.Length > 30)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for City, length must be less than 30.", new [] { "City" });
+            }
+
+            // PostalCode (string) maxLength
+            if(this.PostalCode != null && this.PostalCode.Length > 17)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PostalCode, length must be less than 17.", new [] { "PostalCode" });
+            }
+
+            // StreetNumberName (string) maxLength
+            if(this.StreetNumberName != null && this.StreetNumberName.Length > 150)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for StreetNumberName, length must be less than 150.", new [] { "StreetNumberName" });
+            }
+
+            // ApartmentRoomSuiteNumber (string) maxLength
+            if(this.ApartmentRoomSuiteNumber != null && this.ApartmentRoomSuiteNumber.Length > 50)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ApartmentRoomSuiteNumber, length must be less than 50.", new [] { "ApartmentRoomSuiteNumber" });
+            }
+
+            // BuildingSiteNumber (string) maxLength
+            if(this.BuildingSiteNumber != null && this.BuildingSiteNumber.Length > 20)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for BuildingSiteNumber, length must be less than 20.", new [] { "BuildingSiteNumber" });
+            }
+
+            yield break;
         }
     }
 

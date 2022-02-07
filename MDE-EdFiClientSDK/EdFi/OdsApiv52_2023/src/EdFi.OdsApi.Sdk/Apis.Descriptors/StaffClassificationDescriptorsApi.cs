@@ -12,7 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp.Portable;
+using RestSharp;
 using EdFi.OdsApi.Sdk.Client;
 using EdFi.OdsApi.Sdk.Models.Descriptors;
 
@@ -463,7 +463,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Descriptors
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling StaffClassificationDescriptorsApi->DeleteStaffClassificationDescriptorById");
 
-            var localVarPath = "./ed-fi/staffClassificationDescriptors/{id}";
+            var localVarPath = "/ed-fi/staffClassificationDescriptors/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -509,7 +509,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Descriptors
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
         }
 
@@ -539,7 +539,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Descriptors
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling StaffClassificationDescriptorsApi->DeleteStaffClassificationDescriptorById");
 
-            var localVarPath = "./ed-fi/staffClassificationDescriptors/{id}";
+            var localVarPath = "/ed-fi/staffClassificationDescriptors/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -585,7 +585,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Descriptors
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
         }
 
@@ -618,7 +618,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Descriptors
         public ApiResponse< List<DeletedResource> > DeletesStaffClassificationDescriptorsWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, string snapshotIdentifier = null)
         {
 
-            var localVarPath = "./ed-fi/staffClassificationDescriptors/deletes";
+            var localVarPath = "/ed-fi/staffClassificationDescriptors/deletes";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -667,7 +667,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Descriptors
             }
 
             return new ApiResponse<List<DeletedResource>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (List<DeletedResource>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<DeletedResource>)));
         }
 
@@ -701,7 +701,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Descriptors
         public async System.Threading.Tasks.Task<ApiResponse<List<DeletedResource>>> DeletesStaffClassificationDescriptorsAsyncWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, string snapshotIdentifier = null)
         {
 
-            var localVarPath = "./ed-fi/staffClassificationDescriptors/deletes";
+            var localVarPath = "/ed-fi/staffClassificationDescriptors/deletes";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -750,7 +750,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Descriptors
             }
 
             return new ApiResponse<List<DeletedResource>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (List<DeletedResource>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<DeletedResource>)));
         }
 
@@ -787,7 +787,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Descriptors
         public ApiResponse< List<EdFiStaffClassificationDescriptor> > GetStaffClassificationDescriptorsWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, int? staffClassificationDescriptorId = null, string snapshotIdentifier = null)
         {
 
-            var localVarPath = "./ed-fi/staffClassificationDescriptors";
+            var localVarPath = "/ed-fi/staffClassificationDescriptors";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -838,7 +838,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Descriptors
             }
 
             return new ApiResponse<List<EdFiStaffClassificationDescriptor>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (List<EdFiStaffClassificationDescriptor>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<EdFiStaffClassificationDescriptor>)));
         }
 
@@ -876,7 +876,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Descriptors
         public async System.Threading.Tasks.Task<ApiResponse<List<EdFiStaffClassificationDescriptor>>> GetStaffClassificationDescriptorsAsyncWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, int? staffClassificationDescriptorId = null, string snapshotIdentifier = null)
         {
 
-            var localVarPath = "./ed-fi/staffClassificationDescriptors";
+            var localVarPath = "/ed-fi/staffClassificationDescriptors";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -927,7 +927,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Descriptors
             }
 
             return new ApiResponse<List<EdFiStaffClassificationDescriptor>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (List<EdFiStaffClassificationDescriptor>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<EdFiStaffClassificationDescriptor>)));
         }
 
@@ -959,7 +959,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Descriptors
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling StaffClassificationDescriptorsApi->GetStaffClassificationDescriptorsById");
 
-            var localVarPath = "./ed-fi/staffClassificationDescriptors/{id}";
+            var localVarPath = "/ed-fi/staffClassificationDescriptors/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1006,7 +1006,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Descriptors
             }
 
             return new ApiResponse<EdFiStaffClassificationDescriptor>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (EdFiStaffClassificationDescriptor) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdFiStaffClassificationDescriptor)));
         }
 
@@ -1039,7 +1039,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Descriptors
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling StaffClassificationDescriptorsApi->GetStaffClassificationDescriptorsById");
 
-            var localVarPath = "./ed-fi/staffClassificationDescriptors/{id}";
+            var localVarPath = "/ed-fi/staffClassificationDescriptors/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1086,7 +1086,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Descriptors
             }
 
             return new ApiResponse<EdFiStaffClassificationDescriptor>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (EdFiStaffClassificationDescriptor) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EdFiStaffClassificationDescriptor)));
         }
 
@@ -1113,7 +1113,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Descriptors
             if (staffClassificationDescriptor == null)
                 throw new ApiException(400, "Missing required parameter 'staffClassificationDescriptor' when calling StaffClassificationDescriptorsApi->PostStaffClassificationDescriptor");
 
-            var localVarPath = "./ed-fi/staffClassificationDescriptors";
+            var localVarPath = "/ed-fi/staffClassificationDescriptors";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1165,7 +1165,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Descriptors
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
         }
 
@@ -1193,7 +1193,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Descriptors
             if (staffClassificationDescriptor == null)
                 throw new ApiException(400, "Missing required parameter 'staffClassificationDescriptor' when calling StaffClassificationDescriptorsApi->PostStaffClassificationDescriptor");
 
-            var localVarPath = "./ed-fi/staffClassificationDescriptors";
+            var localVarPath = "/ed-fi/staffClassificationDescriptors";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1245,7 +1245,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Descriptors
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
         }
 
@@ -1279,7 +1279,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Descriptors
             if (staffClassificationDescriptor == null)
                 throw new ApiException(400, "Missing required parameter 'staffClassificationDescriptor' when calling StaffClassificationDescriptorsApi->PutStaffClassificationDescriptor");
 
-            var localVarPath = "./ed-fi/staffClassificationDescriptors/{id}";
+            var localVarPath = "/ed-fi/staffClassificationDescriptors/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1333,7 +1333,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Descriptors
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
         }
 
@@ -1368,7 +1368,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Descriptors
             if (staffClassificationDescriptor == null)
                 throw new ApiException(400, "Missing required parameter 'staffClassificationDescriptor' when calling StaffClassificationDescriptorsApi->PutStaffClassificationDescriptor");
 
-            var localVarPath = "./ed-fi/staffClassificationDescriptors/{id}";
+            var localVarPath = "/ed-fi/staffClassificationDescriptors/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1422,7 +1422,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Descriptors
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
         }
 

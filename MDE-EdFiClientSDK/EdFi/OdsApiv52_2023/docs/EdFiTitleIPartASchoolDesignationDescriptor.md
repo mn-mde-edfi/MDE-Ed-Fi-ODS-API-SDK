@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiTitleIPartASchoolDesignationDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiTitleIPartASchoolDesignationDescriptor
 ## Properties
 
 Name | Type | Description | Notes

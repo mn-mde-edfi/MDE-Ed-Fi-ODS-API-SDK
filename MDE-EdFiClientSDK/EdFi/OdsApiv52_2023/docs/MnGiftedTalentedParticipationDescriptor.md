@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.MnGiftedTalentedParticipationDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.MnGiftedTalentedParticipationDescriptor
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiAttendanceEventCategoryDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiAttendanceEventCategoryDescriptor
 ## Properties
 
 Name | Type | Description | Notes

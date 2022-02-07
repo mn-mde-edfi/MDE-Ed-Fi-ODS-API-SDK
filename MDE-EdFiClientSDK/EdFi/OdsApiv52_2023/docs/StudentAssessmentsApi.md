@@ -1,6 +1,6 @@
 # EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile.StudentAssessmentsApi
 
-All URIs are relative to *http://localhost:54746/data/v3/*
+All URIs are relative to *https://test.edfi5.education.mn.gov:443/api/data/v3/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

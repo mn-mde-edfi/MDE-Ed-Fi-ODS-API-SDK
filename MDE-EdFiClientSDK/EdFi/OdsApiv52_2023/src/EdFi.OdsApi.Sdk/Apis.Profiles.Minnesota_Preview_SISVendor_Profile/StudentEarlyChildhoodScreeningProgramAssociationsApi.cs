@@ -12,7 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp.Portable;
+using RestSharp;
 using EdFi.OdsApi.Sdk.Client;
 using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile;
 
@@ -495,7 +495,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
         public ApiResponse< List<DeletedResource> > DeletesStudentEarlyChildhoodScreeningProgramAssociationsWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, string snapshotIdentifier = null)
         {
 
-            var localVarPath = "./MN/studentEarlyChildhoodScreeningProgramAssociations/deletes";
+            var localVarPath = "/MN/studentEarlyChildhoodScreeningProgramAssociations/deletes";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -544,7 +544,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<List<DeletedResource>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (List<DeletedResource>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<DeletedResource>)));
         }
 
@@ -578,7 +578,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
         public async System.Threading.Tasks.Task<ApiResponse<List<DeletedResource>>> DeletesStudentEarlyChildhoodScreeningProgramAssociationsAsyncWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, string snapshotIdentifier = null)
         {
 
-            var localVarPath = "./MN/studentEarlyChildhoodScreeningProgramAssociations/deletes";
+            var localVarPath = "/MN/studentEarlyChildhoodScreeningProgramAssociations/deletes";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -627,7 +627,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<List<DeletedResource>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (List<DeletedResource>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<DeletedResource>)));
         }
 
@@ -656,7 +656,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling StudentEarlyChildhoodScreeningProgramAssociationsApi->DeletestudentEarlyChildhoodScreeningProgramAssociationById");
 
-            var localVarPath = "./MN/studentEarlyChildhoodScreeningProgramAssociations/{id}";
+            var localVarPath = "/MN/studentEarlyChildhoodScreeningProgramAssociations/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -702,7 +702,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
         }
 
@@ -732,7 +732,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling StudentEarlyChildhoodScreeningProgramAssociationsApi->DeletestudentEarlyChildhoodScreeningProgramAssociationById");
 
-            var localVarPath = "./MN/studentEarlyChildhoodScreeningProgramAssociations/{id}";
+            var localVarPath = "/MN/studentEarlyChildhoodScreeningProgramAssociations/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -778,7 +778,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
         }
 
@@ -829,7 +829,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
         public ApiResponse< List<MnStudentEarlyChildhoodScreeningProgramAssociationReadable> > GetStudentEarlyChildhoodScreeningProgramAssociationsWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, string earlyChildhoodScreenerDescriptor = null, string earlyChildhoodScreeningExitStatusDescriptor = null, string snapshotIdentifier = null)
         {
 
-            var localVarPath = "./MN/studentEarlyChildhoodScreeningProgramAssociations";
+            var localVarPath = "/MN/studentEarlyChildhoodScreeningProgramAssociations";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -887,7 +887,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<List<MnStudentEarlyChildhoodScreeningProgramAssociationReadable>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (List<MnStudentEarlyChildhoodScreeningProgramAssociationReadable>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<MnStudentEarlyChildhoodScreeningProgramAssociationReadable>)));
         }
 
@@ -939,7 +939,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
         public async System.Threading.Tasks.Task<ApiResponse<List<MnStudentEarlyChildhoodScreeningProgramAssociationReadable>>> GetStudentEarlyChildhoodScreeningProgramAssociationsAsyncWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, string earlyChildhoodScreenerDescriptor = null, string earlyChildhoodScreeningExitStatusDescriptor = null, string snapshotIdentifier = null)
         {
 
-            var localVarPath = "./MN/studentEarlyChildhoodScreeningProgramAssociations";
+            var localVarPath = "/MN/studentEarlyChildhoodScreeningProgramAssociations";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -997,7 +997,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<List<MnStudentEarlyChildhoodScreeningProgramAssociationReadable>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (List<MnStudentEarlyChildhoodScreeningProgramAssociationReadable>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<MnStudentEarlyChildhoodScreeningProgramAssociationReadable>)));
         }
 
@@ -1029,7 +1029,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling StudentEarlyChildhoodScreeningProgramAssociationsApi->GetStudentEarlyChildhoodScreeningProgramAssociationsById");
 
-            var localVarPath = "./MN/studentEarlyChildhoodScreeningProgramAssociations/{id}";
+            var localVarPath = "/MN/studentEarlyChildhoodScreeningProgramAssociations/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1076,7 +1076,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<MnStudentEarlyChildhoodScreeningProgramAssociationReadable>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (MnStudentEarlyChildhoodScreeningProgramAssociationReadable) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MnStudentEarlyChildhoodScreeningProgramAssociationReadable)));
         }
 
@@ -1109,7 +1109,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling StudentEarlyChildhoodScreeningProgramAssociationsApi->GetStudentEarlyChildhoodScreeningProgramAssociationsById");
 
-            var localVarPath = "./MN/studentEarlyChildhoodScreeningProgramAssociations/{id}";
+            var localVarPath = "/MN/studentEarlyChildhoodScreeningProgramAssociations/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1156,7 +1156,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<MnStudentEarlyChildhoodScreeningProgramAssociationReadable>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (MnStudentEarlyChildhoodScreeningProgramAssociationReadable) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MnStudentEarlyChildhoodScreeningProgramAssociationReadable)));
         }
 
@@ -1183,7 +1183,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             if (studentEarlyChildhoodScreeningProgramAssociation == null)
                 throw new ApiException(400, "Missing required parameter 'studentEarlyChildhoodScreeningProgramAssociation' when calling StudentEarlyChildhoodScreeningProgramAssociationsApi->PoststudentEarlyChildhoodScreeningProgramAssociation");
 
-            var localVarPath = "./MN/studentEarlyChildhoodScreeningProgramAssociations";
+            var localVarPath = "/MN/studentEarlyChildhoodScreeningProgramAssociations";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1235,7 +1235,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
         }
 
@@ -1263,7 +1263,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             if (studentEarlyChildhoodScreeningProgramAssociation == null)
                 throw new ApiException(400, "Missing required parameter 'studentEarlyChildhoodScreeningProgramAssociation' when calling StudentEarlyChildhoodScreeningProgramAssociationsApi->PoststudentEarlyChildhoodScreeningProgramAssociation");
 
-            var localVarPath = "./MN/studentEarlyChildhoodScreeningProgramAssociations";
+            var localVarPath = "/MN/studentEarlyChildhoodScreeningProgramAssociations";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1315,7 +1315,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
         }
 
@@ -1349,7 +1349,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             if (studentEarlyChildhoodScreeningProgramAssociation == null)
                 throw new ApiException(400, "Missing required parameter 'studentEarlyChildhoodScreeningProgramAssociation' when calling StudentEarlyChildhoodScreeningProgramAssociationsApi->PutstudentEarlyChildhoodScreeningProgramAssociation");
 
-            var localVarPath = "./MN/studentEarlyChildhoodScreeningProgramAssociations/{id}";
+            var localVarPath = "/MN/studentEarlyChildhoodScreeningProgramAssociations/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1403,7 +1403,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
         }
 
@@ -1438,7 +1438,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             if (studentEarlyChildhoodScreeningProgramAssociation == null)
                 throw new ApiException(400, "Missing required parameter 'studentEarlyChildhoodScreeningProgramAssociation' when calling StudentEarlyChildhoodScreeningProgramAssociationsApi->PutstudentEarlyChildhoodScreeningProgramAssociation");
 
-            var localVarPath = "./MN/studentEarlyChildhoodScreeningProgramAssociations/{id}";
+            var localVarPath = "/MN/studentEarlyChildhoodScreeningProgramAssociations/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1492,7 +1492,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
         }
 

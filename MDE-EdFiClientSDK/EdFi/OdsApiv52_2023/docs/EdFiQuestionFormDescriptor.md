@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiQuestionFormDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiQuestionFormDescriptor
 ## Properties
 
 Name | Type | Description | Notes

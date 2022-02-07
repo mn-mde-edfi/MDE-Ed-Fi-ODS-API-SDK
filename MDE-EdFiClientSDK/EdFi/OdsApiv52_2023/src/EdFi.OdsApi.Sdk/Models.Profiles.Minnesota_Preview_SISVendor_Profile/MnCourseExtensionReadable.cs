@@ -12,12 +12,14 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = EdFi.OdsApi.Sdk.Client.SwaggerDateConverter;
 
 namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
@@ -26,7 +28,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
     /// MnCourseExtensionReadable
     /// </summary>
     [DataContract]
-    public partial class MnCourseExtensionReadable :  IEquatable<MnCourseExtensionReadable>
+    public partial class MnCourseExtensionReadable :  IEquatable<MnCourseExtensionReadable>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MnCourseExtensionReadable" /> class.
@@ -209,6 +211,34 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
                     hashCode = hashCode * 59 + this.Programs.GetHashCode();
                 return hashCode;
             }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            // CareerClusterDescriptor (string) maxLength
+            if(this.CareerClusterDescriptor != null && this.CareerClusterDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CareerClusterDescriptor, length must be less than 306.", new [] { "CareerClusterDescriptor" });
+            }
+
+            // EarlyEducationCourseLocationDescriptor (string) maxLength
+            if(this.EarlyEducationCourseLocationDescriptor != null && this.EarlyEducationCourseLocationDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for EarlyEducationCourseLocationDescriptor, length must be less than 306.", new [] { "EarlyEducationCourseLocationDescriptor" });
+            }
+
+            // StandardAddressedDescriptor (string) maxLength
+            if(this.StandardAddressedDescriptor != null && this.StandardAddressedDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for StandardAddressedDescriptor, length must be less than 306.", new [] { "StandardAddressedDescriptor" });
+            }
+
+            yield break;
         }
     }
 

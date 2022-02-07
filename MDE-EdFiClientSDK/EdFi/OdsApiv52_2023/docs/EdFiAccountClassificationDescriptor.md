@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiAccountClassificationDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiAccountClassificationDescriptor
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiLimitedEnglishProficiencyDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiLimitedEnglishProficiencyDescriptor
 ## Properties
 
 Name | Type | Description | Notes

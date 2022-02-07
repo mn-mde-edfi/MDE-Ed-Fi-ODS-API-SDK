@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiDiplomaTypeDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiDiplomaTypeDescriptor
 ## Properties
 
 Name | Type | Description | Notes

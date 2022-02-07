@@ -12,7 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp.Portable;
+using RestSharp;
 using EdFi.OdsApi.Sdk.Client;
 using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile;
 
@@ -491,7 +491,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
         public ApiResponse< List<DeletedResource> > DeletesStudentAssessmentPrecodeSitesWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, string snapshotIdentifier = null)
         {
 
-            var localVarPath = "./MN/studentAssessmentPrecodeSites/deletes";
+            var localVarPath = "/MN/studentAssessmentPrecodeSites/deletes";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -540,7 +540,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<List<DeletedResource>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (List<DeletedResource>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<DeletedResource>)));
         }
 
@@ -574,7 +574,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
         public async System.Threading.Tasks.Task<ApiResponse<List<DeletedResource>>> DeletesStudentAssessmentPrecodeSitesAsyncWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, string snapshotIdentifier = null)
         {
 
-            var localVarPath = "./MN/studentAssessmentPrecodeSites/deletes";
+            var localVarPath = "/MN/studentAssessmentPrecodeSites/deletes";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -623,7 +623,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<List<DeletedResource>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (List<DeletedResource>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<DeletedResource>)));
         }
 
@@ -652,7 +652,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling StudentAssessmentPrecodeSitesApi->DeletestudentAssessmentPrecodeSiteById");
 
-            var localVarPath = "./MN/studentAssessmentPrecodeSites/{id}";
+            var localVarPath = "/MN/studentAssessmentPrecodeSites/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -698,7 +698,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
         }
 
@@ -728,7 +728,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling StudentAssessmentPrecodeSitesApi->DeletestudentAssessmentPrecodeSiteById");
 
-            var localVarPath = "./MN/studentAssessmentPrecodeSites/{id}";
+            var localVarPath = "/MN/studentAssessmentPrecodeSites/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -774,7 +774,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
         }
 
@@ -823,7 +823,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
         public ApiResponse< List<MnStudentAssessmentPrecodeSiteReadable> > GetStudentAssessmentPrecodeSitesWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, string precodeTypeDescriptor = null, int? educationOrganizationId = null, string contactElectronicMailAddress = null, string contactFirstName = null, string contactLastSurname = null, string contactTitle = null, string id = null, string snapshotIdentifier = null)
         {
 
-            var localVarPath = "./MN/studentAssessmentPrecodeSites";
+            var localVarPath = "/MN/studentAssessmentPrecodeSites";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -880,7 +880,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<List<MnStudentAssessmentPrecodeSiteReadable>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (List<MnStudentAssessmentPrecodeSiteReadable>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<MnStudentAssessmentPrecodeSiteReadable>)));
         }
 
@@ -930,7 +930,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
         public async System.Threading.Tasks.Task<ApiResponse<List<MnStudentAssessmentPrecodeSiteReadable>>> GetStudentAssessmentPrecodeSitesAsyncWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, string precodeTypeDescriptor = null, int? educationOrganizationId = null, string contactElectronicMailAddress = null, string contactFirstName = null, string contactLastSurname = null, string contactTitle = null, string id = null, string snapshotIdentifier = null)
         {
 
-            var localVarPath = "./MN/studentAssessmentPrecodeSites";
+            var localVarPath = "/MN/studentAssessmentPrecodeSites";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -987,7 +987,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<List<MnStudentAssessmentPrecodeSiteReadable>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (List<MnStudentAssessmentPrecodeSiteReadable>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<MnStudentAssessmentPrecodeSiteReadable>)));
         }
 
@@ -1019,7 +1019,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling StudentAssessmentPrecodeSitesApi->GetStudentAssessmentPrecodeSitesById");
 
-            var localVarPath = "./MN/studentAssessmentPrecodeSites/{id}";
+            var localVarPath = "/MN/studentAssessmentPrecodeSites/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1066,7 +1066,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<MnStudentAssessmentPrecodeSiteReadable>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (MnStudentAssessmentPrecodeSiteReadable) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MnStudentAssessmentPrecodeSiteReadable)));
         }
 
@@ -1099,7 +1099,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling StudentAssessmentPrecodeSitesApi->GetStudentAssessmentPrecodeSitesById");
 
-            var localVarPath = "./MN/studentAssessmentPrecodeSites/{id}";
+            var localVarPath = "/MN/studentAssessmentPrecodeSites/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1146,7 +1146,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<MnStudentAssessmentPrecodeSiteReadable>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (MnStudentAssessmentPrecodeSiteReadable) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MnStudentAssessmentPrecodeSiteReadable)));
         }
 
@@ -1173,7 +1173,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             if (studentAssessmentPrecodeSite == null)
                 throw new ApiException(400, "Missing required parameter 'studentAssessmentPrecodeSite' when calling StudentAssessmentPrecodeSitesApi->PoststudentAssessmentPrecodeSite");
 
-            var localVarPath = "./MN/studentAssessmentPrecodeSites";
+            var localVarPath = "/MN/studentAssessmentPrecodeSites";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1225,7 +1225,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
         }
 
@@ -1253,7 +1253,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             if (studentAssessmentPrecodeSite == null)
                 throw new ApiException(400, "Missing required parameter 'studentAssessmentPrecodeSite' when calling StudentAssessmentPrecodeSitesApi->PoststudentAssessmentPrecodeSite");
 
-            var localVarPath = "./MN/studentAssessmentPrecodeSites";
+            var localVarPath = "/MN/studentAssessmentPrecodeSites";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1305,7 +1305,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
         }
 
@@ -1339,7 +1339,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             if (studentAssessmentPrecodeSite == null)
                 throw new ApiException(400, "Missing required parameter 'studentAssessmentPrecodeSite' when calling StudentAssessmentPrecodeSitesApi->PutstudentAssessmentPrecodeSite");
 
-            var localVarPath = "./MN/studentAssessmentPrecodeSites/{id}";
+            var localVarPath = "/MN/studentAssessmentPrecodeSites/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1393,7 +1393,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
         }
 
@@ -1428,7 +1428,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             if (studentAssessmentPrecodeSite == null)
                 throw new ApiException(400, "Missing required parameter 'studentAssessmentPrecodeSite' when calling StudentAssessmentPrecodeSitesApi->PutstudentAssessmentPrecodeSite");
 
-            var localVarPath = "./MN/studentAssessmentPrecodeSites/{id}";
+            var localVarPath = "/MN/studentAssessmentPrecodeSites/{id}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1482,7 +1482,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 null);
         }
 

@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiCharterApprovalAgencyTypeDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiCharterApprovalAgencyTypeDescriptor
 ## Properties
 
 Name | Type | Description | Notes

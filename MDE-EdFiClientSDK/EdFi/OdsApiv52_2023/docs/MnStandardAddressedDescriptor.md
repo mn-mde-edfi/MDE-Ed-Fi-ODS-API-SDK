@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.MnStandardAddressedDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.MnStandardAddressedDescriptor
 ## Properties
 
 Name | Type | Description | Notes

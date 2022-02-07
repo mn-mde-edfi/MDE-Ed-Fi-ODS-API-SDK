@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiRaceDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiRaceDescriptor
 ## Properties
 
 Name | Type | Description | Notes

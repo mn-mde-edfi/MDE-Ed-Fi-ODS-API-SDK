@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiDisciplineActionLengthDifferenceReasonDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiDisciplineActionLengthDifferenceReasonDescriptor
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiContactTypeDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiContactTypeDescriptor
 ## Properties
 
 Name | Type | Description | Notes

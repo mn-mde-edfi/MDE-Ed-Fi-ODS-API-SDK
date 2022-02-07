@@ -12,12 +12,14 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = EdFi.OdsApi.Sdk.Client.SwaggerDateConverter;
 
 namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
@@ -26,7 +28,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
     /// MnStudentAssessmentStudentObjectiveAssessmentExtensionReadable
     /// </summary>
     [DataContract]
-    public partial class MnStudentAssessmentStudentObjectiveAssessmentExtensionReadable :  IEquatable<MnStudentAssessmentStudentObjectiveAssessmentExtensionReadable>
+    public partial class MnStudentAssessmentStudentObjectiveAssessmentExtensionReadable :  IEquatable<MnStudentAssessmentStudentObjectiveAssessmentExtensionReadable>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MnStudentAssessmentStudentObjectiveAssessmentExtensionReadable" /> class.
@@ -158,6 +160,40 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
                     hashCode = hashCode * 59 + this.ClusterGradeLevelDescriptor.GetHashCode();
                 return hashCode;
             }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            // AssessmentFormatDescriptor (string) maxLength
+            if(this.AssessmentFormatDescriptor != null && this.AssessmentFormatDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AssessmentFormatDescriptor, length must be less than 306.", new [] { "AssessmentFormatDescriptor" });
+            }
+
+            // AssessmentStatusDescriptor (string) maxLength
+            if(this.AssessmentStatusDescriptor != null && this.AssessmentStatusDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AssessmentStatusDescriptor, length must be less than 306.", new [] { "AssessmentStatusDescriptor" });
+            }
+
+            // AssessmentTierDescriptor (string) maxLength
+            if(this.AssessmentTierDescriptor != null && this.AssessmentTierDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AssessmentTierDescriptor, length must be less than 306.", new [] { "AssessmentTierDescriptor" });
+            }
+
+            // ClusterGradeLevelDescriptor (string) maxLength
+            if(this.ClusterGradeLevelDescriptor != null && this.ClusterGradeLevelDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ClusterGradeLevelDescriptor, length must be less than 306.", new [] { "ClusterGradeLevelDescriptor" });
+            }
+
+            yield break;
         }
     }
 

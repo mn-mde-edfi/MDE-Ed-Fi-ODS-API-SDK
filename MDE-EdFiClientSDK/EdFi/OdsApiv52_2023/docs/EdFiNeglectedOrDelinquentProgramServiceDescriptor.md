@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiNeglectedOrDelinquentProgramServiceDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiNeglectedOrDelinquentProgramServiceDescriptor
 ## Properties
 
 Name | Type | Description | Notes

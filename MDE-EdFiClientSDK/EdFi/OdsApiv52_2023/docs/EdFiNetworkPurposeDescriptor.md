@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiNetworkPurposeDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiNetworkPurposeDescriptor
 ## Properties
 
 Name | Type | Description | Notes

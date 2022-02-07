@@ -12,12 +12,14 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = EdFi.OdsApi.Sdk.Client.SwaggerDateConverter;
 
 namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
@@ -26,7 +28,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
     /// EdFiStudentAssessmentItemReadable
     /// </summary>
     [DataContract]
-    public partial class EdFiStudentAssessmentItemReadable :  IEquatable<EdFiStudentAssessmentItemReadable>
+    public partial class EdFiStudentAssessmentItemReadable :  IEquatable<EdFiStudentAssessmentItemReadable>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="EdFiStudentAssessmentItemReadable" /> class.
@@ -229,6 +231,46 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
                     hashCode = hashCode * 59 + this.AssessmentItemReference.GetHashCode();
                 return hashCode;
             }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            // AssessmentItemResultDescriptor (string) maxLength
+            if(this.AssessmentItemResultDescriptor != null && this.AssessmentItemResultDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AssessmentItemResultDescriptor, length must be less than 306.", new [] { "AssessmentItemResultDescriptor" });
+            }
+
+            // ResponseIndicatorDescriptor (string) maxLength
+            if(this.ResponseIndicatorDescriptor != null && this.ResponseIndicatorDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ResponseIndicatorDescriptor, length must be less than 306.", new [] { "ResponseIndicatorDescriptor" });
+            }
+
+            // AssessmentResponse (string) maxLength
+            if(this.AssessmentResponse != null && this.AssessmentResponse.Length > 60)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AssessmentResponse, length must be less than 60.", new [] { "AssessmentResponse" });
+            }
+
+            // DescriptiveFeedback (string) maxLength
+            if(this.DescriptiveFeedback != null && this.DescriptiveFeedback.Length > 1024)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for DescriptiveFeedback, length must be less than 1024.", new [] { "DescriptiveFeedback" });
+            }
+
+            // TimeAssessed (string) maxLength
+            if(this.TimeAssessed != null && this.TimeAssessed.Length > 30)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for TimeAssessed, length must be less than 30.", new [] { "TimeAssessed" });
+            }
+
+            yield break;
         }
     }
 

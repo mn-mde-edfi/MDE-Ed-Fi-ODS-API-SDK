@@ -14,12 +14,12 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using System.IO;
+using System.Web;
 using System.Linq;
 using System.Net;
 using System.Text;
 using Newtonsoft.Json;
-using RestSharp.Portable;
-using RestSharp.Portable.HttpClient;
+using RestSharp;
 
 namespace EdFi.OdsApi.Sdk.Client
 {
@@ -53,13 +53,12 @@ namespace EdFi.OdsApi.Sdk.Client
         public ApiClient()
         {
             Configuration = EdFi.OdsApi.Sdk.Client.Configuration.Default;
-            RestClient = new RestClient("http://localhost:54746/data/v3/");
-            RestClient.IgnoreResponseStatusCode = true;
+            RestClient = new RestClient("https://test.edfi5.education.mn.gov:443/api/data/v3/");
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiClient" /> class
-        /// with default base path (http://localhost:54746/data/v3/).
+        /// with default base path (https://test.edfi5.education.mn.gov:443/api/data/v3/).
         /// </summary>
         /// <param name="config">An instance of Configuration.</param>
         public ApiClient(Configuration config)
@@ -67,7 +66,6 @@ namespace EdFi.OdsApi.Sdk.Client
             Configuration = config ?? EdFi.OdsApi.Sdk.Client.Configuration.Default;
 
             RestClient = new RestClient(Configuration.BasePath);
-            RestClient.IgnoreResponseStatusCode = true;
         }
 
         /// <summary>
@@ -75,13 +73,12 @@ namespace EdFi.OdsApi.Sdk.Client
         /// with default configuration.
         /// </summary>
         /// <param name="basePath">The base path.</param>
-        public ApiClient(String basePath = "http://localhost:54746/data/v3/")
+        public ApiClient(String basePath = "https://test.edfi5.education.mn.gov:443/api/data/v3/")
         {
            if (String.IsNullOrEmpty(basePath))
                 throw new ArgumentException("basePath cannot be empty");
 
             RestClient = new RestClient(basePath);
-            RestClient.IgnoreResponseStatusCode = true;
             Configuration = Client.Configuration.Default;
         }
 
@@ -111,14 +108,12 @@ namespace EdFi.OdsApi.Sdk.Client
 
         // Creates and sets up a RestRequest prior to a call.
         private RestRequest PrepareRequest(
-            String path, Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
+            String path, RestSharp.Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
             Dictionary<String, String> headerParams, Dictionary<String, String> formParams,
             Dictionary<String, FileParameter> fileParams, Dictionary<String, String> pathParams,
             String contentType)
         {
             var request = new RestRequest(path, method);
-            // disable ResetSharp.Portable built-in serialization
-            request.Serializer = null;
 
             // add path parameter, if any
             foreach(var param in pathParams)
@@ -139,12 +134,12 @@ namespace EdFi.OdsApi.Sdk.Client
             // add file parameter, if any
             foreach(var param in fileParams)
             {
-                request.AddFile(param.Value);
+                request.AddFile(param.Value.Name, param.Value.Writer, param.Value.FileName, param.Value.ContentType);
             }
 
             if (postBody != null) // http body (model or byte[]) parameter
             {
-                request.AddParameter(new Parameter { Value = postBody, Type = ParameterType.RequestBody, ContentType = contentType });
+                request.AddParameter(contentType, postBody, ParameterType.RequestBody);
             }
 
             return request;
@@ -164,7 +159,7 @@ namespace EdFi.OdsApi.Sdk.Client
         /// <param name="contentType">Content Type of the request</param>
         /// <returns>Object</returns>
         public Object CallApi(
-            String path, Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
+            String path, RestSharp.Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
             Dictionary<String, String> headerParams, Dictionary<String, String> formParams,
             Dictionary<String, FileParameter> fileParams, Dictionary<String, String> pathParams,
             String contentType)
@@ -174,13 +169,13 @@ namespace EdFi.OdsApi.Sdk.Client
                 pathParams, contentType);
 
             // set timeout
-            RestClient.Timeout = TimeSpan.FromMilliseconds(Configuration.Timeout);
             
+            RestClient.Timeout = Configuration.Timeout;
             // set user agent
             RestClient.UserAgent = Configuration.UserAgent;
 
             InterceptRequest(request);
-            var response = RestClient.Execute(request).Result;
+            var response = RestClient.Execute(request);
             InterceptResponse(request, response);
 
             return (Object) response;
@@ -199,7 +194,7 @@ namespace EdFi.OdsApi.Sdk.Client
         /// <param name="contentType">Content type.</param>
         /// <returns>The Task instance.</returns>
         public async System.Threading.Tasks.Task<Object> CallApiAsync(
-            String path, Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
+            String path, RestSharp.Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
             Dictionary<String, String> headerParams, Dictionary<String, String> formParams,
             Dictionary<String, FileParameter> fileParams, Dictionary<String, String> pathParams,
             String contentType)
@@ -208,7 +203,7 @@ namespace EdFi.OdsApi.Sdk.Client
                 path, method, queryParams, postBody, headerParams, formParams, fileParams,
                 pathParams, contentType);
             InterceptRequest(request);
-            var response = await RestClient.Execute(request);
+            var response = await RestClient.ExecuteTaskAsync(request);
             InterceptResponse(request, response);
             return (Object)response;
         }
@@ -281,7 +276,7 @@ namespace EdFi.OdsApi.Sdk.Client
         /// <returns>Object representation of the JSON string.</returns>
         public object Deserialize(IRestResponse response, Type type)
         {
-            IHttpHeaders headers = response.Headers;
+            IList<Parameter> headers = response.Headers;
             if (type == typeof(byte[])) // return byte array
             {
                 return response.RawBytes;

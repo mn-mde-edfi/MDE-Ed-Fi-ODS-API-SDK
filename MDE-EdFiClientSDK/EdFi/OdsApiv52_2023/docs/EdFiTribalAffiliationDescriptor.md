@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiTribalAffiliationDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiTribalAffiliationDescriptor
 ## Properties
 
 Name | Type | Description | Notes

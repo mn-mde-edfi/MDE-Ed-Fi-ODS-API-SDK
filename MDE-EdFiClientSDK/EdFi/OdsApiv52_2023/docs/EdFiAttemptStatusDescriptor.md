@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiAttemptStatusDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiAttemptStatusDescriptor
 ## Properties
 
 Name | Type | Description | Notes

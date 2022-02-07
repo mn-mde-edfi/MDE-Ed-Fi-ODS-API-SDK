@@ -12,12 +12,14 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = EdFi.OdsApi.Sdk.Client.SwaggerDateConverter;
 
 namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
@@ -26,7 +28,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
     /// EdFiStudentEducationOrganizationAssociationRaceReadable
     /// </summary>
     [DataContract]
-    public partial class EdFiStudentEducationOrganizationAssociationRaceReadable :  IEquatable<EdFiStudentEducationOrganizationAssociationRaceReadable>
+    public partial class EdFiStudentEducationOrganizationAssociationRaceReadable :  IEquatable<EdFiStudentEducationOrganizationAssociationRaceReadable>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="EdFiStudentEducationOrganizationAssociationRaceReadable" /> class.
@@ -120,6 +122,22 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
                     hashCode = hashCode * 59 + this.RaceDescriptor.GetHashCode();
                 return hashCode;
             }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            // RaceDescriptor (string) maxLength
+            if(this.RaceDescriptor != null && this.RaceDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for RaceDescriptor, length must be less than 306.", new [] { "RaceDescriptor" });
+            }
+
+            yield break;
         }
     }
 

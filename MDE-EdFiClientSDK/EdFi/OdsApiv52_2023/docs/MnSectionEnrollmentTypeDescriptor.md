@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.MnSectionEnrollmentTypeDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.MnSectionEnrollmentTypeDescriptor
 ## Properties
 
 Name | Type | Description | Notes

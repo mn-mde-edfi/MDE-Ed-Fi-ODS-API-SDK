@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.MnNeglectedOrDelinquentProgramOutcomeDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.MnNeglectedOrDelinquentProgramOutcomeDescriptor
 ## Properties
 
 Name | Type | Description | Notes

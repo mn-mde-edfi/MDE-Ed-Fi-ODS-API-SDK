@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiDisabilityDeterminationSourceTypeDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiDisabilityDeterminationSourceTypeDescriptor
 ## Properties
 
 Name | Type | Description | Notes

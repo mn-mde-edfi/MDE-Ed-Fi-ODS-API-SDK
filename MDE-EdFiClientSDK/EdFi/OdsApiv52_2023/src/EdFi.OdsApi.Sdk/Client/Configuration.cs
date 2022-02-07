@@ -57,7 +57,11 @@ namespace EdFi.OdsApi.Sdk.Client
                     string.Format("Error calling {0}: {1}", methodName, response.Content),
                     response.Content);
             }
-            
+            if (status == 0)
+            {
+                return new ApiException(status,
+                    string.Format("Error calling {0}: {1}", methodName, response.ErrorMessage), response.ErrorMessage);
+            }
             return null;
         };
 
@@ -111,7 +115,7 @@ namespace EdFi.OdsApi.Sdk.Client
         public Configuration()
         {
             UserAgent = "Swagger-Codegen/1.0.0/csharp";
-            BasePath = "http://localhost:54746/data/v3/";
+            BasePath = "https://test.edfi5.education.mn.gov:443/api/data/v3/";
             DefaultHeader = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
             ApiKeyPrefix = new ConcurrentDictionary<string, string>();
@@ -127,7 +131,7 @@ namespace EdFi.OdsApi.Sdk.Client
             IDictionary<string, string> defaultHeader,
             IDictionary<string, string> apiKey,
             IDictionary<string, string> apiKeyPrefix,
-            string basePath = "http://localhost:54746/data/v3/") : this()
+            string basePath = "https://test.edfi5.education.mn.gov:443/api/data/v3/") : this()
         {
             if (string.IsNullOrWhiteSpace(basePath))
                 throw new ArgumentException("The provided basePath is invalid.", "basePath");
@@ -244,8 +248,9 @@ namespace EdFi.OdsApi.Sdk.Client
         /// </summary>
         public virtual int Timeout
         {
-            get { return (int)ApiClient.RestClient.Timeout.GetValueOrDefault(TimeSpan.FromSeconds(0)).TotalMilliseconds; }
-            set { ApiClient.RestClient.Timeout = TimeSpan.FromMilliseconds(value); }
+            
+            get { return ApiClient.RestClient.Timeout; }
+            set { ApiClient.RestClient.Timeout = value; }
         }
 
         /// <summary>
@@ -414,7 +419,8 @@ namespace EdFi.OdsApi.Sdk.Client
         public static String ToDebugReport()
         {
             String report = "C# SDK (EdFi.OdsApi.Sdk) Debug Report:\n";
-            report += "    OS: " + System.Runtime.InteropServices.RuntimeInformation.OSDescription + "\n";
+            report += "    OS: " + System.Environment.OSVersion + "\n";
+            report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
             report += "    Version of the API: 3\n";
             report += "    SDK Package Version: 1.0.0\n";
 

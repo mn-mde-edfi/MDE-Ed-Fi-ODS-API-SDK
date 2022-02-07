@@ -12,12 +12,14 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = EdFi.OdsApi.Sdk.Client.SwaggerDateConverter;
 
 namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
@@ -26,7 +28,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
     /// MnStudentAssessmentPrecodeSiteReadable
     /// </summary>
     [DataContract]
-    public partial class MnStudentAssessmentPrecodeSiteReadable :  IEquatable<MnStudentAssessmentPrecodeSiteReadable>
+    public partial class MnStudentAssessmentPrecodeSiteReadable :  IEquatable<MnStudentAssessmentPrecodeSiteReadable>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MnStudentAssessmentPrecodeSiteReadable" /> class.
@@ -279,6 +281,46 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
                     hashCode = hashCode * 59 + this.Etag.GetHashCode();
                 return hashCode;
             }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            // PrecodeTypeDescriptor (string) maxLength
+            if(this.PrecodeTypeDescriptor != null && this.PrecodeTypeDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PrecodeTypeDescriptor, length must be less than 306.", new [] { "PrecodeTypeDescriptor" });
+            }
+
+            // ContactElectronicMailAddress (string) maxLength
+            if(this.ContactElectronicMailAddress != null && this.ContactElectronicMailAddress.Length > 128)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ContactElectronicMailAddress, length must be less than 128.", new [] { "ContactElectronicMailAddress" });
+            }
+
+            // ContactFirstName (string) maxLength
+            if(this.ContactFirstName != null && this.ContactFirstName.Length > 75)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ContactFirstName, length must be less than 75.", new [] { "ContactFirstName" });
+            }
+
+            // ContactLastSurname (string) maxLength
+            if(this.ContactLastSurname != null && this.ContactLastSurname.Length > 75)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ContactLastSurname, length must be less than 75.", new [] { "ContactLastSurname" });
+            }
+
+            // ContactTitle (string) maxLength
+            if(this.ContactTitle != null && this.ContactTitle.Length > 75)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ContactTitle, length must be less than 75.", new [] { "ContactTitle" });
+            }
+
+            yield break;
         }
     }
 

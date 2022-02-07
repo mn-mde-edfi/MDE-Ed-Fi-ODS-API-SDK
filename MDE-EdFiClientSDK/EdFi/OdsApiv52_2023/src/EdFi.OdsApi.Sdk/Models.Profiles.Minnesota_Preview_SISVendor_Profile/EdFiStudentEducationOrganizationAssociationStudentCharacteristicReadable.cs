@@ -12,12 +12,14 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = EdFi.OdsApi.Sdk.Client.SwaggerDateConverter;
 
 namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
@@ -26,7 +28,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
     /// EdFiStudentEducationOrganizationAssociationStudentCharacteristicReadable
     /// </summary>
     [DataContract]
-    public partial class EdFiStudentEducationOrganizationAssociationStudentCharacteristicReadable :  IEquatable<EdFiStudentEducationOrganizationAssociationStudentCharacteristicReadable>
+    public partial class EdFiStudentEducationOrganizationAssociationStudentCharacteristicReadable :  IEquatable<EdFiStudentEducationOrganizationAssociationStudentCharacteristicReadable>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="EdFiStudentEducationOrganizationAssociationStudentCharacteristicReadable" /> class.
@@ -120,6 +122,22 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
                     hashCode = hashCode * 59 + this.StudentCharacteristicDescriptor.GetHashCode();
                 return hashCode;
             }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            // StudentCharacteristicDescriptor (string) maxLength
+            if(this.StudentCharacteristicDescriptor != null && this.StudentCharacteristicDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for StudentCharacteristicDescriptor, length must be less than 306.", new [] { "StudentCharacteristicDescriptor" });
+            }
+
+            yield break;
         }
     }
 

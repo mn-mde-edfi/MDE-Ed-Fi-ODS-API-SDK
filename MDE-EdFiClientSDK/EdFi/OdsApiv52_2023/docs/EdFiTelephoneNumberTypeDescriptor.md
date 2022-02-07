@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiTelephoneNumberTypeDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiTelephoneNumberTypeDescriptor
 ## Properties
 
 Name | Type | Description | Notes

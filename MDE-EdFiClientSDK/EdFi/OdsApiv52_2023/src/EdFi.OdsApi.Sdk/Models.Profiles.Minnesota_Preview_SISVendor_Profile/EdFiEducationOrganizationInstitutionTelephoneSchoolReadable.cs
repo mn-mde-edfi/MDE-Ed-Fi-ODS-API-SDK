@@ -12,12 +12,14 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = EdFi.OdsApi.Sdk.Client.SwaggerDateConverter;
 
 namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
@@ -26,7 +28,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
     /// EdFiEducationOrganizationInstitutionTelephoneSchoolReadable
     /// </summary>
     [DataContract]
-    public partial class EdFiEducationOrganizationInstitutionTelephoneSchoolReadable :  IEquatable<EdFiEducationOrganizationInstitutionTelephoneSchoolReadable>
+    public partial class EdFiEducationOrganizationInstitutionTelephoneSchoolReadable :  IEquatable<EdFiEducationOrganizationInstitutionTelephoneSchoolReadable>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="EdFiEducationOrganizationInstitutionTelephoneSchoolReadable" /> class.
@@ -145,6 +147,28 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
                     hashCode = hashCode * 59 + this.TelephoneNumber.GetHashCode();
                 return hashCode;
             }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            // InstitutionTelephoneNumberTypeDescriptor (string) maxLength
+            if(this.InstitutionTelephoneNumberTypeDescriptor != null && this.InstitutionTelephoneNumberTypeDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for InstitutionTelephoneNumberTypeDescriptor, length must be less than 306.", new [] { "InstitutionTelephoneNumberTypeDescriptor" });
+            }
+
+            // TelephoneNumber (string) maxLength
+            if(this.TelephoneNumber != null && this.TelephoneNumber.Length > 24)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for TelephoneNumber, length must be less than 24.", new [] { "TelephoneNumber" });
+            }
+
+            yield break;
         }
     }
 

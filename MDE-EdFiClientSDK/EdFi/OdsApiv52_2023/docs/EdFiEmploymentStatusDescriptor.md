@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiEmploymentStatusDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiEmploymentStatusDescriptor
 ## Properties
 
 Name | Type | Description | Notes

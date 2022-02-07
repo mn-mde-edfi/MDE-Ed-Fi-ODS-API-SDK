@@ -12,12 +12,14 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = EdFi.OdsApi.Sdk.Client.SwaggerDateConverter;
 
 namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
@@ -26,7 +28,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
     /// MnStudentAssessmentPrecodeReadable
     /// </summary>
     [DataContract]
-    public partial class MnStudentAssessmentPrecodeReadable :  IEquatable<MnStudentAssessmentPrecodeReadable>
+    public partial class MnStudentAssessmentPrecodeReadable :  IEquatable<MnStudentAssessmentPrecodeReadable>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MnStudentAssessmentPrecodeReadable" /> class.
@@ -312,6 +314,52 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
                     hashCode = hashCode * 59 + this.Etag.GetHashCode();
                 return hashCode;
             }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            // PrecodeTypeDescriptor (string) maxLength
+            if(this.PrecodeTypeDescriptor != null && this.PrecodeTypeDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PrecodeTypeDescriptor, length must be less than 306.", new [] { "PrecodeTypeDescriptor" });
+            }
+
+            // AssessedGradeLevelDescriptor (string) maxLength
+            if(this.AssessedGradeLevelDescriptor != null && this.AssessedGradeLevelDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AssessedGradeLevelDescriptor, length must be less than 306.", new [] { "AssessedGradeLevelDescriptor" });
+            }
+
+            // AssessmentTitle (string) maxLength
+            if(this.AssessmentTitle != null && this.AssessmentTitle.Length > 100)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AssessmentTitle, length must be less than 100.", new [] { "AssessmentTitle" });
+            }
+
+            // CustomGroup (string) maxLength
+            if(this.CustomGroup != null && this.CustomGroup.Length > 100)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CustomGroup, length must be less than 100.", new [] { "CustomGroup" });
+            }
+
+            // EnrolledGradeLevelDescriptor (string) maxLength
+            if(this.EnrolledGradeLevelDescriptor != null && this.EnrolledGradeLevelDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for EnrolledGradeLevelDescriptor, length must be less than 306.", new [] { "EnrolledGradeLevelDescriptor" });
+            }
+
+            // GeneralEnrollmentDescriptor (string) maxLength
+            if(this.GeneralEnrollmentDescriptor != null && this.GeneralEnrollmentDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for GeneralEnrollmentDescriptor, length must be less than 306.", new [] { "GeneralEnrollmentDescriptor" });
+            }
+
+            yield break;
         }
     }
 

@@ -12,12 +12,14 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = EdFi.OdsApi.Sdk.Client.SwaggerDateConverter;
 
 namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
@@ -26,7 +28,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
     /// EdFiStudentAssessmentReadable
     /// </summary>
     [DataContract]
-    public partial class EdFiStudentAssessmentReadable :  IEquatable<EdFiStudentAssessmentReadable>
+    public partial class EdFiStudentAssessmentReadable :  IEquatable<EdFiStudentAssessmentReadable>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="EdFiStudentAssessmentReadable" /> class.
@@ -513,6 +515,76 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
                     hashCode = hashCode * 59 + this.Ext.GetHashCode();
                 return hashCode;
             }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            // StudentAssessmentIdentifier (string) maxLength
+            if(this.StudentAssessmentIdentifier != null && this.StudentAssessmentIdentifier.Length > 60)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for StudentAssessmentIdentifier, length must be less than 60.", new [] { "StudentAssessmentIdentifier" });
+            }
+
+            // AdministrationEnvironmentDescriptor (string) maxLength
+            if(this.AdministrationEnvironmentDescriptor != null && this.AdministrationEnvironmentDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AdministrationEnvironmentDescriptor, length must be less than 306.", new [] { "AdministrationEnvironmentDescriptor" });
+            }
+
+            // AdministrationLanguageDescriptor (string) maxLength
+            if(this.AdministrationLanguageDescriptor != null && this.AdministrationLanguageDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AdministrationLanguageDescriptor, length must be less than 306.", new [] { "AdministrationLanguageDescriptor" });
+            }
+
+            // EventCircumstanceDescriptor (string) maxLength
+            if(this.EventCircumstanceDescriptor != null && this.EventCircumstanceDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for EventCircumstanceDescriptor, length must be less than 306.", new [] { "EventCircumstanceDescriptor" });
+            }
+
+            // EventDescription (string) maxLength
+            if(this.EventDescription != null && this.EventDescription.Length > 1024)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for EventDescription, length must be less than 1024.", new [] { "EventDescription" });
+            }
+
+            // PlatformTypeDescriptor (string) maxLength
+            if(this.PlatformTypeDescriptor != null && this.PlatformTypeDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PlatformTypeDescriptor, length must be less than 306.", new [] { "PlatformTypeDescriptor" });
+            }
+
+            // ReasonNotTestedDescriptor (string) maxLength
+            if(this.ReasonNotTestedDescriptor != null && this.ReasonNotTestedDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ReasonNotTestedDescriptor, length must be less than 306.", new [] { "ReasonNotTestedDescriptor" });
+            }
+
+            // RetestIndicatorDescriptor (string) maxLength
+            if(this.RetestIndicatorDescriptor != null && this.RetestIndicatorDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for RetestIndicatorDescriptor, length must be less than 306.", new [] { "RetestIndicatorDescriptor" });
+            }
+
+            // SerialNumber (string) maxLength
+            if(this.SerialNumber != null && this.SerialNumber.Length > 60)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SerialNumber, length must be less than 60.", new [] { "SerialNumber" });
+            }
+
+            // WhenAssessedGradeLevelDescriptor (string) maxLength
+            if(this.WhenAssessedGradeLevelDescriptor != null && this.WhenAssessedGradeLevelDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for WhenAssessedGradeLevelDescriptor, length must be less than 306.", new [] { "WhenAssessedGradeLevelDescriptor" });
+            }
+
+            yield break;
         }
     }
 
