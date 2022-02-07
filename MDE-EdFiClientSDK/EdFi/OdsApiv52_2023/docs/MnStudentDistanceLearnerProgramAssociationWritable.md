@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.MnStudentDistanceLearnerProgramAssociationWritable
+# EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile.MnStudentDistanceLearnerProgramAssociationWritable
 ## Properties
 
 Name | Type | Description | Notes

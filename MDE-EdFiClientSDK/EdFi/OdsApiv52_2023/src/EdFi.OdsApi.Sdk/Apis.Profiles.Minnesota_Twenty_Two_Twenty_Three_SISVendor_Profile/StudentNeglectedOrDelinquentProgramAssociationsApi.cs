@@ -94,9 +94,12 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVen
         /// <param name="programName">The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)</param>
         /// <param name="programTypeDescriptor">The type of program. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="neglectedOrDelinquentProgramDescriptor">The type of program under ESEA Title I, Part D, Subpart 1 (state programs) or Subpart 2 (LEA). (optional)</param>
+        /// <param name="elaProgressLevelDescriptor">The progress measured from pre- to post- test for ELA. (optional)</param>
+        /// <param name="mathematicsProgressLevelDescriptor">The progress measured from pre- to post-test for Mathematics. (optional)</param>
         /// <param name="snapshotIdentifier">Indicates the Snapshot-Identifier that should be used. (optional)</param>
         /// <returns>List&lt;EdFiStudentNeglectedOrDelinquentProgramAssociationReadable&gt;</returns>
-        List<EdFiStudentNeglectedOrDelinquentProgramAssociationReadable> GetStudentNeglectedOrDelinquentProgramAssociations (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, string snapshotIdentifier = null);
+        List<EdFiStudentNeglectedOrDelinquentProgramAssociationReadable> GetStudentNeglectedOrDelinquentProgramAssociations (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, string neglectedOrDelinquentProgramDescriptor = null, string elaProgressLevelDescriptor = null, string mathematicsProgressLevelDescriptor = null, string snapshotIdentifier = null);
 
         /// <summary>
         /// Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
@@ -116,9 +119,12 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVen
         /// <param name="programName">The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)</param>
         /// <param name="programTypeDescriptor">The type of program. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="neglectedOrDelinquentProgramDescriptor">The type of program under ESEA Title I, Part D, Subpart 1 (state programs) or Subpart 2 (LEA). (optional)</param>
+        /// <param name="elaProgressLevelDescriptor">The progress measured from pre- to post- test for ELA. (optional)</param>
+        /// <param name="mathematicsProgressLevelDescriptor">The progress measured from pre- to post-test for Mathematics. (optional)</param>
         /// <param name="snapshotIdentifier">Indicates the Snapshot-Identifier that should be used. (optional)</param>
         /// <returns>ApiResponse of List&lt;EdFiStudentNeglectedOrDelinquentProgramAssociationReadable&gt;</returns>
-        ApiResponse<List<EdFiStudentNeglectedOrDelinquentProgramAssociationReadable>> GetStudentNeglectedOrDelinquentProgramAssociationsWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, string snapshotIdentifier = null);
+        ApiResponse<List<EdFiStudentNeglectedOrDelinquentProgramAssociationReadable>> GetStudentNeglectedOrDelinquentProgramAssociationsWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, string neglectedOrDelinquentProgramDescriptor = null, string elaProgressLevelDescriptor = null, string mathematicsProgressLevelDescriptor = null, string snapshotIdentifier = null);
         /// <summary>
         /// Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
         /// </summary>
@@ -262,9 +268,12 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVen
         /// <param name="programName">The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)</param>
         /// <param name="programTypeDescriptor">The type of program. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="neglectedOrDelinquentProgramDescriptor">The type of program under ESEA Title I, Part D, Subpart 1 (state programs) or Subpart 2 (LEA). (optional)</param>
+        /// <param name="elaProgressLevelDescriptor">The progress measured from pre- to post- test for ELA. (optional)</param>
+        /// <param name="mathematicsProgressLevelDescriptor">The progress measured from pre- to post-test for Mathematics. (optional)</param>
         /// <param name="snapshotIdentifier">Indicates the Snapshot-Identifier that should be used. (optional)</param>
         /// <returns>Task of List&lt;EdFiStudentNeglectedOrDelinquentProgramAssociationReadable&gt;</returns>
-        System.Threading.Tasks.Task<List<EdFiStudentNeglectedOrDelinquentProgramAssociationReadable>> GetStudentNeglectedOrDelinquentProgramAssociationsAsync (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, string snapshotIdentifier = null);
+        System.Threading.Tasks.Task<List<EdFiStudentNeglectedOrDelinquentProgramAssociationReadable>> GetStudentNeglectedOrDelinquentProgramAssociationsAsync (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, string neglectedOrDelinquentProgramDescriptor = null, string elaProgressLevelDescriptor = null, string mathematicsProgressLevelDescriptor = null, string snapshotIdentifier = null);
 
         /// <summary>
         /// Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
@@ -284,9 +293,12 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVen
         /// <param name="programName">The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)</param>
         /// <param name="programTypeDescriptor">The type of program. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="neglectedOrDelinquentProgramDescriptor">The type of program under ESEA Title I, Part D, Subpart 1 (state programs) or Subpart 2 (LEA). (optional)</param>
+        /// <param name="elaProgressLevelDescriptor">The progress measured from pre- to post- test for ELA. (optional)</param>
+        /// <param name="mathematicsProgressLevelDescriptor">The progress measured from pre- to post-test for Mathematics. (optional)</param>
         /// <param name="snapshotIdentifier">Indicates the Snapshot-Identifier that should be used. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;EdFiStudentNeglectedOrDelinquentProgramAssociationReadable&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<EdFiStudentNeglectedOrDelinquentProgramAssociationReadable>>> GetStudentNeglectedOrDelinquentProgramAssociationsAsyncWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, string snapshotIdentifier = null);
+        System.Threading.Tasks.Task<ApiResponse<List<EdFiStudentNeglectedOrDelinquentProgramAssociationReadable>>> GetStudentNeglectedOrDelinquentProgramAssociationsAsyncWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, string neglectedOrDelinquentProgramDescriptor = null, string elaProgressLevelDescriptor = null, string mathematicsProgressLevelDescriptor = null, string snapshotIdentifier = null);
         /// <summary>
         /// Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
         /// </summary>
@@ -789,11 +801,14 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVen
         /// <param name="programName">The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)</param>
         /// <param name="programTypeDescriptor">The type of program. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="neglectedOrDelinquentProgramDescriptor">The type of program under ESEA Title I, Part D, Subpart 1 (state programs) or Subpart 2 (LEA). (optional)</param>
+        /// <param name="elaProgressLevelDescriptor">The progress measured from pre- to post- test for ELA. (optional)</param>
+        /// <param name="mathematicsProgressLevelDescriptor">The progress measured from pre- to post-test for Mathematics. (optional)</param>
         /// <param name="snapshotIdentifier">Indicates the Snapshot-Identifier that should be used. (optional)</param>
         /// <returns>List&lt;EdFiStudentNeglectedOrDelinquentProgramAssociationReadable&gt;</returns>
-        public List<EdFiStudentNeglectedOrDelinquentProgramAssociationReadable> GetStudentNeglectedOrDelinquentProgramAssociations (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, string snapshotIdentifier = null)
+        public List<EdFiStudentNeglectedOrDelinquentProgramAssociationReadable> GetStudentNeglectedOrDelinquentProgramAssociations (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, string neglectedOrDelinquentProgramDescriptor = null, string elaProgressLevelDescriptor = null, string mathematicsProgressLevelDescriptor = null, string snapshotIdentifier = null)
         {
-             ApiResponse<List<EdFiStudentNeglectedOrDelinquentProgramAssociationReadable>> localVarResponse = GetStudentNeglectedOrDelinquentProgramAssociationsWithHttpInfo(offset, limit, minChangeVersion, maxChangeVersion, totalCount, beginDate, educationOrganizationId, programEducationOrganizationId, programName, programTypeDescriptor, studentUniqueId, snapshotIdentifier);
+             ApiResponse<List<EdFiStudentNeglectedOrDelinquentProgramAssociationReadable>> localVarResponse = GetStudentNeglectedOrDelinquentProgramAssociationsWithHttpInfo(offset, limit, minChangeVersion, maxChangeVersion, totalCount, beginDate, educationOrganizationId, programEducationOrganizationId, programName, programTypeDescriptor, studentUniqueId, neglectedOrDelinquentProgramDescriptor, elaProgressLevelDescriptor, mathematicsProgressLevelDescriptor, snapshotIdentifier);
              return localVarResponse.Data;
         }
 
@@ -812,9 +827,12 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVen
         /// <param name="programName">The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)</param>
         /// <param name="programTypeDescriptor">The type of program. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="neglectedOrDelinquentProgramDescriptor">The type of program under ESEA Title I, Part D, Subpart 1 (state programs) or Subpart 2 (LEA). (optional)</param>
+        /// <param name="elaProgressLevelDescriptor">The progress measured from pre- to post- test for ELA. (optional)</param>
+        /// <param name="mathematicsProgressLevelDescriptor">The progress measured from pre- to post-test for Mathematics. (optional)</param>
         /// <param name="snapshotIdentifier">Indicates the Snapshot-Identifier that should be used. (optional)</param>
         /// <returns>ApiResponse of List&lt;EdFiStudentNeglectedOrDelinquentProgramAssociationReadable&gt;</returns>
-        public ApiResponse< List<EdFiStudentNeglectedOrDelinquentProgramAssociationReadable> > GetStudentNeglectedOrDelinquentProgramAssociationsWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, string snapshotIdentifier = null)
+        public ApiResponse< List<EdFiStudentNeglectedOrDelinquentProgramAssociationReadable> > GetStudentNeglectedOrDelinquentProgramAssociationsWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, string neglectedOrDelinquentProgramDescriptor = null, string elaProgressLevelDescriptor = null, string mathematicsProgressLevelDescriptor = null, string snapshotIdentifier = null)
         {
 
             var localVarPath = "/ed-fi/studentNeglectedOrDelinquentProgramAssociations";
@@ -850,6 +868,9 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVen
             if (programName != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "programName", programName)); // query parameter
             if (programTypeDescriptor != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "programTypeDescriptor", programTypeDescriptor)); // query parameter
             if (studentUniqueId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "studentUniqueId", studentUniqueId)); // query parameter
+            if (neglectedOrDelinquentProgramDescriptor != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "neglectedOrDelinquentProgramDescriptor", neglectedOrDelinquentProgramDescriptor)); // query parameter
+            if (elaProgressLevelDescriptor != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "elaProgressLevelDescriptor", elaProgressLevelDescriptor)); // query parameter
+            if (mathematicsProgressLevelDescriptor != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "mathematicsProgressLevelDescriptor", mathematicsProgressLevelDescriptor)); // query parameter
             if (snapshotIdentifier != null) localVarHeaderParams.Add("Snapshot-Identifier", this.Configuration.ApiClient.ParameterToString(snapshotIdentifier)); // header parameter
 
             // authentication (oauth2_client_credentials) required
@@ -892,11 +913,14 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVen
         /// <param name="programName">The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)</param>
         /// <param name="programTypeDescriptor">The type of program. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="neglectedOrDelinquentProgramDescriptor">The type of program under ESEA Title I, Part D, Subpart 1 (state programs) or Subpart 2 (LEA). (optional)</param>
+        /// <param name="elaProgressLevelDescriptor">The progress measured from pre- to post- test for ELA. (optional)</param>
+        /// <param name="mathematicsProgressLevelDescriptor">The progress measured from pre- to post-test for Mathematics. (optional)</param>
         /// <param name="snapshotIdentifier">Indicates the Snapshot-Identifier that should be used. (optional)</param>
         /// <returns>Task of List&lt;EdFiStudentNeglectedOrDelinquentProgramAssociationReadable&gt;</returns>
-        public async System.Threading.Tasks.Task<List<EdFiStudentNeglectedOrDelinquentProgramAssociationReadable>> GetStudentNeglectedOrDelinquentProgramAssociationsAsync (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, string snapshotIdentifier = null)
+        public async System.Threading.Tasks.Task<List<EdFiStudentNeglectedOrDelinquentProgramAssociationReadable>> GetStudentNeglectedOrDelinquentProgramAssociationsAsync (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, string neglectedOrDelinquentProgramDescriptor = null, string elaProgressLevelDescriptor = null, string mathematicsProgressLevelDescriptor = null, string snapshotIdentifier = null)
         {
-             ApiResponse<List<EdFiStudentNeglectedOrDelinquentProgramAssociationReadable>> localVarResponse = await GetStudentNeglectedOrDelinquentProgramAssociationsAsyncWithHttpInfo(offset, limit, minChangeVersion, maxChangeVersion, totalCount, beginDate, educationOrganizationId, programEducationOrganizationId, programName, programTypeDescriptor, studentUniqueId, snapshotIdentifier);
+             ApiResponse<List<EdFiStudentNeglectedOrDelinquentProgramAssociationReadable>> localVarResponse = await GetStudentNeglectedOrDelinquentProgramAssociationsAsyncWithHttpInfo(offset, limit, minChangeVersion, maxChangeVersion, totalCount, beginDate, educationOrganizationId, programEducationOrganizationId, programName, programTypeDescriptor, studentUniqueId, neglectedOrDelinquentProgramDescriptor, elaProgressLevelDescriptor, mathematicsProgressLevelDescriptor, snapshotIdentifier);
              return localVarResponse.Data;
 
         }
@@ -916,9 +940,12 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVen
         /// <param name="programName">The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)</param>
         /// <param name="programTypeDescriptor">The type of program. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="neglectedOrDelinquentProgramDescriptor">The type of program under ESEA Title I, Part D, Subpart 1 (state programs) or Subpart 2 (LEA). (optional)</param>
+        /// <param name="elaProgressLevelDescriptor">The progress measured from pre- to post- test for ELA. (optional)</param>
+        /// <param name="mathematicsProgressLevelDescriptor">The progress measured from pre- to post-test for Mathematics. (optional)</param>
         /// <param name="snapshotIdentifier">Indicates the Snapshot-Identifier that should be used. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;EdFiStudentNeglectedOrDelinquentProgramAssociationReadable&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<EdFiStudentNeglectedOrDelinquentProgramAssociationReadable>>> GetStudentNeglectedOrDelinquentProgramAssociationsAsyncWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, string snapshotIdentifier = null)
+        public async System.Threading.Tasks.Task<ApiResponse<List<EdFiStudentNeglectedOrDelinquentProgramAssociationReadable>>> GetStudentNeglectedOrDelinquentProgramAssociationsAsyncWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, string neglectedOrDelinquentProgramDescriptor = null, string elaProgressLevelDescriptor = null, string mathematicsProgressLevelDescriptor = null, string snapshotIdentifier = null)
         {
 
             var localVarPath = "/ed-fi/studentNeglectedOrDelinquentProgramAssociations";
@@ -954,6 +981,9 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVen
             if (programName != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "programName", programName)); // query parameter
             if (programTypeDescriptor != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "programTypeDescriptor", programTypeDescriptor)); // query parameter
             if (studentUniqueId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "studentUniqueId", studentUniqueId)); // query parameter
+            if (neglectedOrDelinquentProgramDescriptor != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "neglectedOrDelinquentProgramDescriptor", neglectedOrDelinquentProgramDescriptor)); // query parameter
+            if (elaProgressLevelDescriptor != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "elaProgressLevelDescriptor", elaProgressLevelDescriptor)); // query parameter
+            if (mathematicsProgressLevelDescriptor != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "mathematicsProgressLevelDescriptor", mathematicsProgressLevelDescriptor)); // query parameter
             if (snapshotIdentifier != null) localVarHeaderParams.Add("Snapshot-Identifier", this.Configuration.ApiClient.ParameterToString(snapshotIdentifier)); // header parameter
 
             // authentication (oauth2_client_credentials) required

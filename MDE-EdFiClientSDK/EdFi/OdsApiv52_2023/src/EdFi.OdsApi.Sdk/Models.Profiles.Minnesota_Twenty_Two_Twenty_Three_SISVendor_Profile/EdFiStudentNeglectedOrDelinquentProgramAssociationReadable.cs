@@ -43,10 +43,14 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
         /// <param name="educationOrganizationReference">educationOrganizationReference (required).</param>
         /// <param name="programReference">programReference (required).</param>
         /// <param name="studentReference">studentReference (required).</param>
+        /// <param name="elaProgressLevelDescriptor">The progress measured from pre- to post- test for ELA..</param>
         /// <param name="endDate">The month, day, and year on which the Student exited the Program or stopped receiving services..</param>
+        /// <param name="mathematicsProgressLevelDescriptor">The progress measured from pre- to post-test for Mathematics..</param>
+        /// <param name="neglectedOrDelinquentProgramDescriptor">The type of program under ESEA Title I, Part D, Subpart 1 (state programs) or Subpart 2 (LEA)..</param>
+        /// <param name="neglectedOrDelinquentProgramServices">An unordered collection of studentNeglectedOrDelinquentProgramAssociationNeglectedOrDelinquentProgramServices. Indicates the service(s) being provided to the Student by the Neglected or Delinquent Program..</param>
         /// <param name="etag">A unique system-generated value that identifies the version of the resource..</param>
         /// <param name="ext">ext.</param>
-        public EdFiStudentNeglectedOrDelinquentProgramAssociationReadable(string id = default(string), DateTime? beginDate = default(DateTime?), EdFiEducationOrganizationReference educationOrganizationReference = default(EdFiEducationOrganizationReference), EdFiProgramReference programReference = default(EdFiProgramReference), EdFiStudentReference studentReference = default(EdFiStudentReference), DateTime? endDate = default(DateTime?), string etag = default(string), StudentNeglectedOrDelinquentProgramAssociationExtensionsReadable ext = default(StudentNeglectedOrDelinquentProgramAssociationExtensionsReadable))
+        public EdFiStudentNeglectedOrDelinquentProgramAssociationReadable(string id = default(string), DateTime? beginDate = default(DateTime?), EdFiEducationOrganizationReference educationOrganizationReference = default(EdFiEducationOrganizationReference), EdFiProgramReference programReference = default(EdFiProgramReference), EdFiStudentReference studentReference = default(EdFiStudentReference), string elaProgressLevelDescriptor = default(string), DateTime? endDate = default(DateTime?), string mathematicsProgressLevelDescriptor = default(string), string neglectedOrDelinquentProgramDescriptor = default(string), List<EdFiStudentNeglectedOrDelinquentProgramAssociationNeglectedOrDelinquentProgramServiceReadable> neglectedOrDelinquentProgramServices = default(List<EdFiStudentNeglectedOrDelinquentProgramAssociationNeglectedOrDelinquentProgramServiceReadable>), string etag = default(string), StudentNeglectedOrDelinquentProgramAssociationExtensionsReadable ext = default(StudentNeglectedOrDelinquentProgramAssociationExtensionsReadable))
         {
             // to ensure "beginDate" is required (not null)
             if (beginDate == null)
@@ -85,7 +89,11 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
                 this.StudentReference = studentReference;
             }
             this.Id = id;
+            this.ElaProgressLevelDescriptor = elaProgressLevelDescriptor;
             this.EndDate = endDate;
+            this.MathematicsProgressLevelDescriptor = mathematicsProgressLevelDescriptor;
+            this.NeglectedOrDelinquentProgramDescriptor = neglectedOrDelinquentProgramDescriptor;
+            this.NeglectedOrDelinquentProgramServices = neglectedOrDelinquentProgramServices;
             this.Etag = etag;
             this.Ext = ext;
         }
@@ -123,12 +131,40 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
         public EdFiStudentReference StudentReference { get; set; }
 
         /// <summary>
+        /// The progress measured from pre- to post- test for ELA.
+        /// </summary>
+        /// <value>The progress measured from pre- to post- test for ELA.</value>
+        [DataMember(Name="elaProgressLevelDescriptor", EmitDefaultValue=false)]
+        public string ElaProgressLevelDescriptor { get; set; }
+
+        /// <summary>
         /// The month, day, and year on which the Student exited the Program or stopped receiving services.
         /// </summary>
         /// <value>The month, day, and year on which the Student exited the Program or stopped receiving services.</value>
         [DataMember(Name="endDate", EmitDefaultValue=false)]
         [JsonConverter(typeof(SwaggerDateConverter))]
         public DateTime? EndDate { get; set; }
+
+        /// <summary>
+        /// The progress measured from pre- to post-test for Mathematics.
+        /// </summary>
+        /// <value>The progress measured from pre- to post-test for Mathematics.</value>
+        [DataMember(Name="mathematicsProgressLevelDescriptor", EmitDefaultValue=false)]
+        public string MathematicsProgressLevelDescriptor { get; set; }
+
+        /// <summary>
+        /// The type of program under ESEA Title I, Part D, Subpart 1 (state programs) or Subpart 2 (LEA).
+        /// </summary>
+        /// <value>The type of program under ESEA Title I, Part D, Subpart 1 (state programs) or Subpart 2 (LEA).</value>
+        [DataMember(Name="neglectedOrDelinquentProgramDescriptor", EmitDefaultValue=false)]
+        public string NeglectedOrDelinquentProgramDescriptor { get; set; }
+
+        /// <summary>
+        /// An unordered collection of studentNeglectedOrDelinquentProgramAssociationNeglectedOrDelinquentProgramServices. Indicates the service(s) being provided to the Student by the Neglected or Delinquent Program.
+        /// </summary>
+        /// <value>An unordered collection of studentNeglectedOrDelinquentProgramAssociationNeglectedOrDelinquentProgramServices. Indicates the service(s) being provided to the Student by the Neglected or Delinquent Program.</value>
+        [DataMember(Name="neglectedOrDelinquentProgramServices", EmitDefaultValue=false)]
+        public List<EdFiStudentNeglectedOrDelinquentProgramAssociationNeglectedOrDelinquentProgramServiceReadable> NeglectedOrDelinquentProgramServices { get; set; }
 
         /// <summary>
         /// A unique system-generated value that identifies the version of the resource.
@@ -156,7 +192,11 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
             sb.Append("  EducationOrganizationReference: ").Append(EducationOrganizationReference).Append("\n");
             sb.Append("  ProgramReference: ").Append(ProgramReference).Append("\n");
             sb.Append("  StudentReference: ").Append(StudentReference).Append("\n");
+            sb.Append("  ElaProgressLevelDescriptor: ").Append(ElaProgressLevelDescriptor).Append("\n");
             sb.Append("  EndDate: ").Append(EndDate).Append("\n");
+            sb.Append("  MathematicsProgressLevelDescriptor: ").Append(MathematicsProgressLevelDescriptor).Append("\n");
+            sb.Append("  NeglectedOrDelinquentProgramDescriptor: ").Append(NeglectedOrDelinquentProgramDescriptor).Append("\n");
+            sb.Append("  NeglectedOrDelinquentProgramServices: ").Append(NeglectedOrDelinquentProgramServices).Append("\n");
             sb.Append("  Etag: ").Append(Etag).Append("\n");
             sb.Append("  Ext: ").Append(Ext).Append("\n");
             sb.Append("}\n");
@@ -219,9 +259,29 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
                     this.StudentReference.Equals(input.StudentReference))
                 ) && 
                 (
+                    this.ElaProgressLevelDescriptor == input.ElaProgressLevelDescriptor ||
+                    (this.ElaProgressLevelDescriptor != null &&
+                    this.ElaProgressLevelDescriptor.Equals(input.ElaProgressLevelDescriptor))
+                ) && 
+                (
                     this.EndDate == input.EndDate ||
                     (this.EndDate != null &&
                     this.EndDate.Equals(input.EndDate))
+                ) && 
+                (
+                    this.MathematicsProgressLevelDescriptor == input.MathematicsProgressLevelDescriptor ||
+                    (this.MathematicsProgressLevelDescriptor != null &&
+                    this.MathematicsProgressLevelDescriptor.Equals(input.MathematicsProgressLevelDescriptor))
+                ) && 
+                (
+                    this.NeglectedOrDelinquentProgramDescriptor == input.NeglectedOrDelinquentProgramDescriptor ||
+                    (this.NeglectedOrDelinquentProgramDescriptor != null &&
+                    this.NeglectedOrDelinquentProgramDescriptor.Equals(input.NeglectedOrDelinquentProgramDescriptor))
+                ) && 
+                (
+                    this.NeglectedOrDelinquentProgramServices == input.NeglectedOrDelinquentProgramServices ||
+                    this.NeglectedOrDelinquentProgramServices != null &&
+                    this.NeglectedOrDelinquentProgramServices.SequenceEqual(input.NeglectedOrDelinquentProgramServices)
                 ) && 
                 (
                     this.Etag == input.Etag ||
@@ -254,8 +314,16 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
                     hashCode = hashCode * 59 + this.ProgramReference.GetHashCode();
                 if (this.StudentReference != null)
                     hashCode = hashCode * 59 + this.StudentReference.GetHashCode();
+                if (this.ElaProgressLevelDescriptor != null)
+                    hashCode = hashCode * 59 + this.ElaProgressLevelDescriptor.GetHashCode();
                 if (this.EndDate != null)
                     hashCode = hashCode * 59 + this.EndDate.GetHashCode();
+                if (this.MathematicsProgressLevelDescriptor != null)
+                    hashCode = hashCode * 59 + this.MathematicsProgressLevelDescriptor.GetHashCode();
+                if (this.NeglectedOrDelinquentProgramDescriptor != null)
+                    hashCode = hashCode * 59 + this.NeglectedOrDelinquentProgramDescriptor.GetHashCode();
+                if (this.NeglectedOrDelinquentProgramServices != null)
+                    hashCode = hashCode * 59 + this.NeglectedOrDelinquentProgramServices.GetHashCode();
                 if (this.Etag != null)
                     hashCode = hashCode * 59 + this.Etag.GetHashCode();
                 if (this.Ext != null)
@@ -271,6 +339,24 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // ElaProgressLevelDescriptor (string) maxLength
+            if(this.ElaProgressLevelDescriptor != null && this.ElaProgressLevelDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ElaProgressLevelDescriptor, length must be less than 306.", new [] { "ElaProgressLevelDescriptor" });
+            }
+
+            // MathematicsProgressLevelDescriptor (string) maxLength
+            if(this.MathematicsProgressLevelDescriptor != null && this.MathematicsProgressLevelDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for MathematicsProgressLevelDescriptor, length must be less than 306.", new [] { "MathematicsProgressLevelDescriptor" });
+            }
+
+            // NeglectedOrDelinquentProgramDescriptor (string) maxLength
+            if(this.NeglectedOrDelinquentProgramDescriptor != null && this.NeglectedOrDelinquentProgramDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for NeglectedOrDelinquentProgramDescriptor, length must be less than 306.", new [] { "NeglectedOrDelinquentProgramDescriptor" });
+            }
+
             yield break;
         }
     }
