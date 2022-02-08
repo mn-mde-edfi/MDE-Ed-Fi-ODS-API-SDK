@@ -34,3 +34,4 @@ atlassian-ide-plugin.xml
 **/.vscode/
 
 **/generated-sdk
+swagger-codegen-cli*.jar
