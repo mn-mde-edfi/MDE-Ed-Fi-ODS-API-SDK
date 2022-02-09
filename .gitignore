@@ -30,18 +30,8 @@ target
 atlassian-ide-plugin.xml
 .DS_Store
 
-/generated-sdk
-
-CSharpSDK/**/bin
-CSharpSDK/**/obj
-CSharpSDK/**/packages
-CSharpSDK/**/*.suo
-CSharpSDK/**/*.user
-CSharpSDK/EdFi.OdsApi.Sdk/Api
-CSharpSDK/EdFi.OdsApi.Sdk/Models
-CSharpSDK/EdFi.OdsApi.Sdk/Program.cs
-CSharpSDK/EdFi.OdsApi.Sdk/*.nupkg
-CSharpSDK/EdFi.OdsApi.Sdk/Helpers
-/MDE-EdFiClientSDK/EdFi/OdsApiV31/.vs/
-
 **/.vs/
+**/.vscode/
+
+**/generated-sdk
+swagger-codegen-cli*.jar

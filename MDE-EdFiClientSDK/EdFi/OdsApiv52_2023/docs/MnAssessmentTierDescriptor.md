@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.MnAssessmentTierDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.MnAssessmentTierDescriptor
 ## Properties
 
 Name | Type | Description | Notes

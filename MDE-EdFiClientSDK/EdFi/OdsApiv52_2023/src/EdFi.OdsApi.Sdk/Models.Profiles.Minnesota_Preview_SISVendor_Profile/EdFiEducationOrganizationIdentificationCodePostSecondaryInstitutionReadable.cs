@@ -12,12 +12,14 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = EdFi.OdsApi.Sdk.Client.SwaggerDateConverter;
 
 namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
@@ -26,7 +28,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
     /// EdFiEducationOrganizationIdentificationCodePostSecondaryInstitutionReadable
     /// </summary>
     [DataContract]
-    public partial class EdFiEducationOrganizationIdentificationCodePostSecondaryInstitutionReadable :  IEquatable<EdFiEducationOrganizationIdentificationCodePostSecondaryInstitutionReadable>
+    public partial class EdFiEducationOrganizationIdentificationCodePostSecondaryInstitutionReadable :  IEquatable<EdFiEducationOrganizationIdentificationCodePostSecondaryInstitutionReadable>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="EdFiEducationOrganizationIdentificationCodePostSecondaryInstitutionReadable" /> class.
@@ -145,6 +147,28 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
                     hashCode = hashCode * 59 + this.IdentificationCode.GetHashCode();
                 return hashCode;
             }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            // EducationOrganizationIdentificationSystemDescriptor (string) maxLength
+            if(this.EducationOrganizationIdentificationSystemDescriptor != null && this.EducationOrganizationIdentificationSystemDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for EducationOrganizationIdentificationSystemDescriptor, length must be less than 306.", new [] { "EducationOrganizationIdentificationSystemDescriptor" });
+            }
+
+            // IdentificationCode (string) maxLength
+            if(this.IdentificationCode != null && this.IdentificationCode.Length > 60)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for IdentificationCode, length must be less than 60.", new [] { "IdentificationCode" });
+            }
+
+            yield break;
         }
     }
 

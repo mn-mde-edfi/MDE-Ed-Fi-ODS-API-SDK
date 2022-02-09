@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiMethodCreditEarnedDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiMethodCreditEarnedDescriptor
 ## Properties
 
 Name | Type | Description | Notes

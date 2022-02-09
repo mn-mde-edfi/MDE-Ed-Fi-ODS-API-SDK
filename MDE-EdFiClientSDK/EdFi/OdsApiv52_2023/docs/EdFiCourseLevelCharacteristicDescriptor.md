@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiCourseLevelCharacteristicDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiCourseLevelCharacteristicDescriptor
 ## Properties
 
 Name | Type | Description | Notes

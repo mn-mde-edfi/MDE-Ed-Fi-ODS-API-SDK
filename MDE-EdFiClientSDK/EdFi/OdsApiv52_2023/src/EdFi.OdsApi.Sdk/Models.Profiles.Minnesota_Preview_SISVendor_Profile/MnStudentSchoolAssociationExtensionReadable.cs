@@ -12,12 +12,14 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = EdFi.OdsApi.Sdk.Client.SwaggerDateConverter;
 
 namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
@@ -26,7 +28,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
     /// MnStudentSchoolAssociationExtensionReadable
     /// </summary>
     [DataContract]
-    public partial class MnStudentSchoolAssociationExtensionReadable :  IEquatable<MnStudentSchoolAssociationExtensionReadable>
+    public partial class MnStudentSchoolAssociationExtensionReadable :  IEquatable<MnStudentSchoolAssociationExtensionReadable>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MnStudentSchoolAssociationExtensionReadable" /> class.
@@ -206,6 +208,28 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
                     hashCode = hashCode * 59 + this.Transportation.GetHashCode();
                 return hashCode;
             }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            // SpecialEducationEvaluationStatusDescriptor (string) maxLength
+            if(this.SpecialEducationEvaluationStatusDescriptor != null && this.SpecialEducationEvaluationStatusDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SpecialEducationEvaluationStatusDescriptor, length must be less than 306.", new [] { "SpecialEducationEvaluationStatusDescriptor" });
+            }
+
+            // StateAidCategoryDescriptor (string) maxLength
+            if(this.StateAidCategoryDescriptor != null && this.StateAidCategoryDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for StateAidCategoryDescriptor, length must be less than 306.", new [] { "StateAidCategoryDescriptor" });
+            }
+
+            yield break;
         }
     }
 

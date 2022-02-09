@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiAcademicHonorCategoryDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiAcademicHonorCategoryDescriptor
 ## Properties
 
 Name | Type | Description | Notes

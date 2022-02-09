@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.MnEarlyChildhoodScreeningExitStatusDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.MnEarlyChildhoodScreeningExitStatusDescriptor
 ## Properties
 
 Name | Type | Description | Notes

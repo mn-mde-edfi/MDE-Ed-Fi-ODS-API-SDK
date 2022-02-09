@@ -12,12 +12,14 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = EdFi.OdsApi.Sdk.Client.SwaggerDateConverter;
 
 namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
@@ -26,7 +28,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
     /// MnStudentEarlyChildhoodScreeningProgramAssociationReadable
     /// </summary>
     [DataContract]
-    public partial class MnStudentEarlyChildhoodScreeningProgramAssociationReadable :  IEquatable<MnStudentEarlyChildhoodScreeningProgramAssociationReadable>
+    public partial class MnStudentEarlyChildhoodScreeningProgramAssociationReadable :  IEquatable<MnStudentEarlyChildhoodScreeningProgramAssociationReadable>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MnStudentEarlyChildhoodScreeningProgramAssociationReadable" /> class.
@@ -278,6 +280,28 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
                     hashCode = hashCode * 59 + this.Etag.GetHashCode();
                 return hashCode;
             }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            // EarlyChildhoodScreenerDescriptor (string) maxLength
+            if(this.EarlyChildhoodScreenerDescriptor != null && this.EarlyChildhoodScreenerDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for EarlyChildhoodScreenerDescriptor, length must be less than 306.", new [] { "EarlyChildhoodScreenerDescriptor" });
+            }
+
+            // EarlyChildhoodScreeningExitStatusDescriptor (string) maxLength
+            if(this.EarlyChildhoodScreeningExitStatusDescriptor != null && this.EarlyChildhoodScreeningExitStatusDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for EarlyChildhoodScreeningExitStatusDescriptor, length must be less than 306.", new [] { "EarlyChildhoodScreeningExitStatusDescriptor" });
+            }
+
+            yield break;
         }
     }
 

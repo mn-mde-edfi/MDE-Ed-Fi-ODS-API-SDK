@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiCredentialFieldDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiCredentialFieldDescriptor
 ## Properties
 
 Name | Type | Description | Notes

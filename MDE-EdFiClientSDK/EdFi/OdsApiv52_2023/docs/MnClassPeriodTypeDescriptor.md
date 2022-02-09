@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.MnClassPeriodTypeDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.MnClassPeriodTypeDescriptor
 ## Properties
 
 Name | Type | Description | Notes

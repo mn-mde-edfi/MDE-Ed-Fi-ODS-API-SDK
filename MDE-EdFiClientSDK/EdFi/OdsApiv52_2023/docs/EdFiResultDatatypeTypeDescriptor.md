@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiResultDatatypeTypeDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiResultDatatypeTypeDescriptor
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiPostSecondaryEventCategoryDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiPostSecondaryEventCategoryDescriptor
 ## Properties
 
 Name | Type | Description | Notes

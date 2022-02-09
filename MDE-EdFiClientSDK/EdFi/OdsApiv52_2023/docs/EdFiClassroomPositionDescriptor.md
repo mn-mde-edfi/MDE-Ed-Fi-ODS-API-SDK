@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiClassroomPositionDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiClassroomPositionDescriptor
 ## Properties
 
 Name | Type | Description | Notes

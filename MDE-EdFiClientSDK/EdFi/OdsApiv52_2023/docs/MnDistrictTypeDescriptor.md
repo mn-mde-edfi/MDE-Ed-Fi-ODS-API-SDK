@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.MnDistrictTypeDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.MnDistrictTypeDescriptor
 ## Properties
 
 Name | Type | Description | Notes

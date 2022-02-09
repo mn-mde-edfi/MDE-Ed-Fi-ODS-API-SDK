@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiRetestIndicatorDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiRetestIndicatorDescriptor
 ## Properties
 
 Name | Type | Description | Notes

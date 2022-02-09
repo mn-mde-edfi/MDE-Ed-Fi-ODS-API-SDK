@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.MnFundingSourceDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.MnFundingSourceDescriptor
 ## Properties
 
 Name | Type | Description | Notes

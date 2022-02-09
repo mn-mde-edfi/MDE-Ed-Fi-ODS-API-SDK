@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiStaffIdentificationSystemDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiStaffIdentificationSystemDescriptor
 ## Properties
 
 Name | Type | Description | Notes

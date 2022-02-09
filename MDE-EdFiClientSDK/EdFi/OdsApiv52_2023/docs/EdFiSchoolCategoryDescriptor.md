@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiSchoolCategoryDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiSchoolCategoryDescriptor
 ## Properties
 
 Name | Type | Description | Notes

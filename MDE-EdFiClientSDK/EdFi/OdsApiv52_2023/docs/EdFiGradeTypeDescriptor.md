@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiGradeTypeDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiGradeTypeDescriptor
 ## Properties
 
 Name | Type | Description | Notes

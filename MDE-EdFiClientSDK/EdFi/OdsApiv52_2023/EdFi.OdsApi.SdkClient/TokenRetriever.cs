@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Runtime.Serialization;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Security.Authentication;
-using EdFi.OdsApi.Sdk.Client;
-using RestSharp.Portable;
+using System.Text;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+using RestSharp;
 
 namespace EdFi.OdsApi.SdkClient
 {
@@ -15,6 +18,12 @@ namespace EdFi.OdsApi.SdkClient
         private string clientKey;
         private string clientSecret;
 
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="oauthUrl"></param>
+        /// <param name="clientKey"></param>
+        /// <param name="clientSecret"></param>
         public TokenRetriever(string oauthUrl, string clientKey, string clientSecret)
         {
             this.oauthUrl = oauthUrl;
@@ -24,22 +33,23 @@ namespace EdFi.OdsApi.SdkClient
 
         public string ObtainNewBearerToken()
         {
-            var oauthClient = new ApiClient(oauthUrl);
+            var oauthClient = new RestClient(oauthUrl);
             return GetBearerToken(oauthClient);
         }
 
-        private string GetBearerToken(ApiClient oauthClient)
+
+        private string GetBearerToken(IRestClient oauthClient)
         {
             var bearerTokenRequest = new RestRequest("oauth/token", Method.POST);
             bearerTokenRequest.AddParameter("Client_id", clientKey);
             bearerTokenRequest.AddParameter("Client_secret", clientSecret);
             bearerTokenRequest.AddParameter("Grant_type", "client_credentials");
 
-            var bearerTokenResponse = oauthClient.RestClient.Execute<BearerTokenResponse>(bearerTokenRequest).Result;
+            var bearerTokenResponse = oauthClient.Execute<BearerTokenResponse>(bearerTokenRequest);
             if (bearerTokenResponse.StatusCode != HttpStatusCode.OK)
             {
                 throw new AuthenticationException("Unable to retrieve an access token. Error message: " +
-                                                  bearerTokenResponse.Data.Error);
+                                                  bearerTokenResponse.ErrorMessage);
             }
 
             if (bearerTokenResponse.Data.Error != null || bearerTokenResponse.Data.TokenType != "bearer")
@@ -52,19 +62,11 @@ namespace EdFi.OdsApi.SdkClient
         }
     }
 
-    [DataContract]
     internal class BearerTokenResponse
     {
-        [DataMember(Name = "access_token", EmitDefaultValue = false)]
         public string AccessToken { get; set; }
-
-        [DataMember(Name = "expires_in", EmitDefaultValue = false)]
         public string ExpiresIn { get; set; }
-
-        [DataMember(Name = "token_type", EmitDefaultValue = false)]
         public string TokenType { get; set; }
-
-        [DataMember(Name = "error", EmitDefaultValue = false)]
         public string Error { get; set; }
     }
 }

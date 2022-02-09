@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiAncestryEthnicOriginDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiAncestryEthnicOriginDescriptor
 ## Properties
 
 Name | Type | Description | Notes

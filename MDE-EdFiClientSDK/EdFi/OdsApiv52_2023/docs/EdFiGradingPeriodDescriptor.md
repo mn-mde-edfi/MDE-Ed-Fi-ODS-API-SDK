@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiGradingPeriodDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiGradingPeriodDescriptor
 ## Properties
 
 Name | Type | Description | Notes

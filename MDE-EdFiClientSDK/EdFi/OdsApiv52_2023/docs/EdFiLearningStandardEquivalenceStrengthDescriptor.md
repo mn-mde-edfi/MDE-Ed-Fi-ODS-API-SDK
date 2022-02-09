@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiLearningStandardEquivalenceStrengthDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiLearningStandardEquivalenceStrengthDescriptor
 ## Properties
 
 Name | Type | Description | Notes

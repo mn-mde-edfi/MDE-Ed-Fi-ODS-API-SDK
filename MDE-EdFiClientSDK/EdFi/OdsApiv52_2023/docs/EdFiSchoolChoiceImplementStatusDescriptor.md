@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiSchoolChoiceImplementStatusDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiSchoolChoiceImplementStatusDescriptor
 ## Properties
 
 Name | Type | Description | Notes

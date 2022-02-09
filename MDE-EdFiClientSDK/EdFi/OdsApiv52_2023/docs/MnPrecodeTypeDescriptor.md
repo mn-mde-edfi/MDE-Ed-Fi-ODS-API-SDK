@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.MnPrecodeTypeDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.MnPrecodeTypeDescriptor
 ## Properties
 
 Name | Type | Description | Notes

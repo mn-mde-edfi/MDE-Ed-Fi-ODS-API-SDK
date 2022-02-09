@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.MnInstructionalApproachDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.MnInstructionalApproachDescriptor
 ## Properties
 
 Name | Type | Description | Notes

@@ -12,12 +12,14 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = EdFi.OdsApi.Sdk.Client.SwaggerDateConverter;
 
 namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
@@ -26,7 +28,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
     /// EdFiAssessmentReadable
     /// </summary>
     [DataContract]
-    public partial class EdFiAssessmentReadable :  IEquatable<EdFiAssessmentReadable>
+    public partial class EdFiAssessmentReadable :  IEquatable<EdFiAssessmentReadable>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="EdFiAssessmentReadable" /> class.
@@ -549,6 +551,58 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
                     hashCode = hashCode * 59 + this.Etag.GetHashCode();
                 return hashCode;
             }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            // AssessmentIdentifier (string) maxLength
+            if(this.AssessmentIdentifier != null && this.AssessmentIdentifier.Length > 60)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AssessmentIdentifier, length must be less than 60.", new [] { "AssessmentIdentifier" });
+            }
+
+            // Namespace (string) maxLength
+            if(this.Namespace != null && this.Namespace.Length > 255)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Namespace, length must be less than 255.", new [] { "Namespace" });
+            }
+
+            // AssessmentCategoryDescriptor (string) maxLength
+            if(this.AssessmentCategoryDescriptor != null && this.AssessmentCategoryDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AssessmentCategoryDescriptor, length must be less than 306.", new [] { "AssessmentCategoryDescriptor" });
+            }
+
+            // AssessmentFamily (string) maxLength
+            if(this.AssessmentFamily != null && this.AssessmentFamily.Length > 60)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AssessmentFamily, length must be less than 60.", new [] { "AssessmentFamily" });
+            }
+
+            // AssessmentForm (string) maxLength
+            if(this.AssessmentForm != null && this.AssessmentForm.Length > 60)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AssessmentForm, length must be less than 60.", new [] { "AssessmentForm" });
+            }
+
+            // AssessmentTitle (string) maxLength
+            if(this.AssessmentTitle != null && this.AssessmentTitle.Length > 100)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AssessmentTitle, length must be less than 100.", new [] { "AssessmentTitle" });
+            }
+
+            // Nomenclature (string) maxLength
+            if(this.Nomenclature != null && this.Nomenclature.Length > 35)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Nomenclature, length must be less than 35.", new [] { "Nomenclature" });
+            }
+
+            yield break;
         }
     }
 

@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.MnEarlyChildhoodScreenerDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.MnEarlyChildhoodScreenerDescriptor
 ## Properties
 
 Name | Type | Description | Notes

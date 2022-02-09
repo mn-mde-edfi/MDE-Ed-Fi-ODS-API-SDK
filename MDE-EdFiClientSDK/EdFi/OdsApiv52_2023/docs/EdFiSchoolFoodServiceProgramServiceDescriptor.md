@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiSchoolFoodServiceProgramServiceDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiSchoolFoodServiceProgramServiceDescriptor
 ## Properties
 
 Name | Type | Description | Notes

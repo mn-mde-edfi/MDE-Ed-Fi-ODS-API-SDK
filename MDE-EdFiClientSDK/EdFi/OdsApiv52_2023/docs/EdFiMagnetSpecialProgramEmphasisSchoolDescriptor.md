@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiMagnetSpecialProgramEmphasisSchoolDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiMagnetSpecialProgramEmphasisSchoolDescriptor
 ## Properties
 
 Name | Type | Description | Notes

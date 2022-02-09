@@ -1,6 +1,6 @@
-# EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_TwentyTwo_TwentyThree_SISVendor_Profile.StudentNeglectedOrDelinquentProgramAssociationsApi
+# EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.StudentNeglectedOrDelinquentProgramAssociationsApi
 
-All URIs are relative to *http://localhost:54746/data/v3/*
+All URIs are relative to *https://test.edfi5.education.mn.gov:443/api/data/v3/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -24,9 +24,9 @@ The DELETES operation is used to retrieve deleted resources.
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_TwentyTwo_TwentyThree_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_TwentyTwo_TwentyThree_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile;
 
 namespace Example
 {
@@ -96,9 +96,9 @@ The DELETE operation is used to delete an existing resource by identifier. If th
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_TwentyTwo_TwentyThree_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_TwentyTwo_TwentyThree_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile;
 
 namespace Example
 {
@@ -151,7 +151,7 @@ void (empty response body)
 
 <a name="getstudentneglectedordelinquentprogramassociations"></a>
 # **GetStudentNeglectedOrDelinquentProgramAssociations**
-> List<EdFiStudentNeglectedOrDelinquentProgramAssociationReadable> GetStudentNeglectedOrDelinquentProgramAssociations (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, string snapshotIdentifier = null)
+> List<EdFiStudentNeglectedOrDelinquentProgramAssociationReadable> GetStudentNeglectedOrDelinquentProgramAssociations (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, string neglectedOrDelinquentProgramDescriptor = null, string elaProgressLevelDescriptor = null, string mathematicsProgressLevelDescriptor = null, string snapshotIdentifier = null)
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
 
@@ -161,9 +161,9 @@ This GET operation provides access to resources using the \"Get\" search pattern
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_TwentyTwo_TwentyThree_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_TwentyTwo_TwentyThree_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile;
 
 namespace Example
 {
@@ -186,12 +186,15 @@ namespace Example
             var programName = programName_example;  // string | The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional) 
             var programTypeDescriptor = programTypeDescriptor_example;  // string | The type of program. (optional) 
             var studentUniqueId = studentUniqueId_example;  // string | A unique alphanumeric code assigned to a student. (optional) 
+            var neglectedOrDelinquentProgramDescriptor = neglectedOrDelinquentProgramDescriptor_example;  // string | The type of program under ESEA Title I, Part D, Subpart 1 (state programs) or Subpart 2 (LEA). (optional) 
+            var elaProgressLevelDescriptor = elaProgressLevelDescriptor_example;  // string | The progress measured from pre- to post- test for ELA. (optional) 
+            var mathematicsProgressLevelDescriptor = mathematicsProgressLevelDescriptor_example;  // string | The progress measured from pre- to post-test for Mathematics. (optional) 
             var snapshotIdentifier = snapshotIdentifier_example;  // string | Indicates the Snapshot-Identifier that should be used. (optional) 
 
             try
             {
                 // Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
-                List&lt;EdFiStudentNeglectedOrDelinquentProgramAssociationReadable&gt; result = apiInstance.GetStudentNeglectedOrDelinquentProgramAssociations(offset, limit, minChangeVersion, maxChangeVersion, totalCount, beginDate, educationOrganizationId, programEducationOrganizationId, programName, programTypeDescriptor, studentUniqueId, snapshotIdentifier);
+                List&lt;EdFiStudentNeglectedOrDelinquentProgramAssociationReadable&gt; result = apiInstance.GetStudentNeglectedOrDelinquentProgramAssociations(offset, limit, minChangeVersion, maxChangeVersion, totalCount, beginDate, educationOrganizationId, programEducationOrganizationId, programName, programTypeDescriptor, studentUniqueId, neglectedOrDelinquentProgramDescriptor, elaProgressLevelDescriptor, mathematicsProgressLevelDescriptor, snapshotIdentifier);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -218,6 +221,9 @@ Name | Type | Description  | Notes
  **programName** | **string**| The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. | [optional] 
  **programTypeDescriptor** | **string**| The type of program. | [optional] 
  **studentUniqueId** | **string**| A unique alphanumeric code assigned to a student. | [optional] 
+ **neglectedOrDelinquentProgramDescriptor** | **string**| The type of program under ESEA Title I, Part D, Subpart 1 (state programs) or Subpart 2 (LEA). | [optional] 
+ **elaProgressLevelDescriptor** | **string**| The progress measured from pre- to post- test for ELA. | [optional] 
+ **mathematicsProgressLevelDescriptor** | **string**| The progress measured from pre- to post-test for Mathematics. | [optional] 
  **snapshotIdentifier** | **string**| Indicates the Snapshot-Identifier that should be used. | [optional] 
 
 ### Return type
@@ -247,9 +253,9 @@ This GET operation retrieves a resource by the specified resource identifier.
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_TwentyTwo_TwentyThree_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_TwentyTwo_TwentyThree_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile;
 
 namespace Example
 {
@@ -315,9 +321,9 @@ The POST operation can be used to create or update resources. In database terms,
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_TwentyTwo_TwentyThree_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_TwentyTwo_TwentyThree_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile;
 
 namespace Example
 {
@@ -378,9 +384,9 @@ The PUT operation is used to update a resource by identifier. If the resource id
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_TwentyTwo_TwentyThree_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_TwentyTwo_TwentyThree_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile;
 
 namespace Example
 {

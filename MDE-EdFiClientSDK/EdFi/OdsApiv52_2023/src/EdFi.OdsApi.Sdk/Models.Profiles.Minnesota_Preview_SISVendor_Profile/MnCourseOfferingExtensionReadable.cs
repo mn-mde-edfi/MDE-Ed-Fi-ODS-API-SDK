@@ -12,12 +12,14 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = EdFi.OdsApi.Sdk.Client.SwaggerDateConverter;
 
 namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
@@ -26,28 +28,19 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
     /// MnCourseOfferingExtensionReadable
     /// </summary>
     [DataContract]
-    public partial class MnCourseOfferingExtensionReadable :  IEquatable<MnCourseOfferingExtensionReadable>
+    public partial class MnCourseOfferingExtensionReadable :  IEquatable<MnCourseOfferingExtensionReadable>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MnCourseOfferingExtensionReadable" /> class.
         /// </summary>
-        /// <param name="instructionMinutesPerTerm">Instruction minutes per term..</param>
         /// <param name="instructionalApproaches">An unordered collection of courseOfferingInstructionalApproaches. Instructional approach as implemented for the course offering. General purpose but intially implemented for Early Education..</param>
         /// <param name="siteBasedInitiatives">An unordered collection of courseOfferingSiteBasedInitiatives. Site-based initiative as implemented for the course offering. General purpose but intially implemented for Early Education..</param>
-        public MnCourseOfferingExtensionReadable(int? instructionMinutesPerTerm = default(int?), List<MnCourseOfferingInstructionalApproachReadable> instructionalApproaches = default(List<MnCourseOfferingInstructionalApproachReadable>), List<MnCourseOfferingSiteBasedInitiativeReadable> siteBasedInitiatives = default(List<MnCourseOfferingSiteBasedInitiativeReadable>))
+        public MnCourseOfferingExtensionReadable(List<MnCourseOfferingInstructionalApproachReadable> instructionalApproaches = default(List<MnCourseOfferingInstructionalApproachReadable>), List<MnCourseOfferingSiteBasedInitiativeReadable> siteBasedInitiatives = default(List<MnCourseOfferingSiteBasedInitiativeReadable>))
         {
-            this.InstructionMinutesPerTerm = instructionMinutesPerTerm;
             this.InstructionalApproaches = instructionalApproaches;
             this.SiteBasedInitiatives = siteBasedInitiatives;
         }
         
-        /// <summary>
-        /// Instruction minutes per term.
-        /// </summary>
-        /// <value>Instruction minutes per term.</value>
-        [DataMember(Name="instructionMinutesPerTerm", EmitDefaultValue=false)]
-        public int? InstructionMinutesPerTerm { get; set; }
-
         /// <summary>
         /// An unordered collection of courseOfferingInstructionalApproaches. Instructional approach as implemented for the course offering. General purpose but intially implemented for Early Education.
         /// </summary>
@@ -70,7 +63,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
         {
             var sb = new StringBuilder();
             sb.Append("class MnCourseOfferingExtensionReadable {\n");
-            sb.Append("  InstructionMinutesPerTerm: ").Append(InstructionMinutesPerTerm).Append("\n");
             sb.Append("  InstructionalApproaches: ").Append(InstructionalApproaches).Append("\n");
             sb.Append("  SiteBasedInitiatives: ").Append(SiteBasedInitiatives).Append("\n");
             sb.Append("}\n");
@@ -108,11 +100,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
 
             return 
                 (
-                    this.InstructionMinutesPerTerm == input.InstructionMinutesPerTerm ||
-                    (this.InstructionMinutesPerTerm != null &&
-                    this.InstructionMinutesPerTerm.Equals(input.InstructionMinutesPerTerm))
-                ) && 
-                (
                     this.InstructionalApproaches == input.InstructionalApproaches ||
                     this.InstructionalApproaches != null &&
                     this.InstructionalApproaches.SequenceEqual(input.InstructionalApproaches)
@@ -133,14 +120,22 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.InstructionMinutesPerTerm != null)
-                    hashCode = hashCode * 59 + this.InstructionMinutesPerTerm.GetHashCode();
                 if (this.InstructionalApproaches != null)
                     hashCode = hashCode * 59 + this.InstructionalApproaches.GetHashCode();
                 if (this.SiteBasedInitiatives != null)
                     hashCode = hashCode * 59 + this.SiteBasedInitiatives.GetHashCode();
                 return hashCode;
             }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            yield break;
         }
     }
 

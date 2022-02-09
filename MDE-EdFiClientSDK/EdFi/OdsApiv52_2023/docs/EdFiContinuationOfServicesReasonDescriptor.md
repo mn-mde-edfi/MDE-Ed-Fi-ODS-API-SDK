@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiContinuationOfServicesReasonDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiContinuationOfServicesReasonDescriptor
 ## Properties
 
 Name | Type | Description | Notes

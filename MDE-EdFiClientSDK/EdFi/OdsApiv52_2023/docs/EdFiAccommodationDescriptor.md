@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiAccommodationDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiAccommodationDescriptor
 ## Properties
 
 Name | Type | Description | Notes

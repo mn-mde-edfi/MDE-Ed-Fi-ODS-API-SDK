@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiCareerPathwayDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiCareerPathwayDescriptor
 ## Properties
 
 Name | Type | Description | Notes

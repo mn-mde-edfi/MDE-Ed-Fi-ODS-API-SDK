@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.MnInstructionalDeliveryModeDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.MnInstructionalDeliveryModeDescriptor
 ## Properties
 
 Name | Type | Description | Notes

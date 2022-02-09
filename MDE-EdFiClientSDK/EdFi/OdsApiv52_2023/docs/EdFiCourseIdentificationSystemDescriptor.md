@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiCourseIdentificationSystemDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiCourseIdentificationSystemDescriptor
 ## Properties
 
 Name | Type | Description | Notes

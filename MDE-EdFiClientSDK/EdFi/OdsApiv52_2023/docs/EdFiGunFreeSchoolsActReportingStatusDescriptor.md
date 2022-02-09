@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiGunFreeSchoolsActReportingStatusDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiGunFreeSchoolsActReportingStatusDescriptor
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,6 +1,6 @@
-# EdFi.OdsApi.Sdk.Apis.Identity.SectionEnrollmentTypeDescriptorsApi
+# EdFi.OdsApi.Sdk.Apis.Descriptors.SectionEnrollmentTypeDescriptorsApi
 
-All URIs are relative to *http://localhost:54746/data/v3/*
+All URIs are relative to *https://test.edfi5.education.mn.gov:443/api/data/v3/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -24,9 +24,9 @@ The DELETE operation is used to delete an existing resource by identifier. If th
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Identity;
+using EdFi.OdsApi.Sdk.Apis.Descriptors;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Identity;
+using EdFi.OdsApi.Sdk.Models.Descriptors;
 
 namespace Example
 {
@@ -89,9 +89,9 @@ The DELETES operation is used to retrieve deleted resources.
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Identity;
+using EdFi.OdsApi.Sdk.Apis.Descriptors;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Identity;
+using EdFi.OdsApi.Sdk.Models.Descriptors;
 
 namespace Example
 {
@@ -161,9 +161,9 @@ This GET operation provides access to resources using the \"Get\" search pattern
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Identity;
+using EdFi.OdsApi.Sdk.Apis.Descriptors;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Identity;
+using EdFi.OdsApi.Sdk.Models.Descriptors;
 
 namespace Example
 {
@@ -237,9 +237,9 @@ This GET operation retrieves a resource by the specified resource identifier.
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Identity;
+using EdFi.OdsApi.Sdk.Apis.Descriptors;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Identity;
+using EdFi.OdsApi.Sdk.Models.Descriptors;
 
 namespace Example
 {
@@ -305,9 +305,9 @@ The POST operation can be used to create or update resources. In database terms,
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Identity;
+using EdFi.OdsApi.Sdk.Apis.Descriptors;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Identity;
+using EdFi.OdsApi.Sdk.Models.Descriptors;
 
 namespace Example
 {
@@ -368,9 +368,9 @@ The PUT operation is used to update a resource by identifier. If the resource id
 ```csharp
 using System;
 using System.Diagnostics;
-using EdFi.OdsApi.Sdk.Apis.Identity;
+using EdFi.OdsApi.Sdk.Apis.Descriptors;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Identity;
+using EdFi.OdsApi.Sdk.Models.Descriptors;
 
 namespace Example
 {

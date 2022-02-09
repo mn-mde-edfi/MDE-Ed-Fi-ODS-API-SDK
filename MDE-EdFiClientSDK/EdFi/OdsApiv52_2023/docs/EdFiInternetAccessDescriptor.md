@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiInternetAccessDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiInternetAccessDescriptor
 ## Properties
 
 Name | Type | Description | Notes

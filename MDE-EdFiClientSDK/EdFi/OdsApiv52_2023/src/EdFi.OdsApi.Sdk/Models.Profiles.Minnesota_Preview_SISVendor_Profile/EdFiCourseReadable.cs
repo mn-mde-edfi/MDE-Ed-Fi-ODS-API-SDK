@@ -12,12 +12,14 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = EdFi.OdsApi.Sdk.Client.SwaggerDateConverter;
 
 namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
@@ -26,7 +28,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
     /// EdFiCourseReadable
     /// </summary>
     [DataContract]
-    public partial class EdFiCourseReadable :  IEquatable<EdFiCourseReadable>
+    public partial class EdFiCourseReadable :  IEquatable<EdFiCourseReadable>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="EdFiCourseReadable" /> class.
@@ -405,6 +407,40 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
                     hashCode = hashCode * 59 + this.Ext.GetHashCode();
                 return hashCode;
             }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            // CourseCode (string) maxLength
+            if(this.CourseCode != null && this.CourseCode.Length > 60)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CourseCode, length must be less than 60.", new [] { "CourseCode" });
+            }
+
+            // CourseDefinedByDescriptor (string) maxLength
+            if(this.CourseDefinedByDescriptor != null && this.CourseDefinedByDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CourseDefinedByDescriptor, length must be less than 306.", new [] { "CourseDefinedByDescriptor" });
+            }
+
+            // CourseDescription (string) maxLength
+            if(this.CourseDescription != null && this.CourseDescription.Length > 1024)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CourseDescription, length must be less than 1024.", new [] { "CourseDescription" });
+            }
+
+            // CourseTitle (string) maxLength
+            if(this.CourseTitle != null && this.CourseTitle.Length > 60)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CourseTitle, length must be less than 60.", new [] { "CourseTitle" });
+            }
+
+            yield break;
         }
     }
 

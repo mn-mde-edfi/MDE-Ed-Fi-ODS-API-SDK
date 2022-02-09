@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Linq;
-
 using EdFi.OdsApi.Sdk.Apis.Descriptors;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_TwentyTwo_TwentyThree_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
 
 namespace EdFi.OdsApi.SdkClient
 {
-
     public class Program
     {
         public static void Main(string[] args)
@@ -20,12 +18,13 @@ namespace EdFi.OdsApi.SdkClient
             // Due to our reliance on some older libraries, the.NET framework won't necessarily default
             // to the latest unless we explicitly request it. Some hosting environments will not allow older versions
             // of TLS, and thus calls can fail without this extra configuration.
-            System.Net.ServicePointManager.SecurityProtocol |= System.Net.SecurityProtocolType.Tls11 | System.Net.SecurityProtocolType.Tls12;
+            System.Net.ServicePointManager.SecurityProtocol |=
+                System.Net.SecurityProtocolType.Tls11 | System.Net.SecurityProtocolType.Tls12;
 
             // Oauth configuration
-            var oauthUrl = "http://localhost:54746";
-            var clientKey = "5MrTEHo3wGZRsaD12V9zy";
-            var clientSecret = "XofzCbh2slKgRN87Qp36j";
+            var oauthUrl = "https://test.edfi5.education.mn.gov/api";
+            var clientKey = "populated";
+            var clientSecret = "populatedSecret";
 
             // TokenRetriever makes the oauth calls.  It has RestSharp dependency, install via NuGet
             var tokenRetriever = new TokenRetriever(oauthUrl, clientKey, clientSecret);
@@ -34,7 +33,7 @@ namespace EdFi.OdsApi.SdkClient
             var configuration = new Configuration
             {
                 AccessToken = tokenRetriever.ObtainNewBearerToken(),
-                BasePath = "http://localhost:54746/data/v3/"
+                BasePath = "https://test.edfi5.education.mn.gov/api/data/v3"
             };
 
             Console.WriteLine("GET MN extension StudentSchoolAssociations");
@@ -88,7 +87,8 @@ namespace EdFi.OdsApi.SdkClient
             Console.WriteLine();
             Console.WriteLine("GET MN Extension Descriptor: EarlyChildhoodScreeningExitStatus");
             var mnDescriptorApi = new EarlyChildhoodScreeningExitStatusDescriptorsApi(configuration);
-            var mnDescriptorResponse = mnDescriptorApi.GetEarlyChildhoodScreeningExitStatusDescriptorsWithHttpInfo(null, null);
+            var mnDescriptorResponse =
+                mnDescriptorApi.GetEarlyChildhoodScreeningExitStatusDescriptorsWithHttpInfo(null, null);
             httpResponseCode = mnDescriptorResponse.StatusCode;
             var mnDescriptors = mnDescriptorResponse.Data;
             Console.WriteLine($"Response code is {httpResponseCode}");

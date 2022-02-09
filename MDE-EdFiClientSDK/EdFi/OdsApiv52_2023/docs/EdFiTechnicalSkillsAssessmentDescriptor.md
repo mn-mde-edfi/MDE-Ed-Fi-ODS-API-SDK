@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiTechnicalSkillsAssessmentDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiTechnicalSkillsAssessmentDescriptor
 ## Properties
 
 Name | Type | Description | Notes

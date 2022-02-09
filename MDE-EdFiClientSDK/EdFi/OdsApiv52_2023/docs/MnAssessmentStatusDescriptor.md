@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.MnAssessmentStatusDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.MnAssessmentStatusDescriptor
 ## Properties
 
 Name | Type | Description | Notes

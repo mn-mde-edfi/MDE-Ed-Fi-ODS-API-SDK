@@ -12,12 +12,14 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = EdFi.OdsApi.Sdk.Client.SwaggerDateConverter;
 
 namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
@@ -26,7 +28,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
     /// EdFiParentWritable
     /// </summary>
     [DataContract]
-    public partial class EdFiParentWritable :  IEquatable<EdFiParentWritable>
+    public partial class EdFiParentWritable :  IEquatable<EdFiParentWritable>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="EdFiParentWritable" /> class.
@@ -287,6 +289,58 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
                     hashCode = hashCode * 59 + this.Ext.GetHashCode();
                 return hashCode;
             }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            // ParentUniqueId (string) maxLength
+            if(this.ParentUniqueId != null && this.ParentUniqueId.Length > 32)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ParentUniqueId, length must be less than 32.", new [] { "ParentUniqueId" });
+            }
+
+            // FirstName (string) maxLength
+            if(this.FirstName != null && this.FirstName.Length > 75)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for FirstName, length must be less than 75.", new [] { "FirstName" });
+            }
+
+            // GenerationCodeSuffix (string) maxLength
+            if(this.GenerationCodeSuffix != null && this.GenerationCodeSuffix.Length > 10)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for GenerationCodeSuffix, length must be less than 10.", new [] { "GenerationCodeSuffix" });
+            }
+
+            // HighestCompletedLevelOfEducationDescriptor (string) maxLength
+            if(this.HighestCompletedLevelOfEducationDescriptor != null && this.HighestCompletedLevelOfEducationDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for HighestCompletedLevelOfEducationDescriptor, length must be less than 306.", new [] { "HighestCompletedLevelOfEducationDescriptor" });
+            }
+
+            // LastSurname (string) maxLength
+            if(this.LastSurname != null && this.LastSurname.Length > 75)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for LastSurname, length must be less than 75.", new [] { "LastSurname" });
+            }
+
+            // MiddleName (string) maxLength
+            if(this.MiddleName != null && this.MiddleName.Length > 75)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for MiddleName, length must be less than 75.", new [] { "MiddleName" });
+            }
+
+            // SexDescriptor (string) maxLength
+            if(this.SexDescriptor != null && this.SexDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for SexDescriptor, length must be less than 306.", new [] { "SexDescriptor" });
+            }
+
+            yield break;
         }
     }
 

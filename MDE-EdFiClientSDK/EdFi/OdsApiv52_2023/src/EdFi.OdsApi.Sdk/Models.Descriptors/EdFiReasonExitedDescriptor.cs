@@ -12,12 +12,14 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = EdFi.OdsApi.Sdk.Client.SwaggerDateConverter;
 
 namespace EdFi.OdsApi.Sdk.Models.Descriptors
@@ -26,7 +28,7 @@ namespace EdFi.OdsApi.Sdk.Models.Descriptors
     /// EdFiReasonExitedDescriptor
     /// </summary>
     [DataContract]
-    public partial class EdFiReasonExitedDescriptor :  IEquatable<EdFiReasonExitedDescriptor>
+    public partial class EdFiReasonExitedDescriptor :  IEquatable<EdFiReasonExitedDescriptor>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="EdFiReasonExitedDescriptor" /> class.
@@ -290,6 +292,40 @@ namespace EdFi.OdsApi.Sdk.Models.Descriptors
                     hashCode = hashCode * 59 + this.Etag.GetHashCode();
                 return hashCode;
             }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            // CodeValue (string) maxLength
+            if(this.CodeValue != null && this.CodeValue.Length > 50)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for CodeValue, length must be less than 50.", new [] { "CodeValue" });
+            }
+
+            // Description (string) maxLength
+            if(this.Description != null && this.Description.Length > 1024)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Description, length must be less than 1024.", new [] { "Description" });
+            }
+
+            // Namespace (string) maxLength
+            if(this.Namespace != null && this.Namespace.Length > 255)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Namespace, length must be less than 255.", new [] { "Namespace" });
+            }
+
+            // ShortDescription (string) maxLength
+            if(this.ShortDescription != null && this.ShortDescription.Length > 75)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for ShortDescription, length must be less than 75.", new [] { "ShortDescription" });
+            }
+
+            yield break;
         }
     }
 

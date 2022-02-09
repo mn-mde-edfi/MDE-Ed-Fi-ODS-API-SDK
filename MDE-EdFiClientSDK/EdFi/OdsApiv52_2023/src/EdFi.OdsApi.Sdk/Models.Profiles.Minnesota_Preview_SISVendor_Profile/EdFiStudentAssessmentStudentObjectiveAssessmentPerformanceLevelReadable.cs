@@ -12,12 +12,14 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = EdFi.OdsApi.Sdk.Client.SwaggerDateConverter;
 
 namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
@@ -26,7 +28,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
     /// EdFiStudentAssessmentStudentObjectiveAssessmentPerformanceLevelReadable
     /// </summary>
     [DataContract]
-    public partial class EdFiStudentAssessmentStudentObjectiveAssessmentPerformanceLevelReadable :  IEquatable<EdFiStudentAssessmentStudentObjectiveAssessmentPerformanceLevelReadable>
+    public partial class EdFiStudentAssessmentStudentObjectiveAssessmentPerformanceLevelReadable :  IEquatable<EdFiStudentAssessmentStudentObjectiveAssessmentPerformanceLevelReadable>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="EdFiStudentAssessmentStudentObjectiveAssessmentPerformanceLevelReadable" /> class.
@@ -170,6 +172,28 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile
                     hashCode = hashCode * 59 + this.PerformanceLevelMet.GetHashCode();
                 return hashCode;
             }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            // AssessmentReportingMethodDescriptor (string) maxLength
+            if(this.AssessmentReportingMethodDescriptor != null && this.AssessmentReportingMethodDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for AssessmentReportingMethodDescriptor, length must be less than 306.", new [] { "AssessmentReportingMethodDescriptor" });
+            }
+
+            // PerformanceLevelDescriptor (string) maxLength
+            if(this.PerformanceLevelDescriptor != null && this.PerformanceLevelDescriptor.Length > 306)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for PerformanceLevelDescriptor, length must be less than 306.", new [] { "PerformanceLevelDescriptor" });
+            }
+
+            yield break;
         }
     }
 

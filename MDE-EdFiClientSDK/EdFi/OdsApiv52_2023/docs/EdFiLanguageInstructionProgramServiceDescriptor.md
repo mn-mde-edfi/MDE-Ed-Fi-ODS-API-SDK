@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiLanguageInstructionProgramServiceDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiLanguageInstructionProgramServiceDescriptor
 ## Properties
 
 Name | Type | Description | Notes

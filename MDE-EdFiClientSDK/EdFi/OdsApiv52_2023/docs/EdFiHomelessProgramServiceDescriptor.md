@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiHomelessProgramServiceDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiHomelessProgramServiceDescriptor
 ## Properties
 
 Name | Type | Description | Notes

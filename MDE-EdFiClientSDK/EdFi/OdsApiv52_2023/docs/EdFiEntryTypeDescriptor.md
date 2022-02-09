@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiEntryTypeDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiEntryTypeDescriptor
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.MnEdFiSubmissionAccessDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.MnEdFiSubmissionAccessDescriptor
 ## Properties
 
 Name | Type | Description | Notes

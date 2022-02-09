@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Identity.EdFiTermDescriptor
+# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiTermDescriptor
 ## Properties
 
 Name | Type | Description | Notes
