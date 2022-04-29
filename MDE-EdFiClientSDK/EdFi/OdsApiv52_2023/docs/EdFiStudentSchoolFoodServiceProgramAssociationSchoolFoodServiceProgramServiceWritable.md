@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.EdFiStudentSchoolFoodServiceProgramAssociationSchoolFoodServiceProgramServiceWritable
+# EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile.EdFiStudentSchoolFoodServiceProgramAssociationSchoolFoodServiceProgramServiceWritable
 ## Properties
 
 Name | Type | Description | Notes

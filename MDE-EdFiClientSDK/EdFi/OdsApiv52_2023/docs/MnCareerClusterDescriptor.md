@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.MnCareerClusterDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.MnCareerClusterDescriptor
 ## Properties
 
 Name | Type | Description | Notes

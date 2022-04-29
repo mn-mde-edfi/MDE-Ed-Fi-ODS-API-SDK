@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiStaffLeaveEventCategoryDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiStaffLeaveEventCategoryDescriptor
 ## Properties
 
 Name | Type | Description | Notes

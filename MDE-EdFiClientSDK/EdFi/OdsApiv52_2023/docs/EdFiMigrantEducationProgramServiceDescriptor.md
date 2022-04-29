@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiMigrantEducationProgramServiceDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiMigrantEducationProgramServiceDescriptor
 ## Properties
 
 Name | Type | Description | Notes

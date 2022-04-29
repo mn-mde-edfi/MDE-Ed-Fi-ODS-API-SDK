@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiCourseDefinedByDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiCourseDefinedByDescriptor
 ## Properties
 
 Name | Type | Description | Notes

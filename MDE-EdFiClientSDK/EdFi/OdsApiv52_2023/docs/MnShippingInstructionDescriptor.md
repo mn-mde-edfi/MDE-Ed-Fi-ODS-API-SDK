@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.MnShippingInstructionDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.MnShippingInstructionDescriptor
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiMediumOfInstructionDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiMediumOfInstructionDescriptor
 ## Properties
 
 Name | Type | Description | Notes

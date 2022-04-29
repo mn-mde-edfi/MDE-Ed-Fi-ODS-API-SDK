@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiMonitoredDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiMonitoredDescriptor
 ## Properties
 
 Name | Type | Description | Notes

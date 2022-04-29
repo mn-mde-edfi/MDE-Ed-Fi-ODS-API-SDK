@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiPersonalInformationVerificationDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiPersonalInformationVerificationDescriptor
 ## Properties
 
 Name | Type | Description | Notes

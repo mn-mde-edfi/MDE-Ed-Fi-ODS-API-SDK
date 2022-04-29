@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiAdministrationEnvironmentDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiAdministrationEnvironmentDescriptor
 ## Properties
 
 Name | Type | Description | Notes

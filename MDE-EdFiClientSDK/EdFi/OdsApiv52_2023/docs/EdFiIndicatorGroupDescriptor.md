@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiIndicatorGroupDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiIndicatorGroupDescriptor
 ## Properties
 
 Name | Type | Description | Notes

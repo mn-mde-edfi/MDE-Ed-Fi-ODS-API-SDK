@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiAddressTypeDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiAddressTypeDescriptor
 ## Properties
 
 Name | Type | Description | Notes

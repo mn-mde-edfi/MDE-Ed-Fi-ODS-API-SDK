@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiPerformanceBaseConversionDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiPerformanceBaseConversionDescriptor
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiPostingResultDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiPostingResultDescriptor
 ## Properties
 
 Name | Type | Description | Notes

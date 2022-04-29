@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiEventCircumstanceDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiEventCircumstanceDescriptor
 ## Properties
 
 Name | Type | Description | Notes

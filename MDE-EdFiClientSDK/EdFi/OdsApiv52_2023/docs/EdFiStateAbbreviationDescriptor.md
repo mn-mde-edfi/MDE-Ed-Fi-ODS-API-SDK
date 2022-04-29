@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiStateAbbreviationDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiStateAbbreviationDescriptor
 ## Properties
 
 Name | Type | Description | Notes

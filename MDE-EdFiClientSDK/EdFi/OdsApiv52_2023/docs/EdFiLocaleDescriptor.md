@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiLocaleDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiLocaleDescriptor
 ## Properties
 
 Name | Type | Description | Notes

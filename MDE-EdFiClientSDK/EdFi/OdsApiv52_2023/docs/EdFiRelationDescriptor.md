@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiRelationDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiRelationDescriptor
 ## Properties
 
 Name | Type | Description | Notes

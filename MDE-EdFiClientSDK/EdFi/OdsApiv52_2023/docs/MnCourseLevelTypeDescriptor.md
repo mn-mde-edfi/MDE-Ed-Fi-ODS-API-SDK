@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.MnCourseLevelTypeDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.MnCourseLevelTypeDescriptor
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiAbsenceEventCategoryDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiAbsenceEventCategoryDescriptor
 ## Properties
 
 Name | Type | Description | Notes

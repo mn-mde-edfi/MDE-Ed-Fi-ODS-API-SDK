@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.MnAssessmentFormatDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.MnAssessmentFormatDescriptor
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiWeaponDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiWeaponDescriptor
 ## Properties
 
 Name | Type | Description | Notes

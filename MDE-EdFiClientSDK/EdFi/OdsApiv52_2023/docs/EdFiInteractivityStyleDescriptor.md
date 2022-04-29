@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiInteractivityStyleDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiInteractivityStyleDescriptor
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiCreditTypeDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiCreditTypeDescriptor
 ## Properties
 
 Name | Type | Description | Notes

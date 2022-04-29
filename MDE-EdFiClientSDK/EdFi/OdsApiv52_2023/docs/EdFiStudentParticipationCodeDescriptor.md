@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiStudentParticipationCodeDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiStudentParticipationCodeDescriptor
 ## Properties
 
 Name | Type | Description | Notes

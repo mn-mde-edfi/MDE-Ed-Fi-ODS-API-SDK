@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiRepeatIdentifierDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiRepeatIdentifierDescriptor
 ## Properties
 
 Name | Type | Description | Notes

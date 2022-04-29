@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiVisaDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiVisaDescriptor
 ## Properties
 
 Name | Type | Description | Notes

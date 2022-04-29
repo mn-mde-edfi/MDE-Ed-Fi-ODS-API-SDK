@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiSectionCharacteristicDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiSectionCharacteristicDescriptor
 ## Properties
 
 Name | Type | Description | Notes

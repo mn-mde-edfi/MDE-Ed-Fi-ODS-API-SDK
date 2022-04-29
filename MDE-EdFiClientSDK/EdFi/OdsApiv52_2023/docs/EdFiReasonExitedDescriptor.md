@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiReasonExitedDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiReasonExitedDescriptor
 ## Properties
 
 Name | Type | Description | Notes

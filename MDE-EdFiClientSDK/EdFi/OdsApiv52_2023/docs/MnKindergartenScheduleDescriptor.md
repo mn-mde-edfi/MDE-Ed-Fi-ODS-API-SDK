@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.MnKindergartenScheduleDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.MnKindergartenScheduleDescriptor
 ## Properties
 
 Name | Type | Description | Notes

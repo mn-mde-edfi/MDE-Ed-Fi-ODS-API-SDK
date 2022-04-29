@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiLearningStandardScopeDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiLearningStandardScopeDescriptor
 ## Properties
 
 Name | Type | Description | Notes

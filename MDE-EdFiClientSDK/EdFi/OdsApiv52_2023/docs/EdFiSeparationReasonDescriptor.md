@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiSeparationReasonDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiSeparationReasonDescriptor
 ## Properties
 
 Name | Type | Description | Notes

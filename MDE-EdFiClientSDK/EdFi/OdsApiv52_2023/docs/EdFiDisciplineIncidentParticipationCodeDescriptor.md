@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiDisciplineIncidentParticipationCodeDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiDisciplineIncidentParticipationCodeDescriptor
 ## Properties
 
 Name | Type | Description | Notes

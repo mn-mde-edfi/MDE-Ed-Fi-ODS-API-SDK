@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.MnClassroomVolunteerDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.MnClassroomVolunteerDescriptor
 ## Properties
 
 Name | Type | Description | Notes

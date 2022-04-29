@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiCourseAttemptResultDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiCourseAttemptResultDescriptor
 ## Properties
 
 Name | Type | Description | Notes

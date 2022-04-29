@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiInterventionEffectivenessRatingDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiInterventionEffectivenessRatingDescriptor
 ## Properties
 
 Name | Type | Description | Notes

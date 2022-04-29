@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiPostSecondaryInstitutionLevelDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiPostSecondaryInstitutionLevelDescriptor
 ## Properties
 
 Name | Type | Description | Notes

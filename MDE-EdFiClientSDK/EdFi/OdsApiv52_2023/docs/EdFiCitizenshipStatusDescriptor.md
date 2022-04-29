@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiCitizenshipStatusDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiCitizenshipStatusDescriptor
 ## Properties
 
 Name | Type | Description | Notes

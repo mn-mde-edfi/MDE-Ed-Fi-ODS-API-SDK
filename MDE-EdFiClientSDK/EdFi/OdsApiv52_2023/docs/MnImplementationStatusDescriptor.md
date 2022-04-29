@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.MnImplementationStatusDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.MnImplementationStatusDescriptor
 ## Properties
 
 Name | Type | Description | Notes

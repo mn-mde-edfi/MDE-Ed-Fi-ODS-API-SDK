@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiCountryDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiCountryDescriptor
 ## Properties
 
 Name | Type | Description | Notes

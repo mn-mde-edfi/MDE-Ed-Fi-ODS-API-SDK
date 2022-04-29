@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiGradebookEntryTypeDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiGradebookEntryTypeDescriptor
 ## Properties
 
 Name | Type | Description | Notes

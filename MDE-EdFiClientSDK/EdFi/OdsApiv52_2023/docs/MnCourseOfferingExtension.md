@@ -1,0 +1,10 @@
+# EdFi.OdsApi.Sdk.Models.Identity.MnCourseOfferingExtension
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**InstructionalApproaches** | [**List&lt;MnCourseOfferingInstructionalApproach&gt;**](MnCourseOfferingInstructionalApproach.md) | An unordered collection of courseOfferingInstructionalApproaches. Instructional approach as implemented for the course offering. General purpose but intially implemented for Early Education. | [optional] 
+**SiteBasedInitiatives** | [**List&lt;MnCourseOfferingSiteBasedInitiative&gt;**](MnCourseOfferingSiteBasedInitiative.md) | An unordered collection of courseOfferingSiteBasedInitiatives. Site-based initiative as implemented for the course offering. General purpose but intially implemented for Early Education. | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

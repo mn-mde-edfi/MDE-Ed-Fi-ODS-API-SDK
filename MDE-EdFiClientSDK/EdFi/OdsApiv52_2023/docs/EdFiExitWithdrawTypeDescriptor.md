@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiExitWithdrawTypeDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiExitWithdrawTypeDescriptor
 ## Properties
 
 Name | Type | Description | Notes

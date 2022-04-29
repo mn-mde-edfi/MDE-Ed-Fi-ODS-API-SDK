@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiCalendarTypeDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiCalendarTypeDescriptor
 ## Properties
 
 Name | Type | Description | Notes

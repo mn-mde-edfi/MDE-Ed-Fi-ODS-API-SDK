@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiCostRateDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiCostRateDescriptor
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiSurveyCategoryDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiSurveyCategoryDescriptor
 ## Properties
 
 Name | Type | Description | Notes

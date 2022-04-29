@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.MnSiteBasedInitiativeDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.MnSiteBasedInitiativeDescriptor
 ## Properties
 
 Name | Type | Description | Notes

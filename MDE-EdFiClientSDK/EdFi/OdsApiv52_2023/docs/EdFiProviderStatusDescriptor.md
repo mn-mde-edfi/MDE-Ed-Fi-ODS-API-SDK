@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiProviderStatusDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiProviderStatusDescriptor
 ## Properties
 
 Name | Type | Description | Notes

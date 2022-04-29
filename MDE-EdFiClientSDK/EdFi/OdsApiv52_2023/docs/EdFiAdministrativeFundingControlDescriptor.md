@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiAdministrativeFundingControlDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiAdministrativeFundingControlDescriptor
 ## Properties
 
 Name | Type | Description | Notes

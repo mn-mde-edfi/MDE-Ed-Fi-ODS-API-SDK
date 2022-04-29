@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiHomelessPrimaryNighttimeResidenceDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiHomelessPrimaryNighttimeResidenceDescriptor
 ## Properties
 
 Name | Type | Description | Notes

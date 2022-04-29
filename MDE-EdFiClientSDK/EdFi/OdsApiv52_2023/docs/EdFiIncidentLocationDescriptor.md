@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiIncidentLocationDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiIncidentLocationDescriptor
 ## Properties
 
 Name | Type | Description | Notes

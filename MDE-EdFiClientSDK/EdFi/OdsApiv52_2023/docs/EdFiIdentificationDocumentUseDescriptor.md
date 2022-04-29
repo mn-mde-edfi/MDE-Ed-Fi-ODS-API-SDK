@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiIdentificationDocumentUseDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiIdentificationDocumentUseDescriptor
 ## Properties
 
 Name | Type | Description | Notes

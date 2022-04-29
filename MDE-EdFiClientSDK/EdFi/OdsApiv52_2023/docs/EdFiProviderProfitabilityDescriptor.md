@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiProviderProfitabilityDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiProviderProfitabilityDescriptor
 ## Properties
 
 Name | Type | Description | Notes

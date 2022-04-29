@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiElectronicMailTypeDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiElectronicMailTypeDescriptor
 ## Properties
 
 Name | Type | Description | Notes

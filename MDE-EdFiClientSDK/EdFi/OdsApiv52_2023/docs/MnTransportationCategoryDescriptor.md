@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.MnTransportationCategoryDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.MnTransportationCategoryDescriptor
 ## Properties
 
 Name | Type | Description | Notes

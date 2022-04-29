@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiReasonNotTestedDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiReasonNotTestedDescriptor
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiDeliveryMethodDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiDeliveryMethodDescriptor
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiAssessmentReportingMethodDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiAssessmentReportingMethodDescriptor
 ## Properties
 
 Name | Type | Description | Notes

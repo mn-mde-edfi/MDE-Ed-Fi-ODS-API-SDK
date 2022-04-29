@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiInterventionClassDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiInterventionClassDescriptor
 ## Properties
 
 Name | Type | Description | Notes

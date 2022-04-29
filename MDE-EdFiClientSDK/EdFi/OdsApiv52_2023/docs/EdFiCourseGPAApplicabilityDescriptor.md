@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiCourseGPAApplicabilityDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiCourseGPAApplicabilityDescriptor
 ## Properties
 
 Name | Type | Description | Notes

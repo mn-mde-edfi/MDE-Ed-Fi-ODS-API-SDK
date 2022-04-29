@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.MnEarlyEducationCourseLocationDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.MnEarlyEducationCourseLocationDescriptor
 ## Properties
 
 Name | Type | Description | Notes

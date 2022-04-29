@@ -94,9 +94,10 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVen
         /// <param name="programName">The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)</param>
         /// <param name="programTypeDescriptor">The type of program. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="directCertification">Indicates that the student&#39;s National School Lunch Program (NSLP) eligibility has been determined through direct certification. (optional)</param>
         /// <param name="snapshotIdentifier">Indicates the Snapshot-Identifier that should be used. (optional)</param>
         /// <returns>List&lt;EdFiStudentSchoolFoodServiceProgramAssociationReadable&gt;</returns>
-        List<EdFiStudentSchoolFoodServiceProgramAssociationReadable> GetStudentSchoolFoodServiceProgramAssociations (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, string snapshotIdentifier = null);
+        List<EdFiStudentSchoolFoodServiceProgramAssociationReadable> GetStudentSchoolFoodServiceProgramAssociations (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, bool? directCertification = null, string snapshotIdentifier = null);
 
         /// <summary>
         /// Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
@@ -116,9 +117,10 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVen
         /// <param name="programName">The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)</param>
         /// <param name="programTypeDescriptor">The type of program. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="directCertification">Indicates that the student&#39;s National School Lunch Program (NSLP) eligibility has been determined through direct certification. (optional)</param>
         /// <param name="snapshotIdentifier">Indicates the Snapshot-Identifier that should be used. (optional)</param>
         /// <returns>ApiResponse of List&lt;EdFiStudentSchoolFoodServiceProgramAssociationReadable&gt;</returns>
-        ApiResponse<List<EdFiStudentSchoolFoodServiceProgramAssociationReadable>> GetStudentSchoolFoodServiceProgramAssociationsWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, string snapshotIdentifier = null);
+        ApiResponse<List<EdFiStudentSchoolFoodServiceProgramAssociationReadable>> GetStudentSchoolFoodServiceProgramAssociationsWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, bool? directCertification = null, string snapshotIdentifier = null);
         /// <summary>
         /// Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
         /// </summary>
@@ -262,9 +264,10 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVen
         /// <param name="programName">The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)</param>
         /// <param name="programTypeDescriptor">The type of program. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="directCertification">Indicates that the student&#39;s National School Lunch Program (NSLP) eligibility has been determined through direct certification. (optional)</param>
         /// <param name="snapshotIdentifier">Indicates the Snapshot-Identifier that should be used. (optional)</param>
         /// <returns>Task of List&lt;EdFiStudentSchoolFoodServiceProgramAssociationReadable&gt;</returns>
-        System.Threading.Tasks.Task<List<EdFiStudentSchoolFoodServiceProgramAssociationReadable>> GetStudentSchoolFoodServiceProgramAssociationsAsync (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, string snapshotIdentifier = null);
+        System.Threading.Tasks.Task<List<EdFiStudentSchoolFoodServiceProgramAssociationReadable>> GetStudentSchoolFoodServiceProgramAssociationsAsync (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, bool? directCertification = null, string snapshotIdentifier = null);
 
         /// <summary>
         /// Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern).
@@ -284,9 +287,10 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVen
         /// <param name="programName">The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)</param>
         /// <param name="programTypeDescriptor">The type of program. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="directCertification">Indicates that the student&#39;s National School Lunch Program (NSLP) eligibility has been determined through direct certification. (optional)</param>
         /// <param name="snapshotIdentifier">Indicates the Snapshot-Identifier that should be used. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;EdFiStudentSchoolFoodServiceProgramAssociationReadable&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<EdFiStudentSchoolFoodServiceProgramAssociationReadable>>> GetStudentSchoolFoodServiceProgramAssociationsAsyncWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, string snapshotIdentifier = null);
+        System.Threading.Tasks.Task<ApiResponse<List<EdFiStudentSchoolFoodServiceProgramAssociationReadable>>> GetStudentSchoolFoodServiceProgramAssociationsAsyncWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, bool? directCertification = null, string snapshotIdentifier = null);
         /// <summary>
         /// Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern).
         /// </summary>
@@ -789,11 +793,12 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVen
         /// <param name="programName">The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)</param>
         /// <param name="programTypeDescriptor">The type of program. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="directCertification">Indicates that the student&#39;s National School Lunch Program (NSLP) eligibility has been determined through direct certification. (optional)</param>
         /// <param name="snapshotIdentifier">Indicates the Snapshot-Identifier that should be used. (optional)</param>
         /// <returns>List&lt;EdFiStudentSchoolFoodServiceProgramAssociationReadable&gt;</returns>
-        public List<EdFiStudentSchoolFoodServiceProgramAssociationReadable> GetStudentSchoolFoodServiceProgramAssociations (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, string snapshotIdentifier = null)
+        public List<EdFiStudentSchoolFoodServiceProgramAssociationReadable> GetStudentSchoolFoodServiceProgramAssociations (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, bool? directCertification = null, string snapshotIdentifier = null)
         {
-             ApiResponse<List<EdFiStudentSchoolFoodServiceProgramAssociationReadable>> localVarResponse = GetStudentSchoolFoodServiceProgramAssociationsWithHttpInfo(offset, limit, minChangeVersion, maxChangeVersion, totalCount, beginDate, educationOrganizationId, programEducationOrganizationId, programName, programTypeDescriptor, studentUniqueId, snapshotIdentifier);
+             ApiResponse<List<EdFiStudentSchoolFoodServiceProgramAssociationReadable>> localVarResponse = GetStudentSchoolFoodServiceProgramAssociationsWithHttpInfo(offset, limit, minChangeVersion, maxChangeVersion, totalCount, beginDate, educationOrganizationId, programEducationOrganizationId, programName, programTypeDescriptor, studentUniqueId, directCertification, snapshotIdentifier);
              return localVarResponse.Data;
         }
 
@@ -812,9 +817,10 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVen
         /// <param name="programName">The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)</param>
         /// <param name="programTypeDescriptor">The type of program. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="directCertification">Indicates that the student&#39;s National School Lunch Program (NSLP) eligibility has been determined through direct certification. (optional)</param>
         /// <param name="snapshotIdentifier">Indicates the Snapshot-Identifier that should be used. (optional)</param>
         /// <returns>ApiResponse of List&lt;EdFiStudentSchoolFoodServiceProgramAssociationReadable&gt;</returns>
-        public ApiResponse< List<EdFiStudentSchoolFoodServiceProgramAssociationReadable> > GetStudentSchoolFoodServiceProgramAssociationsWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, string snapshotIdentifier = null)
+        public ApiResponse< List<EdFiStudentSchoolFoodServiceProgramAssociationReadable> > GetStudentSchoolFoodServiceProgramAssociationsWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, bool? directCertification = null, string snapshotIdentifier = null)
         {
 
             var localVarPath = "/ed-fi/studentSchoolFoodServiceProgramAssociations";
@@ -850,6 +856,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVen
             if (programName != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "programName", programName)); // query parameter
             if (programTypeDescriptor != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "programTypeDescriptor", programTypeDescriptor)); // query parameter
             if (studentUniqueId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "studentUniqueId", studentUniqueId)); // query parameter
+            if (directCertification != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "directCertification", directCertification)); // query parameter
             if (snapshotIdentifier != null) localVarHeaderParams.Add("Snapshot-Identifier", this.Configuration.ApiClient.ParameterToString(snapshotIdentifier)); // header parameter
 
             // authentication (oauth2_client_credentials) required
@@ -892,11 +899,12 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVen
         /// <param name="programName">The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)</param>
         /// <param name="programTypeDescriptor">The type of program. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="directCertification">Indicates that the student&#39;s National School Lunch Program (NSLP) eligibility has been determined through direct certification. (optional)</param>
         /// <param name="snapshotIdentifier">Indicates the Snapshot-Identifier that should be used. (optional)</param>
         /// <returns>Task of List&lt;EdFiStudentSchoolFoodServiceProgramAssociationReadable&gt;</returns>
-        public async System.Threading.Tasks.Task<List<EdFiStudentSchoolFoodServiceProgramAssociationReadable>> GetStudentSchoolFoodServiceProgramAssociationsAsync (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, string snapshotIdentifier = null)
+        public async System.Threading.Tasks.Task<List<EdFiStudentSchoolFoodServiceProgramAssociationReadable>> GetStudentSchoolFoodServiceProgramAssociationsAsync (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, bool? directCertification = null, string snapshotIdentifier = null)
         {
-             ApiResponse<List<EdFiStudentSchoolFoodServiceProgramAssociationReadable>> localVarResponse = await GetStudentSchoolFoodServiceProgramAssociationsAsyncWithHttpInfo(offset, limit, minChangeVersion, maxChangeVersion, totalCount, beginDate, educationOrganizationId, programEducationOrganizationId, programName, programTypeDescriptor, studentUniqueId, snapshotIdentifier);
+             ApiResponse<List<EdFiStudentSchoolFoodServiceProgramAssociationReadable>> localVarResponse = await GetStudentSchoolFoodServiceProgramAssociationsAsyncWithHttpInfo(offset, limit, minChangeVersion, maxChangeVersion, totalCount, beginDate, educationOrganizationId, programEducationOrganizationId, programName, programTypeDescriptor, studentUniqueId, directCertification, snapshotIdentifier);
              return localVarResponse.Data;
 
         }
@@ -916,9 +924,10 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVen
         /// <param name="programName">The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional)</param>
         /// <param name="programTypeDescriptor">The type of program. (optional)</param>
         /// <param name="studentUniqueId">A unique alphanumeric code assigned to a student. (optional)</param>
+        /// <param name="directCertification">Indicates that the student&#39;s National School Lunch Program (NSLP) eligibility has been determined through direct certification. (optional)</param>
         /// <param name="snapshotIdentifier">Indicates the Snapshot-Identifier that should be used. (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;EdFiStudentSchoolFoodServiceProgramAssociationReadable&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<EdFiStudentSchoolFoodServiceProgramAssociationReadable>>> GetStudentSchoolFoodServiceProgramAssociationsAsyncWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, string snapshotIdentifier = null)
+        public async System.Threading.Tasks.Task<ApiResponse<List<EdFiStudentSchoolFoodServiceProgramAssociationReadable>>> GetStudentSchoolFoodServiceProgramAssociationsAsyncWithHttpInfo (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, bool? directCertification = null, string snapshotIdentifier = null)
         {
 
             var localVarPath = "/ed-fi/studentSchoolFoodServiceProgramAssociations";
@@ -954,6 +963,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVen
             if (programName != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "programName", programName)); // query parameter
             if (programTypeDescriptor != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "programTypeDescriptor", programTypeDescriptor)); // query parameter
             if (studentUniqueId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "studentUniqueId", studentUniqueId)); // query parameter
+            if (directCertification != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "directCertification", directCertification)); // query parameter
             if (snapshotIdentifier != null) localVarHeaderParams.Add("Snapshot-Identifier", this.Configuration.ApiClient.ParameterToString(snapshotIdentifier)); // header parameter
 
             // authentication (oauth2_client_credentials) required

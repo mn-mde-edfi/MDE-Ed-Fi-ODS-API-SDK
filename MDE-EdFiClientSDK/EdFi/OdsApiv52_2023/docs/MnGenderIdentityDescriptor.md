@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.MnGenderIdentityDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.MnGenderIdentityDescriptor
 ## Properties
 
 Name | Type | Description | Notes

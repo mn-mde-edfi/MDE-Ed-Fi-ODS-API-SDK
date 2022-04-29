@@ -1,4 +1,4 @@
-# EdFi.OdsApi.Sdk.Models.Descriptors.EdFiProgressDescriptor
+# EdFi.OdsApi.Sdk.Models.Identity.EdFiProgressDescriptor
 ## Properties
 
 Name | Type | Description | Notes
