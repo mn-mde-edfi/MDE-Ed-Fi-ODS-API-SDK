@@ -497,7 +497,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/vnd.ed-fi.staff.minnesota-twentyone-twentytwo-sisvendorprofile.writable+json"
+                "application/vnd.ed-fi.staff.minnesota-twenty-two-twenty-three-baseline-sis-vendor-profile.writable+json"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -580,7 +580,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/vnd.ed-fi.staff.minnesota-twentyone-twentytwo-sisvendorprofile.writable+json"
+                "application/vnd.ed-fi.staff.minnesota-twenty-two-twenty-three-baseline-sis-vendor-profile.writable+json"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -658,7 +658,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/vnd.ed-fi.staff.minnesota-twentyone-twentytwo-sisvendorprofile.writable+json"
+                "application/vnd.ed-fi.staff.minnesota-twenty-two-twenty-three-baseline-sis-vendor-profile.writable+json"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -734,7 +734,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/vnd.ed-fi.staff.minnesota-twentyone-twentytwo-sisvendorprofile.writable+json"
+                "application/vnd.ed-fi.staff.minnesota-twenty-two-twenty-three-baseline-sis-vendor-profile.writable+json"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -833,7 +833,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/vnd.ed-fi.staff.minnesota-twentyone-twentytwo-sisvendorprofile.readable+json"
+                "application/vnd.ed-fi.staff.minnesota-twenty-two-twenty-three-baseline-sis-vendor-profile.readable+json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -937,7 +937,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/vnd.ed-fi.staff.minnesota-twentyone-twentytwo-sisvendorprofile.readable+json"
+                "application/vnd.ed-fi.staff.minnesota-twenty-two-twenty-three-baseline-sis-vendor-profile.readable+json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -1025,7 +1025,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/vnd.ed-fi.staff.minnesota-twentyone-twentytwo-sisvendorprofile.readable+json"
+                "application/vnd.ed-fi.staff.minnesota-twenty-two-twenty-three-baseline-sis-vendor-profile.readable+json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -1105,7 +1105,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
-                "application/vnd.ed-fi.staff.minnesota-twentyone-twentytwo-sisvendorprofile.readable+json"
+                "application/vnd.ed-fi.staff.minnesota-twenty-two-twenty-three-baseline-sis-vendor-profile.readable+json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -1173,7 +1173,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/vnd.ed-fi.staff.minnesota-twentyone-twentytwo-sisvendorprofile.writable+json"
+                "application/vnd.ed-fi.staff.minnesota-twenty-two-twenty-three-baseline-sis-vendor-profile.writable+json"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1253,7 +1253,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/vnd.ed-fi.staff.minnesota-twentyone-twentytwo-sisvendorprofile.writable+json"
+                "application/vnd.ed-fi.staff.minnesota-twenty-two-twenty-three-baseline-sis-vendor-profile.writable+json"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1339,7 +1339,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/vnd.ed-fi.staff.minnesota-twentyone-twentytwo-sisvendorprofile.writable+json"
+                "application/vnd.ed-fi.staff.minnesota-twenty-two-twenty-three-baseline-sis-vendor-profile.writable+json"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1428,7 +1428,7 @@ namespace EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendo
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/vnd.ed-fi.staff.minnesota-twentyone-twentytwo-sisvendorprofile.writable+json"
+                "application/vnd.ed-fi.staff.minnesota-twenty-two-twenty-three-baseline-sis-vendor-profile.writable+json"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 

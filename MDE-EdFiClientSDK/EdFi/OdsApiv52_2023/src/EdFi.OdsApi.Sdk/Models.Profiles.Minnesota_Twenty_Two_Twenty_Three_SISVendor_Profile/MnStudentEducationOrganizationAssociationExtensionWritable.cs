@@ -41,8 +41,10 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
         /// <param name="genderIdentities">An unordered collection of studentEducationOrganizationAssociationGenderIdentities. Gender identity..</param>
         /// <param name="languageAcademicHonors">An unordered collection of studentEducationOrganizationAssociationLanguageAcademicHonors. Academic honors..</param>
         /// <param name="optOutIndicators">An unordered collection of studentEducationOrganizationAssociationOptOutIndicators. Opt Out Indicators..</param>
+        /// <param name="otherNames">An unordered collection of studentEducationOrganizationAssociationOtherNames. Other name..</param>
         /// <param name="preferredPronouns">An unordered collection of studentEducationOrganizationAssociationPreferredPronouns. Preferred pronoun..</param>
-        public MnStudentEducationOrganizationAssociationExtensionWritable(DateTime? birthDate = default(DateTime?), string firstName = default(string), string generationCodeSuffix = default(string), string lastSurname = default(string), string middleName = default(string), List<MnStudentEducationOrganizationAssociationGenderIdentityWritable> genderIdentities = default(List<MnStudentEducationOrganizationAssociationGenderIdentityWritable>), List<MnStudentEducationOrganizationAssociationLanguageAcademicHonorWritable> languageAcademicHonors = default(List<MnStudentEducationOrganizationAssociationLanguageAcademicHonorWritable>), List<MnStudentEducationOrganizationAssociationOptOutIndicatorsWritable> optOutIndicators = default(List<MnStudentEducationOrganizationAssociationOptOutIndicatorsWritable>), List<MnStudentEducationOrganizationAssociationPreferredPronounWritable> preferredPronouns = default(List<MnStudentEducationOrganizationAssociationPreferredPronounWritable>))
+        /// <param name="studentCrisisEvents">An unordered collection of studentEducationOrganizationAssociationStudentCrisisEvents. Information on the crisis that has affected a student..</param>
+        public MnStudentEducationOrganizationAssociationExtensionWritable(DateTime? birthDate = default(DateTime?), string firstName = default(string), string generationCodeSuffix = default(string), string lastSurname = default(string), string middleName = default(string), List<MnStudentEducationOrganizationAssociationGenderIdentityWritable> genderIdentities = default(List<MnStudentEducationOrganizationAssociationGenderIdentityWritable>), List<MnStudentEducationOrganizationAssociationLanguageAcademicHonorWritable> languageAcademicHonors = default(List<MnStudentEducationOrganizationAssociationLanguageAcademicHonorWritable>), List<MnStudentEducationOrganizationAssociationOptOutIndicatorsWritable> optOutIndicators = default(List<MnStudentEducationOrganizationAssociationOptOutIndicatorsWritable>), List<MnStudentEducationOrganizationAssociationOtherNameWritable> otherNames = default(List<MnStudentEducationOrganizationAssociationOtherNameWritable>), List<MnStudentEducationOrganizationAssociationPreferredPronounWritable> preferredPronouns = default(List<MnStudentEducationOrganizationAssociationPreferredPronounWritable>), List<MnStudentEducationOrganizationAssociationStudentCrisisEventWritable> studentCrisisEvents = default(List<MnStudentEducationOrganizationAssociationStudentCrisisEventWritable>))
         {
             this.BirthDate = birthDate;
             this.FirstName = firstName;
@@ -52,7 +54,9 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
             this.GenderIdentities = genderIdentities;
             this.LanguageAcademicHonors = languageAcademicHonors;
             this.OptOutIndicators = optOutIndicators;
+            this.OtherNames = otherNames;
             this.PreferredPronouns = preferredPronouns;
+            this.StudentCrisisEvents = studentCrisisEvents;
         }
         
         /// <summary>
@@ -113,11 +117,25 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
         public List<MnStudentEducationOrganizationAssociationOptOutIndicatorsWritable> OptOutIndicators { get; set; }
 
         /// <summary>
+        /// An unordered collection of studentEducationOrganizationAssociationOtherNames. Other name.
+        /// </summary>
+        /// <value>An unordered collection of studentEducationOrganizationAssociationOtherNames. Other name.</value>
+        [DataMember(Name="otherNames", EmitDefaultValue=false)]
+        public List<MnStudentEducationOrganizationAssociationOtherNameWritable> OtherNames { get; set; }
+
+        /// <summary>
         /// An unordered collection of studentEducationOrganizationAssociationPreferredPronouns. Preferred pronoun.
         /// </summary>
         /// <value>An unordered collection of studentEducationOrganizationAssociationPreferredPronouns. Preferred pronoun.</value>
         [DataMember(Name="preferredPronouns", EmitDefaultValue=false)]
         public List<MnStudentEducationOrganizationAssociationPreferredPronounWritable> PreferredPronouns { get; set; }
+
+        /// <summary>
+        /// An unordered collection of studentEducationOrganizationAssociationStudentCrisisEvents. Information on the crisis that has affected a student.
+        /// </summary>
+        /// <value>An unordered collection of studentEducationOrganizationAssociationStudentCrisisEvents. Information on the crisis that has affected a student.</value>
+        [DataMember(Name="studentCrisisEvents", EmitDefaultValue=false)]
+        public List<MnStudentEducationOrganizationAssociationStudentCrisisEventWritable> StudentCrisisEvents { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -135,7 +153,9 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
             sb.Append("  GenderIdentities: ").Append(GenderIdentities).Append("\n");
             sb.Append("  LanguageAcademicHonors: ").Append(LanguageAcademicHonors).Append("\n");
             sb.Append("  OptOutIndicators: ").Append(OptOutIndicators).Append("\n");
+            sb.Append("  OtherNames: ").Append(OtherNames).Append("\n");
             sb.Append("  PreferredPronouns: ").Append(PreferredPronouns).Append("\n");
+            sb.Append("  StudentCrisisEvents: ").Append(StudentCrisisEvents).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -211,9 +231,19 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
                     this.OptOutIndicators.SequenceEqual(input.OptOutIndicators)
                 ) && 
                 (
+                    this.OtherNames == input.OtherNames ||
+                    this.OtherNames != null &&
+                    this.OtherNames.SequenceEqual(input.OtherNames)
+                ) && 
+                (
                     this.PreferredPronouns == input.PreferredPronouns ||
                     this.PreferredPronouns != null &&
                     this.PreferredPronouns.SequenceEqual(input.PreferredPronouns)
+                ) && 
+                (
+                    this.StudentCrisisEvents == input.StudentCrisisEvents ||
+                    this.StudentCrisisEvents != null &&
+                    this.StudentCrisisEvents.SequenceEqual(input.StudentCrisisEvents)
                 );
         }
 
@@ -242,8 +272,12 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
                     hashCode = hashCode * 59 + this.LanguageAcademicHonors.GetHashCode();
                 if (this.OptOutIndicators != null)
                     hashCode = hashCode * 59 + this.OptOutIndicators.GetHashCode();
+                if (this.OtherNames != null)
+                    hashCode = hashCode * 59 + this.OtherNames.GetHashCode();
                 if (this.PreferredPronouns != null)
                     hashCode = hashCode * 59 + this.PreferredPronouns.GetHashCode();
+                if (this.StudentCrisisEvents != null)
+                    hashCode = hashCode * 59 + this.StudentCrisisEvents.GetHashCode();
                 return hashCode;
             }
         }
