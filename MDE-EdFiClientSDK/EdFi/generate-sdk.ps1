@@ -22,9 +22,8 @@ $params = @(
 )
 
 & $javaExecutable $params -i "$metaDataUrl/data/v3/descriptors/swagger.json"                                               --api-package Apis.Descriptors                                                  --model-package Models.Descriptors
-& $javaExecutable $params -i "$metaDataUrl/identity/v2/swagger.json"                                                       --api-package Apis.Identity                                                     --model-package Models.Identity
 & $javaExecutable $params -i "$metaDataUrl/data/v3/profiles/minnesota-preview-sisvendorprofile/swagger.json"               --api-package Apis.Profiles.Minnesota_Preview_SISVendor_Profile                 --model-package Models.Profiles.Minnesota_Preview_SISVendor_Profile
-& $javaExecutable $params -i "$metaDataUrl/data/v3/profiles/minnesota-twentyone-twentytwo-sisvendorprofile/swagger.json"   --api-package Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile   --model-package Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile
+& $javaExecutable $params -i "$metaDataUrl/data/v3/profiles/minnesota-twenty-two-twenty-three-baseline-sis-vendor-profile/swagger.json"   --api-package Apis.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile   --model-package Models.Profiles.Minnesota_Twenty_One_Twenty_Two_SISVendor_Profile
 & $javaExecutable $params -i "$metaDataUrl/data/v3/profiles/minnesota-twentytwo-twentythree-sisvendorprofile/swagger.json" --api-package Apis.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile --model-package Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile
 
 # After generating files copy the Api and Model directories into the appropriate directory
