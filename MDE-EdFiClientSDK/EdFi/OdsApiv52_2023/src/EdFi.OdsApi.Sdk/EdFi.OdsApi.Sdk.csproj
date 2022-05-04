@@ -12,7 +12,7 @@ OpenAPI spec version: 3
     
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EBBE5737-1B56-4A86-BAB7-81C7D3F81247}</ProjectGuid>
+    <ProjectGuid>{753768A6-05E6-48F2-8A52-FF3E60715546}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EdFi.OdsApi.Sdk</RootNamespace>
