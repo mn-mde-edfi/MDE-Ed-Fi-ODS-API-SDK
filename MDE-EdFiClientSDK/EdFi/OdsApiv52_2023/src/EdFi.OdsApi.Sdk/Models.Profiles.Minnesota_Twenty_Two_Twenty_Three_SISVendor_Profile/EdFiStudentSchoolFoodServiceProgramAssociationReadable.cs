@@ -43,10 +43,9 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
         /// <param name="educationOrganizationReference">educationOrganizationReference (required).</param>
         /// <param name="programReference">programReference (required).</param>
         /// <param name="studentReference">studentReference (required).</param>
-        /// <param name="endDate">The month, day, and year on which the Student exited the Program or stopped receiving services..</param>
-        /// <param name="schoolFoodServiceProgramServices">An unordered collection of studentSchoolFoodServiceProgramAssociationSchoolFoodServiceProgramServices. Indicates the service(s) being provided to the Student by the School Food Service Program..</param>
+        /// <param name="directCertification">Indicates that the student&#39;s National School Lunch Program (NSLP) eligibility has been determined through direct certification..</param>
         /// <param name="etag">A unique system-generated value that identifies the version of the resource..</param>
-        public EdFiStudentSchoolFoodServiceProgramAssociationReadable(string id = default(string), DateTime? beginDate = default(DateTime?), EdFiEducationOrganizationReference educationOrganizationReference = default(EdFiEducationOrganizationReference), EdFiProgramReference programReference = default(EdFiProgramReference), EdFiStudentReference studentReference = default(EdFiStudentReference), DateTime? endDate = default(DateTime?), List<EdFiStudentSchoolFoodServiceProgramAssociationSchoolFoodServiceProgramServiceReadable> schoolFoodServiceProgramServices = default(List<EdFiStudentSchoolFoodServiceProgramAssociationSchoolFoodServiceProgramServiceReadable>), string etag = default(string))
+        public EdFiStudentSchoolFoodServiceProgramAssociationReadable(string id = default(string), DateTime? beginDate = default(DateTime?), EdFiEducationOrganizationReference educationOrganizationReference = default(EdFiEducationOrganizationReference), EdFiProgramReference programReference = default(EdFiProgramReference), EdFiStudentReference studentReference = default(EdFiStudentReference), bool? directCertification = default(bool?), string etag = default(string))
         {
             // to ensure "beginDate" is required (not null)
             if (beginDate == null)
@@ -85,8 +84,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
                 this.StudentReference = studentReference;
             }
             this.Id = id;
-            this.EndDate = endDate;
-            this.SchoolFoodServiceProgramServices = schoolFoodServiceProgramServices;
+            this.DirectCertification = directCertification;
             this.Etag = etag;
         }
         
@@ -123,19 +121,11 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
         public EdFiStudentReference StudentReference { get; set; }
 
         /// <summary>
-        /// The month, day, and year on which the Student exited the Program or stopped receiving services.
+        /// Indicates that the student&#39;s National School Lunch Program (NSLP) eligibility has been determined through direct certification.
         /// </summary>
-        /// <value>The month, day, and year on which the Student exited the Program or stopped receiving services.</value>
-        [DataMember(Name="endDate", EmitDefaultValue=false)]
-        [JsonConverter(typeof(SwaggerDateConverter))]
-        public DateTime? EndDate { get; set; }
-
-        /// <summary>
-        /// An unordered collection of studentSchoolFoodServiceProgramAssociationSchoolFoodServiceProgramServices. Indicates the service(s) being provided to the Student by the School Food Service Program.
-        /// </summary>
-        /// <value>An unordered collection of studentSchoolFoodServiceProgramAssociationSchoolFoodServiceProgramServices. Indicates the service(s) being provided to the Student by the School Food Service Program.</value>
-        [DataMember(Name="schoolFoodServiceProgramServices", EmitDefaultValue=false)]
-        public List<EdFiStudentSchoolFoodServiceProgramAssociationSchoolFoodServiceProgramServiceReadable> SchoolFoodServiceProgramServices { get; set; }
+        /// <value>Indicates that the student&#39;s National School Lunch Program (NSLP) eligibility has been determined through direct certification.</value>
+        [DataMember(Name="directCertification", EmitDefaultValue=false)]
+        public bool? DirectCertification { get; set; }
 
         /// <summary>
         /// A unique system-generated value that identifies the version of the resource.
@@ -157,8 +147,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
             sb.Append("  EducationOrganizationReference: ").Append(EducationOrganizationReference).Append("\n");
             sb.Append("  ProgramReference: ").Append(ProgramReference).Append("\n");
             sb.Append("  StudentReference: ").Append(StudentReference).Append("\n");
-            sb.Append("  EndDate: ").Append(EndDate).Append("\n");
-            sb.Append("  SchoolFoodServiceProgramServices: ").Append(SchoolFoodServiceProgramServices).Append("\n");
+            sb.Append("  DirectCertification: ").Append(DirectCertification).Append("\n");
             sb.Append("  Etag: ").Append(Etag).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -220,14 +209,9 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
                     this.StudentReference.Equals(input.StudentReference))
                 ) && 
                 (
-                    this.EndDate == input.EndDate ||
-                    (this.EndDate != null &&
-                    this.EndDate.Equals(input.EndDate))
-                ) && 
-                (
-                    this.SchoolFoodServiceProgramServices == input.SchoolFoodServiceProgramServices ||
-                    this.SchoolFoodServiceProgramServices != null &&
-                    this.SchoolFoodServiceProgramServices.SequenceEqual(input.SchoolFoodServiceProgramServices)
+                    this.DirectCertification == input.DirectCertification ||
+                    (this.DirectCertification != null &&
+                    this.DirectCertification.Equals(input.DirectCertification))
                 ) && 
                 (
                     this.Etag == input.Etag ||
@@ -255,10 +239,8 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
                     hashCode = hashCode * 59 + this.ProgramReference.GetHashCode();
                 if (this.StudentReference != null)
                     hashCode = hashCode * 59 + this.StudentReference.GetHashCode();
-                if (this.EndDate != null)
-                    hashCode = hashCode * 59 + this.EndDate.GetHashCode();
-                if (this.SchoolFoodServiceProgramServices != null)
-                    hashCode = hashCode * 59 + this.SchoolFoodServiceProgramServices.GetHashCode();
+                if (this.DirectCertification != null)
+                    hashCode = hashCode * 59 + this.DirectCertification.GetHashCode();
                 if (this.Etag != null)
                     hashCode = hashCode * 59 + this.Etag.GetHashCode();
                 return hashCode;

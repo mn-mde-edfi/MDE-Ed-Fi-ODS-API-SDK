@@ -34,11 +34,9 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
         /// Initializes a new instance of the <see cref="MnSessionExtensionReadable" /> class.
         /// </summary>
         /// <param name="daysInSession">Total days in session..</param>
-        /// <param name="termNumber">Term number..</param>
-        public MnSessionExtensionReadable(double? daysInSession = default(double?), int? termNumber = default(int?))
+        public MnSessionExtensionReadable(double? daysInSession = default(double?))
         {
             this.DaysInSession = daysInSession;
-            this.TermNumber = termNumber;
         }
         
         /// <summary>
@@ -49,13 +47,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
         public double? DaysInSession { get; set; }
 
         /// <summary>
-        /// Term number.
-        /// </summary>
-        /// <value>Term number.</value>
-        [DataMember(Name="termNumber", EmitDefaultValue=false)]
-        public int? TermNumber { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -64,7 +55,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
             var sb = new StringBuilder();
             sb.Append("class MnSessionExtensionReadable {\n");
             sb.Append("  DaysInSession: ").Append(DaysInSession).Append("\n");
-            sb.Append("  TermNumber: ").Append(TermNumber).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -103,11 +93,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
                     this.DaysInSession == input.DaysInSession ||
                     (this.DaysInSession != null &&
                     this.DaysInSession.Equals(input.DaysInSession))
-                ) && 
-                (
-                    this.TermNumber == input.TermNumber ||
-                    (this.TermNumber != null &&
-                    this.TermNumber.Equals(input.TermNumber))
                 );
         }
 
@@ -122,8 +107,6 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
                 int hashCode = 41;
                 if (this.DaysInSession != null)
                     hashCode = hashCode * 59 + this.DaysInSession.GetHashCode();
-                if (this.TermNumber != null)
-                    hashCode = hashCode * 59 + this.TermNumber.GetHashCode();
                 return hashCode;
             }
         }

@@ -45,13 +45,14 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
         /// <param name="localEducationAgencyReference">localEducationAgencyReference.</param>
         /// <param name="addresses">An unordered collection of educationOrganizationAddresses. The set of elements that describes an address for the education entity, including the street address, city, state, ZIP code, and ZIP code + 4..</param>
         /// <param name="identificationCodes">An unordered collection of educationOrganizationIdentificationCodes. A unique number or alphanumeric code assigned to an education organization by a school, school system, a state, or other agency or entity..</param>
+        /// <param name="indicators">An unordered collection of educationOrganizationIndicators. An indicator or metric of an Education Organization..</param>
         /// <param name="institutionTelephones">An unordered collection of educationOrganizationInstitutionTelephones. The 10-digit telephone number, including the area code, for the education entity..</param>
         /// <param name="nameOfInstitution">The full, legally accepted name of the institution. (required).</param>
         /// <param name="schoolCategories">An unordered collection of schoolCategories. The one or more categories of school. For example: High School, Middle School, and/or Elementary School..</param>
         /// <param name="titleIPartASchoolDesignationDescriptor">Denotes the Title I Part A designation for the school..</param>
         /// <param name="etag">A unique system-generated value that identifies the version of the resource..</param>
         /// <param name="ext">ext.</param>
-        public EdFiSchoolReadable(string id = default(string), List<EdFiEducationOrganizationCategorySchoolReadable> educationOrganizationCategories = default(List<EdFiEducationOrganizationCategorySchoolReadable>), List<EdFiSchoolGradeLevelReadable> gradeLevels = default(List<EdFiSchoolGradeLevelReadable>), int? schoolId = default(int?), EdFiLocalEducationAgencyReference localEducationAgencyReference = default(EdFiLocalEducationAgencyReference), List<EdFiEducationOrganizationAddressSchoolReadable> addresses = default(List<EdFiEducationOrganizationAddressSchoolReadable>), List<EdFiEducationOrganizationIdentificationCodeSchoolReadable> identificationCodes = default(List<EdFiEducationOrganizationIdentificationCodeSchoolReadable>), List<EdFiEducationOrganizationInstitutionTelephoneSchoolReadable> institutionTelephones = default(List<EdFiEducationOrganizationInstitutionTelephoneSchoolReadable>), string nameOfInstitution = default(string), List<EdFiSchoolCategoryReadable> schoolCategories = default(List<EdFiSchoolCategoryReadable>), string titleIPartASchoolDesignationDescriptor = default(string), string etag = default(string), SchoolExtensionsReadable ext = default(SchoolExtensionsReadable))
+        public EdFiSchoolReadable(string id = default(string), List<EdFiEducationOrganizationCategorySchoolReadable> educationOrganizationCategories = default(List<EdFiEducationOrganizationCategorySchoolReadable>), List<EdFiSchoolGradeLevelReadable> gradeLevels = default(List<EdFiSchoolGradeLevelReadable>), int? schoolId = default(int?), EdFiLocalEducationAgencyReference localEducationAgencyReference = default(EdFiLocalEducationAgencyReference), List<EdFiEducationOrganizationAddressSchoolReadable> addresses = default(List<EdFiEducationOrganizationAddressSchoolReadable>), List<EdFiEducationOrganizationIdentificationCodeSchoolReadable> identificationCodes = default(List<EdFiEducationOrganizationIdentificationCodeSchoolReadable>), List<EdFiEducationOrganizationIndicatorSchoolReadable> indicators = default(List<EdFiEducationOrganizationIndicatorSchoolReadable>), List<EdFiEducationOrganizationInstitutionTelephoneSchoolReadable> institutionTelephones = default(List<EdFiEducationOrganizationInstitutionTelephoneSchoolReadable>), string nameOfInstitution = default(string), List<EdFiSchoolCategoryReadable> schoolCategories = default(List<EdFiSchoolCategoryReadable>), string titleIPartASchoolDesignationDescriptor = default(string), string etag = default(string), SchoolExtensionsReadable ext = default(SchoolExtensionsReadable))
         {
             // to ensure "educationOrganizationCategories" is required (not null)
             if (educationOrganizationCategories == null)
@@ -93,6 +94,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
             this.LocalEducationAgencyReference = localEducationAgencyReference;
             this.Addresses = addresses;
             this.IdentificationCodes = identificationCodes;
+            this.Indicators = indicators;
             this.InstitutionTelephones = institutionTelephones;
             this.SchoolCategories = schoolCategories;
             this.TitleIPartASchoolDesignationDescriptor = titleIPartASchoolDesignationDescriptor;
@@ -146,6 +148,13 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
         /// <value>An unordered collection of educationOrganizationIdentificationCodes. A unique number or alphanumeric code assigned to an education organization by a school, school system, a state, or other agency or entity.</value>
         [DataMember(Name="identificationCodes", EmitDefaultValue=false)]
         public List<EdFiEducationOrganizationIdentificationCodeSchoolReadable> IdentificationCodes { get; set; }
+
+        /// <summary>
+        /// An unordered collection of educationOrganizationIndicators. An indicator or metric of an Education Organization.
+        /// </summary>
+        /// <value>An unordered collection of educationOrganizationIndicators. An indicator or metric of an Education Organization.</value>
+        [DataMember(Name="indicators", EmitDefaultValue=false)]
+        public List<EdFiEducationOrganizationIndicatorSchoolReadable> Indicators { get; set; }
 
         /// <summary>
         /// An unordered collection of educationOrganizationInstitutionTelephones. The 10-digit telephone number, including the area code, for the education entity.
@@ -203,6 +212,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
             sb.Append("  LocalEducationAgencyReference: ").Append(LocalEducationAgencyReference).Append("\n");
             sb.Append("  Addresses: ").Append(Addresses).Append("\n");
             sb.Append("  IdentificationCodes: ").Append(IdentificationCodes).Append("\n");
+            sb.Append("  Indicators: ").Append(Indicators).Append("\n");
             sb.Append("  InstitutionTelephones: ").Append(InstitutionTelephones).Append("\n");
             sb.Append("  NameOfInstitution: ").Append(NameOfInstitution).Append("\n");
             sb.Append("  SchoolCategories: ").Append(SchoolCategories).Append("\n");
@@ -279,6 +289,11 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
                     this.IdentificationCodes.SequenceEqual(input.IdentificationCodes)
                 ) && 
                 (
+                    this.Indicators == input.Indicators ||
+                    this.Indicators != null &&
+                    this.Indicators.SequenceEqual(input.Indicators)
+                ) && 
+                (
                     this.InstitutionTelephones == input.InstitutionTelephones ||
                     this.InstitutionTelephones != null &&
                     this.InstitutionTelephones.SequenceEqual(input.InstitutionTelephones)
@@ -333,6 +348,8 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
                     hashCode = hashCode * 59 + this.Addresses.GetHashCode();
                 if (this.IdentificationCodes != null)
                     hashCode = hashCode * 59 + this.IdentificationCodes.GetHashCode();
+                if (this.Indicators != null)
+                    hashCode = hashCode * 59 + this.Indicators.GetHashCode();
                 if (this.InstitutionTelephones != null)
                     hashCode = hashCode * 59 + this.InstitutionTelephones.GetHashCode();
                 if (this.NameOfInstitution != null)
