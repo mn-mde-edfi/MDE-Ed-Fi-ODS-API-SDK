@@ -171,6 +171,12 @@ Class | Method | HTTP request | Description
 *ProgramsApi* | [**GetProgramsById**](docs/ProgramsApi.md#getprogramsbyid) | **GET** /ed-fi/programs/{id} | Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
 *ProgramsApi* | [**Postprogram**](docs/ProgramsApi.md#postprogram) | **POST** /ed-fi/programs | Creates or updates resources based on the natural key values of the supplied resource.
 *ProgramsApi* | [**Putprogram**](docs/ProgramsApi.md#putprogram) | **PUT** /ed-fi/programs/{id} | Updates a resource based on the resource identifier.
+*SchoolAttributesApi* | [**DeletesSchoolAttributes**](docs/SchoolAttributesApi.md#deletesschoolattributes) | **GET** /MN/schoolAttributes/deletes | Retrieves deleted resources based on change version.
+*SchoolAttributesApi* | [**DeleteschoolAttributeById**](docs/SchoolAttributesApi.md#deleteschoolattributebyid) | **DELETE** /MN/schoolAttributes/{id} | Deletes an existing resource using the resource identifier.
+*SchoolAttributesApi* | [**GetSchoolAttributes**](docs/SchoolAttributesApi.md#getschoolattributes) | **GET** /MN/schoolAttributes | Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
+*SchoolAttributesApi* | [**GetSchoolAttributesById**](docs/SchoolAttributesApi.md#getschoolattributesbyid) | **GET** /MN/schoolAttributes/{id} | Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
+*SchoolAttributesApi* | [**PostschoolAttribute**](docs/SchoolAttributesApi.md#postschoolattribute) | **POST** /MN/schoolAttributes | Creates or updates resources based on the natural key values of the supplied resource.
+*SchoolAttributesApi* | [**PutschoolAttribute**](docs/SchoolAttributesApi.md#putschoolattribute) | **PUT** /MN/schoolAttributes/{id} | Updates a resource based on the resource identifier.
 *SchoolsApi* | [**DeletesSchools**](docs/SchoolsApi.md#deletesschools) | **GET** /ed-fi/schools/deletes | Retrieves deleted resources based on change version.
 *SchoolsApi* | [**DeleteschoolById**](docs/SchoolsApi.md#deleteschoolbyid) | **DELETE** /ed-fi/schools/{id} | Deletes an existing resource using the resource identifier.
 *SchoolsApi* | [**GetSchools**](docs/SchoolsApi.md#getschools) | **GET** /ed-fi/schools | Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
@@ -374,6 +380,7 @@ Class | Method | HTTP request | Description
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.EdFiEducationOrganizationIdentificationCodeLocalEducationAgencyReadable](docs/EdFiEducationOrganizationIdentificationCodeLocalEducationAgencyReadable.md)
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.EdFiEducationOrganizationIdentificationCodePostSecondaryInstitutionReadable](docs/EdFiEducationOrganizationIdentificationCodePostSecondaryInstitutionReadable.md)
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.EdFiEducationOrganizationIdentificationCodeSchoolReadable](docs/EdFiEducationOrganizationIdentificationCodeSchoolReadable.md)
+ - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.EdFiEducationOrganizationIndicatorSchoolReadable](docs/EdFiEducationOrganizationIndicatorSchoolReadable.md)
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.EdFiEducationOrganizationInstitutionTelephoneSchoolReadable](docs/EdFiEducationOrganizationInstitutionTelephoneSchoolReadable.md)
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.EdFiEducationOrganizationReference](docs/EdFiEducationOrganizationReference.md)
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.EdFiGradeReadable](docs/EdFiGradeReadable.md)
@@ -450,8 +457,6 @@ Class | Method | HTTP request | Description
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.EdFiStudentSchoolAssociationReadable](docs/EdFiStudentSchoolAssociationReadable.md)
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.EdFiStudentSchoolAssociationWritable](docs/EdFiStudentSchoolAssociationWritable.md)
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.EdFiStudentSchoolFoodServiceProgramAssociationReadable](docs/EdFiStudentSchoolFoodServiceProgramAssociationReadable.md)
- - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.EdFiStudentSchoolFoodServiceProgramAssociationSchoolFoodServiceProgramServiceReadable](docs/EdFiStudentSchoolFoodServiceProgramAssociationSchoolFoodServiceProgramServiceReadable.md)
- - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.EdFiStudentSchoolFoodServiceProgramAssociationSchoolFoodServiceProgramServiceWritable](docs/EdFiStudentSchoolFoodServiceProgramAssociationSchoolFoodServiceProgramServiceWritable.md)
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.EdFiStudentSchoolFoodServiceProgramAssociationWritable](docs/EdFiStudentSchoolFoodServiceProgramAssociationWritable.md)
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.EdFiStudentSectionAssociationReadable](docs/EdFiStudentSectionAssociationReadable.md)
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.EdFiStudentSectionAssociationReference](docs/EdFiStudentSectionAssociationReference.md)
@@ -504,6 +509,10 @@ Class | Method | HTTP request | Description
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.MnParentExtensionWritable](docs/MnParentExtensionWritable.md)
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.MnParentReference](docs/MnParentReference.md)
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.MnProgramReference](docs/MnProgramReference.md)
+ - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.MnSchoolAttributeEducationOrganizationIndicatorReadable](docs/MnSchoolAttributeEducationOrganizationIndicatorReadable.md)
+ - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.MnSchoolAttributeEducationOrganizationIndicatorWritable](docs/MnSchoolAttributeEducationOrganizationIndicatorWritable.md)
+ - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.MnSchoolAttributeReadable](docs/MnSchoolAttributeReadable.md)
+ - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.MnSchoolAttributeWritable](docs/MnSchoolAttributeWritable.md)
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.MnSchoolExtensionReadable](docs/MnSchoolExtensionReadable.md)
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.MnSchoolReference](docs/MnSchoolReference.md)
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.MnSchoolYearTypeReference](docs/MnSchoolYearTypeReference.md)
@@ -537,10 +546,16 @@ Class | Method | HTTP request | Description
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.MnStudentEducationOrganizationAssociationLanguageAcademicHonorWritable](docs/MnStudentEducationOrganizationAssociationLanguageAcademicHonorWritable.md)
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.MnStudentEducationOrganizationAssociationOptOutIndicatorsReadable](docs/MnStudentEducationOrganizationAssociationOptOutIndicatorsReadable.md)
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.MnStudentEducationOrganizationAssociationOptOutIndicatorsWritable](docs/MnStudentEducationOrganizationAssociationOptOutIndicatorsWritable.md)
+ - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.MnStudentEducationOrganizationAssociationOtherNameReadable](docs/MnStudentEducationOrganizationAssociationOtherNameReadable.md)
+ - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.MnStudentEducationOrganizationAssociationOtherNameWritable](docs/MnStudentEducationOrganizationAssociationOtherNameWritable.md)
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.MnStudentEducationOrganizationAssociationPreferredPronounReadable](docs/MnStudentEducationOrganizationAssociationPreferredPronounReadable.md)
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.MnStudentEducationOrganizationAssociationPreferredPronounWritable](docs/MnStudentEducationOrganizationAssociationPreferredPronounWritable.md)
+ - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.MnStudentEducationOrganizationAssociationStudentCrisisEventReadable](docs/MnStudentEducationOrganizationAssociationStudentCrisisEventReadable.md)
+ - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.MnStudentEducationOrganizationAssociationStudentCrisisEventWritable](docs/MnStudentEducationOrganizationAssociationStudentCrisisEventWritable.md)
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.MnStudentGiftedTalentedProgramAssociationReadable](docs/MnStudentGiftedTalentedProgramAssociationReadable.md)
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.MnStudentGiftedTalentedProgramAssociationWritable](docs/MnStudentGiftedTalentedProgramAssociationWritable.md)
+ - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.MnStudentLanguageInstructionProgramAssociationExtensionReadable](docs/MnStudentLanguageInstructionProgramAssociationExtensionReadable.md)
+ - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.MnStudentLanguageInstructionProgramAssociationExtensionWritable](docs/MnStudentLanguageInstructionProgramAssociationExtensionWritable.md)
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.MnStudentNeglectedOrDelinquentProgramAssociationExtensionReadable](docs/MnStudentNeglectedOrDelinquentProgramAssociationExtensionReadable.md)
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.MnStudentNeglectedOrDelinquentProgramAssociationExtensionWritable](docs/MnStudentNeglectedOrDelinquentProgramAssociationExtensionWritable.md)
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.MnStudentPSEOConcurrentProgramAssociationReadable](docs/MnStudentPSEOConcurrentProgramAssociationReadable.md)
@@ -576,6 +591,8 @@ Class | Method | HTTP request | Description
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.SessionExtensionsWritable](docs/SessionExtensionsWritable.md)
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.StudentEducationOrganizationAssociationExtensionsReadable](docs/StudentEducationOrganizationAssociationExtensionsReadable.md)
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.StudentEducationOrganizationAssociationExtensionsWritable](docs/StudentEducationOrganizationAssociationExtensionsWritable.md)
+ - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.StudentLanguageInstructionProgramAssociationExtensionsReadable](docs/StudentLanguageInstructionProgramAssociationExtensionsReadable.md)
+ - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.StudentLanguageInstructionProgramAssociationExtensionsWritable](docs/StudentLanguageInstructionProgramAssociationExtensionsWritable.md)
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.StudentNeglectedOrDelinquentProgramAssociationExtensionsReadable](docs/StudentNeglectedOrDelinquentProgramAssociationExtensionsReadable.md)
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.StudentNeglectedOrDelinquentProgramAssociationExtensionsWritable](docs/StudentNeglectedOrDelinquentProgramAssociationExtensionsWritable.md)
  - [Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.StudentSchoolAssociationExtensionsReadable](docs/StudentSchoolAssociationExtensionsReadable.md)

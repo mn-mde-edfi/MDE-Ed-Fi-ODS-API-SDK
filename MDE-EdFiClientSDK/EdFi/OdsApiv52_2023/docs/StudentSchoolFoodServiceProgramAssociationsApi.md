@@ -151,7 +151,7 @@ void (empty response body)
 
 <a name="getstudentschoolfoodserviceprogramassociations"></a>
 # **GetStudentSchoolFoodServiceProgramAssociations**
-> List<EdFiStudentSchoolFoodServiceProgramAssociationReadable> GetStudentSchoolFoodServiceProgramAssociations (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, string snapshotIdentifier = null)
+> List<EdFiStudentSchoolFoodServiceProgramAssociationReadable> GetStudentSchoolFoodServiceProgramAssociations (int? offset = null, int? limit = null, int? minChangeVersion = null, int? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string programName = null, string programTypeDescriptor = null, string studentUniqueId = null, bool? directCertification = null, string snapshotIdentifier = null)
 
 Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
 
@@ -186,12 +186,13 @@ namespace Example
             var programName = programName_example;  // string | The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional) 
             var programTypeDescriptor = programTypeDescriptor_example;  // string | The type of program. (optional) 
             var studentUniqueId = studentUniqueId_example;  // string | A unique alphanumeric code assigned to a student. (optional) 
+            var directCertification = true;  // bool? | Indicates that the student's National School Lunch Program (NSLP) eligibility has been determined through direct certification. (optional) 
             var snapshotIdentifier = snapshotIdentifier_example;  // string | Indicates the Snapshot-Identifier that should be used. (optional) 
 
             try
             {
                 // Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
-                List&lt;EdFiStudentSchoolFoodServiceProgramAssociationReadable&gt; result = apiInstance.GetStudentSchoolFoodServiceProgramAssociations(offset, limit, minChangeVersion, maxChangeVersion, totalCount, beginDate, educationOrganizationId, programEducationOrganizationId, programName, programTypeDescriptor, studentUniqueId, snapshotIdentifier);
+                List&lt;EdFiStudentSchoolFoodServiceProgramAssociationReadable&gt; result = apiInstance.GetStudentSchoolFoodServiceProgramAssociations(offset, limit, minChangeVersion, maxChangeVersion, totalCount, beginDate, educationOrganizationId, programEducationOrganizationId, programName, programTypeDescriptor, studentUniqueId, directCertification, snapshotIdentifier);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -218,6 +219,7 @@ Name | Type | Description  | Notes
  **programName** | **string**| The formal name of the Program of instruction, training, services, or benefits available through federal, state, or local agencies. | [optional] 
  **programTypeDescriptor** | **string**| The type of program. | [optional] 
  **studentUniqueId** | **string**| A unique alphanumeric code assigned to a student. | [optional] 
+ **directCertification** | **bool?**| Indicates that the student&#39;s National School Lunch Program (NSLP) eligibility has been determined through direct certification. | [optional] 
  **snapshotIdentifier** | **string**| Indicates the Snapshot-Identifier that should be used. | [optional] 
 
 ### Return type

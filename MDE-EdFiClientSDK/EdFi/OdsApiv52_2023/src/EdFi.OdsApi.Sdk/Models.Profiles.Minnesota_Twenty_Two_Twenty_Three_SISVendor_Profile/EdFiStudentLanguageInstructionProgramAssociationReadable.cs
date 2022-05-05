@@ -47,7 +47,8 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
         /// <param name="englishLearnerParticipation">An indication that an English Learner student is served by an English language instruction educational program supported with Title III of ESEA funds..</param>
         /// <param name="languageInstructionProgramServices">An unordered collection of studentLanguageInstructionProgramAssociationLanguageInstructionProgramServices. Indicates the service(s) being provided to the Student by the Language Instruction Program..</param>
         /// <param name="etag">A unique system-generated value that identifies the version of the resource..</param>
-        public EdFiStudentLanguageInstructionProgramAssociationReadable(string id = default(string), DateTime? beginDate = default(DateTime?), EdFiEducationOrganizationReference educationOrganizationReference = default(EdFiEducationOrganizationReference), EdFiProgramReference programReference = default(EdFiProgramReference), EdFiStudentReference studentReference = default(EdFiStudentReference), DateTime? endDate = default(DateTime?), bool? englishLearnerParticipation = default(bool?), List<EdFiStudentLanguageInstructionProgramAssociationLanguageInstructionProgramServiceReadable> languageInstructionProgramServices = default(List<EdFiStudentLanguageInstructionProgramAssociationLanguageInstructionProgramServiceReadable>), string etag = default(string))
+        /// <param name="ext">ext.</param>
+        public EdFiStudentLanguageInstructionProgramAssociationReadable(string id = default(string), DateTime? beginDate = default(DateTime?), EdFiEducationOrganizationReference educationOrganizationReference = default(EdFiEducationOrganizationReference), EdFiProgramReference programReference = default(EdFiProgramReference), EdFiStudentReference studentReference = default(EdFiStudentReference), DateTime? endDate = default(DateTime?), bool? englishLearnerParticipation = default(bool?), List<EdFiStudentLanguageInstructionProgramAssociationLanguageInstructionProgramServiceReadable> languageInstructionProgramServices = default(List<EdFiStudentLanguageInstructionProgramAssociationLanguageInstructionProgramServiceReadable>), string etag = default(string), StudentLanguageInstructionProgramAssociationExtensionsReadable ext = default(StudentLanguageInstructionProgramAssociationExtensionsReadable))
         {
             // to ensure "beginDate" is required (not null)
             if (beginDate == null)
@@ -90,6 +91,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
             this.EnglishLearnerParticipation = englishLearnerParticipation;
             this.LanguageInstructionProgramServices = languageInstructionProgramServices;
             this.Etag = etag;
+            this.Ext = ext;
         }
         
         /// <summary>
@@ -154,6 +156,12 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
         public string Etag { get; set; }
 
         /// <summary>
+        /// Gets or Sets Ext
+        /// </summary>
+        [DataMember(Name="_ext", EmitDefaultValue=false)]
+        public StudentLanguageInstructionProgramAssociationExtensionsReadable Ext { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -170,6 +178,7 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
             sb.Append("  EnglishLearnerParticipation: ").Append(EnglishLearnerParticipation).Append("\n");
             sb.Append("  LanguageInstructionProgramServices: ").Append(LanguageInstructionProgramServices).Append("\n");
             sb.Append("  Etag: ").Append(Etag).Append("\n");
+            sb.Append("  Ext: ").Append(Ext).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -248,6 +257,11 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
                     this.Etag == input.Etag ||
                     (this.Etag != null &&
                     this.Etag.Equals(input.Etag))
+                ) && 
+                (
+                    this.Ext == input.Ext ||
+                    (this.Ext != null &&
+                    this.Ext.Equals(input.Ext))
                 );
         }
 
@@ -278,6 +292,8 @@ namespace EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISV
                     hashCode = hashCode * 59 + this.LanguageInstructionProgramServices.GetHashCode();
                 if (this.Etag != null)
                     hashCode = hashCode * 59 + this.Etag.GetHashCode();
+                if (this.Ext != null)
+                    hashCode = hashCode * 59 + this.Ext.GetHashCode();
                 return hashCode;
             }
         }
