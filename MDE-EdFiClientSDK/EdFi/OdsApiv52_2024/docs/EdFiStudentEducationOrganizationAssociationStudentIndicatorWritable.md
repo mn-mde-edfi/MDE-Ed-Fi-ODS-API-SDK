@@ -1,0 +1,11 @@
+# EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Two_Twenty_Three_SISVendor_Profile.EdFiStudentEducationOrganizationAssociationStudentIndicatorWritable
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**IndicatorName** | **string** | The name of the indicator or metric. | 
+**Indicator** | **string** | The value of the indicator or metric. | 
+**IndicatorGroup** | **string** | The name for a group of indicators. | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
