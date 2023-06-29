@@ -1,4 +1,12 @@
 # MDE-Ed-Fi-ODS-API-SDK
+
+## Migrated Repository
+On June 27, 2023 this repository was migrated to the State of Minnesota GitHub Enterprise organization:
+
+https://github.com/mn-mde/ed-fi-ods-api-sdk
+
+## Overview
+
 A C sharp client SDK to interact with the MN Ed-Fi ODS API.
 
 ## Use the SDK Source files in a Sample C# Program
