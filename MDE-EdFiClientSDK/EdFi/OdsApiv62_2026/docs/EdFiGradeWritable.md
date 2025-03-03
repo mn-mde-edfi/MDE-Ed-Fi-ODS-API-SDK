@@ -1,0 +1,16 @@
+# EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Five_Twenty_Six_SISVendor_Profile.EdFiGradeWritable
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Id** | **string** |  | [optional] 
+**GradeTypeDescriptor** | **string** | The type of grade reported (e.g., exam, final, grading period). | 
+**GradingPeriodReference** | [**EdFiGradingPeriodReference**](EdFiGradingPeriodReference.md) |  | 
+**StudentSectionAssociationReference** | [**EdFiStudentSectionAssociationReference**](EdFiStudentSectionAssociationReference.md) |  | 
+**LetterGradeEarned** | **string** | A final or interim (grading period) indicator of student performance in a class as submitted by the instructor. | [optional] 
+**Etag** | **string** | A unique system-generated value that identifies the version of the resource. | [optional] 
+**Ext** | [**GradeExtensionsWritable**](GradeExtensionsWritable.md) |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
