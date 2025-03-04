@@ -1,0 +1,768 @@
+# EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Five_Twenty_Six_SISVendor_Profile.StudentHomelessProgramAssociationsApi
+
+All URIs are relative to *https://test.api.education.mn.gov:443/edfiapi/data/v3*
+
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**DeletesStudentHomelessProgramAssociations**](StudentHomelessProgramAssociationsApi.md#deletesstudenthomelessprogramassociations) | **GET** /ed-fi/studentHomelessProgramAssociations/deletes | Retrieves deleted resources based on change version. |
+| [**DeletestudentHomelessProgramAssociationById**](StudentHomelessProgramAssociationsApi.md#deletestudenthomelessprogramassociationbyid) | **DELETE** /ed-fi/studentHomelessProgramAssociations/{id} | Deletes an existing resource using the resource identifier. |
+| [**GetStudentHomelessProgramAssociations**](StudentHomelessProgramAssociationsApi.md#getstudenthomelessprogramassociations) | **GET** /ed-fi/studentHomelessProgramAssociations | Retrieves specific resources using the resource&#39;s property values (using the \&quot;Get\&quot; pattern). |
+| [**GetStudentHomelessProgramAssociationsById**](StudentHomelessProgramAssociationsApi.md#getstudenthomelessprogramassociationsbyid) | **GET** /ed-fi/studentHomelessProgramAssociations/{id} | Retrieves a specific resource using the resource&#39;s identifier (using the \&quot;Get By Id\&quot; pattern). |
+| [**KeyChangesStudentHomelessProgramAssociations**](StudentHomelessProgramAssociationsApi.md#keychangesstudenthomelessprogramassociations) | **GET** /ed-fi/studentHomelessProgramAssociations/keyChanges | Retrieves resources key changes based on change version. |
+| [**PoststudentHomelessProgramAssociation**](StudentHomelessProgramAssociationsApi.md#poststudenthomelessprogramassociation) | **POST** /ed-fi/studentHomelessProgramAssociations | Creates or updates resources based on the natural key values of the supplied resource. |
+| [**PutstudentHomelessProgramAssociation**](StudentHomelessProgramAssociationsApi.md#putstudenthomelessprogramassociation) | **PUT** /ed-fi/studentHomelessProgramAssociations/{id} | Updates a resource based on the resource identifier. |
+
+<a name="deletesstudenthomelessprogramassociations"></a>
+# **DeletesStudentHomelessProgramAssociations**
+> List&lt;TrackedChangesEdFiStudentHomelessProgramAssociationReadableDelete&gt; DeletesStudentHomelessProgramAssociations (int? offset = null, int? limit = null, long? minChangeVersion = null, long? maxChangeVersion = null, bool? totalCount = null, string? snapshotIdentifier = null)
+
+Retrieves deleted resources based on change version.
+
+This operation is used to retrieve identifying information about resources that have been deleted.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Five_Twenty_Six_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Client;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Five_Twenty_Six_SISVendor_Profile;
+
+namespace Example
+{
+    public class DeletesStudentHomelessProgramAssociationsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://test.api.education.mn.gov:443/edfiapi/data/v3";
+            // Configure OAuth2 access token for authorization: oauth2_client_credentials
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new StudentHomelessProgramAssociationsApi(config);
+            var offset = 0;  // int? | Indicates how many items should be skipped before returning results. (optional)  (default to 0)
+            var limit = 25;  // int? | Indicates the maximum number of items that should be returned in the results. (optional)  (default to 25)
+            var minChangeVersion = 789L;  // long? | Used in synchronization to set sequence minimum ChangeVersion (optional) 
+            var maxChangeVersion = 789L;  // long? | Used in synchronization to set sequence maximum ChangeVersion (optional) 
+            var totalCount = false;  // bool? | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. (optional)  (default to false)
+            var snapshotIdentifier = "snapshotIdentifier_example";  // string? | Indicates the Snapshot-Identifier that should be used. (optional) 
+
+            try
+            {
+                // Retrieves deleted resources based on change version.
+                List<TrackedChangesEdFiStudentHomelessProgramAssociationReadableDelete> result = apiInstance.DeletesStudentHomelessProgramAssociations(offset, limit, minChangeVersion, maxChangeVersion, totalCount, snapshotIdentifier);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling StudentHomelessProgramAssociationsApi.DeletesStudentHomelessProgramAssociations: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the DeletesStudentHomelessProgramAssociationsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Retrieves deleted resources based on change version.
+    ApiResponse<List<TrackedChangesEdFiStudentHomelessProgramAssociationReadableDelete>> response = apiInstance.DeletesStudentHomelessProgramAssociationsWithHttpInfo(offset, limit, minChangeVersion, maxChangeVersion, totalCount, snapshotIdentifier);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling StudentHomelessProgramAssociationsApi.DeletesStudentHomelessProgramAssociationsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **offset** | **int?** | Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **limit** | **int?** | Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
+| **minChangeVersion** | **long?** | Used in synchronization to set sequence minimum ChangeVersion | [optional]  |
+| **maxChangeVersion** | **long?** | Used in synchronization to set sequence maximum ChangeVersion | [optional]  |
+| **totalCount** | **bool?** | Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **snapshotIdentifier** | **string?** | Indicates the Snapshot-Identifier that should be used. | [optional]  |
+
+### Return type
+
+[**List&lt;TrackedChangesEdFiStudentHomelessProgramAssociationReadableDelete&gt;**](TrackedChangesEdFiStudentHomelessProgramAssociationReadableDelete.md)
+
+### Authorization
+
+[oauth2_client_credentials](../README.md#oauth2_client_credentials)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The requested resource was successfully retrieved. |  -  |
+| **304** | The resource&#39;s current server-side ETag value matched the If-None-Match header value supplied with the request indicating the resource has not been modified. |  -  |
+| **400** | Bad Request. The request was invalid and cannot be completed. See the response body for specific validation errors. This will typically be an issue with the query parameters or their values. |  -  |
+| **401** | Unauthorized. The request requires authentication. The OAuth bearer token was either not provided or is invalid. The operation may succeed once authentication has been successfully completed. |  -  |
+| **403** | Forbidden. The request cannot be completed in the current authorization context. Contact your administrator if you believe this operation should be allowed. |  -  |
+| **404** | The resource could not be found. |  -  |
+| **500** | An unhandled error occurred on the server. See the response body for details. |  -  |
+| **410** | Gone. An attempt to connect to the database for the snapshot specified by the Snapshot-Identifier header was unsuccessful (indicating the snapshot may have been removed). |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="deletestudenthomelessprogramassociationbyid"></a>
+# **DeletestudentHomelessProgramAssociationById**
+> void DeletestudentHomelessProgramAssociationById (string id, string? ifMatch = null)
+
+Deletes an existing resource using the resource identifier.
+
+The DELETE operation is used to delete an existing resource by identifier. If the resource doesn't exist, an error will result (the resource will not be found).
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Five_Twenty_Six_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Client;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Five_Twenty_Six_SISVendor_Profile;
+
+namespace Example
+{
+    public class DeletestudentHomelessProgramAssociationByIdExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://test.api.education.mn.gov:443/edfiapi/data/v3";
+            // Configure OAuth2 access token for authorization: oauth2_client_credentials
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new StudentHomelessProgramAssociationsApi(config);
+            var id = "id_example";  // string | A resource identifier that uniquely identifies the resource.
+            var ifMatch = "ifMatch_example";  // string? | The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. (optional) 
+
+            try
+            {
+                // Deletes an existing resource using the resource identifier.
+                apiInstance.DeletestudentHomelessProgramAssociationById(id, ifMatch);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling StudentHomelessProgramAssociationsApi.DeletestudentHomelessProgramAssociationById: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the DeletestudentHomelessProgramAssociationByIdWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Deletes an existing resource using the resource identifier.
+    apiInstance.DeletestudentHomelessProgramAssociationByIdWithHttpInfo(id, ifMatch);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling StudentHomelessProgramAssociationsApi.DeletestudentHomelessProgramAssociationByIdWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | A resource identifier that uniquely identifies the resource. |  |
+| **ifMatch** | **string?** | The ETag header value used to prevent the DELETE from removing a resource modified by another consumer. | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oauth2_client_credentials](../README.md#oauth2_client_credentials)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | The resource was successfully deleted. |  -  |
+| **400** | Bad Request. The request was invalid and cannot be completed. See the response body for specific validation errors. This will typically be an issue with the query parameters or their values. |  -  |
+| **401** | Unauthorized. The request requires authentication. The OAuth bearer token was either not provided or is invalid. The operation may succeed once authentication has been successfully completed. |  -  |
+| **403** | Forbidden. The request cannot be completed in the current authorization context. Contact your administrator if you believe this operation should be allowed. |  -  |
+| **404** | The resource could not be found. |  -  |
+| **405** | Method Is Not Allowed. When the Snapshot-Identifier header is present the method is not allowed. |  -  |
+| **409** | Conflict.  The request cannot be completed because it would result in an invalid state.  See the response body for details. |  -  |
+| **412** | The resource&#39;s current server-side ETag value does not match the supplied If-Match header value in the request. This indicates the resource has been modified by another consumer. |  -  |
+| **500** | An unhandled error occurred on the server. See the response body for details. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getstudenthomelessprogramassociations"></a>
+# **GetStudentHomelessProgramAssociations**
+> List&lt;EdFiStudentHomelessProgramAssociationReadable&gt; GetStudentHomelessProgramAssociations (int? offset = null, int? limit = null, long? minChangeVersion = null, long? maxChangeVersion = null, bool? totalCount = null, DateTime? beginDate = null, int? educationOrganizationId = null, int? programEducationOrganizationId = null, string? programName = null, string? programTypeDescriptor = null, string? studentUniqueId = null, string? homelessPrimaryNighttimeResidenceDescriptor = null, bool? homelessUnaccompaniedYouth = null, string? snapshotIdentifier = null)
+
+Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
+
+This GET operation provides access to resources using the \"Get\" search pattern.  The values of any properties of the resource that are specified will be used to return all matching results (if it exists).
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Five_Twenty_Six_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Client;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Five_Twenty_Six_SISVendor_Profile;
+
+namespace Example
+{
+    public class GetStudentHomelessProgramAssociationsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://test.api.education.mn.gov:443/edfiapi/data/v3";
+            // Configure OAuth2 access token for authorization: oauth2_client_credentials
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new StudentHomelessProgramAssociationsApi(config);
+            var offset = 0;  // int? | Indicates how many items should be skipped before returning results. (optional)  (default to 0)
+            var limit = 25;  // int? | Indicates the maximum number of items that should be returned in the results. (optional)  (default to 25)
+            var minChangeVersion = 789L;  // long? | Used in synchronization to set sequence minimum ChangeVersion (optional) 
+            var maxChangeVersion = 789L;  // long? | Used in synchronization to set sequence maximum ChangeVersion (optional) 
+            var totalCount = false;  // bool? | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. (optional)  (default to false)
+            var beginDate = DateTime.Parse("2013-10-20");  // DateTime? | The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program. (optional) 
+            var educationOrganizationId = 56;  // int? | The identifier assigned to an education organization. (optional) 
+            var programEducationOrganizationId = 56;  // int? | The identifier assigned to an education organization. (optional) 
+            var programName = "programName_example";  // string? | The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. (optional) 
+            var programTypeDescriptor = "programTypeDescriptor_example";  // string? | The type of program. (optional) 
+            var studentUniqueId = "studentUniqueId_example";  // string? | A unique alphanumeric code assigned to a student. (optional) 
+            var homelessPrimaryNighttimeResidenceDescriptor = "homelessPrimaryNighttimeResidenceDescriptor_example";  // string? | The primary nighttime residence of the student at the time the student is identified as homeless. (optional) 
+            var homelessUnaccompaniedYouth = true;  // bool? | A homeless unaccompanied youth is a youth who is not in the physical custody of a parent or guardian and who fits the McKinney-Vento definition of homeless. Students must be both unaccompanied and homeless to be included as an unaccompanied homeless youth. (optional) 
+            var snapshotIdentifier = "snapshotIdentifier_example";  // string? | Indicates the Snapshot-Identifier that should be used. (optional) 
+
+            try
+            {
+                // Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
+                List<EdFiStudentHomelessProgramAssociationReadable> result = apiInstance.GetStudentHomelessProgramAssociations(offset, limit, minChangeVersion, maxChangeVersion, totalCount, beginDate, educationOrganizationId, programEducationOrganizationId, programName, programTypeDescriptor, studentUniqueId, homelessPrimaryNighttimeResidenceDescriptor, homelessUnaccompaniedYouth, snapshotIdentifier);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling StudentHomelessProgramAssociationsApi.GetStudentHomelessProgramAssociations: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetStudentHomelessProgramAssociationsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Retrieves specific resources using the resource's property values (using the \"Get\" pattern).
+    ApiResponse<List<EdFiStudentHomelessProgramAssociationReadable>> response = apiInstance.GetStudentHomelessProgramAssociationsWithHttpInfo(offset, limit, minChangeVersion, maxChangeVersion, totalCount, beginDate, educationOrganizationId, programEducationOrganizationId, programName, programTypeDescriptor, studentUniqueId, homelessPrimaryNighttimeResidenceDescriptor, homelessUnaccompaniedYouth, snapshotIdentifier);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling StudentHomelessProgramAssociationsApi.GetStudentHomelessProgramAssociationsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **offset** | **int?** | Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **limit** | **int?** | Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
+| **minChangeVersion** | **long?** | Used in synchronization to set sequence minimum ChangeVersion | [optional]  |
+| **maxChangeVersion** | **long?** | Used in synchronization to set sequence maximum ChangeVersion | [optional]  |
+| **totalCount** | **bool?** | Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **beginDate** | **DateTime?** | The earliest date the student is involved with the program. Typically, this is the date the student becomes eligible for the program. | [optional]  |
+| **educationOrganizationId** | **int?** | The identifier assigned to an education organization. | [optional]  |
+| **programEducationOrganizationId** | **int?** | The identifier assigned to an education organization. | [optional]  |
+| **programName** | **string?** | The formal name of the program of instruction, training, services, or benefits available through federal, state, or local agencies. | [optional]  |
+| **programTypeDescriptor** | **string?** | The type of program. | [optional]  |
+| **studentUniqueId** | **string?** | A unique alphanumeric code assigned to a student. | [optional]  |
+| **homelessPrimaryNighttimeResidenceDescriptor** | **string?** | The primary nighttime residence of the student at the time the student is identified as homeless. | [optional]  |
+| **homelessUnaccompaniedYouth** | **bool?** | A homeless unaccompanied youth is a youth who is not in the physical custody of a parent or guardian and who fits the McKinney-Vento definition of homeless. Students must be both unaccompanied and homeless to be included as an unaccompanied homeless youth. | [optional]  |
+| **snapshotIdentifier** | **string?** | Indicates the Snapshot-Identifier that should be used. | [optional]  |
+
+### Return type
+
+[**List&lt;EdFiStudentHomelessProgramAssociationReadable&gt;**](EdFiStudentHomelessProgramAssociationReadable.md)
+
+### Authorization
+
+[oauth2_client_credentials](../README.md#oauth2_client_credentials)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.ed-fi.studenthomelessprogramassociation.minnesota-twenty-five-twenty-six-sis-vendor-profile.readable+json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The requested resource was successfully retrieved. |  -  |
+| **304** | The resource&#39;s current server-side ETag value matched the If-None-Match header value supplied with the request indicating the resource has not been modified. |  -  |
+| **400** | Bad Request. The request was invalid and cannot be completed. See the response body for specific validation errors. This will typically be an issue with the query parameters or their values. |  -  |
+| **401** | Unauthorized. The request requires authentication. The OAuth bearer token was either not provided or is invalid. The operation may succeed once authentication has been successfully completed. |  -  |
+| **403** | Forbidden. The request cannot be completed in the current authorization context. Contact your administrator if you believe this operation should be allowed. |  -  |
+| **404** | The resource could not be found. |  -  |
+| **500** | An unhandled error occurred on the server. See the response body for details. |  -  |
+| **410** | Gone. An attempt to connect to the database for the snapshot specified by the Snapshot-Identifier header was unsuccessful (indicating the snapshot may have been removed). |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getstudenthomelessprogramassociationsbyid"></a>
+# **GetStudentHomelessProgramAssociationsById**
+> EdFiStudentHomelessProgramAssociationReadable GetStudentHomelessProgramAssociationsById (string id, string? ifNoneMatch = null, string? snapshotIdentifier = null)
+
+Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
+
+This GET operation retrieves a resource by the specified resource identifier.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Five_Twenty_Six_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Client;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Five_Twenty_Six_SISVendor_Profile;
+
+namespace Example
+{
+    public class GetStudentHomelessProgramAssociationsByIdExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://test.api.education.mn.gov:443/edfiapi/data/v3";
+            // Configure OAuth2 access token for authorization: oauth2_client_credentials
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new StudentHomelessProgramAssociationsApi(config);
+            var id = "id_example";  // string | A resource identifier that uniquely identifies the resource.
+            var ifNoneMatch = "ifNoneMatch_example";  // string? | The previously returned ETag header value, used here to prevent the unnecessary data transfer of an unchanged resource. (optional) 
+            var snapshotIdentifier = "snapshotIdentifier_example";  // string? | Indicates the Snapshot-Identifier that should be used. (optional) 
+
+            try
+            {
+                // Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
+                EdFiStudentHomelessProgramAssociationReadable result = apiInstance.GetStudentHomelessProgramAssociationsById(id, ifNoneMatch, snapshotIdentifier);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling StudentHomelessProgramAssociationsApi.GetStudentHomelessProgramAssociationsById: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetStudentHomelessProgramAssociationsByIdWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Retrieves a specific resource using the resource's identifier (using the \"Get By Id\" pattern).
+    ApiResponse<EdFiStudentHomelessProgramAssociationReadable> response = apiInstance.GetStudentHomelessProgramAssociationsByIdWithHttpInfo(id, ifNoneMatch, snapshotIdentifier);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling StudentHomelessProgramAssociationsApi.GetStudentHomelessProgramAssociationsByIdWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | A resource identifier that uniquely identifies the resource. |  |
+| **ifNoneMatch** | **string?** | The previously returned ETag header value, used here to prevent the unnecessary data transfer of an unchanged resource. | [optional]  |
+| **snapshotIdentifier** | **string?** | Indicates the Snapshot-Identifier that should be used. | [optional]  |
+
+### Return type
+
+[**EdFiStudentHomelessProgramAssociationReadable**](EdFiStudentHomelessProgramAssociationReadable.md)
+
+### Authorization
+
+[oauth2_client_credentials](../README.md#oauth2_client_credentials)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/vnd.ed-fi.studenthomelessprogramassociation.minnesota-twenty-five-twenty-six-sis-vendor-profile.readable+json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The requested resource was successfully retrieved. |  -  |
+| **304** | The resource&#39;s current server-side ETag value matched the If-None-Match header value supplied with the request indicating the resource has not been modified. |  -  |
+| **400** | Bad Request. The request was invalid and cannot be completed. See the response body for specific validation errors. This will typically be an issue with the query parameters or their values. |  -  |
+| **401** | Unauthorized. The request requires authentication. The OAuth bearer token was either not provided or is invalid. The operation may succeed once authentication has been successfully completed. |  -  |
+| **403** | Forbidden. The request cannot be completed in the current authorization context. Contact your administrator if you believe this operation should be allowed. |  -  |
+| **404** | The resource could not be found. |  -  |
+| **500** | An unhandled error occurred on the server. See the response body for details. |  -  |
+| **410** | Gone. An attempt to connect to the database for the snapshot specified by the Snapshot-Identifier header was unsuccessful (indicating the snapshot may have been removed). |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="keychangesstudenthomelessprogramassociations"></a>
+# **KeyChangesStudentHomelessProgramAssociations**
+> List&lt;TrackedChangesEdFiStudentHomelessProgramAssociationReadableKeyChange&gt; KeyChangesStudentHomelessProgramAssociations (int? offset = null, int? limit = null, long? minChangeVersion = null, long? maxChangeVersion = null, bool? totalCount = null, string? snapshotIdentifier = null)
+
+Retrieves resources key changes based on change version.
+
+This operation is used to retrieve identifying information about resources whose key values have been changed.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Five_Twenty_Six_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Client;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Five_Twenty_Six_SISVendor_Profile;
+
+namespace Example
+{
+    public class KeyChangesStudentHomelessProgramAssociationsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://test.api.education.mn.gov:443/edfiapi/data/v3";
+            // Configure OAuth2 access token for authorization: oauth2_client_credentials
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new StudentHomelessProgramAssociationsApi(config);
+            var offset = 0;  // int? | Indicates how many items should be skipped before returning results. (optional)  (default to 0)
+            var limit = 25;  // int? | Indicates the maximum number of items that should be returned in the results. (optional)  (default to 25)
+            var minChangeVersion = 789L;  // long? | Used in synchronization to set sequence minimum ChangeVersion (optional) 
+            var maxChangeVersion = 789L;  // long? | Used in synchronization to set sequence maximum ChangeVersion (optional) 
+            var totalCount = false;  // bool? | Indicates if the total number of items available should be returned in the 'Total-Count' header of the response.  If set to false, 'Total-Count' header will not be provided. (optional)  (default to false)
+            var snapshotIdentifier = "snapshotIdentifier_example";  // string? | Indicates the Snapshot-Identifier that should be used. (optional) 
+
+            try
+            {
+                // Retrieves resources key changes based on change version.
+                List<TrackedChangesEdFiStudentHomelessProgramAssociationReadableKeyChange> result = apiInstance.KeyChangesStudentHomelessProgramAssociations(offset, limit, minChangeVersion, maxChangeVersion, totalCount, snapshotIdentifier);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling StudentHomelessProgramAssociationsApi.KeyChangesStudentHomelessProgramAssociations: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the KeyChangesStudentHomelessProgramAssociationsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Retrieves resources key changes based on change version.
+    ApiResponse<List<TrackedChangesEdFiStudentHomelessProgramAssociationReadableKeyChange>> response = apiInstance.KeyChangesStudentHomelessProgramAssociationsWithHttpInfo(offset, limit, minChangeVersion, maxChangeVersion, totalCount, snapshotIdentifier);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling StudentHomelessProgramAssociationsApi.KeyChangesStudentHomelessProgramAssociationsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **offset** | **int?** | Indicates how many items should be skipped before returning results. | [optional] [default to 0] |
+| **limit** | **int?** | Indicates the maximum number of items that should be returned in the results. | [optional] [default to 25] |
+| **minChangeVersion** | **long?** | Used in synchronization to set sequence minimum ChangeVersion | [optional]  |
+| **maxChangeVersion** | **long?** | Used in synchronization to set sequence maximum ChangeVersion | [optional]  |
+| **totalCount** | **bool?** | Indicates if the total number of items available should be returned in the &#39;Total-Count&#39; header of the response.  If set to false, &#39;Total-Count&#39; header will not be provided. | [optional] [default to false] |
+| **snapshotIdentifier** | **string?** | Indicates the Snapshot-Identifier that should be used. | [optional]  |
+
+### Return type
+
+[**List&lt;TrackedChangesEdFiStudentHomelessProgramAssociationReadableKeyChange&gt;**](TrackedChangesEdFiStudentHomelessProgramAssociationReadableKeyChange.md)
+
+### Authorization
+
+[oauth2_client_credentials](../README.md#oauth2_client_credentials)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The requested resource was successfully retrieved. |  -  |
+| **304** | The resource&#39;s current server-side ETag value matched the If-None-Match header value supplied with the request indicating the resource has not been modified. |  -  |
+| **400** | Bad Request. The request was invalid and cannot be completed. See the response body for specific validation errors. This will typically be an issue with the query parameters or their values. |  -  |
+| **401** | Unauthorized. The request requires authentication. The OAuth bearer token was either not provided or is invalid. The operation may succeed once authentication has been successfully completed. |  -  |
+| **403** | Forbidden. The request cannot be completed in the current authorization context. Contact your administrator if you believe this operation should be allowed. |  -  |
+| **404** | The resource could not be found. |  -  |
+| **500** | An unhandled error occurred on the server. See the response body for details. |  -  |
+| **410** | Gone. An attempt to connect to the database for the snapshot specified by the Snapshot-Identifier header was unsuccessful (indicating the snapshot may have been removed). |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="poststudenthomelessprogramassociation"></a>
+# **PoststudentHomelessProgramAssociation**
+> void PoststudentHomelessProgramAssociation (EdFiStudentHomelessProgramAssociationWritable studentHomelessProgramAssociation)
+
+Creates or updates resources based on the natural key values of the supplied resource.
+
+The POST operation can be used to create or update resources. In database terms, this is often referred to as an \"upsert\" operation (insert + update). Clients should NOT include the resource \"id\" in the JSON body because it will result in an error. The web service will identify whether the resource already exists based on the natural key values provided, and update or create the resource appropriately. It is recommended to use POST for both create and update except while updating natural key of a resource in which case PUT operation must be used.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Five_Twenty_Six_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Client;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Five_Twenty_Six_SISVendor_Profile;
+
+namespace Example
+{
+    public class PoststudentHomelessProgramAssociationExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://test.api.education.mn.gov:443/edfiapi/data/v3";
+            // Configure OAuth2 access token for authorization: oauth2_client_credentials
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new StudentHomelessProgramAssociationsApi(config);
+            var studentHomelessProgramAssociation = new EdFiStudentHomelessProgramAssociationWritable(); // EdFiStudentHomelessProgramAssociationWritable | The JSON representation of the \"studentHomelessProgramAssociation\" resource to be created or updated.
+
+            try
+            {
+                // Creates or updates resources based on the natural key values of the supplied resource.
+                apiInstance.PoststudentHomelessProgramAssociation(studentHomelessProgramAssociation);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling StudentHomelessProgramAssociationsApi.PoststudentHomelessProgramAssociation: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the PoststudentHomelessProgramAssociationWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Creates or updates resources based on the natural key values of the supplied resource.
+    apiInstance.PoststudentHomelessProgramAssociationWithHttpInfo(studentHomelessProgramAssociation);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling StudentHomelessProgramAssociationsApi.PoststudentHomelessProgramAssociationWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **studentHomelessProgramAssociation** | [**EdFiStudentHomelessProgramAssociationWritable**](EdFiStudentHomelessProgramAssociationWritable.md) | The JSON representation of the \&quot;studentHomelessProgramAssociation\&quot; resource to be created or updated. |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oauth2_client_credentials](../README.md#oauth2_client_credentials)
+
+### HTTP request headers
+
+ - **Content-Type**: application/vnd.ed-fi.studenthomelessprogramassociation.minnesota-twenty-five-twenty-six-sis-vendor-profile.writable+json
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | The resource was updated.  An updated ETag value is available in the ETag header of the response. |  -  |
+| **201** | The resource was created.  An ETag value is available in the ETag header, and the location of the resource is available in the Location header of the response. |  -  |
+| **400** | Bad Request. The request was invalid and cannot be completed. See the response body for specific validation errors. This will typically be an issue with the query parameters or their values. |  -  |
+| **401** | Unauthorized. The request requires authentication. The OAuth bearer token was either not provided or is invalid. The operation may succeed once authentication has been successfully completed. |  -  |
+| **403** | Forbidden. The request cannot be completed in the current authorization context. Contact your administrator if you believe this operation should be allowed. |  -  |
+| **405** | Method Is Not Allowed. When the Snapshot-Identifier header is present the method is not allowed. |  -  |
+| **409** | Conflict.  The request cannot be completed because it would result in an invalid state.  See the response body for details. |  -  |
+| **412** | The resource&#39;s current server-side ETag value does not match the supplied If-Match header value in the request. This indicates the resource has been modified by another consumer. |  -  |
+| **500** | An unhandled error occurred on the server. See the response body for details. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="putstudenthomelessprogramassociation"></a>
+# **PutstudentHomelessProgramAssociation**
+> void PutstudentHomelessProgramAssociation (string id, EdFiStudentHomelessProgramAssociationWritable studentHomelessProgramAssociation, string? ifMatch = null)
+
+Updates a resource based on the resource identifier.
+
+The PUT operation is used to update a resource by identifier. If the resource identifier (\"id\") is provided in the JSON body, it will be ignored. Additionally, this API resource is not configured for cascading natural key updates. Natural key values for this resource cannot be changed using PUT operation and will not be modified in the database, and so recommendation is to use POST as that supports upsert behavior.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Five_Twenty_Six_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Client;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Five_Twenty_Six_SISVendor_Profile;
+
+namespace Example
+{
+    public class PutstudentHomelessProgramAssociationExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://test.api.education.mn.gov:443/edfiapi/data/v3";
+            // Configure OAuth2 access token for authorization: oauth2_client_credentials
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new StudentHomelessProgramAssociationsApi(config);
+            var id = "id_example";  // string | A resource identifier that uniquely identifies the resource.
+            var studentHomelessProgramAssociation = new EdFiStudentHomelessProgramAssociationWritable(); // EdFiStudentHomelessProgramAssociationWritable | The JSON representation of the \"studentHomelessProgramAssociation\" resource to be created or updated.
+            var ifMatch = "ifMatch_example";  // string? | The ETag header value used to prevent the PUT from updating a resource modified by another consumer. (optional) 
+
+            try
+            {
+                // Updates a resource based on the resource identifier.
+                apiInstance.PutstudentHomelessProgramAssociation(id, studentHomelessProgramAssociation, ifMatch);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling StudentHomelessProgramAssociationsApi.PutstudentHomelessProgramAssociation: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the PutstudentHomelessProgramAssociationWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Updates a resource based on the resource identifier.
+    apiInstance.PutstudentHomelessProgramAssociationWithHttpInfo(id, studentHomelessProgramAssociation, ifMatch);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling StudentHomelessProgramAssociationsApi.PutstudentHomelessProgramAssociationWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | A resource identifier that uniquely identifies the resource. |  |
+| **studentHomelessProgramAssociation** | [**EdFiStudentHomelessProgramAssociationWritable**](EdFiStudentHomelessProgramAssociationWritable.md) | The JSON representation of the \&quot;studentHomelessProgramAssociation\&quot; resource to be created or updated. |  |
+| **ifMatch** | **string?** | The ETag header value used to prevent the PUT from updating a resource modified by another consumer. | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oauth2_client_credentials](../README.md#oauth2_client_credentials)
+
+### HTTP request headers
+
+ - **Content-Type**: application/vnd.ed-fi.studenthomelessprogramassociation.minnesota-twenty-five-twenty-six-sis-vendor-profile.writable+json
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | The resource was updated.  An updated ETag value is available in the ETag header of the response. |  -  |
+| **400** | Bad Request. The request was invalid and cannot be completed. See the response body for specific validation errors. This will typically be an issue with the query parameters or their values. |  -  |
+| **401** | Unauthorized. The request requires authentication. The OAuth bearer token was either not provided or is invalid. The operation may succeed once authentication has been successfully completed. |  -  |
+| **403** | Forbidden. The request cannot be completed in the current authorization context. Contact your administrator if you believe this operation should be allowed. |  -  |
+| **404** | The resource could not be found. |  -  |
+| **405** | Method Is Not Allowed. When the Snapshot-Identifier header is present the method is not allowed. |  -  |
+| **409** | Conflict.  The request cannot be completed because it would result in an invalid state.  See the response body for details. |  -  |
+| **412** | The resource&#39;s current server-side ETag value does not match the supplied If-Match header value in the request. This indicates the resource has been modified by another consumer. |  -  |
+| **500** | An unhandled error occurred on the server. See the response body for details. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
