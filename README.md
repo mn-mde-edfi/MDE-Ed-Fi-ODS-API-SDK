@@ -1,6 +1,9 @@
 # MDE-Ed-Fi-ODS-API-SDK
 
-A C sharp client SDK to interact with the MN Ed-Fi ODS API.
+<p>
+C sharp client SDK to interact with the MN Ed-Fi ODS API.
+<br>Note: LongPathsEnabled should be set to true in the registry. This is due to the filepath most likely exceeding 260 character.      
+</p>
 
 ## Use the SDK Source files in a Sample C# Program
 Open up Visual Studio and compile the SDK
@@ -24,9 +27,9 @@ Edit the Program.cs and create TokenRetriever.cs
 Code Sniplet:
 ```
 using EdFi.OdsApi.Sdk.Apis.Descriptors;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Preview_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Five_Twenty_Six_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Preview_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Five_Twenty_Six_SISVendor_Profile;
 using EdFi.OdsApi.SdkClient;
 
 // Trust all SSL certs -- needed unless signed SSL certificates are configured.

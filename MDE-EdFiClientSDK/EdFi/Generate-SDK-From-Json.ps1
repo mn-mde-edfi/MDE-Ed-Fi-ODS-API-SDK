@@ -17,6 +17,7 @@ $outputDir = "generated-sdk"
 
 # Variables - update URI and Ods version if necessary
 $uri = "https://stage.api.education.mn.gov/edfiapi/metadata/2026"
+
 $OdsVersion = "v62"
 $substrings = $uri -split "/"
 $Year = $substrings[-1]   # Gets year of the URI
@@ -63,15 +64,15 @@ try
     }
 
     # Process the SIS Vendor Profile
-    foreach( $entry in $response) 
-    {
-        if ( $entry.name -eq "Minnesota-Preview-SISVendor-Profile" )
-        {
-            # Create Minnesota SIS Vendor Profile 
-            # (Client, Apis.Profiles.Minnesota_Preview_SISVendor_Profile and Models.Profiles.Minnesota_Preview_SISVendor_Profile)
-            & $javaExecutable $params -i $entry.endpointUri --api-package Apis.Profiles.Minnesota_Preview_SISVendor_Profile  --model-package Models.Profiles.Minnesota_Preview_SISVendor_Profile
-        }
-    }
+    #foreach( $entry in $response) 
+    #{
+    #    if ( $entry.name -eq "Minnesota-Preview-SISVendor-Profile" )
+    #    {
+    #        # Create Minnesota SIS Vendor Profile 
+    #        # (Client, Apis.Profiles.Minnesota_Preview_SISVendor_Profile and Models.Profiles.Minnesota_Preview_SISVendor_Profile)
+    #        & $javaExecutable $params -i $entry.endpointUri --api-package Apis.Profiles.Minnesota_Preview_SISVendor_Profile  --model-package Models.Profiles.Minnesota_Preview_SISVendor_Profile
+    #    }
+    #}
 
     # Process the Minnesota Profile(s)
     foreach( $entry in $response) 
