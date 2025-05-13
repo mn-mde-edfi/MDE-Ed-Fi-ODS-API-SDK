@@ -1,0 +1,19 @@
+# EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Four_Twenty_Five_SISVendor_Profile.EdFiSectionWritable
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Id** | **string** |  | [optional] 
+**SectionIdentifier** | **string** | The local identifier assigned to a section. | 
+**CourseOfferingReference** | [**EdFiCourseOfferingReference**](EdFiCourseOfferingReference.md) |  | 
+**Characteristics** | [**List&lt;EdFiSectionCharacteristicWritable&gt;**](EdFiSectionCharacteristicWritable.md) | An unordered collection of sectionCharacteristics. Reflects important characteristics of the section, such as whether or not attendance is taken and the section is graded. | [optional] 
+**ClassPeriods** | [**List&lt;EdFiSectionClassPeriodWritable&gt;**](EdFiSectionClassPeriodWritable.md) | An unordered collection of sectionClassPeriods. The class period during which the section meets. | [optional] 
+**InstructionLanguageDescriptor** | **string** | The primary language of instruction. If omitted, English is assumed. | [optional] 
+**MediumOfInstructionDescriptor** | **string** | The media through which teachers provide instruction to students and students and teachers communicate about instructional matters. | [optional] 
+**SequenceOfCourse** | **int?** | When a section is part of a sequence of parts for a course, the number of the sequence. If the course has only one part, the value of this section attribute should be 1. | [optional] 
+**Etag** | **string** | A unique system-generated value that identifies the version of the resource. | [optional] 
+**Ext** | [**SectionExtensionsWritable**](SectionExtensionsWritable.md) |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
