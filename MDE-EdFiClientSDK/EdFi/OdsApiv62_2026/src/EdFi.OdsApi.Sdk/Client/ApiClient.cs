@@ -71,10 +71,10 @@ namespace EdFi.OdsApi.Sdk.Client
         /// <returns>A JSON string.</returns>
         public string Serialize(object obj)
         {
-            if (obj != null && obj is EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Four_Twenty_Five_SISVendor_Profile.AbstractOpenAPISchema)
+            if (obj != null && obj is EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Five_Twenty_Six_SISVendor_Profile.AbstractOpenAPISchema)
             {
                 // the object to be serialized is an oneOf/anyOf schema
-                return ((EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Four_Twenty_Five_SISVendor_Profile.AbstractOpenAPISchema)obj).ToJson();
+                return ((EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Five_Twenty_Six_SISVendor_Profile.AbstractOpenAPISchema)obj).ToJson();
             }
             else
             {
@@ -497,11 +497,11 @@ namespace EdFi.OdsApi.Sdk.Client
             }
 
             // if the response type is oneOf/anyOf, call FromJSON to deserialize the data
-            if (typeof(EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Four_Twenty_Five_SISVendor_Profile.AbstractOpenAPISchema).IsAssignableFrom(typeof(T)))
+            if (typeof(EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Five_Twenty_Six_SISVendor_Profile.AbstractOpenAPISchema).IsAssignableFrom(typeof(T)))
             {
                 try
                 {
-                    response.Data = (T) typeof(T).GetMethod("FromJson").Invoke(null, new object[] { response.Content });
+                    response.Data = (T)typeof(T).GetMethod("FromJson").Invoke(null, new object[] { response.Content });
                 }
                 catch (Exception ex)
                 {
@@ -621,9 +621,9 @@ namespace EdFi.OdsApi.Sdk.Client
             }
 
             // if the response type is oneOf/anyOf, call FromJSON to deserialize the data
-            if (typeof(EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Four_Twenty_Five_SISVendor_Profile.AbstractOpenAPISchema).IsAssignableFrom(typeof(T)))
+            if (typeof(EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Five_Twenty_Six_SISVendor_Profile.AbstractOpenAPISchema).IsAssignableFrom(typeof(T)))
             {
-                response.Data = (T) typeof(T).GetMethod("FromJson").Invoke(null, new object[] { response.Content });
+                response.Data = (T)typeof(T).GetMethod("FromJson").Invoke(null, new object[] { response.Content });
             }
             else if (typeof(T).Name == "Stream") // for binary response
             {

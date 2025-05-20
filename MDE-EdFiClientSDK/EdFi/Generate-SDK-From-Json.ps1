@@ -63,22 +63,13 @@ try
         }
     }
 
-    # Process the SIS Vendor Profile
-    #foreach( $entry in $response) 
-    #{
-    #    if ( $entry.name -eq "Minnesota-Preview-SISVendor-Profile" )
-    #    {
-    #        # Create Minnesota SIS Vendor Profile 
-    #        # (Client, Apis.Profiles.Minnesota_Preview_SISVendor_Profile and Models.Profiles.Minnesota_Preview_SISVendor_Profile)
-    #        & $javaExecutable $params -i $entry.endpointUri --api-package Apis.Profiles.Minnesota_Preview_SISVendor_Profile  --model-package Models.Profiles.Minnesota_Preview_SISVendor_Profile
-    #    }
-    #}
-
     # Process the Minnesota Profile(s)
+    # The upcoming school year profile needs to be created last so that ApiClient.cs uses the correct profile. 
     foreach( $entry in $response) 
     {
-        if ( $entry.name -like "Minnesota-*-SIS-Vendor-Profile" )
+        if ( $entry.name -like "Minnesota-*-SIS-Vendor-Profile" -And $entry.name -like "*Twenty-Five-Twenty-Six*" )
         {
+            
             # Create the Profile
             # (Client, Apis.Profiles.Minnesota- ... -SISVendor-Profile, Models.Minnesota- ... -SISVendor-Profile)  
             $namespace = $entry.name.Replace("-", "_").Replace("SIS_Vendor", "SISVendor")
