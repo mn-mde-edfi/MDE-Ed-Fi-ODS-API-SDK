@@ -16,7 +16,8 @@ $openapiGeneratorJar = "openapi-generator-cli-6.0.1.jar"
 $outputDir = "generated-sdk"
 
 # Variables - update URI and Ods version if necessary
-$uri = "https://stage.api.education.mn.gov/edfiapi/metadata/2026"
+# $uri = "https://stage.api.education.mn.gov/edfiapi/metadata/2026"
+$uri = "http://localhost:54746/metadata/2027"
 
 $OdsVersion = "v62"
 $substrings = $uri -split "/"
@@ -67,7 +68,7 @@ try
     # The upcoming school year profile needs to be created last so that ApiClient.cs uses the correct profile. 
     foreach( $entry in $response) 
     {
-        if ( $entry.name -like "Minnesota-*-SIS-Vendor-Profile" -And $entry.name -like "*Twenty-Five-Twenty-Six*" )
+        if ( $entry.name -like "Minnesota-*-SIS-Vendor-Profile" -And $entry.name -like "*Twenty-Six-Twenty-Seven*" )
         {
             
             # Create the Profile

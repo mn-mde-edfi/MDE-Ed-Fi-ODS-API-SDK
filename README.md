@@ -7,7 +7,7 @@ C sharp client SDK to interact with the MN Ed-Fi ODS API.
 
 ## Use the SDK Source files in a Sample C# Program
 Open up Visual Studio and compile the SDK
-1. Navigate to directory "..\MDE-Ed-Fi-ODS-API-SDK\MDE-EdFiClientSDK\EdFi\OdsApiv_2026"
+1. Navigate to directory "..\MDE-Ed-Fi-ODS-API-SDK\MDE-EdFiClientSDK\EdFi\OdsApiv_2027"
 2. Double-Click on the solution file ## "EdFi.OdsApi.Sdk.sln". This will open Visual Studio.
 3. Right-click on the solution and click Restore NuGetPackages.
 4. Build the solution. 
@@ -27,9 +27,9 @@ Edit the Program.cs and create TokenRetriever.cs
 Code Sniplet:
 ```
 using EdFi.OdsApi.Sdk.Apis.Descriptors;
-using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Five_Twenty_Six_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Apis.Profiles.Minnesota_Twenty_Six_Twenty_Seven_SISVendor_Profile;
 using EdFi.OdsApi.Sdk.Client;
-using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Five_Twenty_Six_SISVendor_Profile;
+using EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Six_Twenty_Seven_SISVendor_Profile;
 using EdFi.OdsApi.SdkClient;
 
 // Trust all SSL certs -- needed unless signed SSL certificates are configured.
@@ -43,15 +43,15 @@ System.Net.ServicePointManager.ServerCertificateValidationCallback =
 System.Net.ServicePointManager.SecurityProtocol |= System.Net.SecurityProtocolType.Tls11 | System.Net.SecurityProtocolType.Tls12;
 
 // Oauth configuration
-var oauthUrl = "https://test.api.education.mn.gov/edfiapi/";
+var edfiUrl = "https://test.api.education.mn.gov/edfiapi/";
 var clientKey = "populated";
 var clientSecret = "populatedSecret";
 
 // TokenRetriever makes the oauth calls.  It has RestSharp dependency, install via NuGet
-var tokenRetriever = new TokenRetriever(oauthUrl, clientKey, clientSecret);
+var tokenRetriever = new TokenRetriever(edfiUrl, clientKey, clientSecret);
 
 // Plug Oauth access token. Tokens will need to be refreshed when they expire
-var configuration = new Configuration() { AccessToken = tokenRetriever.ObtainNewBearerToken(), BasePath = "https://test.api.education.mn.gov:443/edfiapi/data/v3" };
+var configuration = new Configuration() { AccessToken = tokenRetriever.ObtainNewBearerToken(), BasePath = edfiUrl + "edfiapi/data/v3" };
 
 Console.WriteLine("GET MN extension StudentSchoolAssociations");
 var mnssaApi = new StudentSchoolAssociationsApi(configuration);
