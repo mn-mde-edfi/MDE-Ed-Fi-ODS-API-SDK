@@ -16,8 +16,8 @@ $openapiGeneratorJar = "openapi-generator-cli-6.0.1.jar"
 $outputDir = "generated-sdk"
 
 # Variables - update URI and Ods version if necessary
-# $uri = "https://stage.api.education.mn.gov/edfiapi/metadata/2026"
-$uri = "http://localhost:54746/metadata/2027"
+# $uri = "http://localhost:54746/metadata/2027"
+$uri = "https://api.education.mn.gov/edfiapi/metadata/2027"
 
 $OdsVersion = "v62"
 $substrings = $uri -split "/"
