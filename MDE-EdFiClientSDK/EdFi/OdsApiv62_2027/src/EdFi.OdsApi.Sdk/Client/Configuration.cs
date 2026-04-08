@@ -114,7 +114,7 @@ namespace EdFi.OdsApi.Sdk.Client
         {
             Proxy = null;
             UserAgent = "OpenAPI-Generator/1.0.0/csharp";
-            BasePath = "https://api.education.mn.gov:443/edfiapi/data/v3/2027";
+            BasePath = "https://dev.api.education.mn.gov:443/edfiapi/data/v3/2027";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
             ApiKeyPrefix = new ConcurrentDictionary<string, string>();
@@ -122,7 +122,7 @@ namespace EdFi.OdsApi.Sdk.Client
             {
                 {
                     new Dictionary<string, object> {
-                        {"url", "https://api.education.mn.gov:443/edfiapi/data/v3/2027"},
+                        {"url", "https://dev.api.education.mn.gov:443/edfiapi/data/v3/2027"},
                         {"description", "No description provided"},
                     }
                 }
@@ -143,7 +143,7 @@ namespace EdFi.OdsApi.Sdk.Client
             IDictionary<string, string> defaultHeaders,
             IDictionary<string, string> apiKey,
             IDictionary<string, string> apiKeyPrefix,
-            string basePath = "https://api.education.mn.gov:443/edfiapi/data/v3/2027") : this()
+            string basePath = "https://dev.api.education.mn.gov:443/edfiapi/data/v3/2027") : this()
         {
             if (string.IsNullOrWhiteSpace(basePath))
                 throw new ArgumentException("The provided basePath is invalid.", "basePath");
