@@ -1,6 +1,6 @@
 # EdFi.OdsApi.Sdk.Apis.Descriptors.ServiceDescriptorsApi
 
-All URIs are relative to *https://api.education.mn.gov:443/edfiapi/data/v3/2027*
+All URIs are relative to *https://dev.api.education.mn.gov:443/edfiapi/data/v3/2027*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -35,7 +35,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.education.mn.gov:443/edfiapi/data/v3/2027";
+            config.BasePath = "https://dev.api.education.mn.gov:443/edfiapi/data/v3/2027";
             // Configure OAuth2 access token for authorization: oauth2_client_credentials
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -135,7 +135,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.education.mn.gov:443/edfiapi/data/v3/2027";
+            config.BasePath = "https://dev.api.education.mn.gov:443/edfiapi/data/v3/2027";
             // Configure OAuth2 access token for authorization: oauth2_client_credentials
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -246,7 +246,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.education.mn.gov:443/edfiapi/data/v3/2027";
+            config.BasePath = "https://dev.api.education.mn.gov:443/edfiapi/data/v3/2027";
             // Configure OAuth2 access token for authorization: oauth2_client_credentials
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -359,7 +359,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.education.mn.gov:443/edfiapi/data/v3/2027";
+            config.BasePath = "https://dev.api.education.mn.gov:443/edfiapi/data/v3/2027";
             // Configure OAuth2 access token for authorization: oauth2_client_credentials
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -464,7 +464,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.education.mn.gov:443/edfiapi/data/v3/2027";
+            config.BasePath = "https://dev.api.education.mn.gov:443/edfiapi/data/v3/2027";
             // Configure OAuth2 access token for authorization: oauth2_client_credentials
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -575,7 +575,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.education.mn.gov:443/edfiapi/data/v3/2027";
+            config.BasePath = "https://dev.api.education.mn.gov:443/edfiapi/data/v3/2027";
             // Configure OAuth2 access token for authorization: oauth2_client_credentials
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
@@ -673,7 +673,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://api.education.mn.gov:443/edfiapi/data/v3/2027";
+            config.BasePath = "https://dev.api.education.mn.gov:443/edfiapi/data/v3/2027";
             // Configure OAuth2 access token for authorization: oauth2_client_credentials
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
