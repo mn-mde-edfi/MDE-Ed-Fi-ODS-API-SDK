@@ -71,10 +71,10 @@ namespace EdFi.OdsApi.Sdk.Client
         /// <returns>A JSON string.</returns>
         public string Serialize(object obj)
         {
-            if (obj != null && obj is EdFi.OdsApi.Sdk.Models.Descriptors.AbstractOpenAPISchema)
+            if (obj != null && obj is EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Six_Twenty_Seven_SISVendor_Profile.AbstractOpenAPISchema)
             {
                 // the object to be serialized is an oneOf/anyOf schema
-                return ((EdFi.OdsApi.Sdk.Models.Descriptors.AbstractOpenAPISchema)obj).ToJson();
+                return ((EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Six_Twenty_Seven_SISVendor_Profile.AbstractOpenAPISchema)obj).ToJson();
             }
             else
             {
@@ -497,7 +497,7 @@ namespace EdFi.OdsApi.Sdk.Client
             }
 
             // if the response type is oneOf/anyOf, call FromJSON to deserialize the data
-            if (typeof(EdFi.OdsApi.Sdk.Models.Descriptors.AbstractOpenAPISchema).IsAssignableFrom(typeof(T)))
+            if (typeof(EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Six_Twenty_Seven_SISVendor_Profile.AbstractOpenAPISchema).IsAssignableFrom(typeof(T)))
             {
                 try
                 {
@@ -621,7 +621,7 @@ namespace EdFi.OdsApi.Sdk.Client
             }
 
             // if the response type is oneOf/anyOf, call FromJSON to deserialize the data
-            if (typeof(EdFi.OdsApi.Sdk.Models.Descriptors.AbstractOpenAPISchema).IsAssignableFrom(typeof(T)))
+            if (typeof(EdFi.OdsApi.Sdk.Models.Profiles.Minnesota_Twenty_Six_Twenty_Seven_SISVendor_Profile.AbstractOpenAPISchema).IsAssignableFrom(typeof(T)))
             {
                 response.Data = (T) typeof(T).GetMethod("FromJson").Invoke(null, new object[] { response.Content });
             }
