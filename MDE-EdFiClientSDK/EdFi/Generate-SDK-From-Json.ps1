@@ -78,6 +78,19 @@ try
         }
     }
 
+    # Process the ChangeQueries
+    # Create Change version access
+    foreach( $entry in $response) 
+    {
+        if ( $entry.name -eq "Change-Queries" )
+        {
+            # Create Change-Queries 
+            # (Client, Apis.Descriptors, Models.Descriptors)
+            $namespace = $entry.name.Replace("-", "")
+            & $javaExecutable $params -i $entry.endpointUri --api-package Apis.$namespace --model-package Models.$namespace
+        }
+    }
+
     # Move the Api and Model directories into the appropriate directory for the new year.
     # Format: OdsApiv<Ods-Version>_<schoolYear> see finalDir variable above
     # When satified, create PR to check-n the Directory
